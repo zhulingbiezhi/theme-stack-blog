@@ -1,4 +1,4 @@
-baseurl: https://example.com
+baseurl: http://www.ququ123.xyz
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 10
@@ -6,12 +6,12 @@ title: ququ's blog
 languages:
     en:
         languageName: English
-        title: note of ququ
+        title: blog of ququ
         weight: 1
     zh-cn:
         languageName: 中文
         title: 去去的烂笔头
-        weight: 2
+        weight: 3
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
@@ -36,19 +36,19 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: img/avatar.png
 
     footer:
         since: 2020
         customText:
 
     dateFormat:
-        published: Jan 02, 2006
-        lastUpdated: Jan 02, 2006 15:04 MST
+        published: 2006年01月02日
+        lastUpdated: 2006年01月02日 15点04分05秒
 
     sidebar:
         emoji: 🍥
-        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        subtitle: No code, no talk.
         avatar:
             enabled: true
             local: true

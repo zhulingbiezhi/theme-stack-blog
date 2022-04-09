@@ -1,23 +1,29 @@
 {{- $ThemeVersion := "3.11.0" -}}
 <footer class="site-footer">
     <section class="copyright">
-        &copy; 
-        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+         {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
             {{ .Site.Params.footer.since }} - 
         {{ end }}
-        {{ now.Format "2006" }} {{ .Site.Title }}
+        {{ now.Format "2006" }} --- 去去的博客
     </section>
-    
+        <section id="busuanzi_container_site_uv">
+        您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
+    </section>
     <section class="powerby">
         {{ with .Site.Params.footer.customText }}
             {{ . | safeHTML }} <br/>
         {{ end }}
 
-        {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
-        {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="%s">Stack</a></b>` $ThemeVersion -}}
-        {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+        {{- $Generator := `<a href="https://gohugo.io/" style="color:#0000ff"  target="_blank" rel="noopener">Hugo</a>` -}}
+        {{- $Theme := printf `<b><a href="https://github.com/CaiJimmy/hugo-theme-stack"  style="color:#0000ff"  target="_blank" rel="noopener" data-version="%s">Stack</a></b>` $ThemeVersion -}}
+        {{- $DesignedBy := `<a href="https://jimmycai.com" style="color:#0000ff"  target="_blank" rel="noopener">Jimmy</a>` -}}
 
-        {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} <br />
-        {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+        {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }} | {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}<br />
     </section>
+
+    <section class="BeiAn-info">
+     备案号：赣ICP备 -
+        <a target="_blank" href="http://beian.miit.gov.cn/" style="color:#0000ff"  rel="nofollow">2022002813号</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->| 
+        <a target="_blank" href="http://beian.miit.gov.cn/portal/registerSystemInfo?recordcode=2022002813" style="color:#0000ff;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow"></a>
+     </section>
 </footer>

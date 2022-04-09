@@ -54,7 +54,7 @@ search:
 
 footer:
     builtWith:
-        other: Built with {{ .Generator }}
+        other: 基于 {{ .Generator }} 构建
 
     designedBy:
         other: 主题 {{ .Theme }} 由 {{ .DesignedBy }} 设计

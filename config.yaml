@@ -1,16 +1,11 @@
 baseurl: http://www.ququ123.xyz
-languageCode: en-us
 theme: hugo-theme-stack
 paginate: 10
 title: ququ's blog
 languages:
-    en:
-        languageName: English
-        title: blog of ququ
-        weight: 1
     zh-cn:
         languageName: 中文
-        title: 去去的烂笔头
+        title: Coder 去去
         weight: 3
 
 # Change it to your Disqus shortname before using
@@ -28,7 +23,7 @@ DefaultContentLanguage: zh-cn
 hasCJKLanguage: false
 
 permalinks:
-    post: /p/:slug/
+    post: /post/:year/:month/:slug/
     page: /:slug/
 
 params:
@@ -59,8 +54,7 @@ params:
         toc: true
         readingTime: true
         license:
-            enabled: true
-            default: Licensed under CC BY-NC-SA 4.0
+            enabled: false
 
     comments:
         enabled: true
@@ -191,15 +185,10 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/zhulingbiezhi
           params:
               icon: brand-github
 
-        - identifier: twitter
-          name: Twitter
-          url: https://twitter.com
-          params:
-              icon: brand-twitter
 
 related:
     includeNewer: true

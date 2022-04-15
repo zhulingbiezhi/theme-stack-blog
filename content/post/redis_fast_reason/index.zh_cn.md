@@ -2,7 +2,7 @@
 title = "【redis】redis为什么这么快"
 date = "2020-12-12"
 categories = [
-    "golang"
+    "redis"
 ]
 +++
 

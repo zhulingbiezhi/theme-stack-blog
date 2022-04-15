@@ -2,7 +2,7 @@
 title = "【mysql】分库分表"
 date = "2020-12-12"
 categories = [
-    "golang"
+    "mysql"
 ]
 +++
 

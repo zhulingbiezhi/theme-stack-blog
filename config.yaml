@@ -1,4 +1,5 @@
 baseurl: http://www.ququ123.xyz
+languageCode: en-us
 theme: hugo-theme-stack
 paginate: 10
 title: ququ's blog

@@ -2,7 +2,7 @@
 title = "【网络】http状态码"
 date = "2020-12-12"
 categories = [
-    "golang"
+    "http"
 ]
 +++
 

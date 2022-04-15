@@ -2,7 +2,7 @@
 title = "【mysql】通过http tunnel连接mysql"
 date = "2020-12-12"
 categories = [
-    "golang"
+    "mysql"
 ]
 +++
 

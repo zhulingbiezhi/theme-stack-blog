@@ -2,7 +2,7 @@
 title = "【mysql】sql优化原则"
 date = "2020-12-12"
 categories = [
-    "golang"
+    "mysql"
 ]
 +++
 

@@ -2,7 +2,7 @@
 title = "【redis】redis备份机制"
 date = "2020-12-12"
 categories = [
-    "golang"
+    "redis"
 ]
 +++
 

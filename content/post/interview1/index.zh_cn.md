@@ -2,7 +2,7 @@
 title = "【面试】公司1（中小型）"
 date = "2020-12-12"
 categories = [
-    "golang"
+    "面试"
 ]
 +++
 

@@ -21,7 +21,7 @@ Golang从1.5开始引入了三色GC, 经过多次改进, 当前的1.9版本的GC
 
 go在程序启动时会分配一块虚拟内存地址是连续的内存, 结构如下:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165637665-171579804.png)
+![](http://img.ququ123.xyz/img/881857-20171122165637665-171579804.png)
 
 这一块内存分为了3个区域, 在X64上大小分别是512M, 16G和512G, 它们的作用如下:
 
@@ -38,11 +38,11 @@ bitmap区域中一个byte(8 bit)对应了arena区域中的四个指针大小的�
 bitmap区域中的一个byte对应arena区域的四个指针大小的内存的结构如下,  
 每一个指针大小的内存都会有两个bit分别表示是否应该继续扫描和是否包含指针:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165646055-1225522876.png)
+![](http://img.ququ123.xyz/img/881857-20171122165646055-1225522876.png)
 
 bitmap中的byte和arena的对应关系从末尾开始, 也就是随着内存分配会向两边扩展:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165652071-1143420937.png)
+![](http://img.ququ123.xyz/img/881857-20171122165652071-1143420937.png)
 
 **spans**
 
@@ -52,7 +52,7 @@ spans区域中一个指针(8 byte)对应了arena区域中的一页(在go中一�
 
 spans区域的一个指针对应arena区域的一页的结构如下, 和bitmap不一样的是对应关系会从开头开始:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165701665-214853306.png)
+![](http://img.ququ123.xyz/img/881857-20171122165701665-214853306.png)
 
 ### 什么时候从Heap分配对象
 
@@ -85,7 +85,7 @@ GC在标记时需要知道哪些地方包含了指针, 例如上面提到的bitm
 
 span是用于分配对象的区块, 下图是简单说明了Span的内部结构:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165711883-1079047912.png)
+![](http://img.ququ123.xyz/img/881857-20171122165711883-1079047912.png)
 
 通常一个span包含了多个大小相同的元素, 一个元素会保存一个对象, 除非:
 
@@ -193,7 +193,7 @@ span中的元素大小是8 byte, span本身占1页也就是8K, 一共可以保�
 在[前一篇](http://www.cnblogs.com/zkweb/p/7815600.html)中我提到了P是一个虚拟的资源, 同一时间只能有一个线程访问同一个P, 所以P中的数据不需要锁.  
 为了分配对象时有更好的性能, 各个P中都有span的缓存(也叫mcache), 缓存的结构如下:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165724540-2110504561.png)
+![](http://img.ququ123.xyz/img/881857-20171122165724540-2110504561.png)
 
 各个P中按span类型的不同, 有67*2=134个span的缓存,
 
@@ -219,7 +219,7 @@ GC扫描对象的时候对于noscan的span可以不去查看bitmap区域来标�
 
 go从堆分配对象时会调用newobject函数, 这个函数的流程大致如下:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165733821-1250658446.png)
+![](http://img.ququ123.xyz/img/881857-20171122165733821-1250658446.png)
 
 首先会检查GC是否在工作中, 如果GC在工作中并且当前的G分配了一定大小的内存则需要协助GC做一定的工作,  
 这个机制叫GC Assist, 用于防止分配内存太快导致GC回收跟不上的情况发生.
@@ -233,7 +233,7 @@ go从堆分配对象时会调用newobject函数, 这个函数的流程大致如�
 
 这三个阶段的详细结构如下图:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165741149-1015705312.png)
+![](http://img.ququ123.xyz/img/881857-20171122165741149-1015705312.png)
 
 ### 数据类型的定义
 
@@ -1278,7 +1278,7 @@ GO的GC是并行GC, 也就是GC的大部分处理和普通的go代码是同时�
 
 下图是比较完整的GC流程, 并按颜色对这四个阶段进行了分类:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171122165749274-1840348396.png)
+![](http://img.ququ123.xyz/img/881857-20171122165749274-1840348396.png)
 
 在GC过程中会有两种后台任务(G), 一种是标记用的后台任务, 一种是清扫用的后台任务.  
 标记用的后台任务会在需要时启动, 可以同时工作的后台任务数量大约是P的数量的25%, 也就是go所讲的让25%的cpu用在GC上的根据.  
@@ -4180,20 +4180,7 @@ GC的整个流程都分析完毕了, 最后贴上写屏障函数[writebarrierptr
     	}
     }
 ```
-参考链接
-====
 
-[https://github.com/golang/go](https://github.com/golang/go)  
-[https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice](https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice)  
-[https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md](https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md)  
-[https://golang.org/s/go15gcpacing](https://golang.org/s/go15gcpacing)  
-[https://golang.org/ref/mem](https://golang.org/ref/mem)  
-[https://talks.golang.org/2015/go-gc.pdf](https://talks.golang.org/2015/go-gc.pdf)  
-[https://docs.google.com/document/d/1ETuA2IOmnaQ4j81AtTGT40Y4_Jr6_IDASEKg0t0dBR8/edit#heading=h.x4kziklnb8fr](https://docs.google.com/document/d/1ETuA2IOmnaQ4j81AtTGT40Y4_Jr6_IDASEKg0t0dBR8/edit#heading=h.x4kziklnb8fr)  
-[https://go-review.googlesource.com/c/go/+/21503](https://go-review.googlesource.com/c/go/+/21503)  
-[http://www.cnblogs.com/diegodu/p/5803202.html](http://www.cnblogs.com/diegodu/p/5803202.html)  
-[http://legendtkl.com/2017/04/28/golang-gc](http://legendtkl.com/2017/04/28/golang-gc)  
-[https://lengzzz.com/note/gc-in-golang](https://lengzzz.com/note/gc-in-golang)
 
 Golang的GC和CoreCLR的GC对比
 ======================
@@ -4218,3 +4205,20 @@ CoreCLR的分配器和收集器通常比GO要高效, 也就是说CoreCLR会有�
 现在分布式计算和横向扩展越来越流行,  
 比起追求单机吞吐量, 追求低延迟然后让分布式解决吞吐量问题无疑是更明智的选择,  
 GO的设计目标使得它比其他语言都更适合编写网络服务程序.
+
+
+
+参考链接
+====
+
+[https://github.com/golang/go](https://github.com/golang/go)  
+[https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice](https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice)  
+[https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md](https://github.com/golang/proposal/blob/master/design/17503-eliminate-rescan.md)  
+[https://golang.org/s/go15gcpacing](https://golang.org/s/go15gcpacing)  
+[https://golang.org/ref/mem](https://golang.org/ref/mem)  
+[https://talks.golang.org/2015/go-gc.pdf](https://talks.golang.org/2015/go-gc.pdf)  
+[https://docs.google.com/document/d/1ETuA2IOmnaQ4j81AtTGT40Y4_Jr6_IDASEKg0t0dBR8/edit#heading=h.x4kziklnb8fr](https://docs.google.com/document/d/1ETuA2IOmnaQ4j81AtTGT40Y4_Jr6_IDASEKg0t0dBR8/edit#heading=h.x4kziklnb8fr)  
+[https://go-review.googlesource.com/c/go/+/21503](https://go-review.googlesource.com/c/go/+/21503)  
+[http://www.cnblogs.com/diegodu/p/5803202.html](http://www.cnblogs.com/diegodu/p/5803202.html)  
+[http://legendtkl.com/2017/04/28/golang-gc](http://legendtkl.com/2017/04/28/golang-gc)  
+https://lengzzz.com/note/gc-in-golang

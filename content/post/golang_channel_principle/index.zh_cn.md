@@ -1,9 +1,8 @@
 +++
 title = "【golang】channel详解"
 date = "2020-12-12"
-categories = [
-    "golang"
-]
+categories = ["golang"]
+
 +++
 
 channel一个类型管道，通过它可以在goroutine之间发送和接收消息。它是Golang在语言层面提供的goroutine间的通信方式。
@@ -39,9 +38,9 @@ goRoutineA received the data 3
 
 上面只是个简单的例子，只输出goRoutineA ，没有执行goRoutineB，说明channel仅允许被一个goroutine读写。
 
-接下来我们通过源代码分析程序执行过程，在讲之前，如果不了解go 并发和调度相关知识。请阅读这篇文章
-
-[https://github.com/guyan0319/...](https://github.com/guyan0319/golang_development_notes/blob/master/zh/9.5.md)
+接下来我们通过源代码分析程序执行过程，在讲之前，如果不了解go 并发和调度相关知识。
+请阅读这篇文章 
+[Go goroutine理解](https://github.com/guyan0319/golang_development_notes/blob/master/zh/9.5.md)
 
 说道channel这里不得不提通道的结构hchan。
 
@@ -141,7 +140,7 @@ goRoutineA received the data 3
 ```
 如果我们创建一个带buffer的channel，底层的数据模型如下图：
 
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)
+![img](http://img.ququ123.xyz/img/1460000019204881)
 
 ### 向channel写入数据
 ```go
@@ -149,8 +148,9 @@ goRoutineA received the data 3
 ```
 底层hchan数据流程如图
 
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)  
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)
+![img](http://img.ququ123.xyz/img/1460000019204882)
+
+![img](http://img.ququ123.xyz/img/1460000019204883)
 
 发送操作概要
 
@@ -168,7 +168,7 @@ goRoutineA received the data 3
 
 流程图
 
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)
+![img](http://img.ququ123.xyz/img/1460000019204884)
 
 ### 从channel读取操作
 
@@ -183,9 +183,9 @@ goRoutineA received the data 3
 ```
 底层hchan数据流程如图
 
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)
+![img](http://img.ququ123.xyz/img/1460000019204885)
 
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)
+![img](http://img.ququ123.xyz/img/1460000019204886)
 
 这里我们要注意几个属性buf、sendx、recvx、lock的变化。
 
@@ -205,13 +205,13 @@ goRoutineA received the data 3
 
 流程图
 
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)
+![img](http://img.ququ123.xyz/img/1460000019204887)
 
 ### recvq和sendq 结构
 
 recvq和sendq基本上是链表，看起来基本如下
 
-![](https://cdn.segmentfault.com/v-5f598fc8/global/img/squares.svg)
+![img](http://img.ququ123.xyz/img/1460000019204888)
 
 ### select
 

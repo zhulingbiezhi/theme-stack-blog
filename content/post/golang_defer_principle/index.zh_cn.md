@@ -144,7 +144,7 @@ categories = [
 *   \_panic：指向 `_panic` 链表
 *   link：指向 `_defer` 链表
 
-![image](https://s2.ax1x.com/2020/02/27/3dLNjJ.png)
+![image](http://img.ququ123.xyz/img/3dLNjJ.png)
 
 ### deferproc，预处理defer函数，存储到结构中，供后面调用
 
@@ -199,7 +199,7 @@ categories = [
         // been set and must not be clobbered.
     }
 ```
-    
+
 
 *   获取调用 `defer` 函数的函数栈指针、传入函数的参数具体地址以及 PC （程序计数器），也就是下一个要执行的指令。这些相当于是预备参数，便于后续的流转控制
 *   创建一个新的 `defer` 最小单元 `_defer`，填入先前准备的参数

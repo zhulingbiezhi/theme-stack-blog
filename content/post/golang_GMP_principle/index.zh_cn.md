@@ -135,7 +135,7 @@ go需要保证有足够的M可以运行G, 是通过这样的机制实现的:
 
 下图是协程可能出现的工作状态, 图中有4个P, 其中M1~M3正在运行G并且运行后会从拥有的P的运行队列继续获取G:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171241372-2120016927.png)
+![](http://img.ququ123.xyz/img/881857-20171110171241372-2120016927.png)
 
 只看这张图可能有点难以想象实际的工作流程, 这里我根据实际的代码再讲解一遍:
 ```go
@@ -165,41 +165,41 @@ go需要保证有足够的M可以运行G, 是通过这样的机制实现的:
 程序启动时会先创建一个G, 指向的是main(实际是runtime.main而不是main.main, 后面解释):  
 图中的虚线指的是G待运行或者开始运行的地址, 不是当前运行的地址.
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171251091-1325784333.png)
+![](http://img.ququ123.xyz/img/881857-20171110171251091-1325784333.png)
 
 M会取得这个G并运行:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171257559-269808777.png)
+![](http://img.ququ123.xyz/img/881857-20171110171257559-269808777.png)
 
 这时main会创建一个新的channel, 并启动两个新的G:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171304919-1329887936.png)
+![](http://img.ququ123.xyz/img/881857-20171110171304919-1329887936.png)
 
 接下来`G: main`会从channel获取数据, 因为获取不到, G会**保存状态**并变为等待中(\_Gwaiting)并添加到channel的队列:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171312638-525155603.png)
+![](http://img.ququ123.xyz/img/881857-20171110171312638-525155603.png)
 
 因为`G: main`保存了运行状态, 下次运行时将会从`_ = <- c`继续运行.  
 接下来M会从运行队列获取到`G: printNumber`并运行:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171319888-1466945199.png)
+![](http://img.ququ123.xyz/img/881857-20171110171319888-1466945199.png)
 
 printNumber会打印数字, 完成后向channel写数据,  
 写数据时发现channel中有正在等待的G, 会把数据交给这个G, 把G变为待运行(\_Grunnable)并重新放入运行队列:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171328216-1977430311.png)
+![](http://img.ququ123.xyz/img/881857-20171110171328216-1977430311.png)
 
 接下来M会运行下一个`G: printNumber`, 因为创建channel时指定了大小为3的缓冲区, 可以直接把数据写入缓冲区而无需等待:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171335450-1117872609.png)
+![](http://img.ququ123.xyz/img/881857-20171110171335450-1117872609.png)
 
 然后printNumber运行完毕, 运行队列中就只剩下`G: main`了:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171343934-830758071.png)
+![](http://img.ququ123.xyz/img/881857-20171110171343934-830758071.png)
 
 最后M把`G: main`取出来运行, 会从上次中断的位置`_ <- c`继续运行:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171354653-922259524.png)
+![](http://img.ququ123.xyz/img/881857-20171110171354653-922259524.png)
 
 第一个`_ <- c`的结果已经在前面设置过了, 这条语句会执行成功.  
 第二个`_ <- c`在获取时会发现channel中有已缓冲的0, 于是结果就是这个0, 不需要等待.  
@@ -392,7 +392,7 @@ go的调用规范非常的简单, 所有参数都通过栈传递, 返回值也�
 ```
 调用函数时的栈的内容如下:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171401966-739107068.png)
+![](http://img.ququ123.xyz/img/881857-20171110171401966-739107068.png)
 
 可以看得出参数和返回值都从低位到高位排列, go函数可以有多个返回值的原因也在于此. 因为返回值都通过栈传递了.  
 需要注意的这里的"返回地址"是x86和x64上的, arm的返回地址会通过LR寄存器保存, 内容会和这里的稍微不一样.  
@@ -655,7 +655,7 @@ go的实现
 
 使用go命令创建goroutine时, go会把go命令编译为对runtime.newproc的调用, 堆栈的结构如下:
 
-![](https://images2017.cnblogs.com/blog/881857/201711/881857-20171110171409294-925311779.png)
+![](http://img.ququ123.xyz/img/881857-20171110171409294-925311779.png)
 
 第一个参数是funcval + 额外参数的长度, 第二个参数是funcval, 后面的都是传递给goroutine中执行的函数的额外参数.  
 funcval的定义[在这里](https://github.com/golang/go/blob/go1.9.2/src/runtime/runtime2.go#L138), fn是指向函数机器代码的指针.  
@@ -971,8 +971,4 @@ channel的数据定义[在这里](https://github.com/golang/go/blob/go1.9.2/src/
 [http://legendtkl.com/categories/golang](http://legendtkl.com/categories/golang)  
 [http://www.cnblogs.com/diegodu/p/5803202.html](http://www.cnblogs.com/diegodu/p/5803202.html)  
 [https://www.douban.com/note/300631999/](https://www.douban.com/note/300631999/)  
-[http://morsmachine.dk/go-scheduler](http://morsmachine.dk/go-scheduler)
-
-legendtkl很早就已经开始写golang内部实现相关的文章了, 他的文章很有参考价值, 建议同时阅读他写的内容.  
-morsmachine写的针对协程的分析也建议参考.  
-golang中的协程实现非常的清晰, 在这里要再次佩服google工程师的功力, 可以写出这样简单易懂的代码不容易.
+http://morsmachine.dk/go-scheduler

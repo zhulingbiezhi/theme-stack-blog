@@ -134,7 +134,7 @@ categories = [
 
 另外通过查看 `link` 字段，可得知其是一个链表的数据结构，如下图：
 
-![image](http://wx3.sinaimg.cn/large/006fVPCvly1g2muc73jp1j30hc099q2x.jpg)
+![image](http://img.ququ123.xyz/img/006fVPCvly1g2muc73jp1j30hc099q2x.jpg)
 
 ### 恐慌 panic
 ```go

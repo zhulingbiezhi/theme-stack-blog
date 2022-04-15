@@ -151,13 +151,13 @@ slices
     s[i]  // panic: index out of range
 ```
 一个为`nil`的slice，除了不能索引外，其他的操作都是可以的，当你需要填充值的时候可以使用`append`函数，slice会自动进行扩充。那么为`nil`的slice的底层结构是怎样的呢？根据官方的文档，slice有三个元素，分别是长度、容量、指向数组的指针：
-![image](https://mmbiz.qpic.cn/mmbiz_png/Ymklzdl2ibukzvicbAhdP3HTibLHdvLicp2ZEhFQg7onuOA4QlQlZiaoPSRCic8D45ibZTHBCWPjIwI7syUxVibJvLgBdQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image](http://img.ququ123.xyz/img/640)
 slice
 
   
 
 当有元素的时候：
-![image](https://mmbiz.qpic.cn/mmbiz_png/Ymklzdl2ibukzvicbAhdP3HTibLHdvLicp2Zdyic9Zcve4ViawibyyInlgcFynPibj7QE6STIrfJAL9RMt8kQeUW4BVfMQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image](http://img.ququ123.xyz/img/640)
 slice
 
   

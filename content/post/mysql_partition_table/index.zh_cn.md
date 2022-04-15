@@ -51,7 +51,7 @@ categories = [
 
 接着大家就是不停的在一个工程里填充进去各种业务代码，尽快把公司的业务支撑起来，如下图所示。
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/1J6IbIcPCLYjibVZs24bM4o7e33V5Lt4qcu8VWKSiabXJiaOQMlveaETfJdu9s2Z5Y8ib1qaJIviaSE9NVqt8nCic33Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
 结果呢，没想到我们运气这么好，碰上个优秀的CEO带着我们走上了康庄大道！
 
@@ -163,9 +163,9 @@ categories = [
 
 依据这个思路画出的图如下所示，大家可以看看。
 
-  
-![image](https://mmbiz.qpic.cn/mmbiz_png/1J6IbIcPCLYjibVZs24bM4o7e33V5Lt4q8trbQyB5xBTiajxSAlMPC74eicSY1CZfDOV40F30ArLDN9sf0DAPSRwA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-  
+
+![image](http://img.ququ123.xyz/img/640)
+
 
 做这一步有什么好处呢？第一个好处，原来比如订单表就一张表，这个时候不就成了5张表了么，那么每个表的数据就变成1/5了。
 
@@ -206,7 +206,7 @@ categories = [
   
 
 这样可以一次性为系统未来的运行做好充足的准备，看下面的图，一起来感受一下：
-![image](https://mmbiz.qpic.cn/mmbiz_png/1J6IbIcPCLYjibVZs24bM4o7e33V5Lt4qgeVaRup8PcahCAvpkXOiaOnqdMnpPBud68QaVjnwHZ1I4d34tUYRl0Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image](http://img.ququ123.xyz/img/640)
 
 **（4）读写分离来支撑按需扩容以及性能提升**
 
@@ -237,7 +237,7 @@ categories = [
   
 
 这样的话，假如写入主库的请求是每秒400，查询从库的请求是每秒1600，那么图大概如下所示。
-![image](https://mmbiz.qpic.cn/mmbiz_png/1J6IbIcPCLYjibVZs24bM4o7e33V5Lt4qHsELljovkdY9YgIULxWQ0kxeib2aHksDUbIzxajG2EibzGMJmUyVN5zA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image](http://img.ququ123.xyz/img/640)
 
 写入主库的时候，会自动同步数据到从库上去，保证主库和从库数据一致。然后查询的时候都是走从库去查询的，这就通过数据库的主从架构实现了读写分离的效果了。
 

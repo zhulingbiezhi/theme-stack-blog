@@ -18,7 +18,7 @@ categories = [
 
   
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP735YhoW1fic47MuJOx0HheBX4ficULcmdHhdGQnqGcfCgvunMmxpb8LnA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
   
 
@@ -48,7 +48,7 @@ Redis 是基于内存的数据库，那不可避免的就要与磁盘数据库�
 
 Redis 中有多种数据类型，每种数据类型的底层都由一种或多种数据结构来支持。正是因为有了这些数据结构，Redis 在存储与读取上的速度才不受阻碍。这些数据结构有什么特别的地方，各位看官接着往下看：
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP74T85YN4xkMF6icjicicf0NCpGU4yia2VNK4YKSmLf7Viaj7ia64m4buiaGiajg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
 **1、简单动态字符串**
 
@@ -58,15 +58,15 @@ Redis 中有多种数据类型，每种数据类型的底层都由一种或多�
 
 **（1）字符串长度处理**
 
-  
-![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb3iajbsSPVicvibDrYFEXy2OsMt922CErEGaa52Qnd7vWrQF9B1ZKI6QpgfRmWKoNGUu0RPQeqI6iaiaZQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-  
+
+![image](http://img.ququ123.xyz/img/640)
+
 
 这个图是字符串在 C 语言中的存储方式，想要获取 「Redis」的长度，需要从头开始遍历，直到遇到 '\0' 为止。
 
-  
-![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7Diay6tbe99SxEdCbyfMItmJNEDgxQ3iayqmSyEZ8q6IIsibbNQJtP8AcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-  
+
+![image](http://img.ququ123.xyz/img/640)
+
 
 Redis 中怎么操作呢？用一个 len 字段记录当前字符串的长度。想要获取长度只需要获取 len 字段即可。你看，差距不言自明。前者遍历的时间复杂度为 O(n)，Redis 中 O(1) 就能拿到，速度明显提升。
 
@@ -128,13 +128,13 @@ SDS 缩短时，并不会回收多余的内存空间，而是使用 free 字段�
 
 列表 List 更多是被当作队列或栈来使用的。队列和栈的特性一个先进先出，一个先进后出。双端链表很好的支持了这些特性。
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP70cib2FMf1tT2Tn9ymRyiaTIPAvY0MBsqSCSWOAujwB2tcv4ItkSib1W3g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
 **- 双端链表 -**
 
 **（1）前后节点**
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7McDd4RbV0t5heaKC9Z7m62r7J3Iw2ZSGIC7k7DlDhdMutlBQWpDOBQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
 链表里每个节点都带有两个指针，prev 指向前节点，next 指向后节点。这样在时间复杂度为 O(1) 内就能获取到前后节点。
 
@@ -142,7 +142,7 @@ SDS 缩短时，并不会回收多余的内存空间，而是使用 free 字段�
 
 **（2）头尾节点**
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7QbghyNOjhzoRCHCkNQNSdnClzlR45PQosiaIXmGmicqzn1ZZwvwypO0A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
 你可能注意到了，头节点里有 head 和 tail 两个参数，分别指向头节点和尾节点。这样的设计能够对双端节点的处理时间复杂度降至 O(1) ，对于队列和栈来说再适合不过。同时链表迭代时从两端都可以进行。
 
@@ -170,7 +170,7 @@ SDS 缩短时，并不会回收多余的内存空间，而是使用 free 字段�
 
 于是，压缩列表上场了！  
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7WIOWyzXHCzPhr4bNJzH3QdYF8R4v27XuIWCqsg8PWGCGg39lTIe3LA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
   
 
@@ -202,9 +202,9 @@ Redis 作为 K-V 型数据库，所有的键值都是用字典来存储的。
 
 作为 Redis 中特有的数据结构-跳跃表，其在链表的基础上增加了多级索引来提升查找效率。
 
-  
-![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7nibCkJgvSO9H4ABiaCHe32ORXjVo1QAz0qIbtkqdZW7VIwnw0MHlP1wA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-  
+
+![image](http://img.ququ123.xyz/img/640)
+
 
 这是跳跃表的简单原理图，每一层都有一条有序的链表，最底层的链表包含了所有的元素。这样跳跃表就可以支持在 O(logN) 的时间复杂度里查找到对应的节点。  
 
@@ -216,7 +216,7 @@ Redis 作为 K-V 型数据库，所有的键值都是用字典来存储的。
 
   
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7xgecNQ4nvH3PDdibyB4FVTVIq8VARFUy6sicxRoI7czmLib03DnNTmqCA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
   
 
@@ -258,7 +258,7 @@ Redis 作为 K-V 型数据库，所有的键值都是用字典来存储的。
 
 **合适的线程模型**
 
-  ![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP78Bibuhs1yCn2NEVwwlIZufXMhF6h9gROxLjQYOg2ibZX4Pbt2umSt0GA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+  ![image](http://img.ququ123.xyz/img/640)
 
 Redis 快的原因还有一个是因为使用了合适的线程模型：  
 
@@ -277,9 +277,9 @@ Redis 快的原因还有一个是因为使用了合适的线程模型：
 
 生产环境中的使用，通常是多个客户端连接 Redis，然后各自发送命令至 Redis 服务器，最后服务端处理这些请求返回结果。
 
-  
-![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7sCcFpTNSRnxK6WNUAzL78viaPLFIcIVT8fWl3qpFTMiaR8ePdV2tYHMA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-  
+
+![image](http://img.ququ123.xyz/img/640)
+
 
 应对大量的请求，Redis 中使用 I/O 多路复用程序同时监听多个套接字，并将这些事件推送到一个队列里，然后逐个被执行。最终将结果返回给客户端。
 
@@ -303,14 +303,14 @@ Redis 快的原因还有一个是因为使用了合适的线程模型：
 
 Redis 中使用了 Reactor 单线程模型，你可能对它并不熟悉。没关系，只需要大概了解一下即可。  
 
-  
-![image](https://mmbiz.qpic.cn/mmbiz_png/g6hBZ0jzZb0Zb0XiaaR6bGaN80wicXIIP7j3SxhEXDibAdYCbYm28oUqFSbsFuJav9yGBNyoYbLl730vnc5YUyzqg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
-  
+
+![image](http://img.ququ123.xyz/img/640)
+
 
 这张图里，接收到用户的请求后，全部推送到一个队列里，然后交给文件事件分派器，而它是单线程的工作方式。Redis 又是基于它工作的，所以说 Redis 是单线程的。
 
   
-  
+
 
 **总结**
 
@@ -340,4 +340,3 @@ Redis 中使用了 Reactor 单线程模型，你可能对它并不熟悉。没�
 *   I/O 多路复用模型同时监听客户端连接；
     
 *   单线程在执行过程中不需要进行上下文切换，减少了耗时。
-    

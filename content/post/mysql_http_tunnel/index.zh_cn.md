@@ -11,7 +11,7 @@ categories = [
 >     (2) 产线这个模式可以理解, 但是测试环境你也搞个这个,那我就要哭了
 >     (3) 在公司用wifi可以连接,但是在家无法直接连接mysql,只能通过垃圾的网页版mysql进行数据库操作
 >     (4) 可以通过网页访问docker的权限,并没有任何服务器权限
-![image.png](https://image-static.segmentfault.com/403/980/403980092-5e8016c8c717a)
+![image.png](http://img.ququ123.xyz/img/403980092-5e8016c8c717a)
 --------------------------------------------------
 * 解决方案
 >     (1) nginx的stream实现tcp流量转发
@@ -45,8 +45,9 @@ categories = [
         ```
 
     * nginx -s reload   
+        
         > ```nginx: [emerg] dlopen() "/usr/lib64/nginx/modules/ngx_http_proxy_connect_module.so" failed (/usr/lib64/nginx/modules/ngx_http_proxy_connect_module.so: cannot open shared object file: No such file or directory) in /etc/nginx/nginx.conf```
-
+        
     *  又要开始折腾了, 没有ngx_http_proxy_connect_module, google了一把, [ngx_http_proxy_connect_module](https://github.com/chobits/ngx_http_proxy_connect_module)
     *  相当于重新编译nginx, 有几个坑, 不过意外发现有个go的开源库,专门编译nginx,刚好我是go开发,go的库[nginx-build](https://github.com/cubicdaiya/nginx-build), 但是下面说的跟这个库没关系, 只是打个go的广告^_^
      >     (1) 选定对应的nginx源码zip,更改nginx的version, nginx -v
@@ -62,12 +63,12 @@ categories = [
      $ make && make install
      $ cp /root/ngx_http_proxy_connect_module
      ```
-
+    
     *     执行过程
       ```
       $ ./configure --add-dynamic-module=/root/ngx_http_proxy_connect_module --prefix=/usr/share/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib64/nginx/modules --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/lib/nginx/tmp/client_body --http-proxy-temp-path=/var/lib/nginx/tmp/proxy --http-fastcgi-temp-path=/var/lib/nginx/tmp/fastcgi --http-uwsgi-temp-path=/var/lib/nginx/tmp/uwsgi --http-scgi-temp-path=/var/lib/nginx/tmp/scgi --pid-path=/run/nginx.pid --lock-path=/run/lock/subsys/nginx --user=nginx --group=nginx --with-file-aio --with-ipv6 --with-http_auth_request_module --with-http_ssl_module --with-http_v2_module --with-http_realip_module --with-http_addition_module --with-http_xslt_module=dynamic --with-http_image_filter_module=dynamic --with-http_geoip_module=dynamic --with-http_sub_module --with-http_dav_module --with-http_flv_module --with-http_mp4_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_random_index_module --with-http_secure_link_module --with-http_degradation_module --with-http_slice_module --with-http_stub_status_module --with-http_perl_module=dynamic --with-mail=dynamic --with-mail_ssl_module --with-pcre --with-pcre-jit --with-stream=dynamic --with-stream_ssl_module --with-google_perftools_module --with-debug --with-cc-opt='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -m64 -mtune=generic' --with-ld-opt='-Wl,-z,relro -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -Wl,-E'
       ```
-
+    
     * 出现各种错误,各种google,最终
       ```
       yum -y install redhat-rpm-config.noarch
@@ -77,7 +78,7 @@ categories = [
       yum -y install geoip-devel
       yum -y install gperftools-devel
       ```
-
+    
     * 最后编译只出现warning类的报错才算成功
 ```
     Configuration summary
@@ -147,9 +148,7 @@ categories = [
 ```
 
 * nginx -s reload, 访问https://t1.test.example.com/ntunnel_mysql.php
-     ![image.png](/img/bVbFgcl)
-* 在Navicat Premium的http tunnel输入上面这个链接就可以了
-   
+     ![image.png](http://img.ququ123.xyz/img/bVbFgcl)在Navicat Premium的http tunnel输入上面这个链接就可以了
 
 大功告成!!!!
     

@@ -7,7 +7,6 @@ categories = [
 image = "http://img.ququ123.xyz/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
-### 首先我们来看一段代码：
 ```
     package main
     import (
@@ -187,9 +186,6 @@ MulUintptr函数源码：
 
 ### **append操作**
 
-* * *
-
-### 首先我们来看一段程序：
 ```
     package main
     

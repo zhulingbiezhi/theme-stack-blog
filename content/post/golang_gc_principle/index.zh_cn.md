@@ -16,7 +16,7 @@ Golang从1.5开始引入了三色GC, 经过多次改进, 当前的1.9版本的GC
 首先会讲解基础概念, 然后讲解分配器, 再讲解收集器的实现.
 
 基础概念
-====
+---
 
 ### 内存结构
 
@@ -214,7 +214,7 @@ GC扫描对象的时候对于noscan的span可以不去查看bitmap区域来标�
 都可以让分配对象时大部分时候不需要线程锁, 改进分配的性能.
 
 分配对象的处理
-=======
+---
 
 ### 分配对象的流程
 
@@ -1265,7 +1265,7 @@ freelarge的类型是mTreap, 调用[remove](https://github.com/golang/go/blob/go
 以上就是分配对象的完整流程了, 接下来分析GC标记和回收对象的处理.
 
 回收对象的处理
-=======
+---
 
 ### 回收对象的流程
 
@@ -4184,7 +4184,7 @@ GC的整个流程都分析完毕了, 最后贴上写屏障函数[writebarrierptr
 
 
 Golang的GC和CoreCLR的GC对比
-======================
+------------
 
 因为我之前已经对CoreCLR的GC做过分析(看[这一篇](http://www.cnblogs.com/zkweb/p/6379080.html)和[这一篇](http://www.cnblogs.com/zkweb/p/6625049.html)), 这里我可以简单的对比一下CoreCLR和GO的GC实现:
 
@@ -4210,7 +4210,7 @@ GO的设计目标使得它比其他语言都更适合编写网络服务程序.
 
 
 参考链接
-====
+---
 
 [https://github.com/golang/go](https://github.com/golang/go)  
 [https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice](https://making.pusher.com/golangs-real-time-gc-in-theory-and-practice)  

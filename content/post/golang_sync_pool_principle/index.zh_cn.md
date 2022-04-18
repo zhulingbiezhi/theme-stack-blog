@@ -17,7 +17,7 @@ image = "http://img.ququ123.xyz/img/u=2033342888,4177252789&fm=253&fmt=auto&app=
 `sync.Pool` 是 sync 包下的一个组件，可以作为保存临时取还对象的一个“池子”。个人觉得它的名字有一定的误导性，因为 Pool 里装的对象可以被无通知地被回收，可能 `sync.Cache` 是一个更合适的名字。
 
 有什么用
-====
+---
 
 对于很多需要重复分配、回收内存的地方，`sync.Pool` 是一个很好的选择。频繁地分配、回收内存会给 GC 带来一定的负担，严重的时候会引起 CPU 的毛刺，而 `sync.Pool` 可以将暂时不用的对象缓存起来，待下次需要的时候直接使用，不用再次经过内存分配，复用对象的内存，减轻 GC 的压力，提升系统的性能。
 
@@ -308,7 +308,7 @@ pool\_test
 > It leverages sync pool to reuse memory and achieve zero dynamic memory allocation with no GC overhead.
 
 源码分析
-====
+---
 
 Pool 结构体
 --------
@@ -1066,7 +1066,7 @@ GC
 
 
 参考资料
-====
+---
 
 【欧神 源码分析】[https://changkun.us/archives/2018/09/256/](https://changkun.us/archives/2018/09/256/)
 

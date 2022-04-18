@@ -12,7 +12,7 @@ image = "http://img.ququ123.xyz/img/u=708091934,2439842609&fm=253&fmt=auto&app=1
 思考
 ---------
 
-### 一、为什么会中止运行
+### 为什么会中止运行
 ```go
     func main() {
     	panic("EDDYCJY.")
@@ -30,7 +30,7 @@ image = "http://img.ququ123.xyz/img/u=708091934,2439842609&fm=253&fmt=auto&app=1
 ```
 请思考一下，为什么执行 `panic` 后会导致应用程序运行中止？（而不是单单说执行了 `panic` 所以就结束了这么含糊）
 
-### 二、为什么不会中止运行
+### 为什么不会中止运行
 ```go
     func main() {
     	defer func() {
@@ -51,7 +51,7 @@ image = "http://img.ququ123.xyz/img/u=708091934,2439842609&fm=253&fmt=auto&app=1
 
 请思考一下，为什么加上 `defer` + `recover` 组合就可以保护应用程序？
 
-### 三、不设置 defer 行不
+### 不设置 defer 行不
 
 上面问题二是 `defer` + `recover` 组合，那我去掉 `defer` 是不是也可以呢？如下：
 ```go
@@ -81,7 +81,7 @@ image = "http://img.ququ123.xyz/img/u=708091934,2439842609&fm=253&fmt=auto&app=1
 
 同时你还需要仔细想想，我们设置 `defer` + `recover` 组合后就能无忧无虑了吗，各种 “乱” 写了吗？
 
-### 四、为什么起个 goroutine 就不行
+### 为什么起个 goroutine 就不行
 ```go
     func main() {
     	go func() {

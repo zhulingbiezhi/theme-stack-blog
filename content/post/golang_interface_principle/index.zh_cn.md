@@ -7,7 +7,7 @@ categories = [
 image = "http://img.ququ123.xyz/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
 +++
 
-### 0.引言
+## 引言
 
 在上一篇文章 [《深入理解 Go Interface》](http://legendtkl.com/2017/06/12/understanding-golang-interface/)中从设计和使用的角度介绍了 Golang 的 interface，作为补充，这篇文章将从源码级别来看看 interface 的具体实现。所有源码分析都是基于 Go 1.8.3。在开始之前，我们先看一个例子。
  
@@ -33,7 +33,7 @@ non-empty interface
 ```
 如果你对于上面的输出结果有疑惑，那么不妨带着疑问来看这篇文章。
 
-## 1. interface 底层结构
+## interface 底层结构
 根据 interface 是否包含有 method，底层实现上用两种 struct 来表示：iface 和 eface。`eface`表示不含 method 的 interface 结构，或者叫 empty interface。对于 Golang 中的大部分数据类型都可以抽象出来 `_type` 结构，同时针对不同的类型还会有一些其他信息。
 
 ```
@@ -156,7 +156,7 @@ func convT2I(tab *itab, elem unsafe.Pointer) (i iface) {
 ```
 看上面的函数原型，可以看出中间过程编译器将根据我们的转换目标类型的 empty interface 还是 non-empty interface，来对原数据类型进行转换（转换成 <*_type, unsafe.Pointer> 或者 <*itab, unsafe.Pointer>）。这里对于 struct 满不满足 interface 的类型要求（也就是 struct 是否实现了 interface 的所有 method），是由编译器来检测的。
 
-## 2. itab
+##  itab
 
 iface 结构中最重要的是 itab 结构。itab 可以理解为 pair<interface type, concrete type> 。当然 itab 里面还包含一些其他信息，比如 interface 里面包含的 method 的具体实现。下面细说。itab 的结构如下。
  
@@ -294,7 +294,7 @@ func additab(...) {
  atomicstorep(unsafe.Pointer(&hash[h]), unsafe.Pointer(m))  
 }  
 ```
-## 3. Type Assertion
+## Type Assertion
 
 我们知道使用 interface type assertion (中文一般叫断言) 的时候需要注意，不然很容易引入 panic。
 
@@ -352,11 +352,11 @@ func assertE2I(inter *interfacetype, e eface) (r iface)
 func assertE2I2(inter *interfacetype, e eface) (r iface, b bool)  
 ```
 
-## 4. 总结
+## 总结
 
 从某种意义上来说，Golang 的 interface 也是一种多态的体现。对比其他支持多态特性的语言，实现还是略有差异，很难说谁好谁坏。
 
-## 5. 参考
+## 参考
 
 1.  [Go Data Structure: Interfaces](https://research.swtch.com/interfaces) (注：09 年的文章)
 2.  [A Quick Guide to Go’s Assembler](https://golang.org/doc/asm)

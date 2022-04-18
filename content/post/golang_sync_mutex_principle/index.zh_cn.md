@@ -12,7 +12,7 @@ sync.Mutex是一个不可重入的排他锁。 这点和Java不同，golang里�
 当一个 goroutine 获得了这个锁的拥有权后， 其它请求锁的 goroutine 就会阻塞在 Lock 方法的调用上，直到锁被释放。
 
 数据结构与状态机
-========
+------
 
 sync.Mutex 由两个字段 state 和 sema 组成。其中 state 表示当前互斥锁的状态，而 sema 是用于控制锁状态的信号量。
 ```go
@@ -62,7 +62,8 @@ Mutex的状态机比较复杂，使用一个int32来表示：
 正常状态有很好的性能表现，饥饿模式也是非常重要的，因为它能阻止尾部延迟的现象。
 
 Lock
-====
+------
+
 ```go
     func (m *Mutex) Lock() {
     	// 如果mutex的state没有被锁，也没有等待/唤醒的goroutine, 锁处于正常状态，那么获得锁，返回.
@@ -227,7 +228,7 @@ slowLock的获取锁流程有两种模式： 饥饿模式 和 正常模式。
 2.  在饥饿模式下，当前 Goroutine 会获得互斥锁，如果等待队列中只存在当前 Goroutine，互斥锁还会从饥饿模式中退出；
 
 Unlock
-======
+---
 ```go
     func (m *Mutex) Unlock() {
     	// Fast path: drop lock bit.

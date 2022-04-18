@@ -15,7 +15,7 @@ Golang最大的特色可以说是协程(goroutine)了, 协程让本来很复杂�
 运行环境是Ubuntu 16.04 LTS 64bit.
 
 核心概念
-====
+---
 
 要理解协程的实现, 首先需要了解go中的三个非常重要的概念, 它们分别是**G**, **M**和**P**,  
 没有看过golang源代码的可能会对它们感到陌生, 这三项是协程最主要的组成部分, 它们在golang的源代码中无处不在.
@@ -57,7 +57,7 @@ P也可以理解为控制go代码的并行度的机制,
 因为同一时间只有一个线程(M)可以拥有P, P中的数据都是锁自由(lock free)的, 读写这些数据的效率会非常的高.
 
 数据结构
-====
+---
 
 在讲解协程的工作流程之前, 还需要理解一些内部的数据结构.
 
@@ -132,7 +132,7 @@ go需要保证有足够的M可以运行G, 是通过这样的机制实现的:
 下次待运行的G入队时如果发现有空闲的P, 但是又没有自旋中的M时会唤醒或者新建一个M, M会拥有这个P, P会重新变为运行中的状态.
 
 工作流程(概览)
-========
+---
 
 下图是协程可能出现的工作状态, 图中有4个P, 其中M1~M3正在运行G并且运行后会从拥有的P的运行队列继续获取G:
 
@@ -212,7 +212,7 @@ printNumber会打印数字, 完成后向channel写数据,
 ```
 
 开始代码分析
-======
+---
 
 关于概念的讲解到此结束, 从这里开始会分析go中的实现代码, 我们需要先了解一些基础的内容.
 
@@ -567,7 +567,7 @@ g0是仅用于负责调度的G, g0不指向任何可执行的函数, 每个m都�
 如果上面的内容都了解, 就可以开始看golang的源代码了.
 
 程序初始化
-=====
+---
 
 go程序的入口点是[runtime.rt0\_go](https://github.com/golang/go/blob/go1.9.2/src/runtime/asm_amd64.s), 流程是:
 
@@ -609,7 +609,7 @@ go程序的入口点是[runtime.rt0\_go](https://github.com/golang/go/blob/go1.9
 *   调用exit(0)退出程序
 
 G M P的定义
-========
+---
 
 G的定义[在这里](https://github.com/golang/go/blob/go1.9.2/src/runtime/runtime2.go#L320).  
 M的定义[在这里](https://github.com/golang/go/blob/go1.9.2/src/runtime/runtime2.go#L383).  
@@ -652,7 +652,7 @@ P里面比较重要的成员如下
 *   gcw: GC的本地工作队列, 详细将在下一篇(GC篇)分析
 
 go的实现
-=====
+---
 
 使用go命令创建goroutine时, go会把go命令编译为对runtime.newproc的调用, 堆栈的结构如下:
 
@@ -707,7 +707,7 @@ funcval的定义[在这里](https://github.com/golang/go/blob/go1.9.2/src/runtim
 创建goroutine的流程就这么多了, 接下来看看M是如何调度的.
 
 调度器的实现
-======
+---
 
 M启动时会调用mstart函数, m0在初始化后调用, 其他的的m在线程启动后调用.  
 [mstart](https://github.com/golang/go/blob/go1.9.2/src/runtime/proc.go#L1135)函数的处理如下:
@@ -817,7 +817,7 @@ G结束后回到schedule函数, 这样就结束了一个调度循环.
 不仅只有G结束会重新开始调度, G被抢占或者等待资源也会重新进行调度, 下面继续来看这两种情况.
 
 抢占的实现
-=====
+---
 
 上面我提到了runtime.main会创建一个额外的M运行[sysmon](https://github.com/golang/go/blob/master/src/runtime/proc.go#L4178)函数, 抢占就是在sysmon中实现的.  
 sysmon会进入一个无限循环, 第一轮回休眠20us, 之后每次休眠时间倍增, 最终每一轮都会休眠10ms.  
@@ -861,7 +861,7 @@ gopreempt\_m函数会调用[goschedImpl](https://github.com/golang/go/blob/maste
 抢占机制保证了不会有一个G长时间的运行导致其他G无法运行的情况发生.
 
 channel的实现
-==========
+------
 
 在goroutine运行的过程中, 有时候需要对资源进行等待, channel就是最典型的资源.  
 channel的数据定义[在这里](https://github.com/golang/go/blob/go1.9.2/src/runtime/chan.go#L31), 其中关键的成员如下:
@@ -956,7 +956,7 @@ channel的数据定义[在这里](https://github.com/golang/go/blob/go1.9.2/src/
 对网络资源的等待可以看netpoll相关的处理, netpoll在不同系统中的处理都不一样, 有兴趣的可以自己看看.
 
 参考链接
-====
+---
 
 [https://github.com/golang/go](https://github.com/golang/go)  
 [https://golang.org/s/go11sched](https://golang.org/s/go11sched)  

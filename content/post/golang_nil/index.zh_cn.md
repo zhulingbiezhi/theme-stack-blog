@@ -1,5 +1,5 @@
 +++
-title = "【golang】nil的理解"
+title = "nil的理解"
 date = "2020-12-12"
 categories = [
     "golang"

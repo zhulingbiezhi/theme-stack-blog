@@ -1,5 +1,5 @@
 +++
-title = "【golang】sync.WaitGroup详解"
+title = "sync.WaitGroup详解"
 date = "2020-12-12"
 categories = [
     "golang"

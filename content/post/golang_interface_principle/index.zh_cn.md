@@ -1,9 +1,10 @@
 +++
-title = "【golang】interface原理"
+title = "interface原理"
 date = "2020-12-12"
 categories = [
     "golang"
 ]
+image = "http://img.ququ123.xyz/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
 +++
 
 ### 0.引言

@@ -1,9 +1,10 @@
 +++
-title = "【golang】GC详解"
+title = "GC详解"
 date = "2020-12-12"
 categories = [
     "golang"
 ]
+image = "http://img.ququ123.xyz/img/u=2823023142,3998149518&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 Golang从1.5开始引入了三色GC, 经过多次改进, 当前的1.9版本的GC停顿时间已经可以做到极短.  

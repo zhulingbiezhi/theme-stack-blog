@@ -1,9 +1,10 @@
 +++
-title = "【golang】defer详解"
+title = "defer详解"
 date = "2020-12-12"
 categories = [
     "golang"
 ]
+image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 +++
 
 

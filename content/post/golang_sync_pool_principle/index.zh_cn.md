@@ -1,5 +1,5 @@
 +++
-title = "【golang】sync.Pool详解"
+title = "sync.Pool详解"
 date = "2020-12-12"
 categories = [
     "golang"

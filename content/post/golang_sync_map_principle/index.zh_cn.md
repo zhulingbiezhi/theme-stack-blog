@@ -1,9 +1,10 @@
 +++
-title = "【golang】sync.Map详解"
+title = "sync.Map详解"
 date = "2020-12-12"
 categories = [
     "golang"
 ]
+image = "http://img.ququ123.xyz/img/u=469829844,4113946476&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 工作中，经常会碰到并发读写 map 而造成 panic 的情况，为什么在并发读写的时候，会 panic 呢？因为在并发读写的情况下，map 里的数据会被写乱，之后就是 `Garbage in, garbage out`，还不如直接 panic 了。

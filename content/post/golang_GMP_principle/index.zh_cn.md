@@ -1,9 +1,10 @@
 +++
-title = "【golang】GMP调度详解"
+title = "GMP调度详解"
 date = "2020-12-12"
 categories = [
     "golang"
 ]
+image = "http://img.ququ123.xyz/img/u=60200828,2533224267&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 Golang最大的特色可以说是协程(goroutine)了, 协程让本来很复杂的异步编程变得简单, 让程序员不再需要面对回调地狱,  

@@ -1,9 +1,10 @@
 +++
-title = "【golang】panic详解"
+title = "panic详解"
 date = "2020-12-12"
 categories = [
     "golang"
 ]
+image = "http://img.ququ123.xyz/img/u=708091934,2439842609&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 作为一个 gophper，我相信你对于 `panic` 和 `recover` 肯定不陌生，但是你有没有想过。当我们执行了这两条语句之后。底层到底发生了什么事呢？前几天和同事刚好聊到相关的话题，发现其实大家对这块理解还是比较模糊的。希望这篇文章能够从更深入的角度告诉你为什么，它到底做了什么事？

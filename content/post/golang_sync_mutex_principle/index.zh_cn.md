@@ -1,5 +1,5 @@
 +++
-title = "【golang】sync.Mutex原理"
+title = "sync.Mutex原理"
 date = "2020-12-12"
 categories = [
     "golang"

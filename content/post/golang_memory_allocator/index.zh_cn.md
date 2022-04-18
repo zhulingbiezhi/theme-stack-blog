@@ -1,9 +1,10 @@
 +++
-title = "【golang】内存分配详解"
+title = "内存分配详解"
 date = "2020-12-12"
 categories = [
     "golang"
 ]
+image = "http://img.ququ123.xyz/img/u=140571796,2511374842&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
 这篇文章**主要介绍Go内存分配和Go内存管理**，会轻微涉及内存申请和释放，以及Go垃圾回收。

@@ -8,7 +8,7 @@ image = "http://img.ququ123.xyz/img/u=2548277013,2202110587&fm=253&fmt=auto&app=
 +++
 
 
-一、前言
+前言
 ----
     
     Go语言在设计上对同步（Synchronization，数据同步和线程同步）提供大量的支持，比如 goroutine和channel同步原语，库层面有
@@ -21,7 +21,7 @@ image = "http://img.ququ123.xyz/img/u=2548277013,2202110587&fm=253&fmt=auto&app=
 
 上一期中，我们介绍了 `sync.Once` 如何保障 `exactly once` 语义，本期文章我们介绍 `package sync` 下的另一个工具类：`sync.WaitGroup`。
 
-二、为什么需要 `WaitGroup`？
+为什么需要 `WaitGroup`？
 --------------------
 
 想象一个场景：我们有一个用户画像服务，当一个请求到来时，需要
@@ -42,7 +42,7 @@ image = "http://img.ququ123.xyz/img/u=2548277013,2202110587&fm=253&fmt=auto&app=
 
 此时，`sync.WaitGroup` 闪耀登场。
 
-三、`WaitGroup` 用法
+`WaitGroup` 用法
 ----------------
 
 官方文档对 WaitGroup 的描述是：`一个 WaitGroup 对象可以等待一组协程结束`。使用方法是：
@@ -119,7 +119,7 @@ Go 对 array/slice 进行遍历时，runtime 会把 `task[i]` 拷贝到 `task` �
 1.  对于 rpc 调用，可以通过 data channel 和 error channel 搜集信息，或者二合一的channel
 2.  共享变量，比如加锁的 map
 
-四、`WaitGroup` 实现
+`WaitGroup` 实现
 ----------------
 
 在讨论这个主题之前，建议读者先思考一下：如果让你去实现 `WaitGroup`，你会怎么做？
@@ -188,7 +188,7 @@ Go 对 array/slice 进行遍历时，runtime 会把 `task[i]` 拷贝到 `task` �
 
 **提示：如果只想了解 WaitGroup 的正确用法，本文读到这儿就足够了。对底层有兴趣的朋友可以继续读，不过最好打开IDE，参考源码一起读。**
 
-### 4.1 WaitGroup 结构
+### WaitGroup 结构
 ```go
     type WaitGroup struct {
       noCopy noCopy
@@ -239,7 +239,7 @@ Go 对 array/slice 进行遍历时，runtime 会把 `task[i]` 拷贝到 `task` �
 ```
 细心的朋友可能会发现，worker计数器的更新是直接累加，而 waiter计数器的更新是 CompareAndSwap。这是因为在 main协程中执行 `wg.Add` 时，只有main协程对 `state1` 做修改；而 `wg.Wait` 中修改waiter计数器时，可能有很多个协程在更新 `state1`。如果你还不太理解这段话，不妨先往下走，了解 `wg.Add` 和 `wg.Wait` 的细节之后再回头看。
 
-### 4.2 Add 和 Done
+### Add 和 Done
 
 `wg.Add` 操作的核心逻辑比较简单，即修改 worker计数器，根据worker计数器的状态进行后续操作。简化版的代码如下：
 ```go
@@ -272,7 +272,7 @@ Go 对 array/slice 进行遍历时，runtime 会把 `task[i]` 拷贝到 `task` �
       wg.Add(-1)
     }
 ```
-### 4.3 Wait
+### Wait
 
 `wg.Wait` 的逻辑是修改waiter计数器，并等待信号量被释放。简化版的代码如下：
 ```go

@@ -13,7 +13,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 
 我们简单的过一下 `defer` 关键字的基础使用，让大家先有一个基础的认知
 
-### 一、延迟调用
+### 延迟调用
 ```go
     func main() {
     	defer log.Println("EDDYCJY.")
@@ -27,7 +27,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
     2019/05/19 21:15:02 end.
     2019/05/19 21:15:02 EDDYCJY.
 ```
-### 二、后进先出
+### 后进先出
 ```go
     func main() {
     	for i := 0; i < 6; i++ {
@@ -51,7 +51,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
     2019/05/19 21:19:17 EDDYCJY0.
 ```
 
-### 三、运行时间点
+### 运行时间点
 ```go
     func main() {
     	func() {
@@ -67,7 +67,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
     2019/05/22 23:30:27 defer.EDDYCJY.
     2019/05/22 23:30:27 main.EDDYCJY.
 ```
-### 四、异常处理
+### 异常处理
 ```go
     func main() {
     	defer func() {
@@ -142,12 +142,14 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 *   sp：函数栈指针寄存器，一般指向当前函数栈的栈顶
 *   pc：程序计数器，有时称为指令指针(IP)，线程利用它来跟踪下一个要执行的指令。在大多数处理器中，PC 指向的是下一条指令，而不是当前指令
 *   fn：指向传入的函数地址和参数
-*   \_panic：指向 `_panic` 链表
+*   _panic：指向 `_panic` 链表
 *   link：指向 `_defer` 链表
 
 ![image](http://img.ququ123.xyz/img/3dLNjJ.png)
 
-### deferproc，预处理defer函数，存储到结构中，供后面调用
+### deferproc
+
+预处理defer函数，存储到结构中，供后面调用
 
 ```go
     func deferproc(siz int32, fn *funcval) { // arguments of fn follow fn
@@ -207,7 +209,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 *   调用 `memmove` 将传入的参数存储到新 `_defer` （当前使用）中去，便于后续的使用
 *   最后调用 `return0` 进行返回，这个函数非常重要。能够避免在 `deferproc` 中又因为返回 `return`，而诱发 `deferreturn` 方法的调用。其根本原因是一个停止 `panic` 的延迟方法会使 `deferproc` 返回 1，但在机制中如果 `deferproc` 返回不等于 0，将会总是检查返回值并跳转到函数的末尾。而 `return0` 返回的就是 0，因此可以防止重复调用
 
-#### 小结
+### 小结
 
 在**这个函数中会为新的 `_defer` 设置一些基础属性，并将调用函数的参数集传入。最后通过特殊的返回方法结束函数调用**。另外这一块与先前 [《深入理解 Go panic and recover》](https://segmentfault.com/a/1190000019251478#articleHeader9) 的处理逻辑有一定关联性，其实就是 `gp.sched.ret` 返回 0 还是 1 会分流至不同处理方式
 
@@ -249,7 +251,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 *   `defer` 与 `Goroutine(g)` 有直接关系，所以讨论 `defer` 时基本离不开 `g` 的关联
 *   新的 `defer` 总是会在现有的链表中的最前面，也就是 `defer` 的特性后进先出
 
-#### 小结
+### 小结
 
 这个函数主要承担了获取新的 `_defer` 的作用，它有可能是从 `deferpool` 中获取的，也有可能是重新申请的
 
@@ -341,7 +343,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 ```
 的确如上述流程所分析一致，验证完毕
 
-#### 小结
+### 小结
 
 这个函数主要承担了清空已使用的 `defer` 和跳转到调用 `defer` 关键字的函数处，非常重要
 

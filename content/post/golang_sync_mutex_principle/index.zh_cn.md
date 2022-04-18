@@ -201,7 +201,7 @@ Lock
 
 slowLock的获取锁流程有两种模式： 饥饿模式 和 正常模式。
 
-(1)正常模式
+正常模式
 -------
 
 1.  mutex已经被locked了，处于正常模式下；
@@ -217,8 +217,8 @@ slowLock的获取锁流程有两种模式： 饥饿模式 和 正常模式。
 
 如果当前goroutine竞争失败，会调用 `sync.runtime_SemacquireMutex` 使用信号量保证资源不会被两个 Goroutine 获取。`sync.runtime_SemacquireMutex` 会在方法中不断调用尝试获取锁并休眠当前 Goroutine 等待信号量的释放，一旦当前 Goroutine 可以获取信号量，它就会立刻返回，sync.Mutex.Lock 方法的剩余代码也会继续执行。
 
-(2) 饥饿模式
---------
+饥饿模式
+---
 
 饥饿模式本身是为了一定程度保证公平性而设计的模式。所以饥饿模式不会有自旋的操作，新的 Goroutine 在该状态下不能获取锁、也不会进入自旋状态，它们只会在队列的末尾等待。
 
@@ -228,7 +228,8 @@ slowLock的获取锁流程有两种模式： 饥饿模式 和 正常模式。
 2.  在饥饿模式下，当前 Goroutine 会获得互斥锁，如果等待队列中只存在当前 Goroutine，互斥锁还会从饥饿模式中退出；
 
 Unlock
----
+------
+
 ```go
     func (m *Mutex) Unlock() {
     	// Fast path: drop lock bit.

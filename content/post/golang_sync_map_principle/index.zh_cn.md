@@ -400,14 +400,14 @@ Range 的参数是一个函数：
 之后，遍历 read，取出 entry 中的值，调用 f(k, v)。
 
 其他
-==
+---
 
 关于为何 `sync.map` 没有 Len 方法，参考资料里给出了 [issue](https://github.com/golang/go/issues/20680)，`bcmills` 认为对于并发的数据结构和非并发的数据结构并不一定要有相同的方法。例如，map 有 Len 方法，sync.map 却不一定要有。就像 sync.map 有 LoadOrStore 方法，map 就没有一样。
 
 有些实现增加了一个计数器，并原子地增加或减少它，以此来表示 sync.map 中元素的个数。但 `bcmills` 提出这会引入竞争：`atomic` 并不是 `contention-free` 的，它只是把竞争下沉到了 CPU 层级。这会给其他不需要 Len 方法的场景带来负担。
 
 总结
-==
+---
 
 1.  `sync.map` 是线程安全的，读取，插入，删除也都保持着常数级的时间复杂度。
     

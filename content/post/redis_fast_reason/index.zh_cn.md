@@ -4,6 +4,7 @@ date = "2020-12-12"
 categories = [
     "redis"
 ]
+image = "http://img.ququ123.xyz/img/u=3168490317,3659123965&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 作为一名服务端工程师，工作中你肯定和 Redis 打过交道。Redis 为什么快，这点想必你也知道，至少为了面试也做过准备。很多人知道 Redis 快仅仅因为它是基于内存实现的，对于其它原因倒是模棱两可。

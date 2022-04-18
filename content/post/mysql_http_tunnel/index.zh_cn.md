@@ -4,6 +4,7 @@ date = "2020-12-12"
 categories = [
     "mysql"
 ]
+image = "http://img.ququ123.xyz/img/u=3878467649,1404563456&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 * 背景

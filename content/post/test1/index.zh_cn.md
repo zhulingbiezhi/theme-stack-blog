@@ -2,6 +2,7 @@
 title = "【网络】tcp/ip详解"
 date = "2020-12-12"
 categories = ["TCP"]
+image = "http://img.ququ123.xyz/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 长文是对TCP IP的剖析归类总结，就自己的经验再次回顾IP协议而写的归纳性笔记，助力初学者掌握。文有不妥之处，请查看原文并留言告知，谢谢！

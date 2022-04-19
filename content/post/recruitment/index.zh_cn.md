@@ -10,6 +10,9 @@ image = "http://img.ququ123.xyz/img/u=2709744112,676407541&fm=253&fmt=auto&app=1
 ### 基本介绍
   - 公司官网： https://www.hellotalk.com 
   - 内推邮箱： demon@hellotalk.com
+  - 微信：
+  ---
+   ![image](http://img.ququ123.xyz/img/image-20220419114357055.png)
 
 ### 招聘内容
 

@@ -4,6 +4,7 @@ date = "2020-12-12"
 categories = [
     "面试"
 ]
+image = "http://img.ququ123.xyz/img/u=242378018,3642385577&fm=253&fmt=auto&app=138&f=JPEG.jpeg"
 +++
 
 * **笔试**

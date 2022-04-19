@@ -90,7 +90,7 @@ params:
         waline:
             serverURL: https://comment.ququ123.xyz
             lang: zh-CN
-            visitor: false
+            visitor: true
             avatar: identicon
             emoji:
                 - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq

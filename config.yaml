@@ -59,7 +59,7 @@ params:
 
     comments:
         enabled: true
-        provider: disqus
+        provider: waline
 
         disqusjs:
             shortname:
@@ -88,17 +88,18 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/client.html
         waline:
-            serverURL:
-            lang:
-            visitor:
-            avatar:
+            serverURL: https://comment.ququ123.xyz
+            lang: zh-CN
+            visitor: false
+            avatar: identicon
             emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
+                - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq
+                - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili
+                - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba
             requiredMeta:
                 - name
                 - email
-                - url
-            placeholder:
+            placeholder: 允许匿名评论
             locale:
                 admin: Admin
 

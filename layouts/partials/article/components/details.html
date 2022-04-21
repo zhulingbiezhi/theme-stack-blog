@@ -22,12 +22,6 @@
         </h3>
         {{ end }}
     </div>
-    <div class="article-comment-count">
-        评论数: <span id="{{ .RelPermalink }}" class="waline-comment-count" />
-    </div>
-    <div class="article-visitor-count">
-        阅读量: <span id="{{ .RelPermalink }}" class="waline-visitor-count" />
-    </div>
     {{ if or (not .Date.IsZero) (.Site.Params.article.readingTime) }}
     <footer class="article-time">
         {{ if not .Date.IsZero }}

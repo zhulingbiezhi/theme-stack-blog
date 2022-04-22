@@ -1,7 +1,4 @@
 .widget {
-    display: flex;
-    flex-direction: column;
-
     .widget-icon {
         svg {
             width: 32px;
@@ -17,14 +14,16 @@
     .tagCloud-tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
 
         a {
             background: var(--card-background);
             box-shadow: var(--shadow-l1);
-            border-radius: var(--tag-border-radius);
+            border-radius: 10px;
             padding: 8px 20px;
+
             color: var(--card-text-color-main);
+            margin-bottom: 10px;
+            margin-right: 5px;
             font-size: 1.4rem;
             transition: box-shadow 0.3s ease;
 
@@ -62,6 +61,35 @@
             span.count {
                 color: var(--card-text-color-tertiary);
             }
+        }
+    }
+}
+
+/* categories widget */
+
+.widget.categories {
+    .widget-categories--list {
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        background-color: var(--card-background); 
+    }
+
+    .category-list-item {
+        &:not(:last-of-type) {
+            border-bottom: 1.4px solid var(--card-separator-color);
+        }
+
+        a {
+            font-size: 1.4rem;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--card-text-color-main);
+}
+    span.category-list-count {
+        color: var(--card-text-color-tertiary);
+
+
         }
     }
 }

@@ -101,15 +101,10 @@
     background: none;
     border: none;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 30px;
+    top: 30px;
     z-index: 2;
     cursor: pointer;
-
-    [dir="rtl"] & {
-        left: 0;
-        right: auto;
-    }
 
     @include respond(md) {
         display: none;
@@ -130,31 +125,22 @@
 .menu {
     padding-left: 0;
     list-style: none;
+    display: flex;
     flex-direction: column;
     overflow-y: auto;
     flex-grow: 1;
     font-size: 1.4rem;
+
     background-color: var(--card-background);
-
-    box-shadow: var(--shadow-l1);
+    padding: 15px ;
+    box-shadow: var(--shadow-l2); //改个阴影
     display: none;
-    margin: 0 calc(var(--container-padding) * -1);
+    border-radius: 10px;  //加个圆角
 
-    padding: 30px 30px;
-    @include respond(xl) {
-        padding: 15px 0;
-    }
-
-    &,
-    .menu-bottom-section {
-        gap: 30px;
-        @include respond(xl) {
-            gap: 25px;
-        }
-    }
+    margin: 0; //改为0
 
     &.show {
-        display: flex;
+        display: block;
     }
 
     @include respond(md) {
@@ -164,19 +150,34 @@
         padding: 0;
         box-shadow: none;
         margin: 0;
+        margin-top: var(--sidebar-element-separation);
+    }
+
+    @include respond(xl) {
+        margin-top: 30px;
     }
 
     li {
         position: relative;
         vertical-align: middle;
-        padding: 0;
+        padding: 10px 30px;
+
+        &:not(:last-of-type) {
+            margin-bottom: 15px;
+
+            @include respond(xl) {
+                margin-bottom: 20px;
+            }
+        }
 
         @include respond(md) {
             width: 100%;
+            padding: 10px 0;
         }
 
         svg {
             stroke-width: 1.33;
+            margin-right: 40px;
 
             width: 20px;
             height: 20px;
@@ -187,7 +188,6 @@
             display: inline-flex;
             align-items: center;
             color: var(--body-text-color);
-            gap: var(--menu-icon-separation);
         }
 
         span {
@@ -201,22 +201,15 @@
             }
         }
     }
-
-    .menu-bottom-section {
-        margin-top: auto;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
 }
 
 .social-menu {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 0%;
     display: flex;
     flex-direction: row;
     gap: 10px;
+    justify-content: center; #设置居中
 
     svg {
         width: 24px;

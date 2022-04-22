@@ -2,7 +2,6 @@
 .article-list {
     display: flex;
     flex-direction: column;
-    gap: var(--section-separation);
 
     article {
         display: flex;
@@ -10,12 +9,16 @@
         background-color: var(--card-background);
         box-shadow: var(--shadow-l1);
         border-radius: var(--card-border-radius);
-        overflow: hidden;
-
+        overflow-x: auto; 
+    
         transition: box-shadow 0.3s ease;
 
         &:hover {
             box-shadow: var(--shadow-l2);
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: var(--section-separation);
         }
 
         .article-image {
@@ -49,13 +52,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     padding: var(--card-padding);
-    gap: 15px;
 }
 
 .article-title {
     font-weight: 600;
-    margin: 0;
+    margin: 10px 0;
     color: var(--card-text-color-main);
     font-size: 2.2rem;
 
@@ -70,58 +73,52 @@
             color: var(--card-text-color-main);
         }
     }
+
+    & + .article-subtitle {
+        margin-top: 0;
+    }
 }
 
 .article-subtitle {
     font-weight: normal;
     color: var(--card-text-color-secondary);
+    margin: 5px 0;
     line-height: 1.5;
-    margin: 0;
-    font-size: 1.75rem;
+
+    font-size: 1.5rem; //改为1.5rem 应该是全局
     @include respond(xl) {
-        font-size: 2rem;
+        font-size: 1.5rem; //改为1.5rem 应该是大尺寸屏幕适应？
     }
 }
 
-.article-title-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.article-time,
-.article-translations {
+.article-time {
     display: flex;
     align-items: center;
     color: var(--card-text-color-tertiary);
     gap: 15px;
+    margin-top: 10px;
     flex-wrap: wrap;
 
     svg {
         vertical-align: middle;
+        margin-right: 15px;
         width: 20px;
         height: 20px;
         stroke-width: 1.33;
     }
 
-    time,
-    a {
+    time {
         font-size: 1.4rem;
-        color: var(--card-text-color-tertiary);
     }
 
     & > div {
         display: inline-flex;
         align-items: center;
-        gap: 15px;
     }
 }
 
 .article-category,
 .article-tags {
-    display: flex;
-    gap: 10px;
-
     a {
         color: var(--accent-color-text);
         background-color: var(--accent-color);
@@ -129,6 +126,8 @@
         border-radius: var(--tag-border-radius);
         display: inline-block;
         font-size: 1.4rem;
+        margin-right: 10px;
+        margin-bottom: 10px;
         transition: background-color 0.5s ease;
 
         &:hover {
@@ -149,12 +148,15 @@
         --image-size: 60px;
     }
 
+    & + .pagination {
+        margin-top: var(--section-separation);
+    }
+
     article {
         & > a {
             display: flex;
             align-items: center;
             padding: var(--small-card-padding);
-            gap: 15px;
         }
 
         &:not(:last-of-type) {
@@ -164,8 +166,8 @@
         .article-details {
             flex-grow: 1;
             padding: 0;
+            padding-right: 15px;
             min-height: var(--image-size);
-            gap: 10px;
         }
 
         .article-title {

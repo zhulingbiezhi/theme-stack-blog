@@ -11,15 +11,13 @@
     flex-direction: column;
     flex-shrink: 0;
     align-self: stretch;
-    gap: var(--sidebar-element-separation);
-    max-width: none;
-    width: 100%;
-    position: relative;
 
-    --sidebar-avatar-size: 100px;
+    width: 100%;
+    padding: 30px 0 15px 0;
+    max-width: none;
+
+    --sidebar-avatar-size: 120px;
     --sidebar-element-separation: 20px;
-    --emoji-size: 40px;
-    --emoji-font-size: 20px;
 
     @include respond(md) {
         width: auto;
@@ -29,49 +27,18 @@
     }
 
     @include respond(2xl) {
-        --sidebar-avatar-size: 120px;
+        --sidebar-avatar-size: 140px;
         --sidebar-element-separation: 25px;
-        --emoji-size: 40px;
     }
 
     &.sticky {
         top: 0;
     }
-
-    &.compact {
-        --sidebar-avatar-size: 80px;
-        --emoji-size: 30px;
-        --emoji-font-size: 15px;
-
-        header {
-            @include respond(lg) {
-                flex-direction: row;
-            }
-
-            .site-meta {
-                gap: 5px;
-            }
-
-            .site-name {
-                font-size: 1.4rem;
-
-                @include respond(2xl) {
-                    font-size: 1.75rem;
-                }
-            }
-
-            .site-description {
-                font-size: 1.4rem;
-            }
-        }
-    }
 }
 
 .right-sidebar {
-    width: 100%;
+    flex-shrink: 0;
     display: none;
-    flex-direction: column;
-    gap: var(--widget-separation);
 
     &.sticky {
         top: 0;
@@ -82,23 +49,24 @@
     }
 }
 
-.sidebar header {
+.site-info {
     z-index: 1;
     transition: box-shadow 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    gap: var(--sidebar-element-separation);
+
+    padding: 15px;
 
     @include respond(md) {
         padding: 0;
     }
 
-    .site-avatar {
+	.site-avatar {
         position: relative;
-        margin: 0;
+        margin-left:auto; //站点头像居中
+		margin-right:auto; //站点头像居中
         width: var(--sidebar-avatar-size);
         height: var(--sidebar-avatar-size);
-        flex-shrink: 0;
+
+        margin-bottom: var(--sidebar-element-separation);
 
         .site-logo {
             width: 100%;
@@ -109,44 +77,58 @@
 
         .emoji {
             position: absolute;
-            width: var(--emoji-size);
-            height: var(--emoji-size);
-            line-height: var(--emoji-size);
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             border-radius: 100%;
             bottom: 0;
             right: 0;
             text-align: center;
-            font-size: var(--emoji-font-size);
+            font-size: 20px;
             background-color: var(--card-background);
             box-shadow: var(--shadow-l2);
+
+            @include respond(2xl) {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+            }
         }
     }
 
-    .site-meta {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: center;
+	.site-name {
+        color: var(--accent-color);
+        text-align:center; //站点名称居中
+        font-size: 1.8rem;
+
+        @include respond(2xl) {
+            font-size: 2rem;
+        }
     }
 
-    .site-name {
-        color: var(--accent-color);
-        margin: 0;
+	.site-description {
+        color: var(--body-text-color);
+        font-weight: normal;
+        text-align:center; //站点描述居中
         font-size: 1.6rem;
 
         @include respond(2xl) {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
         }
     }
+}
 
-    .site-description {
-        color: var(--body-text-color);
-        font-weight: normal;
-        margin: 0;
-        font-size: 1.4rem;
+.sidebar {
+    .widget {
+        margin-bottom: var(--section-separation);
 
-        @include respond(2xl) {
-            font-size: 1.6rem;
+        &:not(:last-of-type):after {
+            content: "";
+            width: 100px;
+            height: 2px;
+            background-color: var(--body-text-color);
+            display: block;
+            margin-top: var(--section-separation);
         }
     }
 }
@@ -172,27 +154,8 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    gap: var(--menu-icon-separation);
 
     .icon-tabler-toggle-right {
         display: none;
-    }
-}
-
-#i18n-switch {
-    color: var(--body-text-color);
-    display: inline-flex;
-    align-content: center;
-    gap: var(--menu-icon-separation);
-
-    select {
-        border: 0;
-        background-color: transparent;
-        color: var(--body-text-color);
-
-        option {
-            color: var(--card-text-color-main);
-            background-color: var(--card-background);
-        }
     }
 }

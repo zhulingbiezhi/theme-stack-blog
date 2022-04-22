@@ -19,6 +19,7 @@
 @import "partials/pagination.scss";
 @import "partials/sidebar.scss";
 @import "partials/base.scss";
+@import "partials/layout/archives.scss";
 @import "partials/layout/article.scss";
 @import "partials/layout/list.scss";
 @import "partials/layout/404.scss";
@@ -34,16 +35,15 @@ a {
         color: var(--accent-color-darker);
     }
 
-    &.link {
-        box-shadow: 0px -2px 0px rgba(var(--link-background-color), var(--link-background-opacity)) inset;
+    &.link {  //鼠标未悬停时，超链接显示6px的高亮
+        box-shadow: 0px -7px 0px rgba(var(--link-background-color), var(--link-background-opacity-hover)) inset; 
         transition: all 0.3s ease;
 
-        &:hover {
-            box-shadow: 0px -10px 0px rgba(var(--link-background-color), var(--link-background-opacity-hover)) inset;
+        &:hover { //鼠标悬停，高亮为10px
+            box-shadow: 0px -11px 0px rgba(var(--link-background-color), var(--link-background-opacity-hover)) inset; 
         }
     }
 }
-
 .section-title {
     text-transform: uppercase;
     margin-top: 0;

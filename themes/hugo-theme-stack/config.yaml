@@ -19,7 +19,6 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        compact: false
         emoji:
         subtitle:
         avatar:
@@ -96,7 +95,6 @@ params:
             darkTheme:
             reactionsEnabled: 1
             emitMetadata: 0
-            lang:
 
         gitalk:
             owner:
@@ -110,8 +108,16 @@ params:
             id:
 
     widgets:
-        homepage: []
-        page: []
+        enabled:
+            - search
+            - archives
+            - tag-cloud
+
+        archives:
+            limit: 5
+
+        tagCloud:
+            limit: 10
 
     opengraph:
         twitter:

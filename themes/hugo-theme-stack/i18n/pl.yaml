@@ -50,10 +50,6 @@ widget:
     tagCloud:
         title:
             other: Tagi
-    
-    categoriesCloud:
-        title:
-            other: Kategorie
 
 search:
     title:

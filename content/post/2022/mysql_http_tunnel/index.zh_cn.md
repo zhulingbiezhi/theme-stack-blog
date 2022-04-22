@@ -1,6 +1,7 @@
 +++
 title = "【mysql】通过http tunnel连接mysql"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "mysql_http_tunnel"
 categories = [
     "mysql"
 ]

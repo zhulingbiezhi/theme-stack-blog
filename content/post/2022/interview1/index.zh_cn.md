@@ -1,6 +1,7 @@
 +++
 title = "【面试】公司1（中小型）"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "interview1"
 categories = [
     "面试"
 ]

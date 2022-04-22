@@ -1,6 +1,7 @@
 +++
 title = "slice源码分析"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "golang_slice_principle"
 categories = [
     "golang"
 ]

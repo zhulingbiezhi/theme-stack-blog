@@ -1,6 +1,7 @@
 +++
 title = "sync.Pool详解"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "golang_sync_pool_principle"
 categories = [
     "golang"
 ]

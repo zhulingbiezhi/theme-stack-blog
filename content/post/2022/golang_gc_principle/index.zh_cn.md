@@ -1,6 +1,7 @@
 +++
 title = "GC详解"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "golang_gc_principle"
 categories = [
     "golang"
 ]

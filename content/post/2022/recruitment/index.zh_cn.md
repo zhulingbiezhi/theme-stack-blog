@@ -1,6 +1,7 @@
 +++
 title = "Hellotalk招聘"
-date = "2022-04-19"
+date = "2022-04-01"
+slug = "recruitment"
 categories = [
     "招聘"
 ]

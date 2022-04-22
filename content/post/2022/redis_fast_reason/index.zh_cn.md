@@ -1,6 +1,7 @@
 +++
 title = "【redis】redis为什么这么快"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "redis_fast_reason"
 categories = [
     "redis"
 ]

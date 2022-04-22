@@ -1,9 +1,10 @@
 ---
 title: channel详解
-date: 2020-12-12
+date: 2022-04-01
 image: http://img.ququ123.xyz/img/u=2104548819,3267708629&fm=253&fmt=auto&app=138&f=JPG
 categories: 
     - golang
+slug: golang_channel_principle
 ---
 
 channel一个类型管道，通过它可以在goroutine之间发送和接收消息。它是Golang在语言层面提供的goroutine间的通信方式。

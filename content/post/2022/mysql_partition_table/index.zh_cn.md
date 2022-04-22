@@ -1,6 +1,7 @@
 +++
 title = "【mysql】分库分表"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "mysql_partition_table"
 categories = [
     "mysql"
 ]

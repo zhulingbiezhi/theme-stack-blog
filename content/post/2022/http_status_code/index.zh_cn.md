@@ -1,6 +1,7 @@
 +++
 title = "【网络】http状态码"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "http_status_code"
 categories = [
     "http"
 ]

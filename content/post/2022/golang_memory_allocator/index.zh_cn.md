@@ -1,6 +1,7 @@
 +++
 title = "内存分配详解"
-date = "2020-12-12"
+date = "2022-04-01"
+slug = "golang_memory_allocator"
 categories = [
     "golang"
 ]

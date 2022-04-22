@@ -5,9 +5,11 @@
             {{ .Site.Params.footer.since }} - 
         {{ end }}
         {{ now.Format "2006" }} --- 去去的博客
-    </section>
-        <section id="busuanzi_container_site_uv">
-        您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
+    <section id="busuanzi_container">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        总访客数: <span id="busuanzi_value_site_uv"></span>
+        总访问量: <span id="busuanzi_value_site_pv"></span>
+        本页面访问量: <span id="busuanzi_value_page_pv"></span>
     </section>
     <section class="powerby">
         {{ with .Site.Params.footer.customText }}

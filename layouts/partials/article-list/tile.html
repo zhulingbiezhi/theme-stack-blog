@@ -5,12 +5,6 @@
     <a href="{{ .context.RelPermalink }}">
         
         {{ if $image.exists }}
-            <div class="article-comment-count">
-        评论数: <span id="{{ .RelPermalink }}" class="waline-comment-count" />
-    </div>
-    <div class="article-visitor-count">
-        阅读量: <span id="{{ .RelPermalink }}" class="waline-visitor-count" />
-    </div>
             <div class="article-image">
                 {{ if $image.resource }}
                     {{- $imageRaw := $image.resource | resources.Fingerprint "md5" -}}

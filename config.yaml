@@ -88,9 +88,9 @@ params:
             visitor: true
             avatar: identicon
             emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba
+                - https://unpkg.com/@waline/emojis@1.0.1/qq
+                - https://unpkg.com/@waline/emojis@1.0.1/bilibili
+                - https://unpkg.com/@waline/emojis@1.0.1/tieba
             requiredMeta:
                 - name
                 - email

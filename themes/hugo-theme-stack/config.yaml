@@ -70,7 +70,7 @@ params:
             visitor:
             avatar:
             emoji:
-                - https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo
+                - https://unpkg.com/gh/walinejs/emojis/weibo
             requiredMeta:
                 - name
                 - email

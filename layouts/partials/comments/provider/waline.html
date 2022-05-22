@@ -1,4 +1,4 @@
-<script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<script src='https://unpkg.com/@waline/client@v2/dist/waline.js'></script>
 <div id="waline" class="waline-container"></div>
 <style>
     .waline-container {
@@ -11,9 +11,13 @@
         color: var(--card-text-color-main);
     }
 </style>
-
+<!-- 样式文件 -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+/>
 {{- with .Site.Params.comments.waline -}}
-{{- $config := dict "el" "#waline" "dark" `html[data-scheme="dark"]` -}}
+{{- $config := dict "pageview" "waline-pageview-count" "el" "#waline" "dark" `html[data-scheme="dark"]` -}}
 {{- $replaceKeys := dict "serverurl" "serverURL" "requiredmeta" "requiredMeta" "wordlimit" "wordLimit" "pagesize" "pageSize" "avatarcdn" "avatarCDN" "avatarforce" "avatarForce" -}}
 
 {{- range $key, $val := . -}}
@@ -27,6 +31,8 @@
 
 <script>
     /// Waline client configuration see: https://waline.js.org/en/reference/client.html
-    new Waline({{ $config | jsonify | safeJS }});
+    Waline.init({{ $config | jsonify | safeJS }});
+    Waline.commentCount();
+    Waline.pageviewCount();
 </script>
 {{- end -}}

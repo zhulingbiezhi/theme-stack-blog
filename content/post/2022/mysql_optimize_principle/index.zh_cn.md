@@ -31,7 +31,7 @@ SQL 作为关系型数据库的标准语言，是 IT 从业人员必不可少的
 ------------
 
 一定要为查询语句指定 WHERE 条件，过滤掉不需要的数据行。通常来说，OLTP 系统每次只需要从大量数据中返回很少的几条记录；指定查询条件可以帮助我们通过索引返回结果，而不是全表扫描。绝大多数情况下使用索引时的性能更好，因为索引（B-树、B+树、B\*树）执行的是二进制搜索，具有对数时间复杂度，而不是线性时间复杂度。以下是 MySQL 聚簇索引的示意图：
-![image](http://img.ququ123.xyz/img/640)
+![image](https://mmbiz.qpic.cn/mmbiz_png/JfTPiahTHJhrnv9vXdxofWhueVP3IFZMibfXrhiaKFytv6rxsloZBT3r9mTiaW1QRvbz9zoLUNdZ2823Urv5XURkSA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 Clustered index
 
 举例来说，假设每个索引分支节点可以存储 100 个记录，100 万（1003）条记录只需要 3 层 B-树即可完成索引。通过索引查找数据时需要读取 3 次索引数据（每次磁盘 IO 读取整个分支节点），加上 1 次磁盘 IO 读取数据即可得到查询结果。
@@ -121,7 +121,7 @@ Clustered index
 --------------------
 
 分页查询的原理就是先跳过指定的行数，再返回 Top-N 记录。分页查询的示意图如下：
-![image](http://img.ququ123.xyz/img/640)
+![image](https://mmbiz.qpic.cn/mmbiz_png/JfTPiahTHJhrnv9vXdxofWhueVP3IFZMibgLF9Bz3AMibJaj6vevtUxOvqnDqFfMqMErTia3Xqkjia9iacAEnGaSXDWg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 分页查询
 
 数据库一般支持 FETCH/LIMIT 以及 OFFSET 实现 Top-N 排行榜和分页查询。当表中的数据量很大时，这种方式的分页查询可能会导致性能问题。以 MySQL 为例：

@@ -5,7 +5,7 @@ slug = "interview1"
 categories = [
     "面试"
 ]
-image = "http://img.ququ123.xyz/img/u=242378018,3642385577&fm=253&fmt=auto&app=138&f=JPEG.jpeg"
+image = "http://img.ququ123.top/img/u=242378018,3642385577&fm=253&fmt=auto&app=138&f=JPEG.jpeg"
 +++
 
 * **笔试**

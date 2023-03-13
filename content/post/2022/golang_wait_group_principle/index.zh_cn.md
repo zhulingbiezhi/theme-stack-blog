@@ -5,7 +5,7 @@ slug = "golang_wait_group_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.xyz/img/u=2548277013,2202110587&fm=253&fmt=auto&app=138&f=JPEG"
+image = "http://img.ququ123.top/img/u=2548277013,2202110587&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 

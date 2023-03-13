@@ -5,7 +5,7 @@ slug = "golang_panic_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.xyz/img/u=708091934,2439842609&fm=253&fmt=auto&app=138&f=JPEG"
+image = "http://img.ququ123.top/img/u=708091934,2439842609&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 作为一个 gophper，我相信你对于 `panic` 和 `recover` 肯定不陌生，但是你有没有想过。当我们执行了这两条语句之后。底层到底发生了什么事呢？前几天和同事刚好聊到相关的话题，发现其实大家对这块理解还是比较模糊的。希望这篇文章能够从更深入的角度告诉你为什么，它到底做了什么事？
@@ -136,7 +136,7 @@ image = "http://img.ququ123.xyz/img/u=708091934,2439842609&fm=253&fmt=auto&app=1
 
 另外通过查看 `link` 字段，可得知其是一个链表的数据结构，如下图：
 
-![image](http://img.ququ123.xyz/img/006fVPCvly1g2muc73jp1j30hc099q2x.jpg)
+![image](http://img.ququ123.top/img/006fVPCvly1g2muc73jp1j30hc099q2x.jpg)
 
 ### 恐慌 panic
 ```go

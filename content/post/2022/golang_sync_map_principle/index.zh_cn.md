@@ -5,7 +5,7 @@ slug = "golang_sync_map_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.xyz/img/u=469829844,4113946476&fm=253&fmt=auto&app=138&f=JPEG"
+image = "http://img.ququ123.top/img/u=469829844,4113946476&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 工作中，经常会碰到并发读写 map 而造成 panic 的情况，为什么在并发读写的时候，会 panic 呢？因为在并发读写的情况下，map 里的数据会被写乱，之后就是 `Garbage in, garbage out`，还不如直接 panic 了。
@@ -134,7 +134,7 @@ Go 语言原生 map 并不是线程安全的，对它进行并发读写操作的
 
 很简单，它是一个指针，指向 value。看来，read 和 dirty 各自维护一套 key，key 指向的都是同一个 value。也就是说，只要修改了这个 entry，对 read 和 dirty 都是可见的。这个指针的状态有三种：
 
-![p 的三种状态](http://img.ququ123.xyz/img/20200504093007.png)
+![p 的三种状态](http://img.ququ123.top/img/20200504093007.png)
 
 当 `p == nil` 时，说明这个键值对已被删除，并且 m.dirty == nil，或 m.dirty\[k\] 指向该 entry。
 
@@ -148,7 +148,7 @@ Go 语言原生 map 并不是线程安全的，对它进行并发读写操作的
 
 整体用一张图来表示：
 
-![sync.map 整体结构](http://img.ququ123.xyz/img/20200505120255.png)
+![sync.map 整体结构](http://img.ququ123.top/img/20200505120255.png)
 
 Store
 -----

@@ -5,7 +5,7 @@ slug = "mysql_optimize_principle"
 categories = [
     "mysql"
 ]
-image = "http://img.ququ123.xyz/img/u=1147917346,777784938&fm=253&fmt=auto&app=138&f=JPEG"
+image = "http://img.ququ123.top/img/u=1147917346,777784938&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 ### 文章目录

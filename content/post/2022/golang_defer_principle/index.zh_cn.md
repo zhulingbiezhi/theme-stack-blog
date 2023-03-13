@@ -5,7 +5,7 @@ slug = "golang_defer_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
+image = "http://img.ququ123.top/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 +++
 
 
@@ -146,7 +146,7 @@ image = "http://img.ququ123.xyz/img/042e751cd553ea535e94a95ad21386ec.jpeg"
 *   _panic：指向 `_panic` 链表
 *   link：指向 `_defer` 链表
 
-![image](http://img.ququ123.xyz/img/3dLNjJ.png)
+![image](http://img.ququ123.top/img/3dLNjJ.png)
 
 ### deferproc
 

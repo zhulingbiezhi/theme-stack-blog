@@ -1,4 +1,4 @@
-baseurl: http://www.ququ123.xyz
+baseurl: http://www.ququ123.top
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 10
@@ -83,7 +83,7 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/client.html
         waline:
-            serverURL: https://comment.ququ123.xyz
+            serverURL: https://comment.ququ123.top
             lang: zh-CN
             visitor: true
             avatar: identicon

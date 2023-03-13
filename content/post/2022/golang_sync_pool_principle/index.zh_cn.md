@@ -5,7 +5,7 @@ slug = "golang_sync_pool_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.xyz/img/u=2033342888,4177252789&fm=253&fmt=auto&app=138&f=PNG"
+image = "http://img.ququ123.top/img/u=2033342888,4177252789&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
 最近在工作中碰到了 GC 的问题：项目中大量重复地创建许多对象，造成 GC 的工作量巨大，CPU 频繁掉底。准备使用 `sync.Pool` 来缓存对象，减轻 GC 的消耗。为了用起来更顺畅，我特地研究了一番，形成此文。本文从使用到源码解析，循序渐进，一一道来。
@@ -216,7 +216,7 @@ pool\_test
 
 `PoolDequeue` 是一个双端队列，可以从头部入队元素，从头部和尾部出队元素。调用函数时，前者传入 `NewPoolDequeue(16)`，后者传入 `NewPoolChain()`，底层其实都是 `poolDequeue` 这个结构体。具体来看 `testPoolDequeue` 做了什么：
 
-![双端队列](http://img.ququ123.xyz/img/20200410125923.png)
+![双端队列](http://img.ququ123.top/img/20200410125923.png)
 
 总共起了 10 个 goroutine：1 个生产者，9 个消费者。生产者不断地从队列头 pushHead 元素到双端队列里去，并且每 push 10 次，就 popHead 一次；消费者则一直从队列尾取元素。不论是从队列头还是从队列尾取元素，都会在 map 里做标记，最后检验每个元素是不是只被取出过一次。
 
@@ -422,11 +422,11 @@ Pool 结构体
 
 我们用一幅图来完整地描述 Pool 结构体：
 
-![Pool 结构体](http://img.ququ123.xyz/img/20200416125200.png)
+![Pool 结构体](http://img.ququ123.top/img/20200416125200.png)
 
 结合木白的技术私厨的[《请问sync.Pool有什么缺点?》](https://mp.weixin.qq.com/s?__biz=MzA4ODg0NDkzOA==&mid=2247487149&idx=1&sn=f38f2d72fd7112e19e97d5a2cd304430&source=41#wechat_redirect)里的一张图，对于双端队列的理解会更容易一些：
 
-![Pool 结构体](http://img.ququ123.xyz/img/image-20190805225842592.png)
+![Pool 结构体](http://img.ququ123.top/img/image-20190805225842592.png)
 
 我们看到 Pool 并没有直接使用 poolDequeue，原因是它的大小是固定的，而 Pool 的大小是没有限制的。因此，在 poolDequeue 之上包装了一下，变成了一个 `poolChainElt` 的双向链表，可以动态增长。
 
@@ -471,7 +471,7 @@ Get
 
 我用一张流程图来展示整个过程：
 
-![Get 流程图](http://img.ququ123.xyz/img/20200418091935.png)
+![Get 流程图](http://img.ququ123.top/img/20200418091935.png)
 
 整体流程梳理完了，我们再来看一下其中的一些关键函数。
 
@@ -793,7 +793,7 @@ Put
 
 同样用流程图来展示整个过程：
 
-![Put 流程图](http://img.ququ123.xyz/img/20200418092028.png)
+![Put 流程图](http://img.ququ123.top/img/20200418092028.png)
 
 ### pushHead
 
@@ -1003,7 +1003,7 @@ GC
 
 我根据这个流程画了一张图，可以理解地更清晰一些：
 
-![poolCleanup 过程](http://img.ququ123.xyz/img/20200416125040.png)
+![poolCleanup 过程](http://img.ququ123.top/img/20200416125040.png)
 
 需要指出的是，`allPools` 和 `oldPools` 都是切片，切片的元素是指向 Pool 的指针，Get/Put 操作不需要通过它们。在第 6 步，如果还有其他 Pool 执行了 Put 操作，`allPools` 这时就会有多个元素。
 

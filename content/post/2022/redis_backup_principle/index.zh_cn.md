@@ -5,7 +5,7 @@ slug = "redis_backup_principle"
 categories = [
     "redis"
 ]
-image = "http://img.ququ123.xyz/img/u=1747746174,373277862&fm=253&fmt=auto&app=138&f=PNG"
+image = "http://img.ququ123.top/img/u=1747746174,373277862&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
 突然挂了！Redis缓存都在内存中，这下完了！

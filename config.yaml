@@ -18,6 +18,13 @@ DefaultContentLanguage: zh-cn
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: true
 
+sitemap:
+  changefreq: daily
+  filename: sitemap.xml
+  priority: 0.5
+
+enableRobotsTXT: true
+
 permalinks:
     post: /:year/:month/:slug/
     page: /:slug/

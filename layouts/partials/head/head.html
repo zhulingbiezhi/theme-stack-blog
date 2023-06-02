@@ -17,9 +17,12 @@
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{- end -}}
 
+{{ if .Params.math }}{{- partial "helper/katex.html" . -}}{{ end }}
+
 {{ with .Site.Params.favicon }}
     <link rel="shortcut icon" href="{{ . }}" />
 {{ end }}
 
 {{- template "_internal/google_analytics.html" . -}}
 {{- partial "head/custom.html" . -}}
+

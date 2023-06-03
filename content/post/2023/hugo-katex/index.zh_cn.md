@@ -24,10 +24,10 @@ $$f(a) = \\frac{1}{2\\pi i} \\oint\\frac{f(z)}{z-a}dz$$
 第一行是 CSS，第二行是 JavaScript 文件。第三行是自动渲染扩展。[Auto-render](https://katex.org/docs/autorender.html) 扩展需要渲染文本中的数学元素。
 
 ```
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
 
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
 ```
 

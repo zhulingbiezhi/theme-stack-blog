@@ -3,7 +3,7 @@ title = "【机器学习】课程讲义10"
 date = "2023-05-10"
 slug = "machine-learning-week10"
 categories = [
-    "机器学习"
+    "机器学习", "吴恩达"
 ]
 math = true
 image = "https://img.ququ123.top/img/image-20230602123210308.png"

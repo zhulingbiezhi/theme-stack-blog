@@ -1,6 +1,6 @@
 +++
 title = "【机器学习】课程讲义3"
-date = "2023-0-03"
+date = "2023-05-03"
 slug = "machine-learning-week3"
 categories = [
     "机器学习"

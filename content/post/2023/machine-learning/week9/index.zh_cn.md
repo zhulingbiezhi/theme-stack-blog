@@ -41,8 +41,8 @@ image = "https://img.ququ123.top/img/image-20230602123210308.png"
 $$
 if \quad p(x)
 \begin{cases}
-< \varepsilon & anomaly \\
-> =\varepsilon & normal
+\< \varepsilon & anomaly \\\
+\> =\varepsilon & normal 
 \end{cases}
 $$
 

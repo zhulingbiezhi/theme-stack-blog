@@ -92,7 +92,7 @@ $$
 $$
   \begin{aligned}
   \ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
-  &=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}
+  &=\sum\_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}
   \end{aligned}
 $$
 
@@ -107,7 +107,7 @@ $$
 $$
 \begin{aligned}
 \ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\
-&=\sum_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})} \\
+&=\sum\_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})} \\
 &=\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\left(e^{-H\left(\boldsymbol{x}\_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=-1\right)\right)\\
 &=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}\_{i}\right)} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=-1\right)\right)\\
 &=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}\_{i}\right)} P\left(f\left(\boldsymbol{x}\_{i}\right)=1 \mid \boldsymbol{x}\_{i}\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} P\left(f\left(\boldsymbol{x}\_{i}\right)=-1 \mid \boldsymbol{x}\_{i}\right)\right)
@@ -302,7 +302,7 @@ $$
 ## 8.23
 
 $$
-H(\boldsymbol{x})=\sum_{i=1}^{T} w_{i} h_{i}(\boldsymbol{x})
+H(\boldsymbol{x})=\sum_{i=1}^{T} w\_{i} h_{i}(\boldsymbol{x})
 $$
 
 [解析]：对基分类器的结果进行加权平均。
@@ -311,7 +311,7 @@ $$
 
 $$
 H(\boldsymbol{x})=\left\{\begin{array}{ll}
-{c_{j},} & {\text { if } \sum_{i=1}^{T} h_{i}^{j}(\boldsymbol{x})>0.5 \sum_{k=1}^{N} \sum_{i=1}^{T} h_{i}^{k}(\boldsymbol{x})} \\
+{c_{j},} & {\text { if } \sum_{i=1}^{T} h_{i}^{j}(\boldsymbol{x})>0.5 \sum\_{k=1}^{N} \sum_{i=1}^{T} h_{i}^{k}(\boldsymbol{x})} \\
 {\text { reject, }} & {\text { otherwise. }}
 \end{array}\right.
 $$
@@ -346,8 +346,8 @@ $$
 
 $$
 \begin{aligned}
-\bar{A}(h | \boldsymbol{x}) &=\sum_{i=1}^{T} w_{i} A\left(h_{i} | \boldsymbol{x}\right) \\
-&=\sum_{i=1}^{T} w_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}
+\bar{A}(h | \boldsymbol{x}) &=\sum_{i=1}^{T} w\_{i} A\left(h_{i} | \boldsymbol{x}\right) \\
+&=\sum_{i=1}^{T} w\_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}
 \end{aligned}
 $$
 
@@ -372,38 +372,38 @@ $$
 ## 8.31
 
 $$
-\bar{A}(h | \boldsymbol{x}) =\sum_{i=1}^{T} w_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})
+\bar{A}(h | \boldsymbol{x}) =\sum_{i=1}^{T} w\_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})
 $$
 
 [推导]：由(8.28)知
 $$
 \begin{aligned}
-\bar{A}(h | \boldsymbol{x})&=\sum_{i=1}^{T} w_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}\\
-&=\sum_{i=1}^{T} w_{i}(h_i(\boldsymbol{x})^2-2h_i(\boldsymbol{x})H(\boldsymbol{x})+H(\boldsymbol{x})^2)\\
-&=\sum_{i=1}^{T} w_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^2
+\bar{A}(h | \boldsymbol{x})&=\sum_{i=1}^{T} w\_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}\\
+&=\sum_{i=1}^{T} w\_{i}(h_i(\boldsymbol{x})^2-2h_i(\boldsymbol{x})H(\boldsymbol{x})+H(\boldsymbol{x})^2)\\
+&=\sum_{i=1}^{T} w\_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^2
 \end{aligned}
 $$
 
 又因为
 $$
 \begin{aligned}
-& \sum_{i=1}^{T} w_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})\\
-&=\sum_{i=1}^{T} w_{i}\left(f(\boldsymbol{x})-h_{i}(\boldsymbol{x})\right)^{2}-(f(\boldsymbol{x})-H(\boldsymbol{x}))^{2}\\
-&=\sum_{i=1}^{T} w_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^{2}
+& \sum_{i=1}^{T} w\_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})\\
+&=\sum_{i=1}^{T} w\_{i}\left(f(\boldsymbol{x})-h_{i}(\boldsymbol{x})\right)^{2}-(f(\boldsymbol{x})-H(\boldsymbol{x}))^{2}\\
+&=\sum_{i=1}^{T} w\_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^{2}
 \end{aligned}
 $$
 所以
 $$
-\bar{A}(h | \boldsymbol{x}) =\sum_{i=1}^{T} w_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})
+\bar{A}(h | \boldsymbol{x}) =\sum_{i=1}^{T} w\_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})
 $$
 
 ## 8.32
 
 $$
-\sum_{i=1}^{T} w_{i} \int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}=\sum_{i=1}^{T} w_{i} \int E\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}-\int E(H | \boldsymbol{x}) p(\boldsymbol{x}) d \boldsymbol{x}
+\sum_{i=1}^{T} w\_{i} \int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}=\sum_{i=1}^{T} w\_{i} \int E\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}-\int E(H | \boldsymbol{x}) p(\boldsymbol{x}) d \boldsymbol{x}
 $$
 
-[解析]：$\int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}$表示个体学习器在全样本上的“分歧”，$\sum_{i=1}^{T} w_{i} \int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}$表示集成在全样本上的“分歧”，然后根据式(8.31)拆成误差的形式。
+[解析]：$\int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}$表示个体学习器在全样本上的“分歧”，$\sum_{i=1}^{T} w\_{i} \int A\left(h_{i} | \boldsymbol{x}\right) p(\boldsymbol{x}) d \boldsymbol{x}$表示集成在全样本上的“分歧”，然后根据式(8.31)拆成误差的形式。
 
 ## 8.33
 

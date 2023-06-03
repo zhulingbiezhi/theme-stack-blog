@@ -11,7 +11,7 @@ image = "https://img.ququ123.top/img/nangua.jpg"
 ## 11.1
 
 $$
-\operatorname{Gain}(A)=\operatorname{Ent}(D)-\sum_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \operatorname{Ent}\left(D^{v}\right)
+\operatorname{Gain}(A)=\operatorname{Ent}(D)-\sum\_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \operatorname{Ent}\left(D^{v}\right)
 $$
 
 [解析]：此为信息增益的定义式，对数据集$D$和属性子集$A$，假设根据$A$的取值将$D$分为了$V$个子集$\{D^1,D^2,\dots,D^V\}$，那么信息增益的定义为划分之前数据集$D$的信息熵和划分之后每个子数据集$D^v$的信息熵的差。熵用来衡量一个系统的混乱程度，因此划分前和划分后熵的差越大，表示划分越有效，划分带来的”信息增益“越大。
@@ -19,7 +19,7 @@ $$
 ## 11.2
 
 $$
-\operatorname{Ent}(D)=-\sum_{i=1}^{| \mathcal{Y |}} p_{k} \log \_{2} p_{k}
+\operatorname{Ent}(D)=-\sum\_{i=1}^{| \mathcal{Y |}} p_{k} \log \_{2} p_{k}
 $$
 
 [解析]：此为信息熵的定义式，其中$p_k, k=1, 2, \dots \vert\mathcal{Y}\vert$表示$D$中第$i$类样本所占的比例。可以看出，样本越纯，即$p_k\rightarrow 0$或$p_k\rightarrow 1$时，$\mathrm{Ent}(D)$越小，其最小值为0。
@@ -52,8 +52,8 @@ $$
 
 $$
 \begin{aligned}
-\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}_{k}\right), \boldsymbol{x}-\boldsymbol{x}_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{k}\right\|^{2} \\
-&=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
+\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\
+&=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}\_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
 \end{aligned}
 $$
 
@@ -76,14 +76,14 @@ $$
 由[泰勒公式](https://zh.wikipedia.org/wiki/泰勒公式)，$x_k$附近的$f(x)$通过二阶泰勒展开式可近似为
 $$
 \begin{aligned}
-\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}_{k}\right), \boldsymbol{x}-\boldsymbol{x}_{k}\right\rangle+\frac{\nabla^2f(x_k)}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{k}\right\|^{2} \\
+\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{\nabla^2f(x_k)}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\
 &\leqslant
- f\left(\boldsymbol{x}_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}_{k}\right), \boldsymbol{x}-\boldsymbol{x}_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}_{k}\right\|^{2} \\
-&= f\left(\boldsymbol{x}_{k}\right)+\nabla f\left(\boldsymbol{x}_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{L}{2}\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)\\
-&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)\right)\\
-&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{1}{L^2}\nabla f(x_k)^\top\nabla f(x_k)\right) -\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
-&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)^{\top}\left(\left(\boldsymbol{x}-\boldsymbol{x}_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)-\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
-&=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
+ f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\
+&= f\left(\boldsymbol{x}\_{k}\right)+\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{L}{2}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\\
+&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\right)\\
+&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L^2}\nabla f(x_k)^\top\nabla f(x_k)\right) -\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
+&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)^{\top}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)-\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
+&=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}\_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
 \end{aligned}
 $$
 其中$\mathrm{const}=f(x_k)-\frac{1}{2 L} \nabla f\left(x_{k}\right)^{\top} \nabla f\left(x_{k}\right)$
@@ -93,14 +93,14 @@ $$
 ## 11.11
 
 $$
-\boldsymbol{x}_{k+1}=\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)
+\boldsymbol{x}\_{k+1}=\boldsymbol{x}\_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)
 $$
-[解析]：这个很容易理解，因为2范数的最小值为0，当$\boldsymbol{x}_{k+1}=\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)$时，$\hat{f}(x_{k+1})\leqslant\hat{f}(x_k)$恒成立，同理$\hat{f}(x_{k+2})\leqslant\hat{f}(x_{k+1}), \cdots$，因此反复迭代能够使$\hat{f}(x)$的值不断下降。
+[解析]：这个很容易理解，因为2范数的最小值为0，当$\boldsymbol{x}\_{k+1}=\boldsymbol{x}\_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)$时，$\hat{f}(x_{k+1})\leqslant\hat{f}(x_k)$恒成立，同理$\hat{f}(x_{k+2})\leqslant\hat{f}(x_{k+1}), \cdots$，因此反复迭代能够使$\hat{f}(x)$的值不断下降。
 
 ## 11.12
 
 $$
-\boldsymbol{x}_{k+1}=\underset{\boldsymbol{x}}{\arg \min } \frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}_{k}\right)\right)\right\|_{2}^{2}+\lambda\|\boldsymbol{x}\|_{1}
+\boldsymbol{x}\_{k+1}=\underset{\boldsymbol{x}}{\arg \min } \frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}\_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)\right\|_{2}^{2}+\lambda\|\boldsymbol{x}\|_{1}
 $$
 
 [解析]：式11.11是用来优化$\hat{f}(x)$的，而对于式11.8，优化的函数为$f(x)+\lambda\left\Vert x\right\Vert_1$，由泰勒展开公式，优化的目标可近似为$\hat{f}(x)+\lambda\Vert x\Vert_1$，根据式11.10可知，$x$的更新由式11.12决定。
@@ -108,10 +108,10 @@ $$
 ## 11.13
 
 $$
-\boldsymbol{x}_{k+1}=\underset{\boldsymbol{x}}{\arg \min } \frac{L}{2}\|\boldsymbol{x}-\boldsymbol{z}\|_{2}^{2}+\lambda\|\boldsymbol{x}\|
+\boldsymbol{x}\_{k+1}=\underset{\boldsymbol{x}}{\arg \min } \frac{L}{2}\|\boldsymbol{x}-\boldsymbol{z}\|_{2}^{2}+\lambda\|\boldsymbol{x}\|
 $$
 
-[解析]：这里将式11.12的优化步骤拆分成了两步，首先令$z=x_{k}-\frac{1}{L} \nabla f\left(x_{k}\right)$以计算$z$，然后再求解式11.13，得到的结果是一致的。
+[解析]：这里将式11.12的优化步骤拆分成了两步，首先令$z=x\_{k}-\frac{1}{L} \nabla f\left(x_{k}\right)$以计算$z$，然后再求解式11.13，得到的结果是一致的。
 
 ## 11.14
 
@@ -237,8 +237,8 @@ $$
 
 $$
 \begin{aligned}
-\min _{\mathbf{B}}\|\mathbf{X}-\mathbf{B} \mathbf{A}\|_{F}^{2} &=\min _{\boldsymbol{b}_{i}}\left\|\mathbf{X}-\sum_{j=1}^{k} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right\|_{F}^{2} \\
-&=\min _{\boldsymbol{b}_{i}}\left\|\left(\mathbf{X}-\sum_{j \neq i} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right)-\boldsymbol{b}_{i} \boldsymbol{\alpha}^{i}\right\| _{F}^{2} \\
+\min _{\mathbf{B}}\|\mathbf{X}-\mathbf{B} \mathbf{A}\|_{F}^{2} &=\min _{\boldsymbol{b}_{i}}\left\|\mathbf{X}-\sum\_{j=1}^{k} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right\|_{F}^{2} \\
+&=\min _{\boldsymbol{b}_{i}}\left\|\left(\mathbf{X}-\sum\_{j \neq i} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right)-\boldsymbol{b}_{i} \boldsymbol{\alpha}^{i}\right\| _{F}^{2} \\
 &=\min _{\boldsymbol{b}_{i}}\left\|\mathbf{E}_{i}-\boldsymbol{b}_{i} \boldsymbol{\alpha}^{i}\right\|_{F}^{2}
 \end{aligned}
 $$

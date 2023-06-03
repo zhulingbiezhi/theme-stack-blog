@@ -22,20 +22,20 @@ $$\sum_{i=1}^{m-1}\left[\frac{1}{2}\cdot(x_{i+1} - x_i)\cdot(y_i + y_{i+1})\righ
 表示的便是对所有红色线段和蓝色线段与$x$轴围成的面积进行求和，此即为$\text{AUC}$
 
 ## 2.21
-$$\ell_{rank}=\frac{1}{m^+m^-}\sum_{\boldsymbol{x}^+ \in D^+}\sum_{\boldsymbol{x}^- \in D^-}\left(\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right)$$
+$$\ell_{rank}=\frac{1}{m^+m^-}\sum\_{\boldsymbol{x}^+ \in D^+}\sum\_{\boldsymbol{x}^- \in D^-}\left(\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right)$$
 [解析]：按照我们上述对公式(2.20)的解析思路，$\ell_{rank}$可以看作是所有绿色线段和蓝色线段与$y$轴围成的面积之和，但是公式(2.21)很难一眼看出其面积的具体计算方式，因此我们需要将公式(2.21)进行恒等变形
 $$\begin{aligned}
-\ell_{rank}&=\frac{1}{m^+m^-}\sum_{\boldsymbol{x}^+ \in D^+}\sum_{\boldsymbol{x}^- \in D^-}\left(\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right) \\
-&=\frac{1}{m^+m^-}\sum_{\boldsymbol{x}^+ \in D^+}\left[\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\cdot\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
-&=\sum_{\boldsymbol{x}^+ \in D^+}\left[\frac{1}{m^+}\cdot\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\cdot\frac{1}{m^+}\cdot\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
-&=\sum_{\boldsymbol{x}^+ \in D^+}\frac{1}{2}\cdot\frac{1}{m^+}\cdot\left[\frac{2}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
+\ell_{rank}&=\frac{1}{m^+m^-}\sum\_{\boldsymbol{x}^+ \in D^+}\sum\_{\boldsymbol{x}^- \in D^-}\left(\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right) \\
+&=\frac{1}{m^+m^-}\sum\_{\boldsymbol{x}^+ \in D^+}\left[\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\cdot\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
+&=\sum\_{\boldsymbol{x}^+ \in D^+}\left[\frac{1}{m^+}\cdot\frac{1}{m^-}\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{2}\cdot\frac{1}{m^+}\cdot\frac{1}{m^-}\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
+&=\sum\_{\boldsymbol{x}^+ \in D^+}\frac{1}{2}\cdot\frac{1}{m^+}\cdot\left[\frac{2}{m^-}\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{m^-}\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right] \\
 \end{aligned}$$
-根据公式(2.20)中给出的$\text{ROC}$曲线图可知，在变动分类阈值的过程当中，如果有新增真正例，那么相应地就会增加一条绿色线段或蓝色线段，所以上式中的$\sum\limits_{\boldsymbol{x}^+ \in D^+}$可以看作是在遍历所有绿色和蓝色线段，那么相应地$\sum\limits_{\boldsymbol{x}^+ \in D^+}$后面的那一项便是在求绿色线段或者蓝色线段与$y$轴围成的面积，也即
-$$\frac{1}{2}\cdot\frac{1}{m^+}\cdot\left[\frac{2}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{m^-}\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right]$$
+根据公式(2.20)中给出的$\text{ROC}$曲线图可知，在变动分类阈值的过程当中，如果有新增真正例，那么相应地就会增加一条绿色线段或蓝色线段，所以上式中的$\sum\limits\_{\boldsymbol{x}^+ \in D^+}$可以看作是在遍历所有绿色和蓝色线段，那么相应地$\sum\limits\_{\boldsymbol{x}^+ \in D^+}$后面的那一项便是在求绿色线段或者蓝色线段与$y$轴围成的面积，也即
+$$\frac{1}{2}\cdot\frac{1}{m^+}\cdot\left[\frac{2}{m^-}\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\frac{1}{m^-}\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right]$$
 同公式(2.20)中的求解思路一样，不论是绿色线段还是蓝色线段，其与$y$轴围成的图形面积都可以用梯形公式来进行计算，所以上式表示的依旧是一个梯形的面积求解公式。其中$\frac{1}{m^+}$即为梯形的“高”，中括号中的那一项便是“上底+下底”，下面我们来分别推导一下“上底”（较短的那个底）和“下底”。由于在绘制$\text{ROC}$曲线的过程中，每新增一个假正例时$x$坐标也就新增一个单位，所以对于“上底”，也就是绿色或者蓝色线段的下端点到$y$轴的距离，它就等于$\frac{1}{m^-}$乘以预测值比$\boldsymbol{x^+}$大的假正例的个数，也即
-$$\frac{1}{m^-}\sum\limits_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)$$
+$$\frac{1}{m^-}\sum\limits\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)$$
 而对于“下底”，它就等于$\frac{1}{m^-}$乘以预测值大于等于$\boldsymbol{x^+}$的假正例的个数，也即
-$$\frac{1}{m^-}\left(\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\sum_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right)$$
+$$\frac{1}{m^-}\left(\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)<f(\boldsymbol{x}^-)\right)+\sum\_{\boldsymbol{x}^- \in D^-}\mathbb{I}\left(f(\boldsymbol{x}^+)=f(\boldsymbol{x}^-)\right)\right)$$
 
 ## 2.27
 
@@ -111,7 +111,7 @@ $$\varphi:\text{当}X\leq C\text{时接受}H_0,\text{否则就拒绝}H_0$$
 $$\begin{aligned}
 \beta_{\varphi}(p)&=P(X>C)\\
 &=1-P(X\leq C) \\
-&=1-\sum_{i=0}^{C}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p^{i} (1-p)^{m-i} \\
+&=1-\sum\_{i=0}^{C}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p^{i} (1-p)^{m-i} \\
 &=\sum_{i=C+1}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) p^{i} (1-p)^{m-i} \\
 \end{aligned}$$
 由于“$p$越小，$X$取到较小值的概率越大”可以等价表示为：$P(X\leq C)$是关于$p$的减函数（更为严格的数学证明参见参考文献[1]中第二章习题7），所以$\beta_{\varphi}(p)=P(X>C)=1-P(X\leq C)$是关于$p$的增函数，那么当$p\leq p_0$时，$\beta_{\varphi}(p_0)$即为$\beta_{\varphi}(p)$的上确界。又因为，根据参考文献[1]中5.1.3的定义1.2可知，检验水平$\alpha$默认取最小可能的水平，所以在给定检验水平$\alpha$时，可以通过如下方程解得满足检验水平$\alpha$的整数$C$：

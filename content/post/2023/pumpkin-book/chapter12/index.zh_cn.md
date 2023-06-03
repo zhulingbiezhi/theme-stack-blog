@@ -24,7 +24,7 @@ $$
 \widehat{E}(h ; D)=\frac{1}{m} \sum\_{i=1}^{m} \mathbb{I}\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right)
 $$
 
-[解析]：该式为经验误差的定义式，所谓经验误差，是指观测集$D$中的样本$x_i, i=1,2,\cdots,m$的预测值$h(\boldsymbol{x}_i)$和真实值$y_i$的期望误差。
+[解析]：该式为经验误差的定义式，所谓经验误差，是指观测集$D$中的样本$x_i, i=1,2,\cdots,m$的预测值$h(\boldsymbol{x}\_i)$和真实值$y_i$的期望误差。
 
 
 
@@ -117,12 +117,12 @@ $$
 ## 12.11
 
 $$
-\begin{aligned} P\left(\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)\right) &=(1-P(h(\boldsymbol{x}) \neq y))^{m} \\ &<(1-\epsilon)^{m} \end{aligned}
+\begin{aligned} P\left(\left(h\left(\boldsymbol{x}\_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}\_{m}\right)=y_{m}\right)\right) &=(1-P(h(\boldsymbol{x}) \neq y))^{m} \\ &<(1-\epsilon)^{m} \end{aligned}
 $$
 
 
 
-[解析]：先解释什么是$h$与$D$“表现一致”，12.2节开头阐述了这样的概念，如果$h$能将$D$中所有样本按与真实标记一致的方式完全分开，我们称问题对学习算法是一致的。即$\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)$为True。因为每个事件是独立的，所以上式可以写成$P\left(\left(h\left(\boldsymbol{x}_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}_{m}\right)=y_{m}\right)\right)=\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}\_{i}\right)=y_{i}\right)$。根据对立事件的定义有：$\prod_{i=1}^{m} P\left(h\left(\boldsymbol{x}\_{i}\right)=y_{i}\right)=\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right)\right)$，又根据公式(12.10)，有$$\prod_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right)\right)<\prod_{i=1}^{m}(1-\epsilon)=(1-\epsilon)^{m}$$
+[解析]：先解释什么是$h$与$D$“表现一致”，12.2节开头阐述了这样的概念，如果$h$能将$D$中所有样本按与真实标记一致的方式完全分开，我们称问题对学习算法是一致的。即$\left(h\left(\boldsymbol{x}\_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}\_{m}\right)=y_{m}\right)$为True。因为每个事件是独立的，所以上式可以写成$P\left(\left(h\left(\boldsymbol{x}\_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}\_{m}\right)=y_{m}\right)\right)=\prod\_{i=1}^{m} P\left(h\left(\boldsymbol{x}\_{i}\right)=y_{i}\right)$。根据对立事件的定义有：$\prod\_{i=1}^{m} P\left(h\left(\boldsymbol{x}\_{i}\right)=y_{i}\right)=\prod\_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right)\right)$，又根据公式(12.10)，有$$\prod\_{i=1}^{m}\left(1-P\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right)\right)<\prod\_{i=1}^{m}(1-\epsilon)=(1-\epsilon)^{m}$$
 
 
 
@@ -288,7 +288,7 @@ $$
 ## 12.21
 
 $$
-\Pi_{\mathcal{H}}(m)=\max _{\left\{\boldsymbol{x}_{1}, \ldots, \boldsymbol{x}_{m}\right\} \subseteq \mathcal{X}}\left|\left\{\left(h\left(\boldsymbol{x}_{1}\right), \ldots, h\left(\boldsymbol{x}_{m}\right)\right) | h \in \mathcal{H}\right\}\right|
+\Pi_{\mathcal{H}}(m)=\max _{\left\{\boldsymbol{x}\_{1}, \ldots, \boldsymbol{x}\_{m}\right\} \subseteq \mathcal{X}}\left|\left\{\left(h\left(\boldsymbol{x}\_{1}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\}\right|
 $$
 
 [解析]：这个是增长函数的定义式。增长函数$\Pi_{\mathcal{H}}(m)$表示假设空间$\mathcal{H}$对m个样本所能赋予标签的最大可能的结果数。比如对于两个样本的二分类问题，一共有4中可能的标签组合$[[0, 0], [0, 1], [1, 0], [1, 1]]$，如果假设空间$\mathcal{H}_1$能赋予这两个样本两种标签组合$[[0, 0], [1, 1]]$，则$\Pi_{\mathcal{H}_1}(2)=2$。显然，$\mathcal{H}$对样本所能赋予标签的可能结果数越多，$\mathcal{H}$的表示能力就越强。增长函数可以用来反映假设空间$\mathcal{H}$的复杂度。
@@ -324,9 +324,9 @@ $$
 $$
 [解析]：首先解释下数学归纳法的起始条件"当$m=1, d=0$或$d=1$时，定理成立"，当$m=1,d=0$时，由VC维的定义(式12.23) $\mathrm{VC}(\mathcal{H})=\max \left\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\}=0$ 可知$\Pi_{\mathcal{H}}(1)<2$，否则$d$可以取到1，又因为$\Pi_{\mathcal{H}}(m)$为整数，所以$\Pi_{\mathcal{H}}(1)\in[0, 1]$，式12.24右边为$\sum_{i=0}^{0}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=1$，因此不等式成立。当$m=1,d=1$时，因为一个样本最多只能有两个类别，所以$\Pi_\mathcal{H}(1)=2$，不等式右边为$\sum_{i=0}^{1}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=2$，因此不等式成立。
 
-再介绍归纳过程，这里采样的归纳方法是假设式12.24对$(m-1, d-1)$和$(m-1, d)$成立，推导出其对$(m,d)$也成立。证明过程中引入观测集$D=\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m}\right\}$ 和观测集$D^\prime=\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m-1}\right\}$，其中$D$比$D^\prime$多一个样本$x_m$，它们对应的假设空间可以表示为：
+再介绍归纳过程，这里采样的归纳方法是假设式12.24对$(m-1, d-1)$和$(m-1, d)$成立，推导出其对$(m,d)$也成立。证明过程中引入观测集$D=\left\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m}\right\}$ 和观测集$D^\prime=\left\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m-1}\right\}$，其中$D$比$D^\prime$多一个样本$x_m$，它们对应的假设空间可以表示为：
 $$
-\begin{array}{l}{\mathcal{H}_{| D}=\left\{\left(h\left(\boldsymbol{x}_{1}\right), h\left(\boldsymbol{x}_{2}\right), \ldots, h\left(\boldsymbol{x}_{m}\right)\right) | h \in \mathcal{H}\right\}} \\ {\mathcal{H}_{| D^{\prime}}=\left\{\left(h\left(\boldsymbol{x}_{1}\right), h\left(\boldsymbol{x}_{2}\right), \ldots, h\left(\boldsymbol{x}_{m-1}\right)\right) | h \in \mathcal{H}\right\}}\end{array}
+\begin{array}{l}{\mathcal{H}_{| D}=\left\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\}} \\ {\mathcal{H}_{| D^{\prime}}=\left\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m-1}\right)\right) | h \in \mathcal{H}\right\}}\end{array}
 $$
 如果假设$h\in\mathcal{H}$对$x_m$的分类结果为$+1$，或为$-1$，那么任何出现在$\mathcal{H}_{\vert D^\prime}$中的串都会在$\mathcal{H}_{\vert D}$中出现一次或者两次。这里举个例子就很容易理解了，假设$m=3$：
 $$
@@ -347,7 +347,7 @@ $$
 $$
 由记号$\mathcal{H}_{\vert D^\prime}$的定义可知，$\vert\mathcal{H}_{\vert D^\prime}\vert \geqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，又由于$\vert\mathcal{H}_{\vert D^\prime}\vert$和$\vert\mathcal{H}_{D^\prime\vert D}\vert$均为整数，因此$\vert\mathcal{H}_{D^\prime\vert D}\vert \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，由于样本集$D$的大小为$m$，根据增长函数的概念，有$\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor\leqslant \Pi_{\mathcal{H}}(m-1)$。
 
-假设$Q$表示能被$\mathcal{H}_{D^\prime\vert D}$打散的集合，因为根据$\mathcal{H}_{D^\prime\vert D}$的定义，$H_{D}$必对元素$x_m$给定了不一致的判定，因此$Q \cup\left\{\boldsymbol{x}_{m}\right\}$必能被$\mathcal{H}_{\vert D}$打散，由前提假设$\mathcal{H}$的VC维为$d$，因此$\mathcal{H}_{D^\prime\vert D}$的VC维最大为$d-1$，综上有
+假设$Q$表示能被$\mathcal{H}_{D^\prime\vert D}$打散的集合，因为根据$\mathcal{H}_{D^\prime\vert D}$的定义，$H_{D}$必对元素$x_m$给定了不一致的判定，因此$Q \cup\left\{\boldsymbol{x}\_{m}\right\}$必能被$\mathcal{H}_{\vert D}$打散，由前提假设$\mathcal{H}$的VC维为$d$，因此$\mathcal{H}_{D^\prime\vert D}$的VC维最大为$d-1$，综上有
 $$
 \left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
 $$
@@ -587,7 +587,7 @@ $$
 $$
 \sup _{h \in \mathcal{H}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i} h\left(\boldsymbol{x}\_{i}\right)
 $$
-[解析]：上确界$\sup$这个概念前面已经解释过，见式12.7的解析。由于$\sigma_i$是随机变量，因此这个式子可以理解为求解和随机生成的标签(即$\sigma$)最契合的假设(当$\sigma_i$和$h(\boldsymbol{x}_i)$完全一致时，他们的内积最大)。
+[解析]：上确界$\sup$这个概念前面已经解释过，见式12.7的解析。由于$\sigma_i$是随机变量，因此这个式子可以理解为求解和随机生成的标签(即$\sigma$)最契合的假设(当$\sigma_i$和$h(\boldsymbol{x}\_i)$完全一致时，他们的内积最大)。
 
 
 

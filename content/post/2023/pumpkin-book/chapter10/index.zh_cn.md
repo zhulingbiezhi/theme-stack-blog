@@ -11,10 +11,10 @@ image = "https://img.ququ123.top/img/nangua.jpg"
 ## 10.1
 
 $$
-P(e r r)=1-\sum_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z})
+P(e r r)=1-\sum\_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z})
 $$
 
-[解析]：$P(c | \boldsymbol{x}) P(c | \boldsymbol{z})$表示$x$和$z$同属类$c$的概率，对所有可能的类别$c\in\mathcal{Y}$求和，则得到$x$和$z$同属相同类别的概率，因此$1-\sum_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z})$表示$x$和$z$分属不同类别的概率。
+[解析]：$P(c | \boldsymbol{x}) P(c | \boldsymbol{z})$表示$x$和$z$同属类$c$的概率，对所有可能的类别$c\in\mathcal{Y}$求和，则得到$x$和$z$同属相同类别的概率，因此$1-\sum\_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z})$表示$x$和$z$分属不同类别的概率。
 
 
 
@@ -22,8 +22,8 @@ $$
 
 $$
 \begin{aligned}
-P(e r r) &=1-\sum_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z}) \\
-& \simeq 1-\sum_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x}) \\
+P(e r r) &=1-\sum\_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z}) \\
+& \simeq 1-\sum\_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x}) \\
 & \leqslant 1-P^{2}\left(c^{*} | \boldsymbol{x}\right) \\
 &=\left(1+P\left(c^{*} | \boldsymbol{x}\right)\right)\left(1-P\left(c^{*} | \boldsymbol{x}\right)\right) \\
 & \leqslant 2 \times\left(1-P\left(c^{*} | \boldsymbol{x}\right)\right)
@@ -204,11 +204,11 @@ $$
 [推导]：由式（10.15）可知，主成分分析的优化目标为
 $$
 \begin{aligned}
-&\min\limits_{\mathbf W} \quad-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)\\
+&\min\limits\_{\mathbf W} \quad-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)\\
 &s.t. \quad\mathbf W^{\mathrm{T}} \mathbf W=\mathbf I
 \end{aligned}
 $$
-其中，$\mathbf{X}=\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \ldots, \boldsymbol{x}_{m}\right) \in \mathbb{R}^{d \times m},\mathbf{W}=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d^{\prime}}\right) \in \mathbb{R}^{d \times d^{\prime}}$，$\mathbf{I} \in \mathbb{R}^{d^{\prime} \times d^{\prime}}$为单位矩阵。对于带矩阵约束的优化问题，根据<a href="#ref1">[1]</a>中讲述的方法可得此优化目标的拉格朗日函数为
+其中，$\mathbf{X}=\left(\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m}\right) \in \mathbb{R}^{d \times m},\mathbf{W}=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d^{\prime}}\right) \in \mathbb{R}^{d \times d^{\prime}}$，$\mathbf{I} \in \mathbb{R}^{d^{\prime} \times d^{\prime}}$为单位矩阵。对于带矩阵约束的优化问题，根据<a href="#ref1">[1]</a>中讲述的方法可得此优化目标的拉格朗日函数为
 $$
 \begin{aligned}
 L(\mathbf W,\Theta)&=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\langle \Theta,\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I\rangle \\
@@ -250,11 +250,11 @@ $$
 显然，此式为矩阵特征值和特征向量的定义式，其中$\lambda_i,\boldsymbol w_i$分别表示矩阵$\mathbf X\mathbf X^{\mathrm{T}}$的特征值和单位特征向量。由于以上是仅考虑约束$\boldsymbol{w}_i^{\mathrm{T}}\boldsymbol{w}_i=1$所求得的结果，而$\boldsymbol{w}_i$还需满足约束$\boldsymbol{w}_{i}^{\mathrm{T}}\boldsymbol{w}_{j}=0(i\neq j)$。观察$\mathbf X\mathbf X^{\mathrm{T}}$的定义可知，$\mathbf X\mathbf X^{\mathrm{T}}$是一个实对称矩阵，实对称矩阵的不同特征值所对应的特征向量之间相互正交，同一特征值的不同特征向量可以通过施密特正交化使其变得正交，所以通过上式求得的$\boldsymbol w_i$可以同时满足约束$\boldsymbol{w}_i^{\mathrm{T}}\boldsymbol{w}_i=1,\boldsymbol{w}_{i}^{\mathrm{T}}\boldsymbol{w}_{j}=0(i\neq j)$。根据拉格朗日乘子法的原理可知，此时求得的结果仅是最优解的必要条件，而且$\mathbf X\mathbf X^{\mathrm{T}}$有$d$个相互正交的单位特征向量，所以还需要从这$d$个特征向量里找出$d^{\prime}$个能使得目标函数达到最优值的特征向量作为最优解。将$\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i=\lambda _i\boldsymbol w_i$代入目标函数可得
 $$
 \begin{aligned}
-\min\limits_{\mathbf W}-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)&=\max\limits_{\mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W) \\
-&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i \\
-&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\cdot\lambda _i\boldsymbol w_i \\
-&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i\boldsymbol w_i^{\mathrm{T}}\boldsymbol w_i \\
-&=\max\limits_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i \\
+\min\limits\_{\mathbf W}-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)&=\max\limits\_{\mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W) \\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i \\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\cdot\lambda _i\boldsymbol w_i \\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i\boldsymbol w_i^{\mathrm{T}}\boldsymbol w_i \\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i \\
 \end{aligned}
 $$
 
@@ -293,11 +293,11 @@ $$
 $$
 
 
-此式即为公式(10.24)，其中矩阵$\mathbf{K}$的第i行第j列的元素$(\mathbf{K})_{ij}=\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_j=\phi(\boldsymbol x_i)^{\mathrm{T}}\phi(\boldsymbol x_j)=\kappa\left(\boldsymbol{x}\_{i}, \boldsymbol{x}_{j}\right)$
+此式即为公式(10.24)，其中矩阵$\mathbf{K}$的第i行第j列的元素$(\mathbf{K})_{ij}=\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_j=\phi(\boldsymbol x_i)^{\mathrm{T}}\phi(\boldsymbol x_j)=\kappa\left(\boldsymbol{x}\_{i}, \boldsymbol{x}\_{j}\right)$
 
 ## 10.28
 $$
-w_{i j}=\frac{\sum\limits_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits_{l, s \in Q_{i}} C_{l s}^{-1}}
+w\_{i j}=\frac{\sum\limits\_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits\_{l, s \in Q_{i}} C_{l s}^{-1}}
 $$
 
 
@@ -305,8 +305,8 @@ $$
 [推导]：由书中上下文可知，式(10.28)是如下优化问题的解。
 $$
 \begin{aligned} 
-\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2} \\ 
-\text { s.t. } & \sum_{j \in Q_{i}} w_{i j}=1 
+\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2} \\ 
+\text { s.t. } & \sum_{j \in Q_{i}} w\_{i j}=1 
 \end{aligned}
 $$
 
@@ -314,17 +314,17 @@ $$
 若令$\boldsymbol{x}\_{i}\in \mathbb{R}^{d\times 1},Q_i=\{q_i^1,q_i^2,...,q_i^n\}$，则上述优化问题的目标函数可以进行如下恒等变形
 $$
 \begin{aligned} 
-\sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2}&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}\_{i}-\sum_{j \in Q_{i}} w_{i j} \boldsymbol{x}_{j}\right\|_{2}^{2} \\ 
-&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w_{i j}(\boldsymbol{x}\_{i}-\boldsymbol{x}_{j}) \right\|_{2}^{2} \\ 
+\sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2}&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2} \\ 
+&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j}(\boldsymbol{x}\_{i}-\boldsymbol{x}\_{j}) \right\|_{2}^{2} \\ 
 &=\sum\_{i=1}^{m}\left\|\mathbf{X}_i\boldsymbol{w_i} \right\|_{2}^{2} \\
 &=\sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
 \end{aligned}
 $$
 
 
-其中$\boldsymbol{w_i}=(w_{iq_i^1},w_{iq_i^2},...,w_{iq_i^n})\in \mathbb{R}^{n\times 1}$，$\mathbf{X}_i=\left( \boldsymbol{x}\_{i}-\boldsymbol{x}_{q_i^1}, \boldsymbol{x}\_{i}-\boldsymbol{x}_{q_i^2},...,\boldsymbol{x}\_{i}-\boldsymbol{x}_{q_i^n}\right)\in \mathbb{R}^{d\times n}$。同理，约束条件也可以进行如下恒等变形
+其中$\boldsymbol{w_i}=(w\_{iq_i^1},w\_{iq_i^2},...,w\_{iq_i^n})\in \mathbb{R}^{n\times 1}$，$\mathbf{X}_i=\left( \boldsymbol{x}\_{i}-\boldsymbol{x}\_{q_i^1}, \boldsymbol{x}\_{i}-\boldsymbol{x}\_{q_i^2},...,\boldsymbol{x}\_{i}-\boldsymbol{x}\_{q_i^n}\right)\in \mathbb{R}^{d\times n}$。同理，约束条件也可以进行如下恒等变形
 $$
-\sum_{j \in Q_{i}} w_{i j}=\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=1 
+\sum_{j \in Q_{i}} w\_{i j}=\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=1 
 $$
 
 
@@ -380,7 +380,7 @@ $$
 
 若令矩阵$(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}$第$j$行第$k$列的元素为$C_{jk}^{-1}$，则
 $$
-w_{ij}=w_{i q_i^j}=\frac{\sum\limits_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits_{l, s \in Q_{i}} C_{l s}^{-1}}
+w\_{ij}=w\_{i q_i^j}=\frac{\sum\limits\_{k \in Q_{i}} C_{j k}^{-1}}{\sum\limits\_{l, s \in Q_{i}} C_{l s}^{-1}}
 $$
 
 
@@ -389,7 +389,7 @@ $$
 ## 10.31
 $$
 \begin{aligned}
-&\min\limits_{\boldsymbol Z}\operatorname{tr}(\boldsymbol Z \boldsymbol M \boldsymbol Z^T)\\
+&\min\limits\_{\boldsymbol Z}\operatorname{tr}(\boldsymbol Z \boldsymbol M \boldsymbol Z^T)\\
 &s.t. \boldsymbol Z^T\boldsymbol Z=\boldsymbol I. 
 \end{aligned}
 $$
@@ -399,7 +399,7 @@ $$
 [推导]：
 $$
 \begin{aligned}
-\min\limits_{\boldsymbol Z}\sum^m_{i=1}\| \boldsymbol z_i-\sum_{j \in Q_i}w_{ij}\boldsymbol z_j \|^2_2&=\sum^m_{i=1}\|\boldsymbol Z\boldsymbol I_i-\boldsymbol Z\boldsymbol W_i\|^2_2\\
+\min\limits\_{\boldsymbol Z}\sum^m_{i=1}\| \boldsymbol z_i-\sum\_{j \in Q_i}w\_{ij}\boldsymbol z_j \|^2_2&=\sum^m_{i=1}\|\boldsymbol Z\boldsymbol I_i-\boldsymbol Z\boldsymbol W_i\|^2_2\\
 &=\sum^m_{i=1}\|\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\|^2_2\\
 &=\sum^m_{i=1}(\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i))^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\
 &=\sum^m_{i=1}(\boldsymbol I_i-\boldsymbol W_i)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\

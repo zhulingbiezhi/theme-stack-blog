@@ -13,7 +13,7 @@ image = "https://img.ququ123.top/img/nangua.jpg"
 
 $$
 \begin{aligned}
-P\left(x_{1}, y_{1}, \ldots, x_{n}, y_{n}\right)=P\left(y_{1}\right) P\left(x_{1} | y_{1}\right) \prod_{i=2}^{n} P\left(y_{i} | y_{i-1}\right) P\left(x_{i} | y_{i}\right)
+P\left(x_{1}, y_{1}, \ldots, x_{n}, y_{n}\right)=P\left(y_{1}\right) P\left(x_{1} | y_{1}\right) \prod\_{i=2}^{n} P\left(y_{i} | y_{i-1}\right) P\left(x_{i} | y_{i}\right)
 \end{aligned}
 $$
 
@@ -22,7 +22,7 @@ $$
 ## 14.2
 
 $$
-P(\mathbf{x})=\frac{1}{Z} \prod_{Q \in C} \psi_{Q}\left(\mathbf{x}_{Q}\right)
+P(\mathbf{x})=\frac{1}{Z} \prod\_{Q \in C} \psi_{Q}\left(\mathbf{x}_{Q}\right)
 $$
 
 [解析]：因为各个团之间概率分布相互独立，因此它们连乘可以表示最终的概率。
@@ -30,7 +30,7 @@ $$
 ## 14.3
 
 $$
-P(\mathbf{x})=\frac{1}{Z^*} \prod_{Q \in C*} \psi_{Q}\left(\mathbf{x}_{Q}\right)
+P(\mathbf{x})=\frac{1}{Z^*} \prod\_{Q \in C*} \psi_{Q}\left(\mathbf{x}_{Q}\right)
 $$
 
 [解析]：意义同式$14.2$, 区别在于此处的团为极大团。
@@ -150,7 +150,7 @@ $$
 ## 14.19
 
 $$
-m_{i j}\left(x_{j}\right)=\sum_{x_{i}} \psi\left(x_{i}, x_{j}\right) \prod_{k \in n(i) \backslash j} m_{k i}\left(x_{i}\right)
+m_{i j}\left(x_{j}\right)=\sum_{x_{i}} \psi\left(x_{i}, x_{j}\right) \prod\_{k \in n(i) \backslash j} m_{k i}\left(x_{i}\right)
 $$
 
 [解析]：该式表示从节点$i$传递到节点$j$的过程，求和号表示要考虑节点$i$的所有可能取值。连乘号解释见式$14.20$。应当注意这里连乘号的下标不包括节点$j$，节点$i$只需要把自己知道的关于$j$以外的消息告诉节点$j$即可。
@@ -158,7 +158,7 @@ $$
 ## 14.20
 
 $$
-P\left(x_{i}\right) \propto \prod_{k \in n(i)} m_{k i}\left(x_{i}\right)
+P\left(x_{i}\right) \propto \prod\_{k \in n(i)} m_{k i}\left(x_{i}\right)
 $$
 
 [解析]：应当注意这里是正比于而不是等于，因为涉及到概率的规范化。可以这么解释，每个变量可以看作一个有一些邻居的房子，每个邻居根据其自己的见闻告诉你一些事情(消息)，任何一条消息的可信度应当与所有邻居都有相关性，此处这种相关性用乘积来表达。【引用http://helper.ipam.ucla.edu/publications/gss2013/gss2013_11344.pdf】
@@ -246,7 +246,7 @@ $$
 ## 14.29
 
 $$
-p(\mathbf{x} | \Theta)=\prod_{i=1}^{N} \sum_{\mathbf{z}} p\left(x_{i}, \mathbf{z} | \Theta\right)
+p(\mathbf{x} | \Theta)=\prod\_{i=1}^{N} \sum_{\mathbf{z}} p\left(x_{i}, \mathbf{z} | \Theta\right)
 $$
 
 [解析]：连乘号是因为$N$个变量的生成过程相互独立。求和号是因为每个变量的生成过程需要考虑中间隐变量的所有可能性，类似于边际分布的计算方式。
@@ -315,7 +315,7 @@ $$
 ## 14.35
 
 $$
-q(\mathbf{z})=\prod_{i=1}^{M} q_{i}\left(\mathbf{z}_{i}\right)
+q(\mathbf{z})=\prod\_{i=1}^{M} q_{i}\left(\mathbf{z}_{i}\right)
 $$
 
 [解析]：再一次，条件独立的假设。可以看到，当问题复杂是往往简化问题到最简单最容易计算的局面，实际上往往效果不错。
@@ -323,43 +323,43 @@ $$
 ## 14.36
 $$
 \begin{aligned}
-\mathcal{L}(q)&=\int \prod_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}} \\
-&=\int q_{j}\bigg\{\int p(x,z)\prod_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const} \\
+\mathcal{L}(q)&=\int \prod\_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}} \\
+&=\int q_{j}\bigg\{\int p(x,z)\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const} \\
 &=\int q_{j}{\rm ln}\tilde{p}({\rm \mathbf{x},\mathbf{z_{j}}})d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const}
 \end{aligned}
 $$
 [推导]：
 $$
-\mathcal{L}(q)=\int \prod_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}}=\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}-\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}
+\mathcal{L}(q)=\int \prod\_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}}=\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}-\int\prod\_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}
 $$
-公式可以看做两个积分相减，我们先来看左边积分$\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}$的推导。
+公式可以看做两个积分相减，我们先来看左边积分$\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}$的推导。
 $$
 \begin{aligned}
-\int\prod_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} &= \int q_{j}\prod_{i\ne j}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} \\
-&= \int q_{j}\bigg\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}\qquad 
+\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} &= \int q_{j}\prod\_{i\ne j}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} \\
+&= \int q_{j}\bigg\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}\qquad 
 \end{aligned}
 $$
 即先对$\rm\mathbf{z_{j}}$求积分，再对$\rm\mathbf{z_{i}}$求积分，这个就是教材中的$14.36$左边的积分部分。
-我们现在看下右边积分的推导$\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}$的推导。
-在此之前我们看下$\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}$的计算
+我们现在看下右边积分的推导$\int\prod\_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}$的推导。
+在此之前我们看下$\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}$的计算
 $$
 \begin{aligned}
-\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad  \\
-&=\int q_{i^{\prime}}\bigg\{\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{i^{\prime}}}}
+\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad  \\
+&=\int q_{i^{\prime}}\bigg\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{i^{\prime}}}}
 \end{aligned}
 $$
 第一个等式是一个展开项，选取一个变量$q_{i^{\prime}}, i^{\prime}\ne k$，由于
-$\bigg\{\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}$部分与变量$q_{i^{\prime}}$无关，所以可以拿到积分外面。又因为$\int q_{i^{\prime}}d{\rm\mathbf{z_{i^{\prime}}}}=1$，所以
+$\bigg\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}$部分与变量$q_{i^{\prime}}$无关，所以可以拿到积分外面。又因为$\int q_{i^{\prime}}d{\rm\mathbf{z_{i^{\prime}}}}=1$，所以
 $$
 \begin{aligned}
-\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&=\int\prod_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}} \\
+\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&=\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}} \\
 &= \int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad 
 \end{aligned}
 $$
 即所有$k$以外的变量都可以通过上面的方式消除,有了这个结论，我们再来看公式
 $$
 \begin{aligned}
-\int\prod_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}&= \int\prod_{i}q_{i}{\rm ln}q_{j}d{\rm\mathbf{z}} + \sum_{k\ne j}\int\prod_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}} \\
+\int\prod\_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}&= \int\prod\_{i}q_{i}{\rm ln}q_{j}d{\rm\mathbf{z}} + \sum_{k\ne j}\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}} \\
 &= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{k\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad \\
 &= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + {\rm const} \qquad
 \end{aligned}
@@ -378,7 +378,7 @@ $$
 ## 14.38
 
 $$
-\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]=\int \ln p(\mathbf{x}, \mathbf{z}) \prod_{i \neq j} q_{i} \mathrm{d} \mathbf{z}_{i}
+\mathbb{E}_{i \neq j}[\ln p(\mathbf{x}, \mathbf{z})]=\int \ln p(\mathbf{x}, \mathbf{z}) \prod\_{i \neq j} q_{i} \mathrm{d} \mathbf{z}_{i}
 $$
 
 
@@ -425,9 +425,9 @@ $$
 
 $$
 p(\boldsymbol W,\boldsymbol z,\boldsymbol \beta,\boldsymbol \theta | \boldsymbol \alpha,\boldsymbol \eta) =
-\prod_{t=1}^{T}p(\boldsymbol \theta_t | \boldsymbol \alpha)
-\prod_{k=1}^{K}p(\boldsymbol \beta_k | \boldsymbol \eta) 
-(\prod_{n=1}^{N}P(w_{t,n} | z_{t,n}, \boldsymbol \beta_k)P( z_{t,n} | \boldsymbol \theta_t))
+\prod\_{t=1}^{T}p(\boldsymbol \theta_t | \boldsymbol \alpha)
+\prod\_{k=1}^{K}p(\boldsymbol \beta_k | \boldsymbol \eta) 
+(\prod\_{n=1}^{N}P(w\_{t,n} | z_{t,n}, \boldsymbol \beta_k)P( z_{t,n} | \boldsymbol \theta_t))
 $$
 
 
@@ -437,7 +437,7 @@ $$
 ## 14.42
 
 $$
-p\left(\Theta_{t} | \boldsymbol{\alpha}\right)=\frac{\Gamma\left(\sum_{k} \alpha_{k}\right)}{\prod_{k} \Gamma\left(\alpha_{k}\right)} \prod_{k} \Theta_{t, k}^{\alpha_{k}-1}
+p\left(\Theta_{t} | \boldsymbol{\alpha}\right)=\frac{\Gamma\left(\sum_{k} \alpha_{k}\right)}{\prod\_{k} \Gamma\left(\alpha_{k}\right)} \prod\_{k} \Theta_{t, k}^{\alpha_{k}-1}
 $$
 
 [解析]：参见附录$C1.6$。

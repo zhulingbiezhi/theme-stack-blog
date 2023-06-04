@@ -83,7 +83,7 @@ $$
 $LL(D_u)$对$\boldsymbol{\mu_i}$求导，参考 9.33 的推导：
 $$
 \begin{aligned}
-\frac{\partial L L\left(D_{u}\right)}{\partial \boldsymbol{\mu}_{i}} &=\sum\_{\boldsymbol{x}\_{j} \in D_{u}} \frac{\alpha_{i}}{\sum_{s=1}^{N} \alpha_{s} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{s}, \boldsymbol{\Sigma}_{s}\right)} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right) \\
+\frac{\partial L L\left(D_{u}\right)}{\partial \boldsymbol{\mu}_{i}} &=\sum\_{\boldsymbol{x}\_{j} \in D_{u}} \frac{\alpha_{i}}{\sum_{s=1}^{N} \alpha_{s} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{s}, \boldsymbol{\Sigma}_{s}\right)} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right) \\\
 &=\sum\_{\boldsymbol{x}\_{j} \in D_{u}} \gamma_{j i} \cdot \boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)
 \end{aligned}
 $$
@@ -114,7 +114,7 @@ $$
 
 [推导]：首先$LL(D_l)$对$\boldsymbol{\Sigma_i}$求偏导 ，类似于 13.6
 $$
-\begin{aligned} \frac{\partial L L\left(D_{l}\right)}{\partial \boldsymbol{\Sigma}_{i}} &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{\partial \ln \left(\alpha_{i} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \boldsymbol{\Sigma}_{i}} \\ &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\Sigma}_{i}} \\
+\begin{aligned} \frac{\partial L L\left(D_{l}\right)}{\partial \boldsymbol{\Sigma}_{i}} &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{\partial \ln \left(\alpha_{i} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \boldsymbol{\Sigma}_{i}} \\ &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\Sigma}_{i}} \\\
 &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}\\
 &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}
 \end{aligned}
@@ -227,9 +227,9 @@ $$
 
 $$
 \begin{aligned}
-E(f) &=\frac{1}{2} \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}\_{i}\right)-f\left(\boldsymbol{x}\_{j}\right)\right)^{2} \\
-&=\frac{1}{2}\left(\sum\_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}\_{i}\right)+\sum_{j=1}^{m} d_{j} f^{2}\left(\boldsymbol{x}\_{j}\right)-2 \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right)\right) \\
-&=\sum\_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}\_{i}\right)-\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right) \\
+E(f) &=\frac{1}{2} \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}\_{i}\right)-f\left(\boldsymbol{x}\_{j}\right)\right)^{2} \\\
+&=\frac{1}{2}\left(\sum\_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}\_{i}\right)+\sum_{j=1}^{m} d_{j} f^{2}\left(\boldsymbol{x}\_{j}\right)-2 \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right)\right) \\\
+&=\sum\_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}\_{i}\right)-\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right) \\\
 &=\boldsymbol{f}^{\mathrm{T}}(\mathbf{D}-\mathbf{W}) \boldsymbol{f}
 \end{aligned}
 $$
@@ -237,8 +237,8 @@ $$
 [解析]：首先解释下这个能量函数的定义。原则上，我们希望能量函数$E(f)$越小越好，对于节点$i,j$，如果它们不相邻，则$(\mathbf{W})_{i j}=0$，如果它们相邻，则最小化能量函数要求$f(x_i)$和$f(x_j)$尽量相似，和逻辑相符。下面进行公式的推导，首先由二项展开可得：
 $$
 \begin{aligned}
-E(f) &=\frac{1}{2} \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}\_{i}\right)-f\left(\boldsymbol{x}\_{j}\right)\right)^{2} \\
-&=\frac{1}{2} \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f^{2}\left(\boldsymbol{x}\_{i}\right)-2 f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right)+f^{2}\left(\boldsymbol{x}\_{j}\right)\right) \\
+E(f) &=\frac{1}{2} \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f\left(\boldsymbol{x}\_{i}\right)-f\left(\boldsymbol{x}\_{j}\right)\right)^{2} \\\
+&=\frac{1}{2} \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j}\left(f^{2}\left(\boldsymbol{x}\_{i}\right)-2 f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right)+f^{2}\left(\boldsymbol{x}\_{j}\right)\right) \\\
 &=\frac{1}{2}\left( \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}\_{i}\right)+ \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}\_{j}\right)-2\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right)\right)
 \end{aligned}
 $$
@@ -271,15 +271,15 @@ $$
 $$
 \begin{aligned}
 E(f) &=\left(\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{f}_{u}^{\mathrm{T}}\right)\left(\left[\begin{array}{ll}
-\mathbf{D}_{l l} & \mathbf{0}_{l u} \\
+\mathbf{D}_{l l} & \mathbf{0}_{l u} \\\
 \mathbf{0}_{u l} & \mathbf{D}_{u u}
 \end{array}\right]-\left[\begin{array}{ll}
-\mathbf{W}_{l l} & \mathbf{W}_{l u} \\
+\mathbf{W}_{l l} & \mathbf{W}_{l u} \\\
 \mathbf{W}_{u l} & \mathbf{W}_{u u}
 \end{array}\right]\right)\left[\begin{array}{l}
-\boldsymbol{f}_{l} \\
+\boldsymbol{f}_{l} \\\
 \boldsymbol{f}_{u}
-\end{array}\right] \\
+\end{array}\right] \\\
 &=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\mathbf{D}_{l l}-\mathbf{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \mathbf{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\mathbf{D}_{u u}-\mathbf{W}_{u u}\right) \boldsymbol{f}_{u}
 \end{aligned}
 $$
@@ -292,18 +292,18 @@ $$
 E(f) &=\left[\begin{array}{ll}
 \boldsymbol{f}_{l}^{\mathrm{T}} & \boldsymbol{f}_{u}^{\mathrm{T}}
 \end{array}\right]\left[\begin{array}{cc}
-\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l} & -\boldsymbol{W}_{l u} \\
+\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l} & -\boldsymbol{W}_{l u} \\\
 -\boldsymbol{W}_{u l} & \boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}
 \end{array}\right]\left[\begin{array}{l}
-\boldsymbol{f}_{l} \\
+\boldsymbol{f}_{l} \\\
 \boldsymbol{f}_{u}
-\end{array}\right] \\
+\end{array}\right] \\\
 &=\left[\begin{array}{ll}\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right)-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} & -\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right)\end{array}\right]\left[\begin{array}{l}
-\boldsymbol{f}_{l} \\
+\boldsymbol{f}_{l} \\\
 \boldsymbol{f}_{u}
-\end{array}\right] \\
-&=\left(\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right)-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l}\right) \boldsymbol{f}_{l}+\left(-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right)\right) \boldsymbol{f}_{u} \\
-&=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u} \boldsymbol{f}_{u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u} \\
+\end{array}\right] \\\
+&=\left(\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right)-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l}\right) \boldsymbol{f}_{l}+\left(-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right)\right) \boldsymbol{f}_{u} \\\
+&=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-\boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}-\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{W}_{l u} \boldsymbol{f}_{u}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u} \\\
 &=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}
 \end{aligned}
 $$
@@ -314,15 +314,15 @@ $$
 $$
 \begin{aligned}
 E(f) &=\left(\boldsymbol{f}_{l}^{\mathrm{T}} \boldsymbol{f}_{u}^{\mathrm{T}}\right)\left(\left[\begin{array}{ll}
-\mathbf{D}_{l l} & \mathbf{0}_{l u} \\
+\mathbf{D}_{l l} & \mathbf{0}_{l u} \\\
 \mathbf{0}_{u l} & \mathbf{D}_{u u}
 \end{array}\right]-\left[\begin{array}{ll}
-\mathbf{W}_{l l} & \mathbf{W}_{l u} \\
+\mathbf{W}_{l l} & \mathbf{W}_{l u} \\\
 \mathbf{W}_{u l} & \mathbf{W}_{u u}
 \end{array}\right]\right)\left[\begin{array}{l}
-\boldsymbol{f}_{l} \\
+\boldsymbol{f}_{l} \\\
 \boldsymbol{f}_{u}
-\end{array}\right] \\
+\end{array}\right] \\\
 &=\boldsymbol{f}_{l}^{\mathrm{T}}\left(\mathbf{D}_{l l}-\mathbf{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \mathbf{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\mathbf{D}_{u u}-\mathbf{W}_{u u}\right) \boldsymbol{f}_{u}
 \end{aligned}
 $$
@@ -340,7 +340,7 @@ $$
 [解析]：由 13.13，有
 $$
 \begin{aligned}
-\frac{\partial E(f)}{\partial \boldsymbol{f}_{u}} &=\frac{\partial \boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}}{\partial \boldsymbol{f}_{u}} \\
+\frac{\partial E(f)}{\partial \boldsymbol{f}_{u}} &=\frac{\partial \boldsymbol{f}_{l}^{\mathrm{T}}\left(\boldsymbol{D}_{l l}-\boldsymbol{W}_{l l}\right) \boldsymbol{f}_{l}-2 \boldsymbol{f}_{u}^{\mathrm{T}} \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+\boldsymbol{f}_{u}^{\mathrm{T}}\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}}{\partial \boldsymbol{f}_{u}} \\\
 &=-2 \boldsymbol{W}_{u l} \boldsymbol{f}_{l}+2\left(\boldsymbol{D}_{u u}-\boldsymbol{W}_{u u}\right) \boldsymbol{f}_{u}
 \end{aligned}
 $$
@@ -351,14 +351,14 @@ $$
 $$
 \begin{aligned}
 \mathbf{P} &=\mathbf{D}^{-1} \mathbf{W}=\left[\begin{array}{cc}
-\mathbf{D}_{l l}^{-1} & \mathbf{0}_{l u} \\
+\mathbf{D}_{l l}^{-1} & \mathbf{0}_{l u} \\\
 \mathbf{0}_{u l} & \mathbf{D}_{u u}^{-1}
 \end{array}\right]\left[\begin{array}{ll}
-\mathbf{W}_{l l} & \mathbf{W}_{l u} \\
+\mathbf{W}_{l l} & \mathbf{W}_{l u} \\\
 \mathbf{W}_{u l} & \mathbf{W}_{u u}
-\end{array}\right] \\
+\end{array}\right] \\\
 &=\left[\begin{array}{ll}
-\mathbf{D}_{l l}^{-1} \mathbf{W}_{l l} & \mathbf{D}_{l l}^{-1} \mathbf{W}_{l u} \\
+\mathbf{D}_{l l}^{-1} \mathbf{W}_{l l} & \mathbf{D}_{l l}^{-1} \mathbf{W}_{l u} \\\
 \mathbf{D}_{u u}^{-1} \mathbf{W}_{u l} & \mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}
 \end{array}\right]
 \end{aligned}
@@ -370,8 +370,8 @@ $$
 
 $$
 \begin{aligned}
-\boldsymbol{f}_{u} &=\left(\mathbf{D}_{u u}\left(\mathbf{I}-\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\right)\right)^{-1} \mathbf{W}_{u l} \boldsymbol{f}_{l} \\
-&=\left(\mathbf{I}-\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\right)^{-1} \mathbf{D}_{u u}^{-1} \mathbf{W}_{u l} \boldsymbol{f}_{l} \\
+\boldsymbol{f}_{u} &=\left(\mathbf{D}_{u u}\left(\mathbf{I}-\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\right)\right)^{-1} \mathbf{W}_{u l} \boldsymbol{f}_{l} \\\
+&=\left(\mathbf{I}-\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\right)^{-1} \mathbf{D}_{u u}^{-1} \mathbf{W}_{u l} \boldsymbol{f}_{l} \\\
 &=\left(\mathbf{I}-\mathbf{P}_{u u}\right)^{-1} \mathbf{P}_{u l} \boldsymbol{f}_{l}
 \end{aligned}
 $$
@@ -399,10 +399,10 @@ $$
 $$
 \begin{aligned}
 t=0: \mathbf{F}(1) &=\alpha \mathbf{S F}(0)+(1-\alpha) \mathbf{Y}\\
-&=\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y} \\
-t=1: \mathbf{F}(2) &=\alpha \mathbf{S F}(1)+(1-\alpha) \mathbf{Y}=\alpha \mathbf{S}(\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y})+(1-\alpha) \mathbf{Y} \\
-&=(\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y} \\
-t=2:\mathbf{F}(3)&=\alpha\mathbf{S}\mathbf{F}(2)+(1-\alpha)\mathbf{Y}\\&=\alpha \mathbf{S}\left((\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\right)+(1-\alpha) \mathbf{Y} \\
+&=\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y} \\\
+t=1: \mathbf{F}(2) &=\alpha \mathbf{S F}(1)+(1-\alpha) \mathbf{Y}=\alpha \mathbf{S}(\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y})+(1-\alpha) \mathbf{Y} \\\
+&=(\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y} \\\
+t=2:\mathbf{F}(3)&=\alpha\mathbf{S}\mathbf{F}(2)+(1-\alpha)\mathbf{Y}\\&=\alpha \mathbf{S}\left((\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\right)+(1-\alpha) \mathbf{Y} \\\
 &=(\alpha \mathbf{S})^{3} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{2}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\\
 \end{aligned}
 $$

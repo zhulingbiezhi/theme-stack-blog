@@ -163,9 +163,9 @@ $$\begin{aligned}
 $$J=\cfrac{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w}$$
 [推导]：
 $$\begin{aligned}
-	J &= \cfrac{\|\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1}\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
-	&= \cfrac{\|(\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1})^{\mathrm{T}}\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
-	&= \cfrac{\|(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
+	J &= \cfrac{\\|\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1}\\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
+	&= \cfrac{\\|(\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1})^{\mathrm{T}}\\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
+	&= \cfrac{\\|(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w\\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
 	&= \cfrac{\left[(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w\right]^{\mathrm{T}}(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
 	&= \cfrac{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w}
 \end{aligned}$$
@@ -237,7 +237,7 @@ $$\max\limits\_{\mathbf{W}}\cfrac{
 ## 3.45
 $$\mathbf{S}\_b\mathbf{W}=\lambda\mathbf{S}\_w\mathbf{W}$$
 [推导]：同公式(3.35)一样，我们在此处也固定公式(3.44)的分母为1，那么公式(3.44)此时等价于如下优化问题
-$$\begin{array}{cl}\underset{\boldsymbol{w}}{\min} & -\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W}) \\ 
+$$\begin{array}{cl}\underset{\boldsymbol{w}}{\min} & -\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W}) \\\ 
 \text { s.t. } & \operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_w \mathbf{W})=1\end{array}$$
 根据拉格朗日乘子法可知，上述优化问题的拉格朗日函数为
 $$L(\mathbf{W},\lambda)=-\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W})+\lambda(\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_w \mathbf{W})-1)$$

@@ -25,8 +25,8 @@ $$L(x_1,...,x_n,\lambda)=\sum\_{k=1}^{n} x_{k} \log \_{2} x_{k}+\lambda(\sum\_{k
 其中，$\lambda$为拉格朗日乘子。对$L(x_1,...,x_n,\lambda)$分别关于$x_1,...,x_n,\lambda$求一阶偏导数，并令偏导数等于0可得
 $$\begin{aligned}
 \cfrac{\partial L(x_1,...,x_n,\lambda)}{\partial x_1}&=\cfrac{\partial }{\partial x_1}\left[\sum\_{k=1}^{n} x_{k} \log \_{2} x_{k}+\lambda(\sum\_{k=1}^{n}x_k-1)\right]=0\\
-&=\log \_{2} x_{1}+x_1\cdot \cfrac{1}{x_1\ln2}+\lambda=0 \\
-&=\log \_{2} x_{1}+\cfrac{1}{\ln2}+\lambda=0 \\
+&=\log \_{2} x_{1}+x_1\cdot \cfrac{1}{x_1\ln2}+\lambda=0 \\\
+&=\log \_{2} x_{1}+\cfrac{1}{\ln2}+\lambda=0 \\\
 &\Rightarrow \lambda=-\log \_{2} x_{1}-\cfrac{1}{\ln2}\\
 \cfrac{\partial L(x_1,...,x_n,\lambda)}{\partial x_2}&=\cfrac{\partial }{\partial x_2}\left[\sum\_{k=1}^{n} x_{k} \log \_{2} x_{k}+\lambda(\sum\_{k=1}^{n}x_k-1)\right]=0\\
 &\Rightarrow \lambda=-\log \_{2} x_{2}-\cfrac{1}{\ln2}\\
@@ -38,7 +38,7 @@ $$\begin{aligned}
 \end{aligned}$$
 整理一下可得
 $$\left\\{ \begin{array}{lr}
-\lambda=-\log \_{2} x_{1}-\cfrac{1}{\ln2}=-\log \_{2} x_{2}-\cfrac{1}{\ln2}=...=-\log \_{2} x_{n}-\cfrac{1}{\ln2} \\
+\lambda=-\log \_{2} x_{1}-\cfrac{1}{\ln2}=-\log \_{2} x_{2}-\cfrac{1}{\ln2}=...=-\log \_{2} x_{n}-\cfrac{1}{\ln2} \\\
 \sum\limits\_{k=1}^{n}x_k=1
 \end{array}\right.$$
 由以上两个方程可以解得

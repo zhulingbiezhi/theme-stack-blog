@@ -240,7 +240,7 @@ $$
 令$h_1,h_2,\dots,h_{\vert\mathcal{H}\vert}$表示假设空间$\mathcal{H}$中的假设，有
 $$
 \begin{aligned} 
-& P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon) \\
+& P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon) \\\
 =& P\left(\left(\left|E_{h_{1}}-\widehat{E}_{h_{1}}\right|>\epsilon\right) \vee \ldots \vee\left(| E_{h_{|\mathcal{H}|}}-\widehat{E}_{h_{|\mathcal{H}|} |>\epsilon}\right)\right) \\ \leqslant & \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon) 
 \end{aligned}
 $$
@@ -381,7 +381,7 @@ $$
 
 $$
 \left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}
-m-1 \\
+m-1 \\\
 i
 \end{array}\right)
 $$
@@ -396,7 +396,7 @@ $$
 
 $$
 \left|\mathcal{H}_{D^{\prime} | D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}
-m-1 \\
+m-1 \\\
 i
 \end{array}\right)
 $$
@@ -472,7 +472,7 @@ $$
 [解析]：首先回忆PAC可学习的概念，见定义12.2，而可知/不可知PAC可学习之间的区别仅仅在于概念类$c$是否包含于假设空间$\mathcal{H}$中。令
 $$
 \begin{aligned}
-\delta^\prime = \frac{\delta}{2} \\
+\delta^\prime = \frac{\delta}{2} \\\
 \sqrt{\frac{\left(\ln 2 / \delta^{\prime}\right)}{2 m}}=\frac{\epsilon}{2}
 \end{aligned}
 $$

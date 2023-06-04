@@ -22,10 +22,10 @@ $$
 
 $$
 \begin{aligned}
-P(e r r) &=1-\sum\_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z}) \\
-& \simeq 1-\sum\_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x}) \\
-& \leqslant 1-P^{2}\left(c^{*} | \boldsymbol{x}\right) \\
-&=\left(1+P\left(c^{*} | \boldsymbol{x}\right)\right)\left(1-P\left(c^{*} | \boldsymbol{x}\right)\right) \\
+P(e r r) &=1-\sum\_{c \in \mathcal{Y}} P(c | \boldsymbol{x}) P(c | \boldsymbol{z}) \\\
+& \simeq 1-\sum\_{c \in \mathcal{Y}} P^{2}(c | \boldsymbol{x}) \\\
+& \leqslant 1-P^{2}\left(c^{*} | \boldsymbol{x}\right) \\\
+&=\left(1+P\left(c^{*} | \boldsymbol{x}\right)\right)\left(1-P\left(c^{*} | \boldsymbol{x}\right)\right) \\\
 & \leqslant 2 \times\left(1-P\left(c^{*} | \boldsymbol{x}\right)\right)
 \end{aligned}
 $$
@@ -38,7 +38,7 @@ $$
 
 $$
 \begin{aligned}
-\operatorname{dist}_{i j}^{2} &=\left\|\boldsymbol{z}_{i}\right\|^{2}+\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \boldsymbol{z}_{i}^{\mathrm{T}} \boldsymbol{z}_{j} \\
+\operatorname{dist}_{i j}^{2} &=\left\|\boldsymbol{z}_{i}\right\|^{2}+\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \boldsymbol{z}_{i}^{\mathrm{T}} \boldsymbol{z}_{j} \\\
 &=b_{i i}+b_{j j}-2 b_{i j}
 \end{aligned}
 $$
@@ -46,10 +46,10 @@ $$
 [推导]：
 $$
 \begin{aligned}
-\operatorname{dist}_{i j}^{2} &=\left\|\boldsymbol{z}_{i}-\boldsymbol{z}_{j}\right\|^{2}=\left(\boldsymbol{z}_{i}-\boldsymbol{z}_{j}\right)^{\top}\left(\boldsymbol{z}_{i}-\boldsymbol{z}_{j}\right) \\
-&=\boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{i}-\boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j}-\boldsymbol{z}_{j}^{\top} \boldsymbol{z}_{i}+\boldsymbol{z}_{j}^{\top} \boldsymbol{z}_{j} \\
-&=\boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{i}+\boldsymbol{z}_{j}^{\top} \boldsymbol{z}_{j}-2 \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j} \\
-&=\left\|\boldsymbol{z}_{i}\right\|^{2}+\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j} \\
+\operatorname{dist}_{i j}^{2} &=\left\|\boldsymbol{z}_{i}-\boldsymbol{z}_{j}\right\|^{2}=\left(\boldsymbol{z}_{i}-\boldsymbol{z}_{j}\right)^{\top}\left(\boldsymbol{z}_{i}-\boldsymbol{z}_{j}\right) \\\
+&=\boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{i}-\boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j}-\boldsymbol{z}_{j}^{\top} \boldsymbol{z}_{i}+\boldsymbol{z}_{j}^{\top} \boldsymbol{z}_{j} \\\
+&=\boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{i}+\boldsymbol{z}_{j}^{\top} \boldsymbol{z}_{j}-2 \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j} \\\
+&=\left\|\boldsymbol{z}_{i}\right\|^{2}+\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j} \\\
 &=b_{i i}+b_{j j}-2 b_{i j}
 \end{aligned}
 $$
@@ -93,8 +93,8 @@ $$
 [推导]：
 $$
 \begin{aligned}
-\sum\_{i=1}^{m} \sum_{j=1}^{m} \operatorname{dist}_{i j}^{2} &=\sum\_{i=1}^{m} \sum_{j=1}^{m}\left(\left\|z_{i}\right\|^{2}+\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j}\right) \\
-&=\sum\_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{i}\right\|^{2}+\sum\_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \sum\_{i=1}^{m} \sum_{j=1}^{m} \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j} \\
+\sum\_{i=1}^{m} \sum_{j=1}^{m} \operatorname{dist}_{i j}^{2} &=\sum\_{i=1}^{m} \sum_{j=1}^{m}\left(\left\|z_{i}\right\|^{2}+\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j}\right) \\\
+&=\sum\_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{i}\right\|^{2}+\sum\_{i=1}^{m} \sum_{j=1}^{m}\left\|\boldsymbol{z}_{j}\right\|^{2}-2 \sum\_{i=1}^{m} \sum_{j=1}^{m} \boldsymbol{z}_{i}^{\top} \boldsymbol{z}_{j} \\\
 \end{aligned}
 $$
 其中
@@ -211,7 +211,7 @@ $$
 其中，$\mathbf{X}=\left(\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m}\right) \in \mathbb{R}^{d \times m},\mathbf{W}=\left(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{d^{\prime}}\right) \in \mathbb{R}^{d \times d^{\prime}}$，$\mathbf{I} \in \mathbb{R}^{d^{\prime} \times d^{\prime}}$为单位矩阵。对于带矩阵约束的优化问题，根据<a href="#ref1">[1]</a>中讲述的方法可得此优化目标的拉格朗日函数为
 $$
 \begin{aligned}
-L(\mathbf W,\Theta)&=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\langle \Theta,\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I\rangle \\
+L(\mathbf W,\Theta)&=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\langle \Theta,\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I\rangle \\\
 &=-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Theta^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) 
 \end{aligned}
 $$
@@ -224,15 +224,15 @@ $$
 对拉格朗日函数关于$\mathbf{W}$求导可得
 $$
 \begin{aligned}
-\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right)\right] \\
-&=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) \\
+\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=\cfrac{\partial}{\partial \mathbf W}\left[-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right)\right] \\\
+&=-\cfrac{\partial}{\partial \mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)+\cfrac{\partial}{\partial \mathbf W}\text { tr }\left(\Lambda^{\mathrm{T}} (\mathbf W^{\mathrm{T}} \mathbf W-\mathbf I)\right) \\\
 \end{aligned}
 $$
 由矩阵微分公式$\cfrac{\partial}{\partial \mathbf{X}} \text { tr }(\mathbf{X}^{\mathrm{T}}  \mathbf{B} \mathbf{X})=\mathbf{B X}+\mathbf{B}^{\mathrm{T}}  \mathbf{X},\cfrac{\partial}{\partial \mathbf{X}} \text { tr }\left(\mathbf{B X}^{\mathrm{T}}  \mathbf{X}\right)=\mathbf{X B}^{\mathrm{T}} +\mathbf{X B}$可得
 $$
 \begin{aligned}
-\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}\Lambda+\mathbf{W}\Lambda^{\mathrm{T}}  \\
-&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}(\Lambda+\Lambda^{\mathrm{T}} ) \\
+\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}\Lambda+\mathbf{W}\Lambda^{\mathrm{T}}  \\\
+&=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+\mathbf{W}(\Lambda+\Lambda^{\mathrm{T}} ) \\\
 &=-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+2\mathbf{W}\Lambda
 \end{aligned}
 $$
@@ -250,11 +250,11 @@ $$
 显然，此式为矩阵特征值和特征向量的定义式，其中$\lambda_i,\boldsymbol w_i$分别表示矩阵$\mathbf X\mathbf X^{\mathrm{T}}$的特征值和单位特征向量。由于以上是仅考虑约束$\boldsymbol{w}_i^{\mathrm{T}}\boldsymbol{w}_i=1$所求得的结果，而$\boldsymbol{w}_i$还需满足约束$\boldsymbol{w}_{i}^{\mathrm{T}}\boldsymbol{w}_{j}=0(i\neq j)$。观察$\mathbf X\mathbf X^{\mathrm{T}}$的定义可知，$\mathbf X\mathbf X^{\mathrm{T}}$是一个实对称矩阵，实对称矩阵的不同特征值所对应的特征向量之间相互正交，同一特征值的不同特征向量可以通过施密特正交化使其变得正交，所以通过上式求得的$\boldsymbol w_i$可以同时满足约束$\boldsymbol{w}_i^{\mathrm{T}}\boldsymbol{w}_i=1,\boldsymbol{w}_{i}^{\mathrm{T}}\boldsymbol{w}_{j}=0(i\neq j)$。根据拉格朗日乘子法的原理可知，此时求得的结果仅是最优解的必要条件，而且$\mathbf X\mathbf X^{\mathrm{T}}$有$d$个相互正交的单位特征向量，所以还需要从这$d$个特征向量里找出$d^{\prime}$个能使得目标函数达到最优值的特征向量作为最优解。将$\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i=\lambda _i\boldsymbol w_i$代入目标函数可得
 $$
 \begin{aligned}
-\min\limits\_{\mathbf W}-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)&=\max\limits\_{\mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W) \\
-&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i \\
-&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\cdot\lambda _i\boldsymbol w_i \\
-&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i\boldsymbol w_i^{\mathrm{T}}\boldsymbol w_i \\
-&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i \\
+\min\limits\_{\mathbf W}-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)&=\max\limits\_{\mathbf W}\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W) \\\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\mathbf X\mathbf X^{\mathrm{T}} \boldsymbol w_i \\\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\boldsymbol w_i^{\mathrm{T}}\cdot\lambda _i\boldsymbol w_i \\\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i\boldsymbol w_i^{\mathrm{T}}\boldsymbol w_i \\\
+&=\max\limits\_{\mathbf W}\sum_{i=1}^{d^{\prime}}\lambda _i \\\
 \end{aligned}
 $$
 
@@ -277,7 +277,7 @@ $$
 其中，$\boldsymbol{\alpha}^j=(\alpha_{1}^j;\alpha_{2}^j;...;\alpha_{m}^j)\in \mathbb{R}^{m \times 1} $。所以公式(10.21)可以进一步变换为
 $$
 \begin{aligned}
-\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j&=\lambda_j\mathbf{Z}\boldsymbol{\alpha}^j \\
+\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j&=\lambda_j\mathbf{Z}\boldsymbol{\alpha}^j \\\
 \mathbf{Z}\mathbf{Z}^{\mathrm{T}}\mathbf{Z}\boldsymbol{\alpha}^j&=\mathbf{Z}\lambda_j\boldsymbol{\alpha}^j
 \end{aligned}
 $$
@@ -316,7 +316,7 @@ $$
 \begin{aligned} 
 \sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2}&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2} \\ 
 &=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j}(\boldsymbol{x}\_{i}-\boldsymbol{x}\_{j}) \right\|_{2}^{2} \\ 
-&=\sum\_{i=1}^{m}\left\|\mathbf{X}_i\boldsymbol{w_i} \right\|_{2}^{2} \\
+&=\sum\_{i=1}^{m}\left\|\mathbf{X}_i\boldsymbol{w_i} \right\|_{2}^{2} \\\
 &=\sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
 \end{aligned}
 $$

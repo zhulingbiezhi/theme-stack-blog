@@ -52,7 +52,7 @@ $$
 
 $$
 \begin{aligned}
-\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\
+\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\\
 &=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}\_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
 \end{aligned}
 $$
@@ -76,9 +76,9 @@ $$
 由[泰勒公式](https://zh.wikipedia.org/wiki/泰勒公式)，$x_k$附近的$f(x)$通过二阶泰勒展开式可近似为
 $$
 \begin{aligned}
-\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{\nabla^2f(x_k)}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\
+\hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{\nabla^2f(x_k)}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\\
 &\leqslant
- f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\
+ f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\\
 &= f\left(\boldsymbol{x}\_{k}\right)+\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{L}{2}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\\
 &=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\right)\\
 &=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L^2}\nabla f(x_k)^\top\nabla f(x_k)\right) -\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
@@ -117,8 +117,8 @@ $$
 
 $$
 x_{k+1}^{i}=\left\{\begin{array}{ll}
-{z^{i}-\lambda / L,} & {\lambda / L<z^{i}} \\
-{0,} & {\left|z^{i}\right| \leqslant \lambda / L} \\
+{z^{i}-\lambda / L,} & {\lambda / L<z^{i}} \\\
+{0,} & {\left|z^{i}\right| \leqslant \lambda / L} \\\
 {z^{i}+\lambda / L,} & {z^{i}<-\lambda / L}
 \end{array}\right.
 $$
@@ -126,8 +126,8 @@ $$
 [解析]：令优化函数
 $$
 \begin{aligned}
-g(\boldsymbol{x}) &=\frac{L}{2}\|\boldsymbol{x}-\boldsymbol{z}\|_{2}^{2}+\lambda\|\boldsymbol{x}\|_{1} \\
-&=\frac{L}{2} \sum_{i=1}^{d}\left\|x^{i}-z^{i}\right\|_{2}^{2}+\lambda \sum_{i=1}^{d}\left\|x^{i}\right\|_{1} \\
+g(\boldsymbol{x}) &=\frac{L}{2}\|\boldsymbol{x}-\boldsymbol{z}\|_{2}^{2}+\lambda\|\boldsymbol{x}\|_{1} \\\
+&=\frac{L}{2} \sum_{i=1}^{d}\left\|x^{i}-z^{i}\right\|_{2}^{2}+\lambda \sum_{i=1}^{d}\left\|x^{i}\right\|_{1} \\\
 &=\sum_{i=1}^{d}\left(\frac{L}{2}\left(x^{i}-z^{i}\right)^{2}+\lambda\left|x^{i}\right|\right)
 \end{aligned}
 $$
@@ -143,7 +143,7 @@ $$
 其中
 $$
 \operatorname{sign}\left(x^{i}\right)=\left\{\begin{array}{ll}
-{1,} & {x^{i}>0} \\
+{1,} & {x^{i}>0} \\\
 {-1,} & {x^{i}<0}
 \end{array}\right.
 $$
@@ -197,8 +197,8 @@ $$
    b. 当$-\frac{\lambda}{L} \leqslant z_i \leqslant \frac{\lambda}{L}$时，对于任何$\Delta x\neq 0$有
    $$
    \begin{aligned}
-   g(\Delta x) &=\frac{L}{2}\left(\Delta x-z^{i}\right)^{2}+\lambda|\Delta x| \\
-   &=\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}|\Delta x|\right)+\frac{L}{2}\left(z^{i}\right)^{2} \\
+   g(\Delta x) &=\frac{L}{2}\left(\Delta x-z^{i}\right)^{2}+\lambda|\Delta x| \\\
+   &=\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}|\Delta x|\right)+\frac{L}{2}\left(z^{i}\right)^{2} \\\
    &\ge\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}\Delta x\right)+\frac{L}{2}\left(z^{i}\right)^{2}\\
    &\ge\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\
    &>g(x^i)\vert_{x^i=0}
@@ -237,8 +237,8 @@ $$
 
 $$
 \begin{aligned}
-\min _{\mathbf{B}}\|\mathbf{X}-\mathbf{B} \mathbf{A}\|_{F}^{2} &=\min _{\boldsymbol{b}_{i}}\left\|\mathbf{X}-\sum\_{j=1}^{k} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right\|_{F}^{2} \\
-&=\min _{\boldsymbol{b}_{i}}\left\|\left(\mathbf{X}-\sum\_{j \neq i} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right)-\boldsymbol{b}_{i} \boldsymbol{\alpha}^{i}\right\| _{F}^{2} \\
+\min _{\mathbf{B}}\|\mathbf{X}-\mathbf{B} \mathbf{A}\|_{F}^{2} &=\min _{\boldsymbol{b}_{i}}\left\|\mathbf{X}-\sum\_{j=1}^{k} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right\|_{F}^{2} \\\
+&=\min _{\boldsymbol{b}_{i}}\left\|\left(\mathbf{X}-\sum\_{j \neq i} \boldsymbol{b}_{j} \boldsymbol{\alpha}^{j}\right)-\boldsymbol{b}_{i} \boldsymbol{\alpha}^{i}\right\| _{F}^{2} \\\
 &=\min _{\boldsymbol{b}_{i}}\left\|\mathbf{E}_{i}-\boldsymbol{b}_{i} \boldsymbol{\alpha}^{i}\right\|_{F}^{2}
 \end{aligned}
 $$
@@ -261,7 +261,7 @@ b_{1}^{2} &b_{2}^{2}  & \cdot  & \cdot  & \cdot  & b_{k}^{2}\\
 \cdot  &  \cdot &  & \cdot  &  &\cdot  \\ 
  \cdot & \cdot  &  &  & \cdot  & \cdot \\ 
  \alpha_{1}^{k}& \alpha_{2}^{k}  & \cdot  & \cdot  &\cdot   &  \alpha_{m}^{k}
-\end{bmatrix}_{k\times m} \\
+\end{bmatrix}_{k\times m} \\\
 & =\begin{bmatrix}
 \sum_{j=1}^{k}b_{j}^{1}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{1}\alpha _{m}^{j}\\ 
 \sum_{j=1}^{k}b_{j}^{2}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{2}\alpha _{m}^{j}\\ 

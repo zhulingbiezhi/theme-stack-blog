@@ -95,7 +95,7 @@ $$
 
 $$
 \begin{aligned}
-P\left(x_{5}\right) &=\sum_{x_{4}} \sum_{x_{3}} \sum_{x_{2}} \sum_{x_{1}} P\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}\right) \\
+P\left(x_{5}\right) &=\sum_{x_{4}} \sum_{x_{3}} \sum_{x_{2}} \sum_{x_{1}} P\left(x_{1}, x_{2}, x_{3}, x_{4}, x_{5}\right) \\\
 &=\sum_{x_{4}} \sum_{x_{3}} \sum_{x_{2}} \sum_{x_{1}} P\left(x_{1}\right) P\left(x_{2} | x_{1}\right) P\left(x_{3} | x_{2}\right) P\left(x_{4} | x_{3}\right) P\left(x_{5} | x_{3}\right)
 \end{aligned}
 $$
@@ -117,9 +117,9 @@ $$
 
 $$
 \begin{aligned}
-P\left(x_{5}\right) &=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) \sum_{x_{4}} P\left(x_{4} | x_{3}\right) m_{23}\left(x_{3}\right) \\
-&=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) m_{23}\left(x_{3}\right) \sum_{x_{4}} P\left(x_{4} | x_{3}\right) \\
-&=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) m_{23}\left(x_{3}\right) \\
+P\left(x_{5}\right) &=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) \sum_{x_{4}} P\left(x_{4} | x_{3}\right) m_{23}\left(x_{3}\right) \\\
+&=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) m_{23}\left(x_{3}\right) \sum_{x_{4}} P\left(x_{4} | x_{3}\right) \\\
+&=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) m_{23}\left(x_{3}\right) \\\
 &=m_{35}\left(x_{5}\right)
 \end{aligned}
 $$
@@ -138,9 +138,9 @@ $$
 
 $$
 \begin{aligned}
-P\left(x_{5}\right) &=\frac{1}{Z} \sum_{x_{3}} \psi_{35}\left(x_{3}, x_{5}\right) \sum_{x_{4}} \psi_{34}\left(x_{3}, x_{4}\right) \sum_{x_{2}} \psi_{23}\left(x_{2}, x_{3}\right) \sum_{x_{1}} \psi_{12}\left(x_{1}, x_{2}\right) \\
-&=\frac{1}{Z} \sum_{x_{3}} \psi_{35}\left(x_{3}, x_{5}\right) \sum_{x_{4}} \psi_{34}\left(x_{3}, x_{4}\right) \sum_{x_{2}} \psi_{23}\left(x_{2}, x_{3}\right) m_{12}\left(x_{2}\right) \\
-&=\cdots \\
+P\left(x_{5}\right) &=\frac{1}{Z} \sum_{x_{3}} \psi_{35}\left(x_{3}, x_{5}\right) \sum_{x_{4}} \psi_{34}\left(x_{3}, x_{4}\right) \sum_{x_{2}} \psi_{23}\left(x_{2}, x_{3}\right) \sum_{x_{1}} \psi_{12}\left(x_{1}, x_{2}\right) \\\
+&=\frac{1}{Z} \sum_{x_{3}} \psi_{35}\left(x_{3}, x_{5}\right) \sum_{x_{4}} \psi_{34}\left(x_{3}, x_{4}\right) \sum_{x_{2}} \psi_{23}\left(x_{2}, x_{3}\right) m_{12}\left(x_{2}\right) \\\
+&=\cdots \\\
 &=\frac{1}{Z} m_{35}\left(x_{5}\right)
 \end{aligned}
 $$
@@ -172,9 +172,9 @@ $$
 [推导]：假设$x$有M种不同的取值，$x_i$的采样数量为$m_i$(连续取值可以采用微积分的方法分割为离散的取值)，则
 $$
 \begin{aligned}
-\hat{f}&=\frac{1}{N} \sum_{j=1}^{M} f\left(x_{j}\right) \cdot m_j \\
-&= \sum_{j=1}^{M} f\left(x_{j}\right)\cdot \frac{m_j}{N} \\
-&\approx \sum_{j=1}^{M} f\left(x_{j}\right)\cdot p(x_j)  \\
+\hat{f}&=\frac{1}{N} \sum_{j=1}^{M} f\left(x_{j}\right) \cdot m_j \\\
+&= \sum_{j=1}^{M} f\left(x_{j}\right)\cdot \frac{m_j}{N} \\\
+&\approx \sum_{j=1}^{M} f\left(x_{j}\right)\cdot p(x_j)  \\\
 &\approx \int f(x) p(x) dx
 \end{aligned}
 $$
@@ -219,26 +219,26 @@ $$
 
 ## 14.28
 
-$$A(x^* | x^{t-1}) = \min\left ( 1,\frac{p(x^*)Q(x^{t-1} | x^*) }{p(x^{t-1})Q(x^* | x^{t-1})} \right )$$
+$$A(x^\* | x^{t-1}) = \min\left ( 1,\frac{p(x^\*)Q(x^{t-1} | x^\*) }{p(x^{t-1})Q(x^\* | x^{t-1})} \right )$$
 
 [推导]：这个公式其实是拒绝采样的一个trick，因为基于式$14.27$只需要
 $$
 \begin{aligned}
-  A(x^* | x^{t-1}) &= p(x^*)Q(x^{t-1} | x^*)  \\
-  A(x^{t-1} | x^*) &= p(x^{t-1})Q(x^* | x^{t-1})
+  A(x^\* | x^{t-1}) &= p(x^\*)Q(x^{t-1} | x^\*)  \\\
+  A(x^{t-1} | x^\*) &= p(x^{t-1})Q(x^\* | x^{t-1})
  \end{aligned} 
 $$
 即可满足式$14.26$，但是实际上等号右边的数值可能比较小，比如各为0.1和0.2，那么好不容易才到的样本只有百分之十几得到利用，所以不妨将接受率设为0.5和1，则细致平稳分布条件依然满足，样本利用率大大提高, 所以可以改进为
 $$
 \begin{aligned} 
-A(x^* | x^{t-1}) &=  \frac{p(x^*)Q(x^{t-1} | x^*)}{norm}  \\  
-A(x^{t-1} | x^*) &= \frac{p(x^{t-1})Q(x^* | x^{t-1}) }{norm}
+A(x^\* | x^{t-1}) &=  \frac{p(x^\*)Q(x^{t-1} | x^\*)}{norm}  \\  
+A(x^{t-1} | x^\*) &= \frac{p(x^{t-1})Q(x^\* | x^{t-1}) }{norm}
 \end{aligned} 
 $$
 其中
 $$
 \begin{aligned} 
-norm = \max\left (p(x^{t-1})Q(x^* | x^{t-1}),p(x^*)Q(x^{t-1} | x^*) \right )
+norm = \max\left (p(x^{t-1})Q(x^\* | x^{t-1}),p(x^\*)Q(x^{t-1} | x^\*) \right )
 \end{aligned}  
 $$
 即西瓜书中的$14.28$。
@@ -263,7 +263,7 @@ $$
 
 $$
 \begin{aligned}
-\Theta^{t+1} &=\underset{\Theta}{\arg \max } \mathcal{Q}\left(\Theta ; \Theta^{t}\right) \\
+\Theta^{t+1} &=\underset{\Theta}{\arg \max } \mathcal{Q}\left(\Theta ; \Theta^{t}\right) \\\
 &=\underset{\Theta}{\arg \max } \sum_{\mathbf{z}} p\left(\mathbf{z} | \mathbf{x}, \Theta^{t}\right) \ln p(\mathbf{x}, \mathbf{z} | \Theta)
 \end{aligned}
 $$
@@ -283,11 +283,11 @@ $${\rm ln}p(x)=\mathcal{L}(q)+{\rm KL}(q \parallel p)$$
 等式两边同时乘以${\rm ln}p(x)$，因为${\rm ln}p(x)$是不关于变量$z$的函数，所以${\rm ln}p(x)$可以拿进积分里面，得到${\rm ln}p(x)=\int q(z){\rm ln}p(x)dz$
 $$
 \begin{aligned}
-{\rm ln}p(x)&=\int q(z){\rm ln}p(x)dz \\
+{\rm ln}p(x)&=\int q(z){\rm ln}p(x)dz \\\
  &=\int q(z){\rm ln}\frac{p(x,z)}{p(z|x)}\\
- &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\cdot\frac{q(z)}{p(z|x)}\bigg\} \\
- &=\int q(z)\bigg({\rm ln}\frac{p(x,z)}{q(z)}-{\rm ln}\frac{p(z|x)}{q(z)}\bigg) \\
-  &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\bigg\}-\int q(z){\rm ln}\frac{p(z|x)}{q(z)} \\
+ &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\cdot\frac{q(z)}{p(z|x)}\bigg\} \\\
+ &=\int q(z)\bigg({\rm ln}\frac{p(x,z)}{q(z)}-{\rm ln}\frac{p(z|x)}{q(z)}\bigg) \\\
+  &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\bigg\}-\int q(z){\rm ln}\frac{p(z|x)}{q(z)} \\\
   &=\mathcal{L}(q)+{\rm KL}(q \parallel p)\qquad
 \end{aligned}
 $$
@@ -323,8 +323,8 @@ $$
 ## 14.36
 $$
 \begin{aligned}
-\mathcal{L}(q)&=\int \prod\_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}} \\
-&=\int q_{j}\bigg\{\int p(x,z)\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const} \\
+\mathcal{L}(q)&=\int \prod\_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}} \\\
+&=\int q_{j}\bigg\{\int p(x,z)\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const} \\\
 &=\int q_{j}{\rm ln}\tilde{p}({\rm \mathbf{x},\mathbf{z_{j}}})d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const}
 \end{aligned}
 $$
@@ -335,7 +335,7 @@ $$
 公式可以看做两个积分相减，我们先来看左边积分$\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}$的推导。
 $$
 \begin{aligned}
-\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} &= \int q_{j}\prod\_{i\ne j}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} \\
+\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} &= \int q_{j}\prod\_{i\ne j}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} \\\
 &= \int q_{j}\bigg\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}\qquad 
 \end{aligned}
 $$
@@ -344,7 +344,7 @@ $$
 在此之前我们看下$\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}$的计算
 $$
 \begin{aligned}
-\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad  \\
+\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad  \\\
 &=\int q_{i^{\prime}}\bigg\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{i^{\prime}}}}
 \end{aligned}
 $$
@@ -352,15 +352,15 @@ $$
 $\bigg\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}$部分与变量$q_{i^{\prime}}$无关，所以可以拿到积分外面。又因为$\int q_{i^{\prime}}d{\rm\mathbf{z_{i^{\prime}}}}=1$，所以
 $$
 \begin{aligned}
-\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&=\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}} \\
+\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&=\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}} \\\
 &= \int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad 
 \end{aligned}
 $$
 即所有$k$以外的变量都可以通过上面的方式消除,有了这个结论，我们再来看公式
 $$
 \begin{aligned}
-\int\prod\_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}&= \int\prod\_{i}q_{i}{\rm ln}q_{j}d{\rm\mathbf{z}} + \sum_{k\ne j}\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}} \\
-&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{k\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad \\
+\int\prod\_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}&= \int\prod\_{i}q_{i}{\rm ln}q_{j}d{\rm\mathbf{z}} + \sum_{k\ne j}\int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}} \\\
+&= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + \sum_{k\ne j}\int q_{k}{\rm ln}q_{k}d{\rm\mathbf{z_k}}\qquad \\\
 &= \int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_j}} + {\rm const} \qquad
 \end{aligned}
 $$
@@ -404,19 +404,19 @@ $$
 [推导]：由$14.39$去对数并积分
 $$
 \begin{aligned} 
- \int q_j^*(\mathbf{z}_j)\mathrm{d}\mathbf{z}_j &=\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const) \, \mathrm{d}\mathbf{z}_j \\
- &=\exp(const) \int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \, \mathrm{d}\mathbf{z}_j \\
+ \int q_j^*(\mathbf{z}_j)\mathrm{d}\mathbf{z}_j &=\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const) \, \mathrm{d}\mathbf{z}_j \\\
+ &=\exp(const) \int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \, \mathrm{d}\mathbf{z}_j \\\
  &= 1
  \end{aligned}
 $$
 所以
 $$
-\exp(const)  = \dfrac{1}{\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \, \mathrm{d}\mathbf{z}_j}  \\
+\exp(const)  = \dfrac{1}{\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \, \mathrm{d}\mathbf{z}_j}  \\\
 $$
 
 $$
 \begin{aligned} 
-  q_j^*(\mathbf{z}_j) &= \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const)  \\
+  q_j^*(\mathbf{z}_j) &= \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right )\cdot\exp(const)  \\\
  &= \frac{ \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) }{\int \exp\left ( \mathbb{E}_{i\neq j}[\ln (p(\mathbf{x},\mathbf{z}))] \right ) \mathrm{d}\mathbf{z}_j}
  \end{aligned}
 $$

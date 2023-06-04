@@ -28,18 +28,18 @@ $$\hat{\boldsymbol{\mu}}_{c}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} 
 $$\hat{\boldsymbol{\sigma}}_{c}^{2}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} \in D_{c}}\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)^{\mathrm{T}}$$
 [推导]：根据公式(7.11)和公式(7.10)可知参数求解公式为
 $$\begin{aligned}
-\hat{\boldsymbol{\theta}}_{c}&=\underset{\boldsymbol{\theta}_{c}}{\arg \max } LL\left(\boldsymbol{\theta}_{c}\right) \\
-&=\underset{\boldsymbol{\theta}_{c}}{\arg \min } -LL\left(\boldsymbol{\theta}_{c}\right) \\
+\hat{\boldsymbol{\theta}}_{c}&=\underset{\boldsymbol{\theta}_{c}}{\arg \max } LL\left(\boldsymbol{\theta}_{c}\right) \\\
+&=\underset{\boldsymbol{\theta}_{c}}{\arg \min } -LL\left(\boldsymbol{\theta}_{c}\right) \\\
 &= \underset{\boldsymbol{\theta}_{c}}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \log P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)
 \end{aligned}$$
 由西瓜书上下文可知，此时假设概率密度函数$p(\boldsymbol{x} | c) \sim \mathcal{N}\left(\boldsymbol{\mu}_{c}, \boldsymbol{\sigma}_{c}^{2}\right)$，其等价于假设
 $$P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)=P\left(\boldsymbol{x} | \boldsymbol{\mu}_{c}, \boldsymbol{\sigma}_{c}^{2}\right)=\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)$$
 其中，$d$表示$\boldsymbol{x}$的维数，$\boldsymbol{\Sigma}_c=\boldsymbol{\sigma}_{c}^{2}$为对称正定协方差矩阵，$|\boldsymbol{\Sigma}_c|$表示$\boldsymbol{\Sigma}_c$的行列式。将其代入参数求解公式可得
 $$\begin{aligned}
-(\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \log\left[\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)\right] \\
-&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \left[-\frac{d}{2}\log(2 \pi)-\frac{1}{2}\log|\boldsymbol{\Sigma}_c|-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
-&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{d}{2}\log(2 \pi)+\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
-&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\
+(\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \log\left[\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)\right] \\\
+&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \left[-\frac{d}{2}\log(2 \pi)-\frac{1}{2}\log|\boldsymbol{\Sigma}_c|-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
+&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{d}{2}\log(2 \pi)+\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
+&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
 \end{aligned}$$
 假设此时数据集$D_c$中的样本个数为$n$，也即$|D_c|=n$，则上式可以改写为
 $$\begin{aligned}
@@ -87,24 +87,24 @@ P(\boldsymbol{\theta}|D)&=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{
 $$P(\boldsymbol{\boldsymbol{\theta}};\boldsymbol{\alpha})=\frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}$$
 将其代入$P(D|\boldsymbol{\theta})$可得
 $$\begin{aligned}
-P(\boldsymbol{\theta}|D)&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot P(\boldsymbol{\theta})}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot P(\boldsymbol{\theta})\right]} \\
-&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}\right]} \\
-&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}\right]\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}} \\
-&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}\right]} \\
+P(\boldsymbol{\theta}|D)&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot P(\boldsymbol{\theta})}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot P(\boldsymbol{\theta})\right]} \\\
+&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}\right]} \\\
+&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}\right]\cdot \frac{\Gamma \left(\sum _{i=1}^{k}\alpha _{i}\right)}{\prod _{i=1}^{k}\Gamma (\alpha _{i})}} \\\
+&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot \prod _{i=1}^{k}\theta_{i}^{\alpha _{i}-1}\right]} \\\
 &=\frac{\prod\_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}\right]}
 \end{aligned}$$
 此时若设$\boldsymbol{\alpha}+\boldsymbol{y}=(\alpha_1+y_1,\alpha_2+y_2,...,\alpha_k+y_k)\in \mathbb{R}^{k}$，则根据Dirichlet分布的定义可知
 $$\begin{aligned}
-P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1} \\
+P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1} \\\
 \sum\_{\boldsymbol{\theta}}P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})&=\sum\_{\boldsymbol{\theta}}\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\\
-1&=\sum\_{\boldsymbol{\theta}}\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1} \\
-1&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\sum\_{\boldsymbol{\theta}}\left[\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right] \\
-\frac{1}{\sum\_{\boldsymbol{\theta}}\left[\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right]}&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)} \\
+1&=\sum\_{\boldsymbol{\theta}}\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1} \\\
+1&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\sum\_{\boldsymbol{\theta}}\left[\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right] \\\
+\frac{1}{\sum\_{\boldsymbol{\theta}}\left[\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right]}&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)} \\\
 \end{aligned}$$
 将此结论代入$P(D|\boldsymbol{\theta})$可得
 $$\begin{aligned}
-P(\boldsymbol{\theta}|D)&=\frac{\prod\_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}\right]} \\
-&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}+y_i-1} \\
+P(\boldsymbol{\theta}|D)&=\frac{\prod\_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}\right]} \\\
+&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha _{i}+y_i-1} \\\
 &=P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})
 \end{aligned}$$
 综上可知，对于服从Categorical分布的$\boldsymbol{\theta}$来说，假设其先验概率$P(\boldsymbol{\theta})$是参数为$\boldsymbol{\alpha}$的Dirichlet分布时，得到的后验概率$P(\boldsymbol{\theta}|D)$是参数为$\boldsymbol{\alpha}+\boldsymbol{y}$的Dirichlet分布，通常我们称这种先验概率分布和后验概率分布形式相同的这对分布为共轭分布<sup>[6]</sup>。在推得后验概率$P(\boldsymbol{\theta}|D)$的具体形式以后，根据后验期望值估计可得$\theta_i$的估计值为
@@ -137,16 +137,16 @@ P\left(x_{1}, x_{2}\right) &=\sum_{x_{4}} P\left(x_{1}, x_{2}, x_{4}\right) \\
 \end{aligned}$$
 [解析]：在这里补充一下同父结构和顺序结构的推导。同父结构：在给定父节点$x_1$的条件下$x_3,x_4$独立
 $$\begin{aligned} 
-P(x_3,x_4|x_1)&=\frac{P(x_1,x_3,x_4)}{P(x_1)} \\
-&=\frac{P(x_1)P(x_3|x_1)P(x_4|x_1)}{P(x_1)} \\
-&=P(x_3|x_1)P(x_4|x_1) \\
+P(x_3,x_4|x_1)&=\frac{P(x_1,x_3,x_4)}{P(x_1)} \\\
+&=\frac{P(x_1)P(x_3|x_1)P(x_4|x_1)}{P(x_1)} \\\
+&=P(x_3|x_1)P(x_4|x_1) \\\
 \end{aligned}$$
 顺序结构：在给定节点$x$的条件下$y,z$独立
 $$\begin{aligned} 
-P(y,z|x)&=\frac{P(x,y,z)}{P(x)} \\
-&=\frac{P(z)P(x|z)P(y|x)}{P(x)} \\
-&=\frac{P(z,x)P(y|x)}{P(x)} \\
-&=P(z|x)P(y|x) \\
+P(y,z|x)&=\frac{P(x,y,z)}{P(x)} \\\
+&=\frac{P(z)P(x|z)P(y|x)}{P(x)} \\\
+&=\frac{P(z,x)P(y|x)}{P(x)} \\\
+&=P(z|x)P(y|x) \\\
 \end{aligned}$$
 
 ## 7.34

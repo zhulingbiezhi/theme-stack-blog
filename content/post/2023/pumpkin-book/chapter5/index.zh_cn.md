@@ -68,14 +68,14 @@ $$\Delta \theta_j = -\eta \cfrac{\partial E_k}{\partial \theta_j}$$
 又
 $$
 \begin{aligned}	
-\cfrac{\partial E_k}{\partial \theta_j} &= \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot\cfrac{\partial \hat{y}\_j^k}{\partial \theta_j} \\
-&= \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot\cfrac{\partial [f(\beta_j-\theta_j)]}{\partial \theta_j} \\
-&=\cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot f^{\prime}(\beta_j-\theta_j) \times (-1) \\
-&=\cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot f\left(\beta_{j}-\theta_{j}\right)\times\left[1-f\left(\beta_{j}-\theta_{j}\right)\right]  \times (-1) \\
-&=\cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \hat{y}\_j^k\left(1-\hat{y}\_j^k\right)  \times (-1) \\
-&=\cfrac{\partial\left[ \cfrac{1}{2} \sum\limits\_{j=1}^{l}\left(\hat{y}\_{j}^{k}-y_{j}^{k}\right)^{2}\right]}{\partial \hat{y}\_{j}^{k}} \cdot \hat{y}\_j^k\left(1-\hat{y}\_j^k\right) \times (-1)  \\
-&=\cfrac{1}{2}\times 2(\hat{y}\_j^k-y_j^k)\times 1 \cdot\hat{y}\_j^k\left(1-\hat{y}\_j^k\right)  \times (-1) \\
-&=(y_j^k-\hat{y}\_j^k)\hat{y}\_j^k\left(1-\hat{y}\_j^k\right)  \\
+\cfrac{\partial E_k}{\partial \theta_j} &= \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot\cfrac{\partial \hat{y}\_j^k}{\partial \theta_j} \\\
+&= \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot\cfrac{\partial [f(\beta_j-\theta_j)]}{\partial \theta_j} \\\
+&=\cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot f^{\prime}(\beta_j-\theta_j) \times (-1) \\\
+&=\cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot f\left(\beta_{j}-\theta_{j}\right)\times\left[1-f\left(\beta_{j}-\theta_{j}\right)\right]  \times (-1) \\\
+&=\cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \hat{y}\_j^k\left(1-\hat{y}\_j^k\right)  \times (-1) \\\
+&=\cfrac{\partial\left[ \cfrac{1}{2} \sum\limits\_{j=1}^{l}\left(\hat{y}\_{j}^{k}-y_{j}^{k}\right)^{2}\right]}{\partial \hat{y}\_{j}^{k}} \cdot \hat{y}\_j^k\left(1-\hat{y}\_j^k\right) \times (-1)  \\\
+&=\cfrac{1}{2}\times 2(\hat{y}\_j^k-y_j^k)\times 1 \cdot\hat{y}\_j^k\left(1-\hat{y}\_j^k\right)  \times (-1) \\\
+&=(y_j^k-\hat{y}\_j^k)\hat{y}\_j^k\left(1-\hat{y}\_j^k\right)  \\\
 &= g_j
 \end{aligned}
 $$
@@ -89,13 +89,13 @@ $$\Delta v_{ih} = -\eta \cfrac{\partial E_k}{\partial v_{ih}}$$
 又
 $$
 \begin{aligned}	
-\cfrac{\partial E_k}{\partial v_{ih}} &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \alpha_h} \cdot \cfrac{\partial \alpha_h}{\partial v_{ih}} \\
+\cfrac{\partial E_k}{\partial v_{ih}} &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \alpha_h} \cdot \cfrac{\partial \alpha_h}{\partial v_{ih}} \\\
 &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \alpha_h} \cdot x_i \\ 
-&= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot x_i \\
-&= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot w\_{hj} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot x_i \\
-&= \sum_{j=1}^{l} (-g_j) \cdot w\_{hj} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot x_i \\
+&= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot x_i \\\
+&= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot w\_{hj} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot x_i \\\
+&= \sum_{j=1}^{l} (-g_j) \cdot w\_{hj} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot x_i \\\
 &= -f^{\prime}(\alpha_h-\gamma_h) \cdot \sum_{j=1}^{l} g_j \cdot w\_{hj}  \cdot x_i\\
-&= -b_h(1-b_h) \cdot \sum_{j=1}^{l} g_j \cdot w\_{hj}  \cdot x_i \\
+&= -b_h(1-b_h) \cdot \sum_{j=1}^{l} g_j \cdot w\_{hj}  \cdot x_i \\\
 &= -e_h \cdot x_i
 \end{aligned}
 $$
@@ -109,8 +109,8 @@ $$\Delta \gamma_h = -\eta \cfrac{\partial E_k}{\partial \gamma_h}$$
 又
 $$
 \begin{aligned}	
-\cfrac{\partial E_k}{\partial \gamma_h} &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \gamma_h} \\
-&= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot (-1) \\
+\cfrac{\partial E_k}{\partial \gamma_h} &= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot \cfrac{\partial b_h}{\partial \gamma_h} \\\
+&= \sum_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot \cfrac{\partial \beta_j}{\partial b_h} \cdot f^{\prime}(\alpha_h-\gamma_h) \cdot (-1) \\\
 &= -\sum\_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot w\_{hj} \cdot f^{\prime}(\alpha_h-\gamma_h)\\
 &= -\sum\_{j=1}^{l} \cfrac{\partial E_k}{\partial \hat{y}\_j^k} \cdot \cfrac{\partial \hat{y}\_j^k}{\partial \beta_j} \cdot w\_{hj} \cdot b_h(1-b_h)\\
 &= \sum_{j=1}^{l}g_j\cdot w\_{hj} \cdot b_h(1-b_h)\\
@@ -155,7 +155,7 @@ $$P(\boldsymbol{h}|\boldsymbol{v})=\prod\_{j=1}^qP(h_i\,  |  \, \boldsymbol{v})$
 $$\Delta w=\eta(\boldsymbol{v}\boldsymbol{h}^\mathrm{T}-\boldsymbol{v}’\boldsymbol{h}’^{\mathrm{T}})$$
 [推导]：由公式(5.20)可推导出受限Boltzmann机（以下简称RBM）的能量函数为：
 $$\begin{aligned}
-E(\boldsymbol{v},\boldsymbol{h})&=-\sum\_{i=1}^d\sum_{j=1}^qw\_{ij}v_ih_j-\sum\_{i=1}^d\alpha_iv_i-\sum\_{j=1}^q\beta_jh_j \\
+E(\boldsymbol{v},\boldsymbol{h})&=-\sum\_{i=1}^d\sum_{j=1}^qw\_{ij}v_ih_j-\sum\_{i=1}^d\alpha_iv_i-\sum\_{j=1}^q\beta_jh_j \\\
 &=-\boldsymbol{h}^{\mathrm{T}}\mathbf{W}\boldsymbol{v}-\boldsymbol{\alpha}^{\mathrm{T}}\boldsymbol{v}-\boldsymbol{\beta}^{\mathrm{T}}\boldsymbol{h}
 \end{aligned}$$
 其中
@@ -171,8 +171,8 @@ $$P(\boldsymbol{v},\boldsymbol{h})=\frac{1}{Z}e^{-E(\boldsymbol{v},\boldsymbol{h
 $$Z=\sum\_{\boldsymbol{v},\boldsymbol{h}}e^{-E(\boldsymbol{v},\boldsymbol{h})}$$
 给定含$m$个独立同分布数据的数据集$V=\{\boldsymbol{v}_1,\boldsymbol{v}_2,\cdots,\boldsymbol{v}_m\}$，记$\boldsymbol{\theta}=\{\mathbf{W},\boldsymbol{\alpha},\boldsymbol{\beta}\}$，学习RBM的策略是求出参数$\boldsymbol{\theta}$的值，使得如下对数似然函数最大化
 $$\begin{aligned}
-L(\boldsymbol{\theta})&=\ln\left(\prod\_{k=1}^{m}P(\boldsymbol{v}_k)\right) \\
-&=\sum\_{k=1}^m\ln P(\boldsymbol{v}_k) \\
+L(\boldsymbol{\theta})&=\ln\left(\prod\_{k=1}^{m}P(\boldsymbol{v}_k)\right) \\\
+&=\sum\_{k=1}^m\ln P(\boldsymbol{v}_k) \\\
 &= \sum\_{k=1}^m L_k(\boldsymbol{\theta})
 \end{aligned}$$
 具体采用的是梯度上升法来求解参数$\boldsymbol{\theta}$，因此，下面来考虑求对数似然函数$L(\boldsymbol{\theta})$的梯度。对于$V$中的任意一个样本$\boldsymbol{v}_k$来说，其$L_k(\boldsymbol{\theta})$的具体形式为

@@ -13,11 +13,11 @@ image = "https://img.ququ123.top/img/nangua.jpg"
 $$\cfrac{\partial E_{(w, b)}}{\partial w}=2\left(w \sum\_{i=1}^{m} x_{i}^{2}-\sum\_{i=1}^{m}\left(y_{i}-b\right) x_{i}\right)$$
 [推导]：已知$E_{(w, b)}=\sum\limits\_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}$，所以
 $$\begin{aligned}
-\cfrac{\partial E_{(w, b)}}{\partial w}&=\cfrac{\partial}{\partial w} \left[\sum\_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
-&= \sum\_{i=1}^{m}\cfrac{\partial}{\partial w} \left[\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
-&= \sum\_{i=1}^{m}\left[2\cdot\left(y_{i}-w x_{i}-b\right)\cdot (-x_i)\right] \\
-&= \sum\_{i=1}^{m}\left[2\cdot\left(w x_{i}^2-y_i x_i +bx_i\right)\right] \\
-&= 2\cdot\left(w\sum\_{i=1}^{m} x_{i}^2-\sum\_{i=1}^{m}y_i x_i +b\sum\_{i=1}^{m}x_i\right) \\
+\cfrac{\partial E_{(w, b)}}{\partial w}&=\cfrac{\partial}{\partial w} \left[\sum\_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}\right] \\\
+&= \sum\_{i=1}^{m}\cfrac{\partial}{\partial w} \left[\left(y_{i}-w x_{i}-b\right)^{2}\right] \\\
+&= \sum\_{i=1}^{m}\left[2\cdot\left(y_{i}-w x_{i}-b\right)\cdot (-x_i)\right] \\\
+&= \sum\_{i=1}^{m}\left[2\cdot\left(w x_{i}^2-y_i x_i +bx_i\right)\right] \\\
+&= 2\cdot\left(w\sum\_{i=1}^{m} x_{i}^2-\sum\_{i=1}^{m}y_i x_i +b\sum\_{i=1}^{m}x_i\right) \\\
 &=2\left(w \sum\_{i=1}^{m} x_{i}^{2}-\sum\_{i=1}^{m}\left(y_{i}-b\right) x_{i}\right)
 \end{aligned}$$
 
@@ -25,11 +25,11 @@ $$\begin{aligned}
 $$\cfrac{\partial E_{(w, b)}}{\partial b}=2\left(m b-\sum\_{i=1}^{m}\left(y_{i}-w x_{i}\right)\right)$$
 [推导]：已知$E_{(w, b)}=\sum\limits\_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}$，所以
 $$\begin{aligned}
-\cfrac{\partial E_{(w, b)}}{\partial b}&=\cfrac{\partial}{\partial b} \left[\sum\_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
-&=\sum\_{i=1}^{m}\cfrac{\partial}{\partial b} \left[\left(y_{i}-w x_{i}-b\right)^{2}\right] \\
-&=\sum\_{i=1}^{m}\left[2\cdot\left(y_{i}-w x_{i}-b\right)\cdot (-1)\right] \\
-&=\sum\_{i=1}^{m}\left[2\cdot\left(b-y_{i}+w x_{i}\right)\right] \\
-&=2\cdot\left[\sum\_{i=1}^{m}b-\sum\_{i=1}^{m}y_{i}+\sum\_{i=1}^{m}w x_{i}\right] \\
+\cfrac{\partial E_{(w, b)}}{\partial b}&=\cfrac{\partial}{\partial b} \left[\sum\_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}\right] \\\
+&=\sum\_{i=1}^{m}\cfrac{\partial}{\partial b} \left[\left(y_{i}-w x_{i}-b\right)^{2}\right] \\\
+&=\sum\_{i=1}^{m}\left[2\cdot\left(y_{i}-w x_{i}-b\right)\cdot (-1)\right] \\\
+&=\sum\_{i=1}^{m}\left[2\cdot\left(b-y_{i}+w x_{i}\right)\right] \\\
+&=2\cdot\left[\sum\_{i=1}^{m}b-\sum\_{i=1}^{m}y_{i}+\sum\_{i=1}^{m}w x_{i}\right] \\\
 &=2\left(m b-\sum\_{i=1}^{m}\left(y_{i}-w x_{i}\right)\right)
 \end{aligned}$$
 
@@ -40,21 +40,21 @@ $$ 0 = w\sum\_{i=1}^{m}x_i^2-\sum\_{i=1}^{m}(y_i-b)x_i $$
 $$ w\sum\_{i=1}^{m}x_i^2 = \sum\_{i=1}^{m}y_ix_i-\sum\_{i=1}^{m}bx_i $$
 由于令公式(3.6)等于0可得$b=\cfrac{1}{m}\sum\_{i=1}^{m}(y_i-wx_i)$，又因为$\cfrac{1}{m}\sum\_{i=1}^{m}y_i=\bar{y}$，$\cfrac{1}{m}\sum\_{i=1}^{m}x_i=\bar{x}$，则$b=\bar{y}-w\bar{x}$，代入上式可得
 $$\begin{aligned}	 
-w\sum\_{i=1}^{m}x_i^2 & = \sum\_{i=1}^{m}y_ix_i-\sum\_{i=1}^{m}(\bar{y}-w\bar{x})x_i \\
-w\sum\_{i=1}^{m}x_i^2 & = \sum\_{i=1}^{m}y_ix_i-\bar{y}\sum\_{i=1}^{m}x_i+w\bar{x}\sum\_{i=1}^{m}x_i \\
-w(\sum\_{i=1}^{m}x_i^2-\bar{x}\sum\_{i=1}^{m}x_i) & = \sum\_{i=1}^{m}y_ix_i-\bar{y}\sum\_{i=1}^{m}x_i \\
+w\sum\_{i=1}^{m}x_i^2 & = \sum\_{i=1}^{m}y_ix_i-\sum\_{i=1}^{m}(\bar{y}-w\bar{x})x_i \\\
+w\sum\_{i=1}^{m}x_i^2 & = \sum\_{i=1}^{m}y_ix_i-\bar{y}\sum\_{i=1}^{m}x_i+w\bar{x}\sum\_{i=1}^{m}x_i \\\
+w(\sum\_{i=1}^{m}x_i^2-\bar{x}\sum\_{i=1}^{m}x_i) & = \sum\_{i=1}^{m}y_ix_i-\bar{y}\sum\_{i=1}^{m}x_i \\\
 w & = \cfrac{\sum\_{i=1}^{m}y_ix_i-\bar{y}\sum\_{i=1}^{m}x_i}{\sum\_{i=1}^{m}x_i^2-\bar{x}\sum\_{i=1}^{m}x_i}
 \end{aligned}$$
 由于$\bar{y}\sum\_{i=1}^{m}x_i=\cfrac{1}{m}\sum\_{i=1}^{m}y_i\sum\_{i=1}^{m}x_i=\bar{x}\sum\_{i=1}^{m}y_i$，$\bar{x}\sum\_{i=1}^{m}x_i=\cfrac{1}{m}\sum\_{i=1}^{m}x_i\sum\_{i=1}^{m}x_i=\cfrac{1}{m}(\sum\_{i=1}^{m}x_i)^2$，代入上式即可得公式(3.7)
 $$ w=\cfrac{\sum\_{i=1}^{m}y_i(x_i-\bar{x})}{\sum\_{i=1}^{m}x_i^2-\cfrac{1}{m}(\sum\_{i=1}^{m}x_i)^2} $$
 如果要想用Python来实现上式的话，上式中的求和运算只能用循环来实现，但是如果我们能将上式给向量化，也就是转换成矩阵（向量）运算的话，那么我们就可以利用诸如NumPy这种专门加速矩阵运算的类库来进行编写。下面我们就尝试将上式进行向量化，将$ \cfrac{1}{m}(\sum\_{i=1}^{m}x_i)^2=\bar{x}\sum\_{i=1}^{m}x_i $代入分母可得
 $$\begin{aligned}
-w & = \cfrac{\sum\_{i=1}^{m}y_i(x_i-\bar{x})}{\sum\_{i=1}^{m}x_i^2-\bar{x}\sum\_{i=1}^{m}x_i} \\
+w & = \cfrac{\sum\_{i=1}^{m}y_i(x_i-\bar{x})}{\sum\_{i=1}^{m}x_i^2-\bar{x}\sum\_{i=1}^{m}x_i} \\\
 & = \cfrac{\sum\_{i=1}^{m}(y_ix_i-y_i\bar{x})}{\sum\_{i=1}^{m}(x_i^2-x_i\bar{x})}
 \end{aligned}$$
 又因为$ \bar{y}\sum\_{i=1}^{m}x_i=\bar{x}\sum\_{i=1}^{m}y_i=\sum\_{i=1}^{m}\bar{y}x_i=\sum\_{i=1}^{m}\bar{x}y_i=m\bar{x}\bar{y}=\sum\_{i=1}^{m}\bar{x}\bar{y} $，$\sum\_{i=1}^{m}x_i\bar{x}=\bar{x}\sum\_{i=1}^{m}x_i=\bar{x}\cdot m \cdot\frac{1}{m}\cdot\sum\_{i=1}^{m}x_i=m\bar{x}^2=\sum\_{i=1}^{m}\bar{x}^2$，则上式可化为
 $$\begin{aligned}
-w & = \cfrac{\sum\_{i=1}^{m}(y_ix_i-y_i\bar{x}-x_i\bar{y}+\bar{x}\bar{y})}{\sum\_{i=1}^{m}(x_i^2-x_i\bar{x}-x_i\bar{x}+\bar{x}^2)} \\
+w & = \cfrac{\sum\_{i=1}^{m}(y_ix_i-y_i\bar{x}-x_i\bar{y}+\bar{x}\bar{y})}{\sum\_{i=1}^{m}(x_i^2-x_i\bar{x}-x_i\bar{x}+\bar{x}^2)} \\\
 & = \cfrac{\sum\_{i=1}^{m}(x_i-\bar{x})(y_i-\bar{y})}{\sum\_{i=1}^{m}(x_i-\bar{x})^2} 
 \end{aligned}$$
 若令$\boldsymbol{x}=(x_1,x_2,...,x_m)^T$，$\boldsymbol{x}\_{d}=(x_1-\bar{x},x_2-\bar{x},...,x_m-\bar{x})^T$为去均值后的$\boldsymbol{x}$，$\boldsymbol{y}=(y_1,y_2,...,y_m)^T$，$\boldsymbol{y}\_{d}=(y_1-\bar{y},y_2-\bar{y},...,y_m-\bar{y})^T$为去均值后的$\boldsymbol{y}$，其中$\boldsymbol{x}$、$\boldsymbol{x}\_{d}$、$\boldsymbol{y}$、$\boldsymbol{y}\_{d}$均为m行1列的列向量，代入上式可得
@@ -64,47 +64,47 @@ $$w=\cfrac{\boldsymbol{x}\_{d}^T\boldsymbol{y}\_{d}}{\boldsymbol{x}\_d^T\boldsym
 $$\hat{\boldsymbol{w}}^{\*}=\underset{\hat{\boldsymbol{w}}}{\arg \min }(\boldsymbol{y}-\mathbf{X} \hat{\boldsymbol{w}})^{\mathrm{T}}(\boldsymbol{y}-\mathbf{X} \hat{\boldsymbol{w}})$$
 [推导]：公式(3.4)是最小二乘法运用在一元线性回归上的情形，那么对于多元线性回归来说，我们可以类似得到
 $$\begin{aligned}
-	\left(\boldsymbol{w}^{\*}, b^{*}\right)&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum\_{i=1}^{m}\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}\right)^{2} \\
-	&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum\_{i=1}^{m}\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)\right)^{2}\\
+	\left(\boldsymbol{w}^{\*}, b^{*}\right)&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum\_{i=1}^{m}\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}\right)^{2} \\\
+	&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum\_{i=1}^{m}\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)\right)^{2}\\\
 	&=\underset{(\boldsymbol{w}, b)}{\arg \min } \sum\_{i=1}^{m}\left(y\_{i}-\left(\boldsymbol{w}^\mathrm{T}\boldsymbol{x}\_{i}+b\right)\right)^{2}
 \end{aligned}$$
 为便于讨论，我们令$\hat{\boldsymbol{w}}=(\boldsymbol{w};b)=(w_1;...;w_d;b)\in\mathbb{R}^{(d+1)\times 1},\hat{\boldsymbol{x}}\_i=(x\_{i1};...;x_{id};1)\in\mathbb{R}^{(d+1)\times 1}$，那么上式可以简化为
 $$\begin{aligned}
-	\hat{\boldsymbol{w}}^{\*}&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum\_{i=1}^{m}\left(y\_{i}-\hat{\boldsymbol{w}}^\mathrm{T}\hat{\boldsymbol{x}}\_{i}\right)^{2} \\
-	&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum\_{i=1}^{m}\left(y\_{i}-\hat{\boldsymbol{x}}\_{i}^\mathrm{T}\hat{\boldsymbol{w}}\right)^{2} \\
+	\hat{\boldsymbol{w}}^{\*}&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum\_{i=1}^{m}\left(y\_{i}-\hat{\boldsymbol{w}}^\mathrm{T}\hat{\boldsymbol{x}}\_{i}\right)^{2} \\\
+	&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \sum\_{i=1}^{m}\left(y\_{i}-\hat{\boldsymbol{x}}\_{i}^\mathrm{T}\hat{\boldsymbol{w}}\right)^{2} \\\
 \end{aligned}$$
 根据向量内积的定义可知，上式可以写成如下向量内积的形式
 $$\begin{aligned}
 	\hat{\boldsymbol{w}}^{\*}&=\underset{\hat{\boldsymbol{w}}}{\arg \min } \begin{bmatrix}
-	y\_{1}-\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} & \cdots & y\_{m}-\hat{\boldsymbol{x}}\_{m}^\mathrm{T}\hat{\boldsymbol{w}} \\
+	y\_{1}-\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} & \cdots & y\_{m}-\hat{\boldsymbol{x}}\_{m}^\mathrm{T}\hat{\boldsymbol{w}} \\\
 	\end{bmatrix}
 	\begin{bmatrix}
-	y\_{1}-\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\
-	\vdots \\
+	y\_{1}-\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\\
+	\vdots \\\
 	y\_{m}-\hat{\boldsymbol{x}}\_{m}^\mathrm{T}\hat{\boldsymbol{w}}
-	\end{bmatrix} \\
+	\end{bmatrix} \\\
 \end{aligned}$$
 其中
 $$
 \begin{aligned}
 \begin{bmatrix}
-	y\_{1}-\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\
-	\vdots \\
+	y\_{1}-\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\\
+	\vdots \\\
 	y\_{m}-\hat{\boldsymbol{x}}\_{m}^\mathrm{T}\hat{\boldsymbol{w}}
 \end{bmatrix}&=\begin{bmatrix}
-	y_{1} \\
-	\vdots \\
+	y_{1} \\\
+	\vdots \\\
 	y_{m}
 \end{bmatrix}-\begin{bmatrix}
-	\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\
-	\vdots \\
+	\hat{\boldsymbol{x}}\_{1}^\mathrm{T}\hat{\boldsymbol{w}} \\\
+	\vdots \\\
 	\hat{\boldsymbol{x}}\_{m}^\mathrm{T}\hat{\boldsymbol{w}}
-\end{bmatrix}\\
+\end{bmatrix}\\\
 &=\boldsymbol{y}-\begin{bmatrix}
-	\hat{\boldsymbol{x}}\_{1}^\mathrm{T} \\
-	\vdots \\
+	\hat{\boldsymbol{x}}\_{1}^\mathrm{T} \\\
+	\vdots \\\
 	\hat{\boldsymbol{x}}_{m}^\mathrm{T}
-\end{bmatrix}\cdot\hat{\boldsymbol{w}}\\
+\end{bmatrix}\cdot\hat{\boldsymbol{w}}\\\
 &=\boldsymbol{y}-\mathbf{X}\hat{\boldsymbol{w}}
 \end{aligned}
 $$
@@ -127,13 +127,13 @@ $$ \ell(\boldsymbol{\beta})=\sum\_{i=1}^{m}(-y_i\boldsymbol{\beta}^{\mathrm{T}}\
 $$ \ell(\boldsymbol{\beta})=\sum\_{i=1}^{m}\ln\left(y_ip_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})+(1-y_i)p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})\right) $$
 其中$ p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}}{1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}},p_0(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\cfrac{1}{1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}} $，代入上式可得
 $$\begin{aligned} 
-\ell(\boldsymbol{\beta})&=\sum\_{i=1}^{m}\ln\left(\cfrac{y_ie^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}+1-y_i}{1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}}\right) \\
+\ell(\boldsymbol{\beta})&=\sum\_{i=1}^{m}\ln\left(\cfrac{y_ie^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}+1-y_i}{1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}}\right) \\\
 &=\sum\_{i=1}^{m}\left(\ln(y_ie^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i}+1-y_i)-\ln(1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i})\right) 
 \end{aligned}$$
 由于$ y_i $=0或1，则
 $$ \ell(\boldsymbol{\beta}) =
 \begin{cases} 
-\sum\_{i=1}^{m}(-\ln(1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i})),  & y_i=0 \\
+\sum\_{i=1}^{m}(-\ln(1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i})),  & y_i=0 \\\
 \sum\_{i=1}^{m}(\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i-\ln(1+e^{\boldsymbol{\beta}^{\mathrm{T}}\hat{\boldsymbol x}_i})), & y_i=1
 \end{cases} $$
 两式综合可得
@@ -153,19 +153,19 @@ $$\begin{aligned}
 $$\frac{\partial \ell(\boldsymbol{\beta})}{\partial \boldsymbol{\beta}}=-\sum\_{i=1}^{m}\hat{\boldsymbol x}_i(y_i-p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta}))$$
 [解析]：此式可以进行向量化，令$p_1(\hat{\boldsymbol x}_i;\boldsymbol{\beta})=\hat{y}\_i$，代入上式得
 $$\begin{aligned}
-\frac{\partial \ell(\boldsymbol{\beta})}{\partial \boldsymbol{\beta}} &= -\sum\_{i=1}^{m}\hat{\boldsymbol x}_i(y_i-\hat{y}\_i) \\
-& =\sum\_{i=1}^{m}\hat{\boldsymbol x}_i(\hat{y}\_i-y_i) \\
-& ={\mathbf{X}^{\mathrm{T}}}(\hat{\boldsymbol y}-\boldsymbol{y}) \\
-& ={\mathbf{X}^{\mathrm{T}}}(p_1(\mathbf{X};\boldsymbol{\beta})-\boldsymbol{y}) \\
+\frac{\partial \ell(\boldsymbol{\beta})}{\partial \boldsymbol{\beta}} &= -\sum\_{i=1}^{m}\hat{\boldsymbol x}_i(y_i-\hat{y}\_i) \\\
+& =\sum\_{i=1}^{m}\hat{\boldsymbol x}_i(\hat{y}\_i-y_i) \\\
+& ={\mathbf{X}^{\mathrm{T}}}(\hat{\boldsymbol y}-\boldsymbol{y}) \\\
+& ={\mathbf{X}^{\mathrm{T}}}(p_1(\mathbf{X};\boldsymbol{\beta})-\boldsymbol{y}) \\\
 \end{aligned}$$
 
 ## 3.32
 $$J=\cfrac{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w}$$
 [推导]：
 $$\begin{aligned}
-	J &= \cfrac{\|\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1}\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\
-	&= \cfrac{\|(\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1})^{\mathrm{T}}\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\
-	&= \cfrac{\|(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\
+	J &= \cfrac{\|\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1}\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
+	&= \cfrac{\|(\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{0}-\boldsymbol w^{\mathrm{T}}\boldsymbol{\mu}\_{1})^{\mathrm{T}}\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
+	&= \cfrac{\|(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w\|\_2^2}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
 	&= \cfrac{\left[(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w\right]^{\mathrm{T}}(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w} \\\
 	&= \cfrac{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1})^{\mathrm{T}}\boldsymbol w}{\boldsymbol w^{\mathrm{T}}(\boldsymbol{\Sigma}\_{0}+\boldsymbol{\Sigma}\_{1})\boldsymbol w}
 \end{aligned}$$
@@ -176,7 +176,7 @@ $$\mathbf{S}\_b\boldsymbol w=\lambda\mathbf{S}\_w\boldsymbol w$$
 $$L(\boldsymbol w,\lambda)=-\boldsymbol w^{\mathrm{T}}\mathbf{S}\_b\boldsymbol w+\lambda(\boldsymbol w^{\mathrm{T}}\mathbf{S}\_w\boldsymbol w-1)$$
 对$\boldsymbol w$求偏导可得
 $$\begin{aligned}
-\cfrac{\partial L(\boldsymbol w,\lambda)}{\partial \boldsymbol w} &= -\cfrac{\partial(\boldsymbol w^{\mathrm{T}}\mathbf{S}\_b\boldsymbol w)}{\partial \boldsymbol w}+\lambda \cfrac{\partial(\boldsymbol w^{\mathrm{T}}\mathbf{S}\_w\boldsymbol w-1)}{\partial \boldsymbol w} \\
+\cfrac{\partial L(\boldsymbol w,\lambda)}{\partial \boldsymbol w} &= -\cfrac{\partial(\boldsymbol w^{\mathrm{T}}\mathbf{S}\_b\boldsymbol w)}{\partial \boldsymbol w}+\lambda \cfrac{\partial(\boldsymbol w^{\mathrm{T}}\mathbf{S}\_w\boldsymbol w-1)}{\partial \boldsymbol w} \\\
 &= -(\mathbf{S}\_b+\mathbf{S}\_b^{\mathrm{T}})\boldsymbol w+\lambda(\mathbf{S}\_w+\mathbf{S}\_w^{\mathrm{T}})\boldsymbol w
 \end{aligned}$$
 由于$\mathbf{S}\_b=\mathbf{S}\_b^{\mathrm{T}},\mathbf{S}\_w=\mathbf{S}\_w^{\mathrm{T}}$，所以
@@ -200,21 +200,21 @@ $$\boldsymbol{w}=\mathbf{S}\_{w}^{-1}(\boldsymbol{\mu}\_{0}-\boldsymbol{\mu}\_{1
 
 ## 3.43
 $$\begin{aligned}
-\mathbf{S}\_b &= \mathbf{S}\_t - \mathbf{S}\_w \\
+\mathbf{S}\_b &= \mathbf{S}\_t - \mathbf{S}\_w \\\
 &= \sum_{i=1}^N m_i(\boldsymbol\mu_i-\boldsymbol\mu)(\boldsymbol\mu_i-\boldsymbol\mu)^{\mathrm{T}}
 \end{aligned}$$
 [推导]：由公式(3.40)、公式(3.41)、公式(3.42)可得：
 $$\begin{aligned}
-\mathbf{S}\_b &= \mathbf{S}\_t - \mathbf{S}\_w \\
-&= \sum_{i=1}^m(\boldsymbol x_i-\boldsymbol\mu)(\boldsymbol x_i-\boldsymbol\mu)^{\mathrm{T}}-\sum\_{i=1}^N\sum\_{\boldsymbol x\in X_i}(\boldsymbol x-\boldsymbol\mu_i)(\boldsymbol x-\boldsymbol\mu_i)^{\mathrm{T}} \\
-&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left((\boldsymbol x-\boldsymbol\mu)(\boldsymbol x-\boldsymbol\mu)^{\mathrm{T}}-(\boldsymbol x-\boldsymbol\mu_i)(\boldsymbol x-\boldsymbol\mu_i)^{\mathrm{T}}\right)\right) \\
-&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left((\boldsymbol x-\boldsymbol\mu)(\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu^{\mathrm{T}})-(\boldsymbol x-\boldsymbol\mu_i)(\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu_i^{\mathrm{T}})\right)\right) \\
-&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left(\boldsymbol x\boldsymbol x^{\mathrm{T}} - \boldsymbol x\boldsymbol\mu^{\mathrm{T}}-\boldsymbol\mu\boldsymbol x^{\mathrm{T}}+\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}-\boldsymbol x\boldsymbol x^{\mathrm{T}}+\boldsymbol x\boldsymbol\mu_i^{\mathrm{T}}+\boldsymbol\mu_i\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right)\right) \\
-&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left(- \boldsymbol x\boldsymbol\mu^{\mathrm{T}}-\boldsymbol\mu\boldsymbol x^{\mathrm{T}}+\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+\boldsymbol x\boldsymbol\mu_i^{\mathrm{T}}+\boldsymbol\mu_i\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right)\right) \\
-&= \sum_{i=1}^N\left(-\sum\_{\boldsymbol x\in X_i}\boldsymbol x\boldsymbol\mu^{\mathrm{T}}-\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu\boldsymbol x^{\mathrm{T}}+\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+\sum\_{\boldsymbol x\in X_i}\boldsymbol x\boldsymbol\mu_i^{\mathrm{T}}+\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu_i\boldsymbol x^{\mathrm{T}}-\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\
-&= \sum_{i=1}^N\left(-m_i\boldsymbol\mu_i\boldsymbol\mu^{\mathrm{T}}-m_i\boldsymbol\mu\boldsymbol\mu_i^{\mathrm{T}}+m_i\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}+m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}-m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\
-&= \sum_{i=1}^N\left(-m_i\boldsymbol\mu_i\boldsymbol\mu^{\mathrm{T}}-m_i\boldsymbol\mu\boldsymbol\mu_i^{\mathrm{T}}+m_i\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\
-&= \sum_{i=1}^Nm_i\left(-\boldsymbol\mu_i\boldsymbol\mu^{\mathrm{T}}-\boldsymbol\mu\boldsymbol\mu_i^{\mathrm{T}}+\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\
+\mathbf{S}\_b &= \mathbf{S}\_t - \mathbf{S}\_w \\\
+&= \sum_{i=1}^m(\boldsymbol x_i-\boldsymbol\mu)(\boldsymbol x_i-\boldsymbol\mu)^{\mathrm{T}}-\sum\_{i=1}^N\sum\_{\boldsymbol x\in X_i}(\boldsymbol x-\boldsymbol\mu_i)(\boldsymbol x-\boldsymbol\mu_i)^{\mathrm{T}} \\\
+&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left((\boldsymbol x-\boldsymbol\mu)(\boldsymbol x-\boldsymbol\mu)^{\mathrm{T}}-(\boldsymbol x-\boldsymbol\mu_i)(\boldsymbol x-\boldsymbol\mu_i)^{\mathrm{T}}\right)\right) \\\
+&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left((\boldsymbol x-\boldsymbol\mu)(\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu^{\mathrm{T}})-(\boldsymbol x-\boldsymbol\mu_i)(\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu_i^{\mathrm{T}})\right)\right) \\\
+&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left(\boldsymbol x\boldsymbol x^{\mathrm{T}} - \boldsymbol x\boldsymbol\mu^{\mathrm{T}}-\boldsymbol\mu\boldsymbol x^{\mathrm{T}}+\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}-\boldsymbol x\boldsymbol x^{\mathrm{T}}+\boldsymbol x\boldsymbol\mu_i^{\mathrm{T}}+\boldsymbol\mu_i\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right)\right) \\\
+&= \sum_{i=1}^N\left(\sum\_{\boldsymbol x\in X_i}\left(- \boldsymbol x\boldsymbol\mu^{\mathrm{T}}-\boldsymbol\mu\boldsymbol x^{\mathrm{T}}+\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+\boldsymbol x\boldsymbol\mu_i^{\mathrm{T}}+\boldsymbol\mu_i\boldsymbol x^{\mathrm{T}}-\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right)\right) \\\
+&= \sum_{i=1}^N\left(-\sum\_{\boldsymbol x\in X_i}\boldsymbol x\boldsymbol\mu^{\mathrm{T}}-\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu\boldsymbol x^{\mathrm{T}}+\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+\sum\_{\boldsymbol x\in X_i}\boldsymbol x\boldsymbol\mu_i^{\mathrm{T}}+\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu_i\boldsymbol x^{\mathrm{T}}-\sum\_{\boldsymbol x\in X_i}\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\\
+&= \sum_{i=1}^N\left(-m_i\boldsymbol\mu_i\boldsymbol\mu^{\mathrm{T}}-m_i\boldsymbol\mu\boldsymbol\mu_i^{\mathrm{T}}+m_i\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}+m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}-m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\\
+&= \sum_{i=1}^N\left(-m_i\boldsymbol\mu_i\boldsymbol\mu^{\mathrm{T}}-m_i\boldsymbol\mu\boldsymbol\mu_i^{\mathrm{T}}+m_i\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+m_i\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\\
+&= \sum_{i=1}^Nm_i\left(-\boldsymbol\mu_i\boldsymbol\mu^{\mathrm{T}}-\boldsymbol\mu\boldsymbol\mu_i^{\mathrm{T}}+\boldsymbol\mu\boldsymbol\mu^{\mathrm{T}}+\boldsymbol\mu_i\boldsymbol\mu_i^{\mathrm{T}}\right) \\\
 &= \sum_{i=1}^N m_i(\boldsymbol\mu_i-\boldsymbol\mu)(\boldsymbol\mu_i-\boldsymbol\mu)^{\mathrm{T}}
 \end{aligned}$$
 
@@ -225,7 +225,7 @@ $$\max\limits\_{\mathbf{W}}\cfrac{
 设$\mathbf{W}=(\boldsymbol w_1,\boldsymbol w_2,...,\boldsymbol w_i,...,\boldsymbol w\_{N-1})\in\mathbb{R}^{d\times(N-1)}$，其中$\boldsymbol w_i\in\mathbb{R}^{d\times 1}$为$d$行1列的列向量，则
 $$\left\\{
 \begin{aligned}
-\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W})&=\sum_{i=1}^{N-1}\boldsymbol w_i^{\mathrm{T}}\mathbf{S}\_b \boldsymbol w_i \\
+\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W})&=\sum_{i=1}^{N-1}\boldsymbol w_i^{\mathrm{T}}\mathbf{S}\_b \boldsymbol w_i \\\
 \operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_w \mathbf{W})&=\sum_{i=1}^{N-1}\boldsymbol w_i^{\mathrm{T}}\mathbf{S}\_w \boldsymbol w_i
 \end{aligned}
 \right.$$
@@ -243,7 +243,7 @@ $$\begin{array}{cl}\underset{\boldsymbol{w}}{\min} & -\operatorname{tr}(\mathbf{
 $$L(\mathbf{W},\lambda)=-\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W})+\lambda(\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_w \mathbf{W})-1)$$
 根据矩阵微分公式$\cfrac{\partial}{\partial \mathbf{X}} \text { tr }(\mathbf{X}^{\mathrm{T}}  \mathbf{B} \mathbf{X})=(\mathbf{B}+\mathbf{B}^{\mathrm{T}})\mathbf{X}$对上式关于$\mathbf{W}$求偏导可得
 $$\begin{aligned}
-\cfrac{\partial L(\mathbf{W},\lambda)}{\partial \mathbf{W}} &= -\cfrac{\partial\left(\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W})\right)}{\partial \mathbf{W}}+\lambda \cfrac{\partial\left(\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_w \mathbf{W})-1\right)}{\partial \mathbf{W}} \\
+\cfrac{\partial L(\mathbf{W},\lambda)}{\partial \mathbf{W}} &= -\cfrac{\partial\left(\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_b \mathbf{W})\right)}{\partial \mathbf{W}}+\lambda \cfrac{\partial\left(\operatorname{tr}(\mathbf{W}^{\mathrm{T}}\mathbf{S}\_w \mathbf{W})-1\right)}{\partial \mathbf{W}} \\\
 &= -(\mathbf{S}\_b+\mathbf{S}\_b^{\mathrm{T}})\mathbf{W}+\lambda(\mathbf{S}\_w+\mathbf{S}\_w^{\mathrm{T}})\mathbf{W}
 \end{aligned}$$
 由于$\mathbf{S}\_b=\mathbf{S}\_b^{\mathrm{T}},\mathbf{S}\_w=\mathbf{S}\_w^{\mathrm{T}}$，所以

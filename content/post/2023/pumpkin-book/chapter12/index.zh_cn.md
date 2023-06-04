@@ -107,7 +107,7 @@ $$
 ## 12.10
 
 $$
-\begin{aligned} P(h(\boldsymbol{x})=y) &=1-P(h(\boldsymbol{x}) \neq y) \\ &=1-E(h) \\ &<1-\epsilon \end{aligned}
+\begin{aligned} P(h(\boldsymbol{x})=y) &=1-P(h(\boldsymbol{x}) \neq y) \\\ &=1-E(h) \\\ &<1-\epsilon \end{aligned}
 $$
 
 [解析]：$P(h(\boldsymbol{x})=y) =1-P(h(\boldsymbol{x}) \neq y)$ 因为它们是对立事件，$P(h(x)\neq y)=E(h)$是泛化误差的定义(见12.1)，由于我们假定了泛化误差$E(h)>\epsilon$，因此有$1-E(h)<1-\epsilon$。
@@ -117,7 +117,7 @@ $$
 ## 12.11
 
 $$
-\begin{aligned} P\left(\left(h\left(\boldsymbol{x}\_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}\_{m}\right)=y_{m}\right)\right) &=(1-P(h(\boldsymbol{x}) \neq y))^{m} \\ &<(1-\epsilon)^{m} \end{aligned}
+\begin{aligned} P\left(\left(h\left(\boldsymbol{x}\_{1}\right)=y_{1}\right) \wedge \ldots \wedge\left(h\left(\boldsymbol{x}\_{m}\right)=y_{m}\right)\right) &=(1-P(h(\boldsymbol{x}) \neq y))^{m} \\\ &<(1-\epsilon)^{m} \end{aligned}
 $$
 
 
@@ -129,7 +129,7 @@ $$
 ## 12.12
 
 $$
-\begin{aligned} P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0) &<|\mathcal{H}|(1-\epsilon)^{m} \\ &<|\mathcal{H}| e^{-m \epsilon} \end{aligned}
+\begin{aligned} P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0) &<|\mathcal{H}|(1-\epsilon)^{m} \\\ &<|\mathcal{H}| e^{-m \epsilon} \end{aligned}
 $$
 
 [解析]：首先解释为什么”我们事先并不知道学习算法$\mathcal{L}$会输出$\mathcal{H}$中的哪个假设“，因为一些学习算法对用一个观察集$D$的输出结果是非确定的，比如感知机就是个典型的例子，训练样本的顺序也会影响感知机学习到的假设$h$参数的值。泛化误差大于$\epsilon$且经验误差为0的假设(即在训练集上表现完美的假设)出现的概率可以表示为$P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0)$，根据式12.11，每一个这样的假设$h$都满足$P(E(h)>\epsilon \wedge \widehat{E}(h)=0)<\left(1-\epsilon \right)^m$，假设一共有$\vert\mathcal{H}\vert$这么多个这样的假设$h$，因为每个假设$h$满足$E(h)>\epsilon$且$\widehat{E}(h)=0$是互斥的，因此总的概率$P(h \in \mathcal{H}: E(h)>\epsilon \wedge \widehat{E}(h)=0)$就是这些互斥事件之和，即
@@ -241,7 +241,7 @@ $$
 $$
 \begin{aligned} 
 & P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon) \\\
-=& P\left(\left(\left|E_{h_{1}}-\widehat{E}_{h_{1}}\right|>\epsilon\right) \vee \ldots \vee\left(| E_{h_{|\mathcal{H}|}}-\widehat{E}_{h_{|\mathcal{H}|} |>\epsilon}\right)\right) \\ \leqslant & \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon) 
+=& P\left(\left(\left|E_{h_{1}}-\widehat{E}_{h_{1}}\right|>\epsilon\right) \vee \ldots \vee\left(| E_{h_{|\mathcal{H}|}}-\widehat{E}_{h_{|\mathcal{H}|} |>\epsilon}\right)\right) \\\ \leqslant & \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon) 
 \end{aligned}
 $$
 这一步是很好理解的，存在一个假设$h$使得$|E(h)-\widehat{E}(h)|>\epsilon$的概率可以表示为对假设空间内所有的假设$h_i, i\in 1,\dots,\vert\mathcal{H}\vert$，使得$\left|E_{h_{i}}-\widehat{E}_{h_{i}}\right|>\epsilon$这个事件成立的"或"事件。因为$P(A\vee B)=P(A) + P(B) - P(A\wedge B)$，而$P(A\wedge B)\geqslant 0$，所以最后一行的不等式成立。
@@ -264,7 +264,7 @@ $$
 其对立事件：
 $$
 \begin{aligned}
-P(\forall h\in\mathcal{H}:\vert E(h)-\widehat{E}(h)\vert\leqslant\epsilon)&=1-P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon)\\ &\geqslant 1- 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
+P(\forall h\in\mathcal{H}:\vert E(h)-\widehat{E}(h)\vert\leqslant\epsilon)&=1-P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon)\\\ &\geqslant 1- 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
 \end{aligned}
 $$
 令$\delta=2\vert\mathcal{H}\vert e^{-2m\epsilon^2}$，则$\epsilon=\sqrt{\frac{\ln |\mathcal{H}|+\ln (2 / \delta)}{2 m}}$，代入上式中即可得到
@@ -320,13 +320,13 @@ $$
 ## 12.24
 
 $$
-\Pi_{\mathcal{H}}(m) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)
+\Pi_{\mathcal{H}}(m) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\\ {i}\end{array}\right)
 $$
-[解析]：首先解释下数学归纳法的起始条件"当$m=1, d=0$或$d=1$时，定理成立"，当$m=1,d=0$时，由VC维的定义(式12.23) $\mathrm{VC}(\mathcal{H})=\max \left\\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\\}=0$ 可知$\Pi_{\mathcal{H}}(1)<2$，否则$d$可以取到1，又因为$\Pi_{\mathcal{H}}(m)$为整数，所以$\Pi_{\mathcal{H}}(1)\in[0, 1]$，式12.24右边为$\sum_{i=0}^{0}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=1$，因此不等式成立。当$m=1,d=1$时，因为一个样本最多只能有两个类别，所以$\Pi_\mathcal{H}(1)=2$，不等式右边为$\sum_{i=0}^{1}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=2$，因此不等式成立。
+[解析]：首先解释下数学归纳法的起始条件"当$m=1, d=0$或$d=1$时，定理成立"，当$m=1,d=0$时，由VC维的定义(式12.23) $\mathrm{VC}(\mathcal{H})=\max \left\\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\\}=0$ 可知$\Pi_{\mathcal{H}}(1)<2$，否则$d$可以取到1，又因为$\Pi_{\mathcal{H}}(m)$为整数，所以$\Pi_{\mathcal{H}}(1)\in[0, 1]$，式12.24右边为$\sum_{i=0}^{0}\left(\begin{array}{c}{1} \\\ {i}\end{array}\right)=1$，因此不等式成立。当$m=1,d=1$时，因为一个样本最多只能有两个类别，所以$\Pi_\mathcal{H}(1)=2$，不等式右边为$\sum_{i=0}^{1}\left(\begin{array}{c}{1} \\\ {i}\end{array}\right)=2$，因此不等式成立。
 
 再介绍归纳过程，这里采样的归纳方法是假设式12.24对$(m-1, d-1)$和$(m-1, d)$成立，推导出其对$(m,d)$也成立。证明过程中引入观测集$D=\left\\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m}\right\\}$ 和观测集$D^\prime=\left\\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m-1}\right\\}$，其中$D$比$D^\prime$多一个样本$x_m$，它们对应的假设空间可以表示为：
 $$
-\begin{array}{l}{\mathcal{H}_{| D}=\left\\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\\}} \\ {\mathcal{H}_{| D^{\prime}}=\left\\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m-1}\right)\right) | h \in \mathcal{H}\right\\}}\end{array}
+\begin{array}{l}{\mathcal{H}_{| D}=\left\\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\\}} \\\ {\mathcal{H}_{| D^{\prime}}=\left\\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m-1}\right)\right) | h \in \mathcal{H}\right\\}}\end{array}
 $$
 如果假设$h\in\mathcal{H}$对$x_m$的分类结果为$+1$，或为$-1$，那么任何出现在$\mathcal{H}_{\vert D^\prime}$中的串都会在$\mathcal{H}_{\vert D}$中出现一次或者两次。这里举个例子就很容易理解了，假设$m=3$：
 $$
@@ -343,26 +343,26 @@ $$
 $$
 由于$\mathcal{H}_{\vert D^\prime}$表示限制在样本集$D^\prime$上的假设空间$\mathcal{H}$的表达能力(即所有假设对样本集$D^\prime$所能赋予的标记种类数)，样本集$D^\prime$的大小为$m-1$，根据增长函数的定义，假设空间$\mathcal{H}$对包含$m-1$个样本的集合所能赋予的最大标记种类数为$\Pi_{\mathcal{H}}(m-1)$，因此$\vert\mathcal{H}_{\vert D^\prime}\vert \leqslant \Pi_\mathcal{H}(m-1)$。又根据数学归纳法的前提假设，有：
 $$
-\left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
+\left|\mathcal{H}_{| D^{\prime}}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\\ {i}\end{array}\right)
 $$
 由记号$\mathcal{H}_{\vert D^\prime}$的定义可知，$\vert\mathcal{H}_{\vert D^\prime}\vert \geqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，又由于$\vert\mathcal{H}_{\vert D^\prime}\vert$和$\vert\mathcal{H}_{D^\prime\vert D}\vert$均为整数，因此$\vert\mathcal{H}_{D^\prime\vert D}\vert \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，由于样本集$D$的大小为$m$，根据增长函数的概念，有$\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor\leqslant \Pi_{\mathcal{H}}(m-1)$。
 
 假设$Q$表示能被$\mathcal{H}_{D^\prime\vert D}$打散的集合，因为根据$\mathcal{H}_{D^\prime\vert D}$的定义，$H_{D}$必对元素$x_m$给定了不一致的判定，因此$Q \cup\left\\{\boldsymbol{x}\_{m}\right\\}$必能被$\mathcal{H}_{\vert D}$打散，由前提假设$\mathcal{H}$的VC维为$d$，因此$\mathcal{H}_{D^\prime\vert D}$的VC维最大为$d-1$，综上有
 $$
-\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
+\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\\ {i}\end{array}\right)
 $$
 因此：
 $$
 \begin{aligned}
 \left|\mathcal{H}_{| D}\right|&=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|\\\
-&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\\
-&=\sum_{i=0}^d \left(\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right)\right)\\\
-&=\sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)
+&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\\ {i}\end{array}\right) + \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\\ {i}\end{array}\right)\\\
+&=\sum_{i=0}^d \left(\left(\begin{array}{c}{m-1} \\\ {i}\end{array}\right) + \left(\begin{array}{c}{m-1} \\\ {i-1}\end{array}\right)\right)\\\
+&=\sum_{i=0}^{d}\left(\begin{array}{c}{m} \\\ {i}\end{array}\right)
 \end{aligned}
 $$
 注：最后一步依据组合公式，推导如下：
 $$
-\begin{aligned}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)+\left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right) &=\frac{(m-1) !}{(m-1-i) ! i !}+\frac{(m-1) !}{(m-1-i+1) !(i-1) !} \\ &=\frac{(m-1) !(m-i)}{(m-i)(m-1-i) ! i !}+\frac{(m-1) ! i}{(m-i) !(i-1) ! i} \\ &=\frac{(m-1) !(m-i)+(m-1) ! i}{(m-i) ! i !} \\ &=\frac{(m-1) !(m-i+i)}{(m-i) ! i !}=\frac{(m-1) ! m}{(m-i) ! i !} \\ &=\frac{m !}{(m-i) ! i !}=\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \end{aligned}
+\begin{aligned}\left(\begin{array}{c}{m-1} \\\ {i}\end{array}\right)+\left(\begin{array}{c}{m-1} \\\ {i-1}\end{array}\right) &=\frac{(m-1) !}{(m-1-i) ! i !}+\frac{(m-1) !}{(m-1-i+1) !(i-1) !} \\\ &=\frac{(m-1) !(m-i)}{(m-i)(m-1-i) ! i !}+\frac{(m-1) ! i}{(m-i) !(i-1) ! i} \\\ &=\frac{(m-1) !(m-i)+(m-1) ! i}{(m-i) ! i !} \\\ &=\frac{(m-1) !(m-i+i)}{(m-i) ! i !}=\frac{(m-1) ! m}{(m-i) ! i !} \\\ &=\frac{m !}{(m-i) ! i !}=\left(\begin{array}{c}{m} \\\ {i}\end{array}\right) \end{aligned}
 $$
 
 ## 12.25
@@ -414,11 +414,11 @@ $$
 $$
 [推导]：
 $$
-\begin{aligned} \Pi_{\mathcal{H}}(m) & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \\ & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{m}{d}\right)^{d-i} \\ &=\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\ & \leqslant\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\\ 
+\begin{aligned} \Pi_{\mathcal{H}}(m) & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\\ {i}\end{array}\right) \\\ & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\\ {i}\end{array}\right)\left(\frac{m}{d}\right)^{d-i} \\\ &=\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\\ & \leqslant\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\\ 
 &={\left(\frac{m}{d}\right)}^d{\left(1+\frac{d}{m}\right)}^m\\\
 &<\left(\frac{e \cdot m}{d}\right)^{d} \end{aligned}
 $$
-第一步到第二步和第三步到第四步均因为$m\geqslant d$，第四步到第五步是由于[二项式定理](https://zh.wikipedia.org/wiki/二项式定理)：$(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}{n} \\ {k}\end{array}\right) x^{n-k} y^{k}$，其中令$k=i, n=m, x=1, y = \frac{d}{m}$得$\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i}=\left(\frac{m}{d}\right)^{d} (1+\frac{d}{m})^m$，最后一步的不等式即需证明${\left(1+\frac{d}{m}\right)}^m\leqslant e^d$，因为${\left(1+\frac{d}{m}\right)}^m={\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}$，根据[自然对数底数$e$的定义](https://en.wikipedia.org/wiki/E_(mathematical_constant))，${\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}< e^d$，注意原文中用的是$\leqslant$，但是由于$e=\lim _{\frac{d}{m} \rightarrow 0}\left(1+\frac{d}{m}\right)^{\frac{m}{d}}$的定义是一个极限，所以应该是用$<$。
+第一步到第二步和第三步到第四步均因为$m\geqslant d$，第四步到第五步是由于[二项式定理](https://zh.wikipedia.org/wiki/二项式定理)：$(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}{n} \\\ {k}\end{array}\right) x^{n-k} y^{k}$，其中令$k=i, n=m, x=1, y = \frac{d}{m}$得$\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i}=\left(\frac{m}{d}\right)^{d} (1+\frac{d}{m})^m$，最后一步的不等式即需证明${\left(1+\frac{d}{m}\right)}^m\leqslant e^d$，因为${\left(1+\frac{d}{m}\right)}^m={\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}$，根据[自然对数底数$e$的定义](https://en.wikipedia.org/wiki/E_(mathematical_constant))，${\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}< e^d$，注意原文中用的是$\leqslant$，但是由于$e=\lim _{\frac{d}{m} \rightarrow 0}\left(1+\frac{d}{m}\right)^{\frac{m}{d}}$的定义是一个极限，所以应该是用$<$。
 
 
 
@@ -567,7 +567,7 @@ $$
 ## 12.36
 
 $$
-\begin{aligned} \widehat{E}(h) &=\frac{1}{m} \sum\_{i=1}^{m} \mathbb{I}\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right) \\ &=\frac{1}{m} \sum\_{i=1}^{m} \frac{1-y_{i} h\left(\boldsymbol{x}\_{i}\right)}{2} \\ &=\frac{1}{2}-\frac{1}{2 m} \sum\_{i=1}^{m} y_{i} h\left(\boldsymbol{x}\_{i}\right) \end{aligned}
+\begin{aligned} \widehat{E}(h) &=\frac{1}{m} \sum\_{i=1}^{m} \mathbb{I}\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right) \\\ &=\frac{1}{m} \sum\_{i=1}^{m} \frac{1-y_{i} h\left(\boldsymbol{x}\_{i}\right)}{2} \\\ &=\frac{1}{2}-\frac{1}{2 m} \sum\_{i=1}^{m} y_{i} h\left(\boldsymbol{x}\_{i}\right) \end{aligned}
 $$
 [解析]：这里解释从第一步到第二步的推导，因为前提假设是2分类问题，$y_k\in\\{-1, +1\\}$，因此$\mathbb{I}\left(h(x_i)\neq y_i\right)\equiv \frac{1-y_i h(x_i)}{2}$。这是因为假如$y_i=+1, h(x_i)=+1$或$y_i=-1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=0= \frac{1-y_i h(x_i)}{2}$；反之，假如$y_i=-1, h(x_i)=+1$或$y_i=+1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=1= \frac{1-y_i h(x_i)}{2}$。
 
@@ -621,15 +621,15 @@ $$
 ## 12.42
 
 $$
-\begin{array}{l}{\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum\_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 R_{m}(\mathcal{F})+\sqrt{\frac{\ln (1 / \delta)}{2 m}}} \\ {\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum\_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}}\end{array}
+\begin{array}{l}{\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum\_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 R_{m}(\mathcal{F})+\sqrt{\frac{\ln (1 / \delta)}{2 m}}} \\\ {\mathbb{E}[f(\boldsymbol{z})] \leqslant \frac{1}{m} \sum\_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right)+2 \widehat{R}_{Z}(\mathcal{F})+3 \sqrt{\frac{\ln (2 / \delta)}{2 m}}}\end{array}
 $$
 [解析]：首先令记号
 $$
-\begin{aligned} \widehat{E}_{Z}(f) &=\frac{1}{m} \sum\_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right) \\ \Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \end{aligned}
+\begin{aligned} \widehat{E}_{Z}(f) &=\frac{1}{m} \sum\_{i=1}^{m} f\left(\boldsymbol{z}_{i}\right) \\\ \Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \end{aligned}
 $$
 即$\widehat{E}_{Z}(f)$表示函数$f$作为假设下的经验误差，$\Phi(Z)$表示泛化误差和经验误差的差的上确界。再令$Z^\prime$为只与$Z$有一个示例(样本)不同的训练集，不妨设$z_m\in Z$和$z^\prime_m\in Z^\prime$为不同的示例，那么有
 $$
-\begin{aligned} \Phi\left(Z^{\prime}\right)-\Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z^{\prime}}(f)\right)-\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \\ & \leqslant \sup _{f \in \mathcal{F}} \left(\widehat{E}_{Z}(f)-\widehat{E}_{Z^{\prime}}(f)\right) \\ &=\sup_{f\in\mathcal{F}}\frac{\sum^m_{i=1}f(z_i)-\sum^m_{i=1}f(z^\prime_i)}{m}\\&=\sup _{f \in \mathcal{F}} \frac{f\left(z_{m}\right)-f\left(z_{m}^{\prime}\right)}{m} \\ & \leqslant \frac{1}{m} \end{aligned}
+\begin{aligned} \Phi\left(Z^{\prime}\right)-\Phi(Z) &=\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z^{\prime}}(f)\right)-\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right) \\\ & \leqslant \sup _{f \in \mathcal{F}} \left(\widehat{E}_{Z}(f)-\widehat{E}_{Z^{\prime}}(f)\right) \\\ &=\sup_{f\in\mathcal{F}}\frac{\sum^m_{i=1}f(z_i)-\sum^m_{i=1}f(z^\prime_i)}{m}\\&=\sup _{f \in \mathcal{F}} \frac{f\left(z_{m}\right)-f\left(z_{m}^{\prime}\right)}{m} \\\ & \leqslant \frac{1}{m} \end{aligned}
 $$
 第一个不等式是因为[上确界的差不大于差的上确界](https://math.stackexchange.com/questions/246015/supremum-of-the-difference-of-two-functions)，第四行的等号由于$Z^\prime$与$Z$只有$z_m$不相同，最后一行的不等式是因为前提假设$\mathcal{F}:\mathcal{Z}\rightarrow [0,1]$，即$f(z_m),f(z_m^\prime)\in[0,1]$。
 
@@ -657,7 +657,7 @@ $$
 
 下面来估计$\mathbb{E}_{Z}[\Phi(Z)]$的上界：
 $$
-\begin{aligned} \mathbb{E}_{Z}[\Phi(Z)] &=\mathbb{E}_{Z}\left[\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right)\right] \\ &=\mathbb{E}_{Z}\left[\sup _{f \in \mathcal{F}} \mathbb{E}_{Z^{\prime}}\left[\widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right]\right] \\ & \leqslant \mathbb{E}_{Z, Z^{\prime}}\left[\sup _{f \in \mathcal{F}}\left( \widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right)\right] \\ &=\mathbb{E}_{Z, Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m}\left(f\left(\boldsymbol{z}_{i}^{\prime}\right)-f\left(\boldsymbol{z}_{i}\right)\right)\right] \\ &=\mathbb{E}_{\boldsymbol{\sigma}, Z,Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i}\left(f\left(\boldsymbol{z}_{i}^{\prime}\right)-f\left(\boldsymbol{z}_{i}\right)\right)\right] \\ &\leqslant \mathbb{E}_{\boldsymbol{\sigma}, Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}^{\prime}\right)\right]+\mathbb{E}_{\boldsymbol{\sigma}, Z}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m}-\sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right] \\ &=2 \mathbb{E}_{\boldsymbol{\sigma}, Z}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right] \\ &=2 R_{m}(\mathcal{F}) \end{aligned}
+\begin{aligned} \mathbb{E}_{Z}[\Phi(Z)] &=\mathbb{E}_{Z}\left[\sup _{f \in \mathcal{F}} \left(\mathbb{E}[f]-\widehat{E}_{Z}(f)\right)\right] \\\ &=\mathbb{E}_{Z}\left[\sup _{f \in \mathcal{F}} \mathbb{E}_{Z^{\prime}}\left[\widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right]\right] \\\ & \leqslant \mathbb{E}_{Z, Z^{\prime}}\left[\sup _{f \in \mathcal{F}}\left( \widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right)\right] \\\ &=\mathbb{E}_{Z, Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m}\left(f\left(\boldsymbol{z}_{i}^{\prime}\right)-f\left(\boldsymbol{z}_{i}\right)\right)\right] \\\ &=\mathbb{E}_{\boldsymbol{\sigma}, Z,Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i}\left(f\left(\boldsymbol{z}_{i}^{\prime}\right)-f\left(\boldsymbol{z}_{i}\right)\right)\right] \\\ &\leqslant \mathbb{E}_{\boldsymbol{\sigma}, Z^{\prime}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}^{\prime}\right)\right]+\mathbb{E}_{\boldsymbol{\sigma}, Z}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m}-\sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right] \\\ &=2 \mathbb{E}_{\boldsymbol{\sigma}, Z}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right] \\\ &=2 R_{m}(\mathcal{F}) \end{aligned}
 $$
 第二行等式是外面套了一个对服从分布$\mathcal{D}$的示例集$Z^\prime$求期望，因为$\mathbb{E}_{Z^\prime\sim\mathcal{D}}[\widehat{E}_{Z^\prime}(f)]=\mathbb{E}(f)$，而采样出来的$Z^\prime$和$Z$相互独立，因此有$\mathbb{E}_{Z^\prime\sim\mathcal{D}}[\widehat{E}_{Z}(f)]=\widehat{E}_{Z}(f)$。
 
@@ -739,7 +739,7 @@ $$
 ## 12.57
 
 $$
-\begin{array}{l}{\quad\left|\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{i}}, \boldsymbol{z}\right)\right|} \\ {\leqslant\left|\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}}, \boldsymbol{z}\right)\right|+\left|\ell\left(\mathfrak{L}_{D^{i}, \boldsymbol{z}}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}, \boldsymbol{z}}\right)\right|} \\ {\leqslant 2 \beta}\end{array}
+\begin{array}{l}{\quad\left|\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{i}}, \boldsymbol{z}\right)\right|} \\\ {\leqslant\left|\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}}, \boldsymbol{z}\right)\right|+\left|\ell\left(\mathfrak{L}_{D^{i}, \boldsymbol{z}}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}, \boldsymbol{z}}\right)\right|} \\\ {\leqslant 2 \beta}\end{array}
 $$
 
 [解析]：根据[三角不等式]([https://zh.wikipedia.org/zh-hans/%E4%B8%89%E8%A7%92%E4%B8%8D%E7%AD%89%E5%BC%8F](https://zh.wikipedia.org/zh-hans/三角不等式))，有$|a+b| \leq|a|+|b|$，将$a=\ell\left(\mathfrak{L}_{D}, \boldsymbol{z}\right)-\ell\left(\mathfrak{L}_{D^{i}}\right)$，$b=\ell\left(\mathfrak{L}_{D^{i}, \boldsymbol{z}}\right)-\ell\left(\mathfrak{L}_{D^{\backslash i}, \boldsymbol{z}}\right)$代入即可得出第一个不等式，根据$D^{\backslash i}$表示移除$D$中第$i$个样本，$D^i$表示替换$D$中第$i$个样本，那么$a,b$的变动均为一个样本，根据式12.57，$a\leqslant\beta, b\leqslant\beta$，因此$a +b \leqslant 2\beta$。
@@ -792,7 +792,7 @@ $$
 $$
 再令
 $$
-\begin{array}{l}{\epsilon^{\prime}=\frac{\epsilon}{2}} \\ {\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}\end{array}
+\begin{array}{l}{\epsilon^{\prime}=\frac{\epsilon}{2}} \\\ {\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}\end{array}
 $$
 将$\epsilon^\prime=\frac{\epsilon}{2}$代入到${\frac{\delta}{2}=2 \exp \left(-2 m\left(\epsilon^{\prime}\right)^{2}\right)}$可以解得$m=\frac{2}{\epsilon^{2}} \ln \frac{4}{\delta}$，由Hoeffding不等式12.6，$$P\left(\left\vert\frac{1}{m} \sum\_{i=1}^{m} x_{i}-\frac{1}{m} \sum\_{i=1}^{m} \mathbb{E}\left(x_{i}\right)\right\vert \geqslant \epsilon\right) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)$$，其中$\frac{1}{m} \sum\_{i=1}^{m} \mathbb{E}\left(x_{i}\right)=\ell(g, \mathcal{D})$，$\frac{1}{m} \sum\_{i=1}^{m} x_{i}=\widehat{\ell}(g, \mathcal{D})$，代入可得
 $$

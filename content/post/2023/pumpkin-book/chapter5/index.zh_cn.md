@@ -161,7 +161,7 @@ E(\boldsymbol{v},\boldsymbol{h})&=-\sum\_{i=1}^d\sum_{j=1}^qw\_{ij}v_ih_j-\sum\_
 其中
 $$\mathbf{W}=\begin{bmatrix}
 \boldsymbol{w}_1\\\
-\boldsymbol{w}_2\\ 
+\boldsymbol{w}_2\\\ 
 \vdots\\\
 \boldsymbol{w}_q
 \end{bmatrix}\in \mathbb{R}^{q*d}$$

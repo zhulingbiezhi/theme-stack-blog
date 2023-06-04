@@ -247,24 +247,24 @@ $$
 \begin{aligned}
 \boldsymbol B\boldsymbol A
 & =\begin{bmatrix}
-b_{1}^{1} &b_{2}^{1}  & \cdot  & \cdot  & \cdot  & b_{k}^{1}\\ 
-b_{1}^{2} &b_{2}^{2}  & \cdot  & \cdot  & \cdot  & b_{k}^{2}\\ 
+b_{1}^{1} &b_{2}^{1}  & \cdot  & \cdot  & \cdot  & b_{k}^{1}\\\ 
+b_{1}^{2} &b_{2}^{2}  & \cdot  & \cdot  & \cdot  & b_{k}^{2}\\\ 
 \cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
 \cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
  \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
  b_{1}^{d}& b_{2}^{d}  & \cdot  & \cdot  &\cdot   &  b_{k}^{d}
 \end{bmatrix}_{d\times k}\cdot 
 \begin{bmatrix}
-\alpha_{1}^{1} &\alpha_{2}^{1}  & \cdot  & \cdot  & \cdot  & \alpha_{m}^{1}\\ 
-\alpha_{1}^{2} &\alpha_{2}^{2}  & \cdot  & \cdot  & \cdot  & \alpha_{m}^{2}\\ 
+\alpha_{1}^{1} &\alpha_{2}^{1}  & \cdot  & \cdot  & \cdot  & \alpha_{m}^{1}\\\ 
+\alpha_{1}^{2} &\alpha_{2}^{2}  & \cdot  & \cdot  & \cdot  & \alpha_{m}^{2}\\\ 
 \cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
 \cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
  \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
  \alpha_{1}^{k}& \alpha_{2}^{k}  & \cdot  & \cdot  &\cdot   &  \alpha_{m}^{k}
 \end{bmatrix}_{k\times m} \\\
 & =\begin{bmatrix}
-\sum_{j=1}^{k}b_{j}^{1}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{1}\alpha _{m}^{j}\\ 
-\sum_{j=1}^{k}b_{j}^{2}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{2}\alpha _{m}^{j}\\ 
+\sum_{j=1}^{k}b_{j}^{1}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{1}\alpha _{m}^{j}\\\ 
+\sum_{j=1}^{k}b_{j}^{2}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{2}\alpha _{m}^{j}\\\ 
 \cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
 \cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
  \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
@@ -277,18 +277,18 @@ $$
 \begin{aligned}
 \boldsymbol b_{\boldsymbol j}\boldsymbol \alpha ^{\boldsymbol j}
 & =\begin{bmatrix}
-b_{j}^{1}\\ b_{j}^{2}
-\\ \cdot 
-\\ \cdot 
-\\ \cdot 
-\\ b_{j}^{d}
+b_{j}^{1}\\\ b_{j}^{2}
+\\\ \cdot 
+\\\ \cdot 
+\\\ \cdot 
+\\\ b_{j}^{d}
 \end{bmatrix}\cdot 
 \begin{bmatrix}
  \alpha _{1}^{j}& \alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \alpha _{m}^{j}
 \end{bmatrix}\\\
 & =\begin{bmatrix}
-b_{j}^{1}\alpha _{1}^{j} &b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & b_{j}^{1}\alpha _{m}^{j}\\ 
-b_{j}^{2}\alpha _{1}^{j} &b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & b_{j}^{2}\alpha _{m}^{j}\\ 
+b_{j}^{1}\alpha _{1}^{j} &b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & b_{j}^{1}\alpha _{m}^{j}\\\ 
+b_{j}^{2}\alpha _{1}^{j} &b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & b_{j}^{2}\alpha _{m}^{j}\\\ 
 \cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
 \cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
  \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
@@ -302,18 +302,18 @@ $$
 \begin{aligned}
 \sum_{j=1}^{k}\boldsymbol b_{\boldsymbol j}\boldsymbol \alpha ^{\boldsymbol j} 
 & = \sum_{j=1}^{k}\left (\begin{bmatrix}
-b_{j}^{1}\\ b_{j}^{2}
-\\ \cdot 
-\\ \cdot 
-\\ \cdot 
-\\ b_{j}^{d}
+b_{j}^{1}\\\ b_{j}^{2}
+\\\ \cdot 
+\\\ \cdot 
+\\\ \cdot 
+\\\ b_{j}^{d}
 \end{bmatrix}`\cdot 
 \begin{bmatrix}
  \alpha _{1}^{j}& \alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \alpha _{m}^{j}
 \end{bmatrix} \right )\\\
 & =\begin{bmatrix}
-\sum_{j=1}^{k}b_{j}^{1}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{1}\alpha _{m}^{j}\\ 
-\sum_{j=1}^{k}b_{j}^{2}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{2}\alpha _{m}^{j}\\ 
+\sum_{j=1}^{k}b_{j}^{1}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{1}\alpha _{m}^{j}\\\ 
+\sum_{j=1}^{k}b_{j}^{2}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{2}\alpha _{m}^{j}\\\ 
 \cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
 \cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
  \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 

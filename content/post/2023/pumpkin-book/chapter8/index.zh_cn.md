@@ -27,7 +27,7 @@ $$
 ## 8.3
 
 $$
-\begin{aligned} P(H(\boldsymbol{x}) \neq f(\boldsymbol{x})) &=\sum_{k=0}^{\lfloor T / 2\rfloor} \left( \begin{array}{c}{T} \\ {k}\end{array}\right)(1-\epsilon)^{k} \epsilon^{T-k} \\ & \leqslant \exp \left(-\frac{1}{2} T(1-2 \epsilon)^{2}\right) \end{aligned}
+\begin{aligned} P(H(\boldsymbol{x}) \neq f(\boldsymbol{x})) &=\sum_{k=0}^{\lfloor T / 2\rfloor} \left( \begin{array}{c}{T} \\\ {k}\end{array}\right)(1-\epsilon)^{k} \epsilon^{T-k} \\\ & \leqslant \exp \left(-\frac{1}{2} T(1-2 \epsilon)^{2}\right) \end{aligned}
 $$
 
 [推导]：由基分类器相互独立，假设随机变量$X$为$T$个基分类器分类正确的次数，因此随机变量$\mathrm{X}$服从二项分布：$\mathrm{X} \sim \mathcal{B}(\mathrm{T}, 1-\mathrm{\epsilon})$，设$x_i$为每一个分类器分类正确的次数，则$x_i\sim \mathcal{B}(1, 1-\mathrm{\epsilon})（i=1，2，3，...，\mathrm{T}）$，那么有
@@ -39,13 +39,13 @@ $$
 $$
 则：
 $$
-\begin{aligned} P(H(x) \neq f(x))=& P(X \leq\lfloor T / 2\rfloor) \\ & \leqslant P(X \leq T / 2)
-\\ & =P\left[X-(1-\epsilon) T \leqslant \frac{T}{2}-(1-\epsilon) T\right] 
-\\ & =P\left[X-
+\begin{aligned} P(H(x) \neq f(x))=& P(X \leq\lfloor T / 2\rfloor) \\\ & \leqslant P(X \leq T / 2)
+\\\ & =P\left[X-(1-\epsilon) T \leqslant \frac{T}{2}-(1-\epsilon) T\right] 
+\\\ & =P\left[X-
 (1-\epsilon) T \leqslant -\frac{T}{2}\left(1-2\epsilon\right)]\right]
-\\ &=P\left[\sum_{i=1}^{\mathrm{T}} x_i-
+\\\ &=P\left[\sum_{i=1}^{\mathrm{T}} x_i-
 \sum_{i=1}^{\mathrm{T}}\mathbb{E}(x_i) \leqslant -\frac{T}{2}\left(1-2\epsilon\right)]\right]
-\\ &=P\left[\frac{1}{\mathrm{T}}\sum_{i=1}^{\mathrm{T}} x_i-\frac{1}{\mathrm{T}}
+\\\ &=P\left[\frac{1}{\mathrm{T}}\sum_{i=1}^{\mathrm{T}} x_i-\frac{1}{\mathrm{T}}
 \sum_{i=1}^{\mathrm{T}}\mathbb{E}(x_i) \leqslant -\frac{1}{2}\left(1-2\epsilon\right)]\right]
  \end{aligned}
 $$
@@ -55,7 +55,7 @@ P\left(\frac{1}{m} \sum\_{i=1}^{m} x_{i}-\frac{1}{m} \sum\_{i=1}^{m} \mathbb{E}\
 $$
 令$\delta=\frac {(1-2\epsilon)}{2},m=T$得
 $$
-\begin{aligned} P(H(\boldsymbol{x}) \neq f(\boldsymbol{x})) &=\sum_{k=0}^{\lfloor T / 2\rfloor} \left( \begin{array}{c}{T} \\ {k}\end{array}\right)(1-\epsilon)^{k} \epsilon^{T-k} \\ & \leqslant \exp \left(-\frac{1}{2} T(1-2 \epsilon)^{2}\right) \end{aligned}
+\begin{aligned} P(H(\boldsymbol{x}) \neq f(\boldsymbol{x})) &=\sum_{k=0}^{\lfloor T / 2\rfloor} \left( \begin{array}{c}{T} \\\ {k}\end{array}\right)(1-\epsilon)^{k} \epsilon^{T-k} \\\ & \leqslant \exp \left(-\frac{1}{2} T(1-2 \epsilon)^{2}\right) \end{aligned}
 $$
 
 ## 8.4
@@ -140,8 +140,8 @@ $$
 $$
 \begin{aligned}
 \operatorname{sign}(H(\boldsymbol{x}))&=\operatorname{sign}\left(\frac{1}{2} \ln \frac{P(f(x)=1 | \boldsymbol{x})}{P(f(x)=-1 | \boldsymbol{x})}\right)
-\\ & =\left\\{\begin{array}{ll}{1,} & {P(f(x)=1 | \boldsymbol{x})>P(f(x)=-1 | \boldsymbol{x})} \\ {-1,} & {P(f(x)=1 | \boldsymbol{x})<P(f(x)=-1 | \boldsymbol{x})}\end{array}\right.
-\\ & =\underset{y \in\\{-1,1\\}}{\arg \max } P(f(x)=y | \boldsymbol{x})
+\\\ & =\left\\{\begin{array}{ll}{1,} & {P(f(x)=1 | \boldsymbol{x})>P(f(x)=-1 | \boldsymbol{x})} \\\ {-1,} & {P(f(x)=1 | \boldsymbol{x})<P(f(x)=-1 | \boldsymbol{x})}\end{array}\right.
+\\\ & =\underset{y \in\\{-1,1\\}}{\arg \max } P(f(x)=y | \boldsymbol{x})
 \end{aligned}
 $$
 
@@ -197,7 +197,7 @@ $$
 $$
 \begin{aligned}
 \ell_{\exp }\left(H_{t-1}+h_{t} | \mathcal{D}\right) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} e^{-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})}\right]
-\\ & \simeq \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})+\frac{f^{2}(\boldsymbol{x}) h_{t}^{2}(\boldsymbol{x})}{2}\right)\right]
+\\\ & \simeq \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h_{t}(\boldsymbol{x})+\frac{f^{2}(\boldsymbol{x}) h_{t}^{2}(\boldsymbol{x})}{2}\right)\right]
 \end{aligned}
 $$
 因为$f(\boldsymbol{x})$与$h_t(\boldsymbol{x})$取值都为1或-1，所以$f^2(\boldsymbol{x})=h_t^2(\boldsymbol{x})=1$，所以得:
@@ -221,7 +221,7 @@ $$
 ## 8.16
 
 $$
-\begin{aligned} h_{t}(\boldsymbol{x}) &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\ &=\underset{\boldsymbol{h}}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
+\begin{aligned} h_{t}(\boldsymbol{x}) &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right] \\\ &=\underset{\boldsymbol{h}}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}_{t}}[f(\boldsymbol{x}) h(\boldsymbol{x})] \end{aligned}
 $$
 
 [推导]：首先解释下符号$\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}$的含义，注意在本章中有两个符号$D$和$\mathcal{D}$，其中$D$表示数据集，而$\mathcal{D}$表示数据集$D$的样本分布，可以理解为在数据集$D$上进行一次随机采样，样本$x$被抽到的概率是$\mathcal{D}(x)$，那么符号$\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}$表示的是在概率分布$\mathcal{D}$上的期望，可以简单地理解为对数据及$D$以概率$\mathcal{D}$加权之后的期望，因此有：

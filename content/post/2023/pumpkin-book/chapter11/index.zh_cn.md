@@ -14,7 +14,7 @@ $$
 \operatorname{Gain}(A)=\operatorname{Ent}(D)-\sum\_{v=1}^{V} \frac{\left|D^{v}\right|}{|D|} \operatorname{Ent}\left(D^{v}\right)
 $$
 
-[解析]：此为信息增益的定义式，对数据集$D$和属性子集$A$，假设根据$A$的取值将$D$分为了$V$个子集$\{D^1,D^2,\dots,D^V\}$，那么信息增益的定义为划分之前数据集$D$的信息熵和划分之后每个子数据集$D^v$的信息熵的差。熵用来衡量一个系统的混乱程度，因此划分前和划分后熵的差越大，表示划分越有效，划分带来的”信息增益“越大。
+[解析]：此为信息增益的定义式，对数据集$D$和属性子集$A$，假设根据$A$的取值将$D$分为了$V$个子集$\\{D^1,D^2,\dots,D^V\\}$，那么信息增益的定义为划分之前数据集$D$的信息熵和划分之后每个子数据集$D^v$的信息熵的差。熵用来衡量一个系统的混乱程度，因此划分前和划分后熵的差越大，表示划分越有效，划分带来的”信息增益“越大。
 
 ## 11.2
 
@@ -79,10 +79,10 @@ $$
 \hat{f}(\boldsymbol{x}) & \simeq f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{\nabla^2f(x_k)}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\\
 &\leqslant
  f\left(\boldsymbol{x}\_{k}\right)+\left\langle\nabla f\left(\boldsymbol{x}\_{k}\right), \boldsymbol{x}-\boldsymbol{x}\_{k}\right\rangle+\frac{L}{2}\left\|\boldsymbol{x}-\boldsymbol{x}\_{k}\right\|^{2} \\\
-&= f\left(\boldsymbol{x}\_{k}\right)+\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{L}{2}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\\
-&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\right)\\
-&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L^2}\nabla f(x_k)^\top\nabla f(x_k)\right) -\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
-&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)^{\top}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)-\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\
+&= f\left(\boldsymbol{x}\_{k}\right)+\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{L}{2}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\\\
+&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)\right)\\\
+&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{2}{L}\nabla f\left(\boldsymbol{x}\_{k}\right)^{\top}\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L^2}\nabla f(x_k)^\top\nabla f(x_k)\right) -\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\\
+&=f(x_k)+\frac{L}{2}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)^{\top}\left(\left(\boldsymbol{x}-\boldsymbol{x}\_{k}\right)+\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)-\frac{1}{2L}\nabla f(x_k)^\top\nabla f(x_k)\\\
 &=\frac{L}{2}\left\|\boldsymbol{x}-\left(\boldsymbol{x}\_{k}-\frac{1}{L} \nabla f\left(\boldsymbol{x}\_{k}\right)\right)\right\|_{2}^{2}+\mathrm{const}
 \end{aligned}
 $$
@@ -116,7 +116,7 @@ $$
 ## 11.14
 
 $$
-x_{k+1}^{i}=\left\{\begin{array}{ll}
+x_{k+1}^{i}=\left\\{\begin{array}{ll}
 {z^{i}-\lambda / L,} & {\lambda / L<z^{i}} \\\
 {0,} & {\left|z^{i}\right| \leqslant \lambda / L} \\\
 {z^{i}+\lambda / L,} & {z^{i}<-\lambda / L}
@@ -142,7 +142,7 @@ $$
 $$
 其中
 $$
-\operatorname{sign}\left(x^{i}\right)=\left\{\begin{array}{ll}
+\operatorname{sign}\left(x^{i}\right)=\left\\{\begin{array}{ll}
 {1,} & {x^{i}>0} \\\
 {-1,} & {x^{i}<0}
 \end{array}\right.
@@ -185,8 +185,8 @@ $$
    $$
    \begin{aligned}
    g(x^i)\vert_{x^i=0}-g(x^i)\vert_{x_i=z^i-\frac{\lambda}{L}}
-   &=\frac{L}{2}\left({z^i}\right)^2 - \left(\lambda z^i-\frac{\lambda^2}{2L}\right)\\
-   &=\frac{L}{2}\left(z^i-\frac{\lambda}{L}\right)^2\\
+   &=\frac{L}{2}\left({z^i}\right)^2 - \left(\lambda z^i-\frac{\lambda^2}{2L}\right)\\\
+   &=\frac{L}{2}\left(z^i-\frac{\lambda}{L}\right)^2\\\
    &>0
    \end{aligned}
    $$
@@ -199,8 +199,8 @@ $$
    \begin{aligned}
    g(\Delta x) &=\frac{L}{2}\left(\Delta x-z^{i}\right)^{2}+\lambda|\Delta x| \\\
    &=\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}|\Delta x|\right)+\frac{L}{2}\left(z^{i}\right)^{2} \\\
-   &\ge\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}\Delta x\right)+\frac{L}{2}\left(z^{i}\right)^{2}\\
-   &\ge\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\
+   &\ge\frac{L}{2}\left((\Delta x)^{2}-2 \Delta x \cdot z^{i}+\frac{2 \lambda}{L}\Delta x\right)+\frac{L}{2}\left(z^{i}\right)^{2}\\\
+   &\ge\frac{L}{2}\left(\Delta x\right)^2+\frac{L}{2}\left(z^{i}\right)^{2}\\\
    &>g(x^i)\vert_{x^i=0}
    \end{aligned}
    $$
@@ -249,25 +249,25 @@ $$
 & =\begin{bmatrix}
 b_{1}^{1} &b_{2}^{1}  & \cdot  & \cdot  & \cdot  & b_{k}^{1}\\ 
 b_{1}^{2} &b_{2}^{2}  & \cdot  & \cdot  & \cdot  & b_{k}^{2}\\ 
-\cdot  & \cdot  & \cdot  &  &  & \cdot \\ 
-\cdot  &  \cdot &  & \cdot  &  &\cdot  \\ 
- \cdot & \cdot  &  &  & \cdot  & \cdot \\ 
+\cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
+\cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
+ \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
  b_{1}^{d}& b_{2}^{d}  & \cdot  & \cdot  &\cdot   &  b_{k}^{d}
 \end{bmatrix}_{d\times k}\cdot 
 \begin{bmatrix}
 \alpha_{1}^{1} &\alpha_{2}^{1}  & \cdot  & \cdot  & \cdot  & \alpha_{m}^{1}\\ 
 \alpha_{1}^{2} &\alpha_{2}^{2}  & \cdot  & \cdot  & \cdot  & \alpha_{m}^{2}\\ 
-\cdot  & \cdot  & \cdot  &  &  & \cdot \\ 
-\cdot  &  \cdot &  & \cdot  &  &\cdot  \\ 
- \cdot & \cdot  &  &  & \cdot  & \cdot \\ 
+\cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
+\cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
+ \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
  \alpha_{1}^{k}& \alpha_{2}^{k}  & \cdot  & \cdot  &\cdot   &  \alpha_{m}^{k}
 \end{bmatrix}_{k\times m} \\\
 & =\begin{bmatrix}
 \sum_{j=1}^{k}b_{j}^{1}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{1}\alpha _{m}^{j}\\ 
 \sum_{j=1}^{k}b_{j}^{2}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{2}\alpha _{m}^{j}\\ 
-\cdot  & \cdot  & \cdot  &  &  & \cdot \\ 
-\cdot  &  \cdot &  & \cdot  &  &\cdot  \\ 
- \cdot & \cdot  &  &  & \cdot  & \cdot \\ 
+\cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
+\cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
+ \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
 \sum_{j=1}^{k}b_{j}^{d}\alpha _{1}^{j}& \sum_{j=1}^{k}b_{j}^{d}\alpha _{2}^{j}  & \cdot  & \cdot  &\cdot   &  \sum_{j=1}^{k}b_{j}^{d}\alpha _{m}^{j}
 \end{bmatrix}_{d\times m} &
 \end{aligned}
@@ -285,13 +285,13 @@ b_{j}^{1}\\ b_{j}^{2}
 \end{bmatrix}\cdot 
 \begin{bmatrix}
  \alpha _{1}^{j}& \alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \alpha _{m}^{j}
-\end{bmatrix}\\
+\end{bmatrix}\\\
 & =\begin{bmatrix}
 b_{j}^{1}\alpha _{1}^{j} &b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & b_{j}^{1}\alpha _{m}^{j}\\ 
 b_{j}^{2}\alpha _{1}^{j} &b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & b_{j}^{2}\alpha _{m}^{j}\\ 
-\cdot  & \cdot  & \cdot  &  &  & \cdot \\ 
-\cdot  &  \cdot &  & \cdot  &  &\cdot  \\ 
- \cdot & \cdot  &  &  & \cdot  & \cdot \\ 
+\cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
+\cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
+ \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
 b_{j}^{d}\alpha _{1}^{j}& b_{j}^{d}\alpha _{2}^{j}  & \cdot  & \cdot  &\cdot   &  b_{j}^{d}\alpha _{m}^{j}
 \end{bmatrix}_{d\times m} &
 \end{aligned}
@@ -310,13 +310,13 @@ b_{j}^{1}\\ b_{j}^{2}
 \end{bmatrix}`\cdot 
 \begin{bmatrix}
  \alpha _{1}^{j}& \alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \alpha _{m}^{j}
-\end{bmatrix} \right )\\
+\end{bmatrix} \right )\\\
 & =\begin{bmatrix}
 \sum_{j=1}^{k}b_{j}^{1}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{1}\alpha _{2}^{j} & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{1}\alpha _{m}^{j}\\ 
 \sum_{j=1}^{k}b_{j}^{2}\alpha _{1}^{j} &\sum_{j=1}^{k}b_{j}^{2}\alpha _{2}^{j}  & \cdot  & \cdot  & \cdot  & \sum_{j=1}^{k}b_{j}^{2}\alpha _{m}^{j}\\ 
-\cdot  & \cdot  & \cdot  &  &  & \cdot \\ 
-\cdot  &  \cdot &  & \cdot  &  &\cdot  \\ 
- \cdot & \cdot  &  &  & \cdot  & \cdot \\ 
+\cdot  & \cdot  & \cdot  &  &  & \cdot \\\ 
+\cdot  &  \cdot &  & \cdot  &  &\cdot  \\\ 
+ \cdot & \cdot  &  &  & \cdot  & \cdot \\\ 
 \sum_{j=1}^{k}b_{j}^{d}\alpha _{1}^{j}& \sum_{j=1}^{k}b_{j}^{d}\alpha _{2}^{j}  & \cdot  & \cdot  &\cdot   &  \sum_{j=1}^{k}b_{j}^{d}\alpha _{m}^{j}
 \end{bmatrix}_{d\times m} &
 \end{aligned}

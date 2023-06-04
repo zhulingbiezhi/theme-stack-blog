@@ -33,7 +33,7 @@ $$
 [推导]：由基分类器相互独立，假设随机变量$X$为$T$个基分类器分类正确的次数，因此随机变量$\mathrm{X}$服从二项分布：$\mathrm{X} \sim \mathcal{B}(\mathrm{T}, 1-\mathrm{\epsilon})$，设$x_i$为每一个分类器分类正确的次数，则$x_i\sim \mathcal{B}(1, 1-\mathrm{\epsilon})（i=1，2，3，...，\mathrm{T}）$，那么有
 $$
 \begin{aligned}
-\mathrm{X}&=\sum_{i=1}^{\mathrm{T}} x_i\\
+\mathrm{X}&=\sum_{i=1}^{\mathrm{T}} x_i\\\
 \mathbb{E}(X)&=\sum_{i=1}^{\mathrm{T}}\mathbb{E}(x_i)=(1-\epsilon)T
 \end{aligned}
 $$
@@ -84,7 +84,7 @@ $$
 $$
 由$\ln$函数的单调性可知，该分类器的权重只与分类器的错误率负相关(即错误率越大，权重越低)，下面解释指数损失函数的意义：
 
-1. 先考虑指数损失函数$e^{-f(x) H(x)}$的含义：$f$为真实函数，对于样本$x$来说，$f(\boldsymbol{x}) \in\{+1,-1\}$只能取$+1$和$-1$，而$H(\boldsymbol{x})$是一个实数；
+1. 先考虑指数损失函数$e^{-f(x) H(x)}$的含义：$f$为真实函数，对于样本$x$来说，$f(\boldsymbol{x}) \in\\{+1,-1\\}$只能取$+1$和$-1$，而$H(\boldsymbol{x})$是一个实数；
    当$H(\boldsymbol{x})$的符号与$f(x)$一致时，$f(\boldsymbol{x}) H(\boldsymbol{x})>0$，因此$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}=e^{-|H(\boldsymbol{x})|}<1$，且$|H(\boldsymbol{x})|$越大指数损失函数$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}$越小（这很合理：此时$|H(\boldsymbol{x})|$越大意味着分类器本身对预测结果的信心越大，损失应该越小；若$|H(\boldsymbol{x})|$在零附近，虽然预测正确，但表示分类器本身对预测结果信心很小，损失应该较大）；
    当$H(\boldsymbol{x})$的符号与$f(\boldsymbol{x})$不一致时，$f(\boldsymbol{x}) H(\boldsymbol{x})<0$，因此$e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}=e^{|H(\boldsymbol{x})|}>1$，且$| H(\boldsymbol{x}) |$越大指数损失函数越大（这很合理：此时$| H(\boldsymbol{x}) |$越大意味着分类器本身对预测结果的信心越大，但预测结果是错的，因此损失应该越大；若$| H(\boldsymbol{x}) |$在零附近，虽然预测错误，但表示分类器本身对预测结果信心很小，虽然错了，损失应该较小）；
    
@@ -108,8 +108,8 @@ $$
 \begin{aligned}
 \ell_{\exp }(H | \mathcal{D}) &=\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H(\boldsymbol{x})}\right] \\\
 &=\sum\_{\boldsymbol{x} \in D} \mathcal{D}(\boldsymbol{x}) e^{-f(\boldsymbol{x}) H(\boldsymbol{x})} \\\
-&=\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\left(e^{-H\left(\boldsymbol{x}\_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=-1\right)\right)\\
-&=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}\_{i}\right)} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=-1\right)\right)\\
+&=\sum_{i=1}^{|D|} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\left(e^{-H\left(\boldsymbol{x}\_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} \mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=-1\right)\right)\\\
+&=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}\_{i}\right)} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=1\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} \mathcal{D}\left(\boldsymbol{x}\_{i}\right)\mathbb{I}\left(f\left(\boldsymbol{x}\_{i}\right)=-1\right)\right)\\\
 &=\sum_{i=1}^{|D|} \left(e^{-H\left(\boldsymbol{x}\_{i}\right)} P\left(f\left(\boldsymbol{x}\_{i}\right)=1 \mid \boldsymbol{x}\_{i}\right)+e^{H\left(\boldsymbol{x}\_{i}\right)} P\left(f\left(\boldsymbol{x}\_{i}\right)=-1 \mid \boldsymbol{x}\_{i}\right)\right)
 \end{aligned}
 $$
@@ -140,12 +140,12 @@ $$
 $$
 \begin{aligned}
 \operatorname{sign}(H(\boldsymbol{x}))&=\operatorname{sign}\left(\frac{1}{2} \ln \frac{P(f(x)=1 | \boldsymbol{x})}{P(f(x)=-1 | \boldsymbol{x})}\right)
-\\ & =\left\{\begin{array}{ll}{1,} & {P(f(x)=1 | \boldsymbol{x})>P(f(x)=-1 | \boldsymbol{x})} \\ {-1,} & {P(f(x)=1 | \boldsymbol{x})<P(f(x)=-1 | \boldsymbol{x})}\end{array}\right.
-\\ & =\underset{y \in\{-1,1\}}{\arg \max } P(f(x)=y | \boldsymbol{x})
+\\ & =\left\\{\begin{array}{ll}{1,} & {P(f(x)=1 | \boldsymbol{x})>P(f(x)=-1 | \boldsymbol{x})} \\ {-1,} & {P(f(x)=1 | \boldsymbol{x})<P(f(x)=-1 | \boldsymbol{x})}\end{array}\right.
+\\ & =\underset{y \in\\{-1,1\\}}{\arg \max } P(f(x)=y | \boldsymbol{x})
 \end{aligned}
 $$
 
-[解析]：第一行到第二行显然成立，第二行到第三行是利用了$\arg\max$函数的定义。$\underset{y \in\{-1,1\}}{\arg \max } P(f(x)=y | \boldsymbol{x})$表示使得函数$P(f(x)=y | \boldsymbol{x})$取得最大值的$y$的值，展开刚好是第二行的式子。
+[解析]：第一行到第二行显然成立，第二行到第三行是利用了$\arg\max$函数的定义。$\underset{y \in\\{-1,1\\}}{\arg \max } P(f(x)=y | \boldsymbol{x})$表示使得函数$P(f(x)=y | \boldsymbol{x})$取得最大值的$y$的值，展开刚好是第二行的式子。
 
 ## 8.9
 
@@ -209,9 +209,9 @@ $$
 
 $$
 \begin{aligned}
-h_{t}(\boldsymbol{x})&=\underset{h}{\arg \min } \ell_{\exp }\left(H_{t-1}+h | \mathcal{D}\right)\\
-&=\underset{h}{\arg \min } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h(\boldsymbol{x})+\frac{1}{2}\right)\right]\\
-&=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right]\\
+h_{t}(\boldsymbol{x})&=\underset{h}{\arg \min } \ell_{\exp }\left(H_{t-1}+h | \mathcal{D}\right)\\\
+&=\underset{h}{\arg \min } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\left(1-f(\boldsymbol{x}) h(\boldsymbol{x})+\frac{1}{2}\right)\right]\\\
+&=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})} f(\boldsymbol{x}) h(\boldsymbol{x})\right]\\\
 &=\underset{h}{\arg \max } \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[\frac{e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}}{\mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}\left[e^{-f(\boldsymbol{x}) H_{t-1}(\boldsymbol{x})}\right]} f(\boldsymbol{x}) h(\boldsymbol{x})\right]
 \end{aligned}
 $$
@@ -310,7 +310,7 @@ $$
 ## 8.24
 
 $$
-H(\boldsymbol{x})=\left\{\begin{array}{ll}
+H(\boldsymbol{x})=\left\\{\begin{array}{ll}
 {c_{j},} & {\text { if } \sum_{i=1}^{T} h_{i}^{j}(\boldsymbol{x})>0.5 \sum\_{k=1}^{N} \sum_{i=1}^{T} h_{i}^{k}(\boldsymbol{x})} \\\
 {\text { reject, }} & {\text { otherwise. }}
 \end{array}\right.
@@ -378,8 +378,8 @@ $$
 [推导]：由(8.28)知
 $$
 \begin{aligned}
-\bar{A}(h | \boldsymbol{x})&=\sum_{i=1}^{T} w\_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}\\
-&=\sum_{i=1}^{T} w\_{i}(h_i(\boldsymbol{x})^2-2h_i(\boldsymbol{x})H(\boldsymbol{x})+H(\boldsymbol{x})^2)\\
+\bar{A}(h | \boldsymbol{x})&=\sum_{i=1}^{T} w\_{i}\left(h_{i}(\boldsymbol{x})-H(\boldsymbol{x})\right)^{2}\\\
+&=\sum_{i=1}^{T} w\_{i}(h_i(\boldsymbol{x})^2-2h_i(\boldsymbol{x})H(\boldsymbol{x})+H(\boldsymbol{x})^2)\\\
 &=\sum_{i=1}^{T} w\_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^2
 \end{aligned}
 $$
@@ -387,8 +387,8 @@ $$
 又因为
 $$
 \begin{aligned}
-& \sum_{i=1}^{T} w\_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})\\
-&=\sum_{i=1}^{T} w\_{i}\left(f(\boldsymbol{x})-h_{i}(\boldsymbol{x})\right)^{2}-(f(\boldsymbol{x})-H(\boldsymbol{x}))^{2}\\
+& \sum_{i=1}^{T} w\_{i} E\left(h_{i} | \boldsymbol{x}\right)-E(H | \boldsymbol{x})\\\
+&=\sum_{i=1}^{T} w\_{i}\left(f(\boldsymbol{x})-h_{i}(\boldsymbol{x})\right)^{2}-(f(\boldsymbol{x})-H(\boldsymbol{x}))^{2}\\\
 &=\sum_{i=1}^{T} w\_{i}h_i(\boldsymbol{x})^2-H(\boldsymbol{x})^{2}
 \end{aligned}
 $$

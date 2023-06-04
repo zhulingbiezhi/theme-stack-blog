@@ -86,7 +86,7 @@ $$
 ## 14.10
 
 $$
-P\left(y_{v} | \mathbf{x}, \mathbf{y}_{V \backslash\{v\}}\right)=P\left(y_{v} | \mathbf{x}, \mathbf{y}_{n(v)}\right)
+P\left(y_{v} | \mathbf{x}, \mathbf{y}_{V \backslash\\{v\\}}\right)=P\left(y_{v} | \mathbf{x}, \mathbf{y}_{n(v)}\right)
 $$
 
 [解析]：根据局部马尔科夫性，给定某变量的邻接变量，则该变量独立与其他变量，即该变量只与其邻接变量有关，所以式$14.10$中给定变量$v$ 以外的所有变量与仅给定变量$v$的邻接变量是等价的。
@@ -106,7 +106,7 @@ $$
 
 $$
 \begin{aligned}
-P\left(x_{5}\right) &=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) \sum_{x_{4}} P\left(x_{4} | x_{3}\right) \sum_{x_{2}} P\left(x_{3} | x_{2}\right) \sum_{x_{1}} P\left(x_{1}\right) P\left(x_{2} | x_{1}\right)\\
+P\left(x_{5}\right) &=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) \sum_{x_{4}} P\left(x_{4} | x_{3}\right) \sum_{x_{2}} P\left(x_{3} | x_{2}\right) \sum_{x_{1}} P\left(x_{1}\right) P\left(x_{2} | x_{1}\right)\\\
 &=\sum_{x_{3}} P\left(x_{5} | x_{3}\right) \sum_{x_{4}} P\left(x_{4} | x_{3}\right) \sum_{x_{2}} P\left(x_{3} | x_{2}\right) m_{12}\left(x_{2}\right)
 \end{aligned}
 $$
@@ -254,7 +254,7 @@ $$
 ## 14.30
 
 $$
-\ln p(\mathbf{x} | \Theta)=\sum_{i=1}^{N} \ln \left\{\sum_{\mathbf{z}} p\left(x_{i}, \mathbf{z} | \Theta\right)\right\}
+\ln p(\mathbf{x} | \Theta)=\sum_{i=1}^{N} \ln \left\\{\sum_{\mathbf{z}} p\left(x_{i}, \mathbf{z} | \Theta\right)\right\\}
 $$
 
 [解析]：对式$14.29$取对数。
@@ -284,10 +284,10 @@ $${\rm ln}p(x)=\mathcal{L}(q)+{\rm KL}(q \parallel p)$$
 $$
 \begin{aligned}
 {\rm ln}p(x)&=\int q(z){\rm ln}p(x)dz \\\
- &=\int q(z){\rm ln}\frac{p(x,z)}{p(z|x)}\\
- &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\cdot\frac{q(z)}{p(z|x)}\bigg\} \\\
+ &=\int q(z){\rm ln}\frac{p(x,z)}{p(z|x)}\\\
+ &=\int q(z){\rm ln}\bigg\\{\frac{p(x,z)}{q(z)}\cdot\frac{q(z)}{p(z|x)}\bigg\\} \\\
  &=\int q(z)\bigg({\rm ln}\frac{p(x,z)}{q(z)}-{\rm ln}\frac{p(z|x)}{q(z)}\bigg) \\\
-  &=\int q(z){\rm ln}\bigg\{\frac{p(x,z)}{q(z)}\bigg\}-\int q(z){\rm ln}\frac{p(z|x)}{q(z)} \\\
+  &=\int q(z){\rm ln}\bigg\\{\frac{p(x,z)}{q(z)}\bigg\\}-\int q(z){\rm ln}\frac{p(z|x)}{q(z)} \\\
   &=\mathcal{L}(q)+{\rm KL}(q \parallel p)\qquad
 \end{aligned}
 $$
@@ -295,7 +295,7 @@ $$
 ## 14.33
 
 $$
-\mathcal{L}(q)=\int q(\mathbf{z}) \ln \left\{\frac{p(\mathbf{x}, \mathbf{z})}{q(\mathbf{z})}\right\} \mathrm{d} \mathbf{z}
+\mathcal{L}(q)=\int q(\mathbf{z}) \ln \left\\{\frac{p(\mathbf{x}, \mathbf{z})}{q(\mathbf{z})}\right\\} \mathrm{d} \mathbf{z}
 $$
 
 
@@ -323,20 +323,20 @@ $$
 ## 14.36
 $$
 \begin{aligned}
-\mathcal{L}(q)&=\int \prod\_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}} \\\
-&=\int q_{j}\bigg\{\int p(x,z)\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const} \\\
+\mathcal{L}(q)&=\int \prod\_{i}q_{i}\bigg\\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\\}d{\rm\mathbf{z}} \\\
+&=\int q_{j}\bigg\\{\int p(x,z)\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\\}d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const} \\\
 &=\int q_{j}{\rm ln}\tilde{p}({\rm \mathbf{x},\mathbf{z_{j}}})d{\rm\mathbf{z_{j}}}-\int q_{j}{\rm ln}q_{j}d{\rm\mathbf{z_{j}}}+{\rm const}
 \end{aligned}
 $$
 [推导]：
 $$
-\mathcal{L}(q)=\int \prod\_{i}q_{i}\bigg\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\}d{\rm\mathbf{z}}=\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}-\int\prod\_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}
+\mathcal{L}(q)=\int \prod\_{i}q_{i}\bigg\\{ {\rm ln}p({\rm \mathbf{x},\mathbf{z}})-\sum\_{i}{\rm ln}q_{i}\bigg\\}d{\rm\mathbf{z}}=\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}-\int\prod\_{i}q_{i}\sum_{i}{\rm ln}q_{i}d{\rm\mathbf{z}}
 $$
 公式可以看做两个积分相减，我们先来看左边积分$\int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}}$的推导。
 $$
 \begin{aligned}
 \int\prod\_{i}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} &= \int q_{j}\prod\_{i\ne j}q_{i}{\rm ln}p({\rm \mathbf{x},\mathbf{z}})d{\rm\mathbf{z}} \\\
-&= \int q_{j}\bigg\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{j}}}\qquad 
+&= \int q_{j}\bigg\\{\int{\rm ln}p({\rm \mathbf{x},\mathbf{z}})\prod\_{i\ne j}q_{i}d{\rm\mathbf{z_{i}}}\bigg\\}d{\rm\mathbf{z_{j}}}\qquad 
 \end{aligned}
 $$
 即先对$\rm\mathbf{z_{j}}$求积分，再对$\rm\mathbf{z_{i}}$求积分，这个就是教材中的$14.36$左边的积分部分。
@@ -345,11 +345,11 @@ $$
 $$
 \begin{aligned}
 \int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&= \int q_{i^{\prime}}\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}\qquad  \\\
-&=\int q_{i^{\prime}}\bigg\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}d{\rm\mathbf{z_{i^{\prime}}}}
+&=\int q_{i^{\prime}}\bigg\\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\\}d{\rm\mathbf{z_{i^{\prime}}}}
 \end{aligned}
 $$
 第一个等式是一个展开项，选取一个变量$q_{i^{\prime}}, i^{\prime}\ne k$，由于
-$\bigg\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\}$部分与变量$q_{i^{\prime}}$无关，所以可以拿到积分外面。又因为$\int q_{i^{\prime}}d{\rm\mathbf{z_{i^{\prime}}}}=1$，所以
+$\bigg\\{\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}}\bigg\\}$部分与变量$q_{i^{\prime}}$无关，所以可以拿到积分外面。又因为$\int q_{i^{\prime}}d{\rm\mathbf{z_{i^{\prime}}}}=1$，所以
 $$
 \begin{aligned}
 \int\prod\_{i}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z}}&=\int\prod\_{i\ne i^{\prime}}q_{i}{\rm ln}q_{k}d{\rm\mathbf{z_{i}}} \\\

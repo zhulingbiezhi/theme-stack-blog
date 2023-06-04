@@ -43,21 +43,21 @@ $$\begin{aligned}
 \end{aligned}$$
 假设此时数据集$D_c$中的样本个数为$n$，也即$|D_c|=n$，则上式可以改写为
 $$\begin{aligned}
-(\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum_{i=1}^{n} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)\right]\\
-&=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)\\
+(\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum_{i=1}^{n} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)\right]\\\
+&=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)\\\
 \end{aligned}$$
 为了便于分别求解$\hat{\boldsymbol{\mu}}_{c}$和$\hat{\boldsymbol{\Sigma}}_{c}$，在这里我们根据公式$\boldsymbol{x}^{\mathrm{T}}\mathbf{A}\boldsymbol{x}=\operatorname{tr}(\mathbf{A}\boldsymbol{x}\boldsymbol{x}^{\mathrm{T}}),\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}\_i$将上式中的最后一项作如下恒等变形
 $$\begin{aligned}
-&\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}}\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}\left(\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-\boldsymbol{x}\_i\boldsymbol{\mu}_c^{\mathrm{T}}-\boldsymbol{\mu}_c\boldsymbol{x}\_i^{\mathrm{T}}+\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}\right)\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\sum_{i=1}^{n}\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-n\bar{\boldsymbol{x}}\boldsymbol{\mu}_c^{\mathrm{T}}-n\boldsymbol{\mu}_c\bar{\boldsymbol{x}}^{\mathrm{T}}+n\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}\right)\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\sum_{i=1}^{n}\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\boldsymbol{\mu}_c^{\mathrm{T}}+n\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}+2n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}\right)\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\left(\sum_{i=1}^{n}\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}+n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}\right)+\left(n\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\boldsymbol{\mu}_c^{\mathrm{T}}+n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}\right)\right)\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}+\sum_{i=1}^{n}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right)\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{1}{2}\operatorname{tr}\left[n\cdot\boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]\\
-=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]\\
+&\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}}\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}\left(\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-\boldsymbol{x}\_i\boldsymbol{\mu}_c^{\mathrm{T}}-\boldsymbol{\mu}_c\boldsymbol{x}\_i^{\mathrm{T}}+\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}\right)\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\sum_{i=1}^{n}\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-n\bar{\boldsymbol{x}}\boldsymbol{\mu}_c^{\mathrm{T}}-n\boldsymbol{\mu}_c\bar{\boldsymbol{x}}^{\mathrm{T}}+n\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}\right)\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\sum_{i=1}^{n}\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\boldsymbol{\mu}_c^{\mathrm{T}}+n\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}+2n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}\right)\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\left(\sum_{i=1}^{n}\boldsymbol{x}\_i\boldsymbol{x}\_i^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}+n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}\right)+\left(n\boldsymbol{\mu}_c\boldsymbol{\mu}_c^{\mathrm{T}}-2n\bar{\boldsymbol{x}}\boldsymbol{\mu}_c^{\mathrm{T}}+n\bar{\boldsymbol{x}}\bar{\boldsymbol{x}}^{\mathrm{T}}\right)\right)\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\left(\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}+\sum_{i=1}^{n}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right)\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{1}{2}\operatorname{tr}\left[n\cdot\boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]\\\
+=&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]\\\
 =&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})
 \end{aligned}$$
 所以
@@ -73,14 +73,14 @@ $$\frac{n}{2}\log|\boldsymbol{\Sigma}|+\frac{1}{2}\operatorname{tr}\left[\boldsy
 
 ## 7.19
 $$\hat{P}(c)=\frac{\left|D_{c}\right|+1}{|D|+N}$$
-[推导]：从贝叶斯估计（参见附录①）的角度来说，拉普拉斯修正就等价于先验概率为Dirichlet分布（参见附录③）的后验期望值估计。为了接下来的叙述方便，我们重新定义一下相关数学符号。设包含$m$个独立同分布样本的训练集为$D$，$D$中可能的类别数为$k$，其类别的具体取值范围为$\{c_1,c_2,...,c_k\}$。若令随机变量$C$表示样本所属的类别，且$C$取到每个值的概率分别为$P(C=c_1)=\theta_1,P(C=c_2)=\theta_2,...,P(C=c_k)=\theta_k$，那么显然$C$服从参数为$\boldsymbol{\theta}=(\theta_1,\theta_2,...,\theta_k)\in\mathbb{R}^{k}$的Categorical分布（参见附录②），其概率质量函数为
+[推导]：从贝叶斯估计（参见附录①）的角度来说，拉普拉斯修正就等价于先验概率为Dirichlet分布（参见附录③）的后验期望值估计。为了接下来的叙述方便，我们重新定义一下相关数学符号。设包含$m$个独立同分布样本的训练集为$D$，$D$中可能的类别数为$k$，其类别的具体取值范围为$\\{c_1,c_2,...,c_k\\}$。若令随机变量$C$表示样本所属的类别，且$C$取到每个值的概率分别为$P(C=c_1)=\theta_1,P(C=c_2)=\theta_2,...,P(C=c_k)=\theta_k$，那么显然$C$服从参数为$\boldsymbol{\theta}=(\theta_1,\theta_2,...,\theta_k)\in\mathbb{R}^{k}$的Categorical分布（参见附录②），其概率质量函数为
 $$P(C=c_i)=P(c_i)=\theta_i$$
 其中$P(c_i)=\theta_i$就是公式(7.9)所要求解的$\hat{P}(c)$，下面我们用贝叶斯估计中的后验期望值估计来估计$\theta_i$。根据贝叶斯估计的原理可知，在进行参数估计之前，需要先主观预设一个先验概率$P(\boldsymbol{\theta})$，通常为了方便计算<sup>[7]</sup>后验概率$P(\boldsymbol{\theta}|D)$，我们会用似然函数$P(D|\boldsymbol{\theta})$的共轭先验<sup>[6]</sup>作为我们的先验概率。显然，此时的似然函数$P(D|\boldsymbol{\theta})$是一个基于Categorical分布的似然函数，而Categorical分布的共轭先验为Dirichlet分布，所以此时只需要预设先验概率$P(\boldsymbol{\theta})$为Dirichlet分布，然后使用后验期望值估计就能估计出$\theta_i$。具体地，记$D$中样本类别取值为$c_i$的样本个数为$y_i$，则似然函数$P(D|\boldsymbol{\theta})$可展开为
 $$P(D|\boldsymbol{\theta})=\theta_1^{y_1}\ldots\theta_k^{y_k}=\prod\_{i=1}^{k}\theta_i^{y_i}$$
 那么后验概率$P(D|\boldsymbol{\theta})$为
 $$\begin{aligned}
-P(\boldsymbol{\theta}|D)&=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{P(D)}\\
-&=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{\sum\_{\boldsymbol{\theta}}P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}\\
+P(\boldsymbol{\theta}|D)&=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{P(D)}\\\
+&=\frac{P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}{\sum\_{\boldsymbol{\theta}}P(D|\boldsymbol{\theta})P(\boldsymbol{\theta})}\\\
 &=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot P(\boldsymbol{\theta})}{\sum\_{\boldsymbol{\theta}}\left[\prod\_{i=1}^{k}\theta_i^{y_i}\cdot P(\boldsymbol{\theta})\right]}
 \end{aligned}$$
 假设此时先验概率$P(\boldsymbol{\theta})$是参数为$\boldsymbol{\alpha}=(\alpha_1,\alpha_2,...,\alpha_k)\in \mathbb{R}^{k}$的Dirichlet分布，则$P(\boldsymbol{\theta})$可写为
@@ -96,7 +96,7 @@ P(\boldsymbol{\theta}|D)&=\frac{\prod\_{i=1}^{k}\theta_i^{y_i}\cdot P(\boldsymbo
 此时若设$\boldsymbol{\alpha}+\boldsymbol{y}=(\alpha_1+y_1,\alpha_2+y_2,...,\alpha_k+y_k)\in \mathbb{R}^{k}$，则根据Dirichlet分布的定义可知
 $$\begin{aligned}
 P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1} \\\
-\sum\_{\boldsymbol{\theta}}P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})&=\sum\_{\boldsymbol{\theta}}\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\\
+\sum\_{\boldsymbol{\theta}}P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})&=\sum\_{\boldsymbol{\theta}}\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\\\
 1&=\sum\_{\boldsymbol{\theta}}\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1} \\\
 1&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)}\sum\_{\boldsymbol{\theta}}\left[\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right] \\\
 \frac{1}{\sum\_{\boldsymbol{\theta}}\left[\prod _{i=1}^{k}\theta_{i}^{\alpha_{i}+y_i-1}\right]}&=\frac{\Gamma \left(\sum _{i=1}^{k}(\alpha_{i}+y_i)\right)}{\prod _{i=1}^{k}\Gamma (\alpha_{i}+y_i)} \\\
@@ -109,11 +109,11 @@ P(\boldsymbol{\theta}|D)&=\frac{\prod\_{i=1}^{k}\theta_i^{\alpha_{i}+y_i-1}}{\su
 \end{aligned}$$
 综上可知，对于服从Categorical分布的$\boldsymbol{\theta}$来说，假设其先验概率$P(\boldsymbol{\theta})$是参数为$\boldsymbol{\alpha}$的Dirichlet分布时，得到的后验概率$P(\boldsymbol{\theta}|D)$是参数为$\boldsymbol{\alpha}+\boldsymbol{y}$的Dirichlet分布，通常我们称这种先验概率分布和后验概率分布形式相同的这对分布为共轭分布<sup>[6]</sup>。在推得后验概率$P(\boldsymbol{\theta}|D)$的具体形式以后，根据后验期望值估计可得$\theta_i$的估计值为
 $$\begin{aligned}
-\theta_i&=E_{P(\boldsymbol{\theta}|D)}[\theta_i]\\
-&=E_{P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})}[\theta_i]\\
-&=\frac{\alpha_i+y_i}{\sum_{j=1}^k(\alpha_j+y_j)}\\
-&=\frac{\alpha_i+y_i}{\sum_{j=1}^k\alpha_j+\sum_{j=1}^ky_j}\\
-&=\frac{\alpha_i+y_i}{\sum_{j=1}^k\alpha_j+m}\\
+\theta_i&=E_{P(\boldsymbol{\theta}|D)}[\theta_i]\\\
+&=E_{P(\boldsymbol{\theta};\boldsymbol{\alpha}+\boldsymbol{y})}[\theta_i]\\\
+&=\frac{\alpha_i+y_i}{\sum_{j=1}^k(\alpha_j+y_j)}\\\
+&=\frac{\alpha_i+y_i}{\sum_{j=1}^k\alpha_j+\sum_{j=1}^ky_j}\\\
+&=\frac{\alpha_i+y_i}{\sum_{j=1}^k\alpha_j+m}\\\
 \end{aligned}$$
 显然，公式(7.9)是当$\boldsymbol{\alpha}=(1,1,...,1)$时推得的具体结果，此时等价于我们主观预设的先验概率$P(\boldsymbol{\theta})$服从均匀分布，此即为拉普拉斯修正。同理，当我们调整$\boldsymbol{\alpha}$的取值后，即可推得其他数据平滑的公式。
 
@@ -131,8 +131,8 @@ $$\hat{P}\left(x_{j} | c, x_{i}\right)=\frac{\left|D_{c, x_{i}, x_{j}}\right|+1}
 
 ## 7.27
 $$\begin{aligned} 
-P\left(x_{1}, x_{2}\right) &=\sum_{x_{4}} P\left(x_{1}, x_{2}, x_{4}\right) \\ 
-&=\sum_{x_{4}} P\left(x_{4} | x_{1}, x_{2}\right) P\left(x_{1}\right) P\left(x_{2}\right) \\ 
+P\left(x_{1}, x_{2}\right) &=\sum_{x_{4}} P\left(x_{1}, x_{2}, x_{4}\right) \\\ 
+&=\sum_{x_{4}} P\left(x_{4} | x_{1}, x_{2}\right) P\left(x_{1}\right) P\left(x_{2}\right) \\\ 
 &=P\left(x_{1}\right) P\left(x_{2}\right) 
 \end{aligned}$$
 [解析]：在这里补充一下同父结构和顺序结构的推导。同父结构：在给定父节点$x_1$的条件下$x_3,x_4$独立
@@ -155,14 +155,14 @@ $$LL(\mathbf{\Theta}|\mathbf{X},\mathbf{Z})=\ln P(\mathbf{X},\mathbf{Z}|\mathbf{
 
 ## 附录
 ### ①贝叶斯估计<sup>[1]</sup>
-贝叶斯学派视角下的一类点估计法称为贝叶斯估计，常用的贝叶斯估计有最大后验估计（Maximum A Posteriori Estimation，简称MAP）、后验中位数估计和后验期望值估计这3种参数估计方法，下面给出这3种方法的具体定义。设总体的概率质量函数（若总体的分布为连续型时则改为概率密度函数，此处以离散型为例）为$P(x|\theta)$，从该总体中抽取出的$n$个独立同分布的样本构成的样本集为$D=\{x_1,x_2,...,x_n\}$，则根据贝叶斯公式可得在给定样本集$D$的条件下，$\theta$的条件概率为
+贝叶斯学派视角下的一类点估计法称为贝叶斯估计，常用的贝叶斯估计有最大后验估计（Maximum A Posteriori Estimation，简称MAP）、后验中位数估计和后验期望值估计这3种参数估计方法，下面给出这3种方法的具体定义。设总体的概率质量函数（若总体的分布为连续型时则改为概率密度函数，此处以离散型为例）为$P(x|\theta)$，从该总体中抽取出的$n$个独立同分布的样本构成的样本集为$D=\\{x_1,x_2,...,x_n\\}$，则根据贝叶斯公式可得在给定样本集$D$的条件下，$\theta$的条件概率为
 $$P(\theta|D)=\frac{P(D|\theta)P(\theta)}{P(D)}=\frac{P(D|\theta)P(\theta)}{\sum_{\theta}P(D|\theta)P(\theta)}$$
 其中$P(D|\theta)$为似然函数，由于样本集$D$中的样本是独立同分布的，所以似然函数可以进一步展开
 $$P(\theta|D)=\frac{P(D|\theta)P(\theta)}{\sum_{\theta}P(D|\theta)P(\theta)}=\frac{\prod\_{i=1}^{n}P(x_i|\theta) P(\theta)}{\sum_{\theta}\prod\_{i=1}^{n}P(x_i|\theta)P(\theta)}$$
 根据贝叶斯学派的观点，此条件概率代表了我们在已知样本集$D$后对$\theta$产生的新的认识，它综合了我们对$\theta$主观预设的先验概率$P(\theta)$和样本集$D$带来的信息，通常称其为$\theta$的后验概率。贝叶斯学派认为，在得到$P(\theta|D)$以后，对参数$\theta$的任何统计推断，都只能基于$P(\theta|D)$。至于具体如何去使用它，可以结合某种准则一起去进行，统计学家也有一定的自由度。对于点估计来说，求使得$P(\theta|D)$达到最大值的$\hat{\theta}_{MAP}$作为$\theta$的估计称为最大后验估计；求$P(\theta|D)$的中位数$\hat{\theta}_{Median}$作为$\theta$的估计称为后验中位数估计；求$P(\theta|D)$的期望值（均值）$\hat{\theta}_{Mean}$作为$\theta$的估计称为后验期望值估计。
 
 ### ②Categorical分布<sup>[2]</sup>
-Categorical分布又称为广义伯努利分布，是将伯努利分布中的随机变量可取值个数由两个泛化为多个得到的分布。具体地，设离散型随机变量$X$共有$k$种可能的取值$\{x_1,x_2,...,x_k\}$，且$X$取到每个值的概率分别为$P(X=x_1)=\theta_1,P(X=x_2)=\theta_2,...,P(X=x_k)=\theta_k$，则称随机变量$X$服从参数为$\theta_1,\theta_2,...,\theta_k$的Categorical分布，其概率质量函数为
+Categorical分布又称为广义伯努利分布，是将伯努利分布中的随机变量可取值个数由两个泛化为多个得到的分布。具体地，设离散型随机变量$X$共有$k$种可能的取值$\\{x_1,x_2,...,x_k\\}$，且$X$取到每个值的概率分别为$P(X=x_1)=\theta_1,P(X=x_2)=\theta_2,...,P(X=x_k)=\theta_k$，则称随机变量$X$服从参数为$\theta_1,\theta_2,...,\theta_k$的Categorical分布，其概率质量函数为
 $$P(X=x_i)=P(x_i)=\theta_i$$
 
 ### ③Dirichlet分布<sup>[3]</sup>

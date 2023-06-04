@@ -14,7 +14,7 @@ $$\boldsymbol{w} = \sum_{i=1}^m\alpha_iy_i\boldsymbol{x}\_i$$
 [推导]：公式(6.8)可作如下展开
 $$\begin{aligned}
 L(\boldsymbol{w},b,\boldsymbol{\alpha}) &= \frac{1}{2}||\boldsymbol{w}||^2+\sum_{i=1}^m\alpha_i(1-y_i(\boldsymbol{w}^T\boldsymbol{x}\_i+b)) \\\
-& =  \frac{1}{2}||\boldsymbol{w}||^2+\sum_{i=1}^m(\alpha_i-\alpha_iy_i \boldsymbol{w}^T\boldsymbol{x}\_i-\alpha_iy_ib)\\
+& =  \frac{1}{2}||\boldsymbol{w}||^2+\sum_{i=1}^m(\alpha_i-\alpha_iy_i \boldsymbol{w}^T\boldsymbol{x}\_i-\alpha_iy_ib)\\\
 & =\frac{1}{2}\boldsymbol{w}^T\boldsymbol{w}+\sum_{i=1}^m\alpha_i -\sum\_{i=1}^m\alpha_iy_i\boldsymbol{w}^T\boldsymbol{x}\_i-\sum\_{i=1}^m\alpha_iy_ib
 \end{aligned}​$$
 对$\boldsymbol{w}$和$b$分别求偏导数​并令其等于0
@@ -34,7 +34,7 @@ $$0=\sum_{i=1}^m\alpha_iy_i$$
 ## 6.11
 $$\begin{aligned}
 \max_{\boldsymbol{\alpha}} & \sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i = 1}^m\sum_{j=1}^m\alpha_i \alpha_j y_iy_j\boldsymbol{x}\_i^T\boldsymbol{x}\_j \\\
-\text { s.t. } & \sum_{i=1}^m \alpha_i y_i =0 \\ 
+\text { s.t. } & \sum_{i=1}^m \alpha_i y_i =0 \\\ 
 & \alpha_i \geq 0 \quad i=1,2,\dots ,m
 \end{aligned}$$  
 [推导]：将公式(6.9)和公式(6.10)代入公式(6.8)即可将$L(\boldsymbol{w},b,\boldsymbol{\alpha})$中的$\boldsymbol{w}$和$b$消去，再考虑公式(6.10)的约束，就得到了公式(6.6)的对偶问题
@@ -55,7 +55,7 @@ $$\begin{aligned}
 $$\max_{\boldsymbol{\alpha}}\inf_{\boldsymbol{w},b} L(\boldsymbol{w},b,\boldsymbol{\alpha})=\max_{\boldsymbol{\alpha}} \sum_{i=1}^m\alpha_i - \frac{1}{2}\sum_{i = 1}^m\sum_{j=1}^m\alpha_i \alpha_j y_iy_j\boldsymbol{x}\_i^T\boldsymbol{x}\_j $$
 
 ## 6.13
-$$\left\{\begin{array}{l}\alpha_{i} \geqslant 0 \\ y_{i} f\left(\boldsymbol{x}\_{i}\right)-1 \geqslant 0 \\ \alpha_{i}\left(y_{i} f\left(\boldsymbol{x}\_{i}\right)-1\right)=0\end{array}\right.$$
+$$\left\\{\begin{array}{l}\alpha_{i} \geqslant 0 \\ y_{i} f\left(\boldsymbol{x}\_{i}\right)-1 \geqslant 0 \\ \alpha_{i}\left(y_{i} f\left(\boldsymbol{x}\_{i}\right)-1\right)=0\end{array}\right.$$
 [解析]：参见公式(6.9)中给出的第1点理由
 
 ## 6.35
@@ -88,7 +88,7 @@ $$\frac{\partial L}{\partial \xi_i}=0+C \times 1 - \alpha_i \times 1-\mu_i
 ## 6.40
 $$\begin{aligned}
 \max_{\boldsymbol{\alpha}}&\sum _{i=1}^m\alpha_i-\frac {1}{2}\sum_{i=1 }^{m}\sum_{j=1}^{m}\alpha_i\alpha_jy_iy_j\boldsymbol{x}\_i^T\boldsymbol{x}\_j \\\
- s.t. &\sum_{i=1}^m \alpha_i y_i=0 \\ 
+ s.t. &\sum_{i=1}^m \alpha_i y_i=0 \\\ 
  &  0 \leq\alpha_i \leq C \quad i=1,2,\dots ,m
  \end{aligned}$$
 将公式(6.37)-(6.39)代入公式(6.36)可以得到公式(6.35)的对偶问题：
@@ -97,7 +97,7 @@ $$\begin{aligned}
 =&\frac{1}{2}||\boldsymbol{w}||^2+\sum_{i=1}^m\alpha_i(1-y_i(\boldsymbol{w}^T\boldsymbol{x}\_i+b))+C\sum_{i=1}^m \xi_i-\sum\_{i=1}^m \alpha_i \xi_i-\sum\_{i=1}^m\mu_i \xi_i \\\
 =&-\frac {1}{2}\sum\_{i=1}^{m}\alpha_iy_i\boldsymbol{x}\_i^T\sum _{i=1}^m\alpha_iy_i\boldsymbol{x}\_i+\sum _{i=1}^m\alpha_i +\sum_{i=1}^m C\xi_i-\sum\_{i=1}^m \alpha_i \xi_i-\sum\_{i=1}^m\mu_i \xi_i \\\
 =&-\frac {1}{2}\sum\_{i=1}^{m}\alpha_iy_i\boldsymbol{x}\_i^T\sum _{i=1}^m\alpha_iy_i\boldsymbol{x}\_i+\sum _{i=1}^m\alpha_i +\sum_{i=1}^m (C-\alpha_i-\mu_i)\xi_i \\\
-=&\sum _{i=1}^m\alpha_i-\frac {1}{2}\sum_{i=1 }^{m}\sum_{j=1}^{m}\alpha_i\alpha_jy_iy_j\boldsymbol{x}\_i^T\boldsymbol{x}\_j\\
+=&\sum _{i=1}^m\alpha_i-\frac {1}{2}\sum_{i=1 }^{m}\sum_{j=1}^{m}\alpha_i\alpha_jy_iy_j\boldsymbol{x}\_i^T\boldsymbol{x}\_j\\\
 =&\min_{\boldsymbol{w},b,\boldsymbol{\xi}}L(\boldsymbol{w},b,\boldsymbol{\alpha},\boldsymbol{\xi},\boldsymbol{\mu}) 
 \end{aligned}$$
 所以
@@ -115,30 +115,30 @@ C &= \alpha_i+\mu_i
 $$0 \leq\alpha_i \leq C \quad i=1,2,\dots ,m$$
 
 ## 6.41
-$$\left\{\begin{array}{l}\alpha_{i} \geqslant 0, \quad \mu_{i} \geqslant 0 \\ y_{i} f\left(\boldsymbol{x}\_{i}\right)-1+\xi_{i} \geqslant 0 \\ \alpha_{i}\left(y_{i} f\left(\boldsymbol{x}\_{i}\right)-1+\xi_{i}\right)=0 \\ \xi_{i} \geqslant 0, \mu_{i} \xi_{i}=0\end{array}\right.$$
+$$\left\\{\begin{array}{l}\alpha_{i} \geqslant 0, \quad \mu_{i} \geqslant 0 \\ y_{i} f\left(\boldsymbol{x}\_{i}\right)-1+\xi_{i} \geqslant 0 \\ \alpha_{i}\left(y_{i} f\left(\boldsymbol{x}\_{i}\right)-1+\xi_{i}\right)=0 \\ \xi_{i} \geqslant 0, \mu_{i} \xi_{i}=0\end{array}\right.$$
 [解析]：参见公式(6.13)
 
 ## 6.52
 $$
-\left\{\begin{array}{l}
-{\alpha_{i}\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i}\right)=0} \\ {\hat{\alpha}_{i}\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i}\right)=0} \\ {\alpha_{i} \hat{\alpha}_{i}=0, \xi_{i} \hat{\xi}_{i}=0} \\ 
+\left\\{\begin{array}{l}
+{\alpha_{i}\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i}\right)=0} \\ {\hat{\alpha}_{i}\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i}\right)=0} \\ {\alpha_{i} \hat{\alpha}_{i}=0, \xi_{i} \hat{\xi}_{i}=0} \\\ 
 {\left(C-\alpha_{i}\right) \xi_{i}=0,\left(C-\hat{\alpha}_{i}\right) \hat{\xi}_{i}=0}
 \end{array}\right.
 $$
 [推导]：将公式(6.45)的约束条件全部恒等变形为小于等于0的形式可得：
 $$
-\left\{\begin{array}{l}
-{f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i} \leq 0 }  \\ 
-{y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i} \leq 0 } \\ 
+\left\\{\begin{array}{l}
+{f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i} \leq 0 }  \\\ 
+{y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i} \leq 0 } \\\ 
 {-\xi_{i} \leq 0} \\\
 {-\hat{\xi}_{i} \leq 0}
 \end{array}\right.
 $$
 由于以上四个约束条件的拉格朗日乘子分别为$\alpha_i,\hat{\alpha}_i,\mu_i,\hat{\mu}_i$，所以由附录①可知，以上四个约束条件可相应转化为以下KKT条件：
 $$
-\left\{\begin{array}{l}
-{\alpha_i\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i} \right) = 0 }  \\ 
-{\hat{\alpha}_i\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i} \right) = 0 } \\ 
+\left\\{\begin{array}{l}
+{\alpha_i\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i} \right) = 0 }  \\\ 
+{\hat{\alpha}_i\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i} \right) = 0 } \\\ 
 {-\mu_i\xi_{i} = 0 \Rightarrow \mu_i\xi_{i} = 0 }  \\\
 {-\hat{\mu}_i \hat{\xi}_{i} = 0  \Rightarrow \hat{\mu}_i \hat{\xi}_{i} = 0 }
 \end{array}\right.
@@ -152,9 +152,9 @@ $$
 $$
 所以上述KKT条件可以进一步变形为：
 $$
-\left\{\begin{array}{l}
-{\alpha_i\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i} \right) = 0 }  \\ 
-{\hat{\alpha}_i\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i} \right) = 0 } \\ 
+\left\\{\begin{array}{l}
+{\alpha_i\left(f\left(\boldsymbol{x}\_{i}\right)-y\_{i}-\epsilon-\xi_{i} \right) = 0 }  \\\ 
+{\hat{\alpha}_i\left(y_{i}-f\left(\boldsymbol{x}\_{i}\right)-\epsilon-\hat{\xi}_{i} \right) = 0 } \\\ 
 {(C-\alpha_i)\xi_{i} = 0 }  \\\
 {(C-\hat{\alpha}_i) \hat{\xi}_{i} = 0 }
 \end{array}\right.
@@ -194,7 +194,7 @@ $$\hat{\boldsymbol{\mu}}_{0}=\frac{1}{m_{0}} \mathbf{K} \mathbf{1}_{0}$$
 [解析]：为了详细地说明此公式的计算原理，下面首先先举例说明，然后再在例子的基础上延展出其一般形式。假设此时仅有4个样本，其中第1和第3个样本的标记为0，第2和第4个样本的标记为1，那么此时：
 $$m=4$$
 $$m_0=2,m_1=2$$
-$$X_0=\{\boldsymbol{x}\_1,\boldsymbol{x}\_3\},X_1=\{\boldsymbol{x}\_2,\boldsymbol{x}\_4\}$$
+$$X_0=\\{\boldsymbol{x}\_1,\boldsymbol{x}\_3\\},X_1=\\{\boldsymbol{x}\_2,\boldsymbol{x}\_4\\}$$
 $$\mathbf{K}=\left[ \begin{array}{cccc}
 \kappa\left(\boldsymbol{x}\_1, \boldsymbol{x}\_1\right) & \kappa\left(\boldsymbol{x}\_1, \boldsymbol{x}\_2\right) & \kappa\left(\boldsymbol{x}\_1, \boldsymbol{x}\_3\right) & \kappa\left(\boldsymbol{x}\_1, \boldsymbol{x}\_4\right)\\ 
 \kappa\left(\boldsymbol{x}\_2, \boldsymbol{x}\_1\right) & \kappa\left(\boldsymbol{x}\_2, \boldsymbol{x}\_2\right) & \kappa\left(\boldsymbol{x}\_2, \boldsymbol{x}\_3\right) & \kappa\left(\boldsymbol{x}\_2, \boldsymbol{x}\_4\right)\\ 
@@ -260,20 +260,20 @@ $$\begin{aligned}
 将其代入上式可得
 $$\begin{aligned}
 \boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}=&\sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\cdot\left(\frac{1}{m_{1}} \sum\_{\boldsymbol{x} \in X_{1}} \phi(\boldsymbol{x})-\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi(\boldsymbol{x})\right)\cdot\left(\frac{1}{m_{1}} \sum\_{\boldsymbol{x} \in X_{1}} \phi(\boldsymbol{x})^{\mathrm{T}}-\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi(\boldsymbol{x})^{\mathrm{T}}\right)\cdot \sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right) \\\
-=&\left(\frac{1}{m_{1}} \sum\_{\boldsymbol{x} \in X_{1}}\sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}} \phi(\boldsymbol{x})-\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\phi(\boldsymbol{x})\right)\\
+=&\left(\frac{1}{m_{1}} \sum\_{\boldsymbol{x} \in X_{1}}\sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}} \phi(\boldsymbol{x})-\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\phi(\boldsymbol{x})\right)\\\
 &\cdot\left(\frac{1}{m_{1}} \sum\_{\boldsymbol{x} \in X_{1}} \sum\_{i=1}^{m} \alpha_{i} \phi(\boldsymbol{x})^{\mathrm{T}}\phi\left(\boldsymbol{x}\_{i}\right)-\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \sum\_{i=1}^{m} \alpha_{i} \phi(\boldsymbol{x})^{\mathrm{T}}\phi\left(\boldsymbol{x}\_{i}\right)\right) \\\
 \end{aligned}$$
 由于$\kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)=\phi(\boldsymbol{x}\_i)^{\mathrm{T}}\phi(\boldsymbol{x})$为标量，所以其转置等于本身，也即$\kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)=\phi(\boldsymbol{x}\_i)^{\mathrm{T}}\phi(\boldsymbol{x})=\left(\phi(\boldsymbol{x}\_i)^{\mathrm{T}}\phi(\boldsymbol{x})\right)^{\mathrm{T}}=\phi(\boldsymbol{x})^{\mathrm{T}}\phi(\boldsymbol{x}\_i)=\kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)^{\mathrm{T}}$，将其代入上式可得
 $$\begin{aligned}
-\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}=&\left(\frac{1}{m_{1}} \sum\_{i=1}^{m}\sum\_{\boldsymbol{x} \in X_{1}}\alpha_{i} \kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)-\frac{1}{m_{0}} \sum\_{i=1}^{m} \sum\_{\boldsymbol{x} \in X_{0}}  \alpha_{i} \kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)\right)\\
+\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}=&\left(\frac{1}{m_{1}} \sum\_{i=1}^{m}\sum\_{\boldsymbol{x} \in X_{1}}\alpha_{i} \kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)-\frac{1}{m_{0}} \sum\_{i=1}^{m} \sum\_{\boldsymbol{x} \in X_{0}}  \alpha_{i} \kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)\right)\\\
 &\cdot\left(\frac{1}{m_{1}} \sum\_{i=1}^{m}\sum\_{\boldsymbol{x} \in X_{1}} \alpha_{i} \kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)-\frac{1}{m_{0}}\sum\_{i=1}^{m}  \sum\_{\boldsymbol{x} \in X_{0}} \alpha_{i} \kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)\right)
 \end{aligned}$$
 令$\boldsymbol{\alpha}=(\alpha_1;\alpha_2;...;\alpha_m)^{\mathrm{T}}\in \mathbb{R}^{m\times 1}$，同时结合公式(6.66)的解析中得到的$\hat{\boldsymbol{\mu}}_{0},\hat{\boldsymbol{\mu}}_{1}$的一般形式，上式可以化简为
 $$\begin{aligned}
-\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}&=\left(\boldsymbol{\alpha}^{\mathrm{T}}\hat{\boldsymbol{\mu}}_{1}-\boldsymbol{\alpha}^{\mathrm{T}}\hat{\boldsymbol{\mu}}_{0}\right)\cdot\left(\hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}}\boldsymbol{\alpha}-\hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}}\boldsymbol{\alpha}\right)\\
-&=\boldsymbol{\alpha}^{\mathrm{T}}\cdot\left(\hat{\boldsymbol{\mu}}_{1}-\hat{\boldsymbol{\mu}}_{0}\right)\cdot\left(\hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}}-\hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}}\right)\cdot\boldsymbol{\alpha}\\
-&=\boldsymbol{\alpha}^{\mathrm{T}}\cdot\left(\hat{\boldsymbol{\mu}}_{1}-\hat{\boldsymbol{\mu}}_{0}\right)\cdot\left(\hat{\boldsymbol{\mu}}_{1}-\hat{\boldsymbol{\mu}}_{0}\right)^{\mathrm{T}}\cdot\boldsymbol{\alpha}\\
-&=\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{M} \boldsymbol{\alpha}\\
+\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}&=\left(\boldsymbol{\alpha}^{\mathrm{T}}\hat{\boldsymbol{\mu}}_{1}-\boldsymbol{\alpha}^{\mathrm{T}}\hat{\boldsymbol{\mu}}_{0}\right)\cdot\left(\hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}}\boldsymbol{\alpha}-\hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}}\boldsymbol{\alpha}\right)\\\
+&=\boldsymbol{\alpha}^{\mathrm{T}}\cdot\left(\hat{\boldsymbol{\mu}}_{1}-\hat{\boldsymbol{\mu}}_{0}\right)\cdot\left(\hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}}-\hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}}\right)\cdot\boldsymbol{\alpha}\\\
+&=\boldsymbol{\alpha}^{\mathrm{T}}\cdot\left(\hat{\boldsymbol{\mu}}_{1}-\hat{\boldsymbol{\mu}}_{0}\right)\cdot\left(\hat{\boldsymbol{\mu}}_{1}-\hat{\boldsymbol{\mu}}_{0}\right)^{\mathrm{T}}\cdot\boldsymbol{\alpha}\\\
+&=\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{M} \boldsymbol{\alpha}\\\
 \end{aligned}$$
 以上便是公式(6.70)分子部分的推导，下面继续推导公式(6.70)的分母部分。将公式(6.65)代入公式(6.60)的分母可得：
 $$\begin{aligned}
@@ -296,24 +296,24 @@ $$\begin{aligned}
 所以
 $$\begin{aligned}
 \mathbf{S}_{w}^{\phi}&=\sum\_{\boldsymbol{x} \in  D}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}-2\left[m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}+m_1\boldsymbol{\mu}\_{1}^{\phi}\left(\boldsymbol{\mu}\_{1}^{\phi}\right)^{\mathrm{T}}\right]+m_0 \boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}+m_1 \boldsymbol{\mu}\_{1}^{\phi}\left(\boldsymbol{\mu}\_{1}^{\phi}\right)^{\mathrm{T}} \\\
-&=\sum\_{\boldsymbol{x} \in  D}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}-m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}-m_1\boldsymbol{\mu}\_{1}^{\phi}\left(\boldsymbol{\mu}\_{1}^{\phi}\right)^{\mathrm{T}}\\
+&=\sum\_{\boldsymbol{x} \in  D}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}-m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}-m_1\boldsymbol{\mu}\_{1}^{\phi}\left(\boldsymbol{\mu}\_{1}^{\phi}\right)^{\mathrm{T}}\\\
 \end{aligned}$$
 再将此式代回$\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}$可得
 $$\begin{aligned}
 \boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{w}^{\phi} \boldsymbol{w}=&\sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\cdot\mathbf{S}_{w}^{\phi}\cdot \sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right) \\\
 =&\sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\cdot\left(\sum\_{\boldsymbol{x} \in  D}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}-m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}-m_1\boldsymbol{\mu}\_{1}^{\phi}\left(\boldsymbol{\mu}\_{1}^{\phi}\right)^{\mathrm{T}}\right)\cdot \sum\_{i=1}^{m} \alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right) \\\
-=&\sum\_{i=1}^{m}\sum_{j=1}^{m}\sum\_{\boldsymbol{x} \in  D}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)-\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)\\
+=&\sum\_{i=1}^{m}\sum_{j=1}^{m}\sum\_{\boldsymbol{x} \in  D}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)-\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)\\\
 &-\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}m_1\boldsymbol{\mu}\_{1}^{\phi}\left(\boldsymbol{\mu}\_{1}^{\phi}\right)^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right) \\\
 \end{aligned}$$
 其中，第1项可化简为
 $$\begin{aligned}
-\sum\_{i=1}^{m}\sum_{j=1}^{m}\sum\_{\boldsymbol{x} \in  D}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)&=\sum\_{i=1}^{m}\sum_{j=1}^{m}\sum\_{\boldsymbol{x} \in  D}\alpha_{i} \alpha_{j}\kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)\kappa\left(\boldsymbol{x}\_j, \boldsymbol{x}\right)\\
+\sum\_{i=1}^{m}\sum_{j=1}^{m}\sum\_{\boldsymbol{x} \in  D}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\phi(\boldsymbol{x})\phi(\boldsymbol{x})^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)&=\sum\_{i=1}^{m}\sum_{j=1}^{m}\sum\_{\boldsymbol{x} \in  D}\alpha_{i} \alpha_{j}\kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)\kappa\left(\boldsymbol{x}\_j, \boldsymbol{x}\right)\\\
 &=\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{K} \mathbf{K}^{\mathrm{T}} \boldsymbol{\alpha}
 \end{aligned}$$
 第2项可化简为
 $$\begin{aligned}
-\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)&=m_0\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}\phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}\_{j}\right)\\
-&=m_0\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}\phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi(\boldsymbol{x})\right]\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi(\boldsymbol{x})\right]^{\mathrm{T}} \phi\left(\boldsymbol{x}\_{j}\right)\\
+\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}m_0\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)&=m_0\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}\phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\boldsymbol{\mu}\_{0}^{\phi}\left(\boldsymbol{\mu}\_{0}^{\phi}\right)^{\mathrm{T}} \phi\left(\boldsymbol{x}\_{j}\right)\\\
+&=m_0\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}\phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi(\boldsymbol{x})\right]\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi(\boldsymbol{x})\right]^{\mathrm{T}} \phi\left(\boldsymbol{x}\_{j}\right)\\\
 &=m_0\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}\phi(\boldsymbol{x})\right]\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \phi(\boldsymbol{x})^{\mathrm{T}}\phi\left(\boldsymbol{x}\_{j}\right)\right] \\\
 &=m_0\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_{j}\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \kappa\left(\boldsymbol{x}\_i, \boldsymbol{x}\right)\right]\left[\frac{1}{m_{0}} \sum\_{\boldsymbol{x} \in X_{0}} \kappa\left(\boldsymbol{x}\_j, \boldsymbol{x}\right)\right] \\\
 &=m_0\boldsymbol{\alpha}^{\mathrm{T}} \hat{\boldsymbol{\mu}}_{0} \hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}} \boldsymbol{\alpha}
@@ -322,27 +322,27 @@ $$\begin{aligned}
 $$\sum\_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i} \phi\left(\boldsymbol{x}\_{i}\right)^{\mathrm{T}}m_1\boldsymbol{\mu}\_{1}^{\phi}\left(\boldsymbol{\mu}\_{1}^{\phi}\right)^{\mathrm{T}}\alpha_{j} \phi\left(\boldsymbol{x}\_{j}\right)=m_1\boldsymbol{\alpha}^{\mathrm{T}} \hat{\boldsymbol{\mu}}_{1} \hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}} \boldsymbol{\alpha}$$
 将上述三项的化简结果代回再将此式代回$\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}$可得
 $$\begin{aligned}
-\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}&=\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{K} \mathbf{K}^{\mathrm{T}} \boldsymbol{\alpha}-m_0\boldsymbol{\alpha}^{\mathrm{T}} \hat{\boldsymbol{\mu}}_{0} \hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}} \boldsymbol{\alpha}-m_1\boldsymbol{\alpha}^{\mathrm{T}} \hat{\boldsymbol{\mu}}_{1} \hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}} \boldsymbol{\alpha}\\
-&=\boldsymbol{\alpha}^{\mathrm{T}} \cdot\left(\mathbf{K} \mathbf{K}^{\mathrm{T}} -m_0\hat{\boldsymbol{\mu}}_{0} \hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}} -m_1\hat{\boldsymbol{\mu}}_{1} \hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}} \right)\cdot\boldsymbol{\alpha}\\
-&=\boldsymbol{\alpha}^{\mathrm{T}} \cdot\left(\mathbf{K} \mathbf{K}^{\mathrm{T}}-\sum\_{i=0}^{1} m_{i} \hat{\boldsymbol{\mu}}_{i} \hat{\boldsymbol{\mu}}_{i}^{\mathrm{T}} \right)\cdot\boldsymbol{\alpha}\\
-&=\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{N}\boldsymbol{\alpha}\\
+\boldsymbol{w}^{\mathrm{T}} \mathbf{S}_{b}^{\phi} \boldsymbol{w}&=\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{K} \mathbf{K}^{\mathrm{T}} \boldsymbol{\alpha}-m_0\boldsymbol{\alpha}^{\mathrm{T}} \hat{\boldsymbol{\mu}}_{0} \hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}} \boldsymbol{\alpha}-m_1\boldsymbol{\alpha}^{\mathrm{T}} \hat{\boldsymbol{\mu}}_{1} \hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}} \boldsymbol{\alpha}\\\
+&=\boldsymbol{\alpha}^{\mathrm{T}} \cdot\left(\mathbf{K} \mathbf{K}^{\mathrm{T}} -m_0\hat{\boldsymbol{\mu}}_{0} \hat{\boldsymbol{\mu}}_{0}^{\mathrm{T}} -m_1\hat{\boldsymbol{\mu}}_{1} \hat{\boldsymbol{\mu}}_{1}^{\mathrm{T}} \right)\cdot\boldsymbol{\alpha}\\\
+&=\boldsymbol{\alpha}^{\mathrm{T}} \cdot\left(\mathbf{K} \mathbf{K}^{\mathrm{T}}-\sum\_{i=0}^{1} m_{i} \hat{\boldsymbol{\mu}}_{i} \hat{\boldsymbol{\mu}}_{i}^{\mathrm{T}} \right)\cdot\boldsymbol{\alpha}\\\
+&=\boldsymbol{\alpha}^{\mathrm{T}} \mathbf{N}\boldsymbol{\alpha}\\\
 \end{aligned}$$
 
 ## 附录
 ### ①KKT条件<sup>[1]</sup>
 对于一般地约束优化问题
 $$\begin{array}{ll}
-{\min } & {f(\boldsymbol x)} \\ 
-{\text {s.t.}} & {g_{i}(\boldsymbol x) \leq 0 \quad(i=1, \ldots, m)} \\ 
+{\min } & {f(\boldsymbol x)} \\\ 
+{\text {s.t.}} & {g_{i}(\boldsymbol x) \leq 0 \quad(i=1, \ldots, m)} \\\ 
 {} & {h_{j}(\boldsymbol x)=0 \quad(j=1, \ldots, n)}
 \end{array}$$
 其中，自变量$\boldsymbol x\in \mathbb{R}^n$。设$f(\boldsymbol x),g_i(\boldsymbol x),h_j(\boldsymbol x)$具有连续的一阶偏导数，$\boldsymbol x^\*$是优化问题的局部可行解。若该优化问题满足任意一个约束限制条件（constraint qualifications or regularity conditions）<sup>[2]</sup>，则一定存在$\boldsymbol \mu^\*=(\mu_1^\*,\mu_2^\*,...,\mu_m^\*)^T,\boldsymbol \lambda^\*=(\lambda_1^\*,\lambda_2^\*,...,\lambda_n^\*)^T,$使得
-$$\left\{
+$$\left\\{
 \begin{aligned}
 & \nabla_{\boldsymbol x} L(\boldsymbol x^\* ,\boldsymbol \mu^* ,\boldsymbol \lambda^* )=\nabla f(\boldsymbol  x^\* )+\sum\_{i=1}^{m}\mu_i^\_ \nabla g_i(\boldsymbol x^\* )+\sum_{j=1}^{n}\lambda_j^* \nabla h_j(\boldsymbol x^\*)=0 &(1) \\\
 & h_j(\boldsymbol x^\*)=0 &(2) \\\
 & g_i(\boldsymbol x^\*) \leq 0 &(3) \\\
-& \mu_i^\_ \geq 0 &(4)\\
+& \mu_i^\_ \geq 0 &(4)\\\
 & \mu_i^\_ g_i(\boldsymbol x^\*)=0 &(5)
 \end{aligned}
 \right.

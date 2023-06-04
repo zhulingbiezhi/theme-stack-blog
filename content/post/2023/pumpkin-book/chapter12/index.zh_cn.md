@@ -161,9 +161,9 @@ $$
 [推导]：
 $$
 \begin{aligned}
-\vert\mathcal{H}\vert e^{-m \epsilon} &\leqslant \delta\\
-e^{-m \epsilon} &\leqslant \frac{\delta}{\vert\mathcal{H}\vert}\\
--m \epsilon &\leqslant \ln\delta-\ln\vert\mathcal{H}\vert\\
+\vert\mathcal{H}\vert e^{-m \epsilon} &\leqslant \delta\\\
+e^{-m \epsilon} &\leqslant \frac{\delta}{\vert\mathcal{H}\vert}\\\
+-m \epsilon &\leqslant \ln\delta-\ln\vert\mathcal{H}\vert\\\
 m &\geqslant \frac{1}{\epsilon}\left(\ln |\mathcal{H}|+\ln \frac{1}{\delta}\right)
 \end{aligned}
 $$
@@ -216,11 +216,11 @@ $$
 [推导]：令$\delta=2e^{-2m\epsilon^2}$，则$\epsilon=\sqrt{\frac{\ln(2/\delta)}{2m}}$，由式12.17
 $$
 \begin{aligned}
-P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) &\leqslant 2 \exp \left(-2 m \epsilon^{2}\right)\\
-P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) &\leqslant \delta\\
-P(|E(h)-\widehat{E}(h)| \leqslant \epsilon) &\geqslant 1 - \delta\\
-P(-\epsilon \leqslant E(h)-\widehat{E}(h) \leqslant \epsilon) &\geqslant 1 - \delta\\
-P(\widehat{E}(h) -\epsilon \leqslant E(h) \leqslant \widehat{E}(h)+\epsilon) &\geqslant 1 - \delta\\
+P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) &\leqslant 2 \exp \left(-2 m \epsilon^{2}\right)\\\
+P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) &\leqslant \delta\\\
+P(|E(h)-\widehat{E}(h)| \leqslant \epsilon) &\geqslant 1 - \delta\\\
+P(-\epsilon \leqslant E(h)-\widehat{E}(h) \leqslant \epsilon) &\geqslant 1 - \delta\\\
+P(\widehat{E}(h) -\epsilon \leqslant E(h) \leqslant \widehat{E}(h)+\epsilon) &\geqslant 1 - \delta\\\
 \end{aligned}
 $$
 代入 $\epsilon=\sqrt{\frac{\ln(2/\delta)}{2m}}$得证。
@@ -249,7 +249,7 @@ $$
 由式12.17：
 $$
 \begin{aligned}
-&P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)\\
+&P(|E(h)-\widehat{E}(h)| \geqslant \epsilon) \leqslant 2 \exp \left(-2 m \epsilon^{2}\right)\\\
 &\Rightarrow \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon) \leqslant 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
 \end{aligned}
 $$
@@ -257,7 +257,7 @@ $$
 $$
 \begin{aligned}
 P(\exists h \in \mathcal{H}:|E(h)-\widehat{E}(h)|>\epsilon) 
-&\leqslant  \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon)\\
+&\leqslant  \sum_{h \in \mathcal{H}} P(|E(h)-\widehat{E}(h)|>\epsilon)\\\
 &\leqslant 2|\mathcal{H}| \exp \left(-2 m \epsilon^{2}\right)
 \end{aligned}
 $$
@@ -288,7 +288,7 @@ $$
 ## 12.21
 
 $$
-\Pi_{\mathcal{H}}(m)=\max _{\left\{\boldsymbol{x}\_{1}, \ldots, \boldsymbol{x}\_{m}\right\} \subseteq \mathcal{X}}\left|\left\{\left(h\left(\boldsymbol{x}\_{1}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\}\right|
+\Pi_{\mathcal{H}}(m)=\max _{\left\\{\boldsymbol{x}\_{1}, \ldots, \boldsymbol{x}\_{m}\right\\} \subseteq \mathcal{X}}\left|\left\\{\left(h\left(\boldsymbol{x}\_{1}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\\}\right|
 $$
 
 [解析]：这个是增长函数的定义式。增长函数$\Pi_{\mathcal{H}}(m)$表示假设空间$\mathcal{H}$对m个样本所能赋予标签的最大可能的结果数。比如对于两个样本的二分类问题，一共有4中可能的标签组合$[[0, 0], [0, 1], [1, 0], [1, 1]]$，如果假设空间$\mathcal{H}_1$能赋予这两个样本两种标签组合$[[0, 0], [1, 1]]$，则$\Pi_{\mathcal{H}_1}(2)=2$。显然，$\mathcal{H}$对样本所能赋予标签的可能结果数越多，$\mathcal{H}$的表示能力就越强。增长函数可以用来反映假设空间$\mathcal{H}$的复杂度。
@@ -310,7 +310,7 @@ $$
 ## 12.23
 
 $$
-\mathrm{VC}(\mathcal{H})=\max \left\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\}
+\mathrm{VC}(\mathcal{H})=\max \left\\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\\}
 $$
 
 [解析]：这是VC维的定义式：VC维的定义是能被$\mathcal{H}$打散的最大示例集的大小。西瓜书中例12.1和例12.2 给出了形象的例子。注意，VC维的定义式上的底数2表示这个问题是2分类的问题。如果是$n$分类的问题，那么定义式中底数需要变为$n$。
@@ -322,22 +322,22 @@ $$
 $$
 \Pi_{\mathcal{H}}(m) \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)
 $$
-[解析]：首先解释下数学归纳法的起始条件"当$m=1, d=0$或$d=1$时，定理成立"，当$m=1,d=0$时，由VC维的定义(式12.23) $\mathrm{VC}(\mathcal{H})=\max \left\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\}=0$ 可知$\Pi_{\mathcal{H}}(1)<2$，否则$d$可以取到1，又因为$\Pi_{\mathcal{H}}(m)$为整数，所以$\Pi_{\mathcal{H}}(1)\in[0, 1]$，式12.24右边为$\sum_{i=0}^{0}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=1$，因此不等式成立。当$m=1,d=1$时，因为一个样本最多只能有两个类别，所以$\Pi_\mathcal{H}(1)=2$，不等式右边为$\sum_{i=0}^{1}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=2$，因此不等式成立。
+[解析]：首先解释下数学归纳法的起始条件"当$m=1, d=0$或$d=1$时，定理成立"，当$m=1,d=0$时，由VC维的定义(式12.23) $\mathrm{VC}(\mathcal{H})=\max \left\\{m: \Pi_{\mathcal{H}}(m)=2^{m}\right\\}=0$ 可知$\Pi_{\mathcal{H}}(1)<2$，否则$d$可以取到1，又因为$\Pi_{\mathcal{H}}(m)$为整数，所以$\Pi_{\mathcal{H}}(1)\in[0, 1]$，式12.24右边为$\sum_{i=0}^{0}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=1$，因此不等式成立。当$m=1,d=1$时，因为一个样本最多只能有两个类别，所以$\Pi_\mathcal{H}(1)=2$，不等式右边为$\sum_{i=0}^{1}\left(\begin{array}{c}{1} \\ {i}\end{array}\right)=2$，因此不等式成立。
 
-再介绍归纳过程，这里采样的归纳方法是假设式12.24对$(m-1, d-1)$和$(m-1, d)$成立，推导出其对$(m,d)$也成立。证明过程中引入观测集$D=\left\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m}\right\}$ 和观测集$D^\prime=\left\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m-1}\right\}$，其中$D$比$D^\prime$多一个样本$x_m$，它们对应的假设空间可以表示为：
+再介绍归纳过程，这里采样的归纳方法是假设式12.24对$(m-1, d-1)$和$(m-1, d)$成立，推导出其对$(m,d)$也成立。证明过程中引入观测集$D=\left\\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m}\right\\}$ 和观测集$D^\prime=\left\\{\boldsymbol{x}\_{1}, \boldsymbol{x}\_{2}, \ldots, \boldsymbol{x}\_{m-1}\right\\}$，其中$D$比$D^\prime$多一个样本$x_m$，它们对应的假设空间可以表示为：
 $$
-\begin{array}{l}{\mathcal{H}_{| D}=\left\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\}} \\ {\mathcal{H}_{| D^{\prime}}=\left\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m-1}\right)\right) | h \in \mathcal{H}\right\}}\end{array}
+\begin{array}{l}{\mathcal{H}_{| D}=\left\\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m}\right)\right) | h \in \mathcal{H}\right\\}} \\ {\mathcal{H}_{| D^{\prime}}=\left\\{\left(h\left(\boldsymbol{x}\_{1}\right), h\left(\boldsymbol{x}\_{2}\right), \ldots, h\left(\boldsymbol{x}\_{m-1}\right)\right) | h \in \mathcal{H}\right\\}}\end{array}
 $$
 如果假设$h\in\mathcal{H}$对$x_m$的分类结果为$+1$，或为$-1$，那么任何出现在$\mathcal{H}_{\vert D^\prime}$中的串都会在$\mathcal{H}_{\vert D}$中出现一次或者两次。这里举个例子就很容易理解了，假设$m=3$：
 $$
 \begin{aligned}
-\mathcal{H}_{\vert D}&=\{(+,-,-),(+,+,-),(+,+,+),(-,+,-),(-,-,+)\}\\
-\mathcal{H}_{\vert D^\prime}&=\{(+,+),(+,-),(-,+),(-,-)\}\\
+\mathcal{H}_{\vert D}&=\\{(+,-,-),(+,+,-),(+,+,+),(-,+,-),(-,-,+)\\}\\\
+\mathcal{H}_{\vert D^\prime}&=\\{(+,+),(+,-),(-,+),(-,-)\\}\\\
 \end{aligned}
 $$
 其中串$(+,+)$在$\mathcal{H}_{\vert D}$中出现了两次$(+, +, +), (+, +, -)$，$\mathcal{H}_{\vert D^\prime}$中得其他串$(+,-), (-, +), (-, -)$均只在$\mathcal{H}_{\vert D}$中出现了一次。这里的原因是每个样本是二分类的，所以多出的样本$x_m$要么取$+$，要么取$-$，要么都取到(至少两个假设$h$对$x_m$做出了不一致的判断)。
 
-记号$\mathcal{H}_{D^\prime\vert D}$表示在$\mathcal{H}_{\vert D}$中出现了两次的$\mathcal{H}_{\vert D^\prime}$组成的集合，比如在上例中$\mathcal{H}_{D^\prime\vert D}=\{(+,+)\}$，有
+记号$\mathcal{H}_{D^\prime\vert D}$表示在$\mathcal{H}_{\vert D}$中出现了两次的$\mathcal{H}_{\vert D^\prime}$组成的集合，比如在上例中$\mathcal{H}_{D^\prime\vert D}=\\{(+,+)\\}$，有
 $$
 \left|\mathcal{H}_{| D}\right|=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|
 $$
@@ -347,16 +347,16 @@ $$
 $$
 由记号$\mathcal{H}_{\vert D^\prime}$的定义可知，$\vert\mathcal{H}_{\vert D^\prime}\vert \geqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，又由于$\vert\mathcal{H}_{\vert D^\prime}\vert$和$\vert\mathcal{H}_{D^\prime\vert D}\vert$均为整数，因此$\vert\mathcal{H}_{D^\prime\vert D}\vert \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor$，由于样本集$D$的大小为$m$，根据增长函数的概念，有$\left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \left\lfloor\frac{\vert\mathcal{H}_{\vert D}\vert}{2}\right\rfloor\leqslant \Pi_{\mathcal{H}}(m-1)$。
 
-假设$Q$表示能被$\mathcal{H}_{D^\prime\vert D}$打散的集合，因为根据$\mathcal{H}_{D^\prime\vert D}$的定义，$H_{D}$必对元素$x_m$给定了不一致的判定，因此$Q \cup\left\{\boldsymbol{x}\_{m}\right\}$必能被$\mathcal{H}_{\vert D}$打散，由前提假设$\mathcal{H}$的VC维为$d$，因此$\mathcal{H}_{D^\prime\vert D}$的VC维最大为$d-1$，综上有
+假设$Q$表示能被$\mathcal{H}_{D^\prime\vert D}$打散的集合，因为根据$\mathcal{H}_{D^\prime\vert D}$的定义，$H_{D}$必对元素$x_m$给定了不一致的判定，因此$Q \cup\left\\{\boldsymbol{x}\_{m}\right\\}$必能被$\mathcal{H}_{\vert D}$打散，由前提假设$\mathcal{H}$的VC维为$d$，因此$\mathcal{H}_{D^\prime\vert D}$的VC维最大为$d-1$，综上有
 $$
 \left|\mathcal{H}_{D^{\prime}| D}\right| \leqslant \Pi_{\mathcal{H}}(m-1) \leqslant \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)
 $$
 因此：
 $$
 \begin{aligned}
-\left|\mathcal{H}_{| D}\right|&=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|\\
-&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\
-&=\sum_{i=0}^d \left(\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right)\right)\\
+\left|\mathcal{H}_{| D}\right|&=\left|\mathcal{H}_{| D^{\prime}}\right|+\left|\mathcal{H}_{D^{\prime} | D}\right|\\\
+&\leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \sum_{i=0}^{d-1}\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right)\\\
+&=\sum_{i=0}^d \left(\left(\begin{array}{c}{m-1} \\ {i}\end{array}\right) + \left(\begin{array}{c}{m-1} \\ {i-1}\end{array}\right)\right)\\\
 &=\sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)
 \end{aligned}
 $$
@@ -414,8 +414,8 @@ $$
 $$
 [推导]：
 $$
-\begin{aligned} \Pi_{\mathcal{H}}(m) & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \\ & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{m}{d}\right)^{d-i} \\ &=\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\ & \leqslant\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\ 
-&={\left(\frac{m}{d}\right)}^d{\left(1+\frac{d}{m}\right)}^m\\
+\begin{aligned} \Pi_{\mathcal{H}}(m) & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right) \\ & \leqslant \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{m}{d}\right)^{d-i} \\ &=\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{d}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\ & \leqslant\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i} \\\ 
+&={\left(\frac{m}{d}\right)}^d{\left(1+\frac{d}{m}\right)}^m\\\
 &<\left(\frac{e \cdot m}{d}\right)^{d} \end{aligned}
 $$
 第一步到第二步和第三步到第四步均因为$m\geqslant d$，第四步到第五步是由于[二项式定理](https://zh.wikipedia.org/wiki/二项式定理)：$(x+y)^{n}=\sum_{k=0}^{n}\left(\begin{array}{l}{n} \\ {k}\end{array}\right) x^{n-k} y^{k}$，其中令$k=i, n=m, x=1, y = \frac{d}{m}$得$\left(\frac{m}{d}\right)^{d} \sum_{i=0}^{m}\left(\begin{array}{c}{m} \\ {i}\end{array}\right)\left(\frac{d}{m}\right)^{i}=\left(\frac{m}{d}\right)^{d} (1+\frac{d}{m})^m$，最后一步的不等式即需证明${\left(1+\frac{d}{m}\right)}^m\leqslant e^d$，因为${\left(1+\frac{d}{m}\right)}^m={\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}$，根据[自然对数底数$e$的定义](https://en.wikipedia.org/wiki/E_(mathematical_constant))，${\left(1+\frac{d}{m}\right)}^{\frac{m}{d}d}< e^d$，注意原文中用的是$\leqslant$，但是由于$e=\lim _{\frac{d}{m} \rightarrow 0}\left(1+\frac{d}{m}\right)^{\frac{m}{d}}$的定义是一个极限，所以应该是用$<$。
@@ -569,7 +569,7 @@ $$
 $$
 \begin{aligned} \widehat{E}(h) &=\frac{1}{m} \sum\_{i=1}^{m} \mathbb{I}\left(h\left(\boldsymbol{x}\_{i}\right) \neq y_{i}\right) \\ &=\frac{1}{m} \sum\_{i=1}^{m} \frac{1-y_{i} h\left(\boldsymbol{x}\_{i}\right)}{2} \\ &=\frac{1}{2}-\frac{1}{2 m} \sum\_{i=1}^{m} y_{i} h\left(\boldsymbol{x}\_{i}\right) \end{aligned}
 $$
-[解析]：这里解释从第一步到第二步的推导，因为前提假设是2分类问题，$y_k\in\{-1, +1\}$，因此$\mathbb{I}\left(h(x_i)\neq y_i\right)\equiv \frac{1-y_i h(x_i)}{2}$。这是因为假如$y_i=+1, h(x_i)=+1$或$y_i=-1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=0= \frac{1-y_i h(x_i)}{2}$；反之，假如$y_i=-1, h(x_i)=+1$或$y_i=+1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=1= \frac{1-y_i h(x_i)}{2}$。
+[解析]：这里解释从第一步到第二步的推导，因为前提假设是2分类问题，$y_k\in\\{-1, +1\\}$，因此$\mathbb{I}\left(h(x_i)\neq y_i\right)\equiv \frac{1-y_i h(x_i)}{2}$。这是因为假如$y_i=+1, h(x_i)=+1$或$y_i=-1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=0= \frac{1-y_i h(x_i)}{2}$；反之，假如$y_i=-1, h(x_i)=+1$或$y_i=+1, h(x_i)=-1$，有$\mathbb{I}\left(h(x_i)\neq y_i\right)=1= \frac{1-y_i h(x_i)}{2}$。
 
 
 
@@ -596,7 +596,7 @@ $$
 $$
 \mathbb{E}_{\boldsymbol{\sigma}}\left[\sup _{h \in \mathcal{H}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i} h\left(\boldsymbol{x}\_{i}\right)\right]
 $$
-[解析]：这个式子可以用来衡量假设空间$\mathcal{H}$的表达能力，对变量$\sigma$求期望可以理解为当变量$\sigma$包含所有可能的结果时，假设空间$\mathcal{H}$中最契合的假设$h$和变量的平均契合程度。因为前提假设是2分类的问题，因此$\sigma_i$一共有$2^m$种，这些不同的$\sigma_i$构成了数据集$D=\{(x_1, y_1), (x_2, y_2),\dots, (x_m, y_m)\}$的”对分“(12.4节)，如果一个假设空间的表达能力越强，那么就越有可能对于每一种$\sigma_i$，假设空间中都存在一个$h$使得$h(x_i)$和$\sigma_i$非常接近甚至相同，对所有可能的$\sigma_i$取期望即可衡量假设空间的整体表达能力，这就是这个式子的含义。
+[解析]：这个式子可以用来衡量假设空间$\mathcal{H}$的表达能力，对变量$\sigma$求期望可以理解为当变量$\sigma$包含所有可能的结果时，假设空间$\mathcal{H}$中最契合的假设$h$和变量的平均契合程度。因为前提假设是2分类的问题，因此$\sigma_i$一共有$2^m$种，这些不同的$\sigma_i$构成了数据集$D=\\{(x_1, y_1), (x_2, y_2),\dots, (x_m, y_m)\\}$的”对分“(12.4节)，如果一个假设空间的表达能力越强，那么就越有可能对于每一种$\sigma_i$，假设空间中都存在一个$h$使得$h(x_i)$和$\sigma_i$非常接近甚至相同，对所有可能的$\sigma_i$取期望即可衡量假设空间的整体表达能力，这就是这个式子的含义。
 
 
 
@@ -605,7 +605,7 @@ $$
 $$
 \widehat{R}_{Z}(\mathcal{F})=\mathbb{E}_{\boldsymbol{\sigma}}\left[\sup _{f \in \mathcal{F}} \frac{1}{m} \sum\_{i=1}^{m} \sigma_{i} f\left(\boldsymbol{z}_{i}\right)\right]
 $$
-[解析]：对比式12.39，这里使用函数空间$\mathcal{F}$代替了假设空间$\mathcal{H}$，函数$f$代替了假设$h$，很容易理解，因为假设$h$即可以看做是作用在数据$x_i$上的一个映射，通过这个映射可以得到标签$y_i$。注意前提假设实值函数空间$\mathcal{F}:\mathcal{Z}\rightarrow\mathbb{R}$，即映射$f$将样本$z_i$映射到了实数空间，这个时候所有的$\sigma_i$将是一个标量即$\sigma_i\in\{+1, -1\}$。
+[解析]：对比式12.39，这里使用函数空间$\mathcal{F}$代替了假设空间$\mathcal{H}$，函数$f$代替了假设$h$，很容易理解，因为假设$h$即可以看做是作用在数据$x_i$上的一个映射，通过这个映射可以得到标签$y_i$。注意前提假设实值函数空间$\mathcal{F}:\mathcal{Z}\rightarrow\mathbb{R}$，即映射$f$将样本$z_i$映射到了实数空间，这个时候所有的$\sigma_i$将是一个标量即$\sigma_i\in\\{+1, -1\\}$。
 
 
 
@@ -663,7 +663,7 @@ $$
 
 第三行不等式基于上确界函数$\sup$是个凸函数，将$\sup_{f\in\mathcal{F}}$看做是凸函数$f$，将$\widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)$看做变量$x$根据Jesen不等式(式12.4)，有$\mathbb{E}_{Z}\left[\sup _{f \in \mathcal{F}} \mathbb{E}_{Z^{\prime}}\left[\widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right]\right] \leqslant \mathbb{E}_{Z, Z^{\prime}}\left[\sup _{f \in \mathcal{F}}\left( \widehat{E}_{Z^{\prime}}(f)-\widehat{E}_{Z}(f)\right)\right] $，其中$\mathbb{E}_{Z, Z^{\prime}}[\cdot]$是$\mathbb{E}_{Z}[\mathbb{E}_{Z^\prime}[\cdot]]$的简写形式。
 
-第五行引入对Rademacher随机变量的期望，由于函数值空间是标量，因为$\sigma_i$也是标量，即$\sigma_i\in\{-1, +1\}$，且$\sigma_i$总以相同概率可以取到这两个值，因此可以引入$\mathbb{E}_{\sigma}$而不影响最终结果。
+第五行引入对Rademacher随机变量的期望，由于函数值空间是标量，因为$\sigma_i$也是标量，即$\sigma_i\in\\{-1, +1\\}$，且$\sigma_i$总以相同概率可以取到这两个值，因此可以引入$\mathbb{E}_{\sigma}$而不影响最终结果。
 
 第六行利用了[上确界的和不小于和的上确界](https://math.stackexchange.com/questions/246015/supremum-of-the-difference-of-two-functions)，因为第一项中只含有变量$z^\prime$，所以可以将$\mathbb{E}_Z$去掉，因为第二项中只含有变量$z$，所以可以将$\mathbb{E}_{Z^\prime}$去掉。
 

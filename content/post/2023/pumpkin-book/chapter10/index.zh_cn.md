@@ -129,29 +129,29 @@ $$
 由公式（10.6）和（10.9）可得
 $$
 \begin{aligned}
-\operatorname{tr}(\boldsymbol B)&=\frac{1}{2m}\sum^m_{i=1}\sum^m_{j=1}dist^2_{ij}\\
+\operatorname{tr}(\boldsymbol B)&=\frac{1}{2m}\sum^m_{i=1}\sum^m_{j=1}dist^2_{ij}\\\
 &=\frac{m}{2}dist^2_{\cdot}
 \end{aligned}
 $$
 由公式（10.4）和（10.8）可得
 $$
 \begin{aligned}
-b_{jj}&=\frac{1}{m}\sum^m_{i=1}dist^2_{ij}-\frac{1}{m}tr(\boldsymbol B)\\
+b_{jj}&=\frac{1}{m}\sum^m_{i=1}dist^2_{ij}-\frac{1}{m}tr(\boldsymbol B)\\\
 &=dist^2_{\cdot j}-\frac{1}{2}dist^2_{\cdot}
 \end{aligned}
 $$
 由公式（10.5）和（10.7）可得
 $$
 \begin{aligned}
-b_{ii}&=\frac{1}{m}\sum^m_{j=1}dist^2_{ij}-\frac{1}{m}\operatorname{tr}(\boldsymbol B)\\
+b_{ii}&=\frac{1}{m}\sum^m_{j=1}dist^2_{ij}-\frac{1}{m}\operatorname{tr}(\boldsymbol B)\\\
 &=dist^2_{i\cdot}-\frac{1}{2}dist^2_{\cdot}
 \end{aligned}
 $$
 综合可得
 $$
 \begin{aligned}
-b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\
-&=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}+\frac{1}{2}dist^2_{\cdot\cdot}-dist^2_{\cdot j}+\frac{1}{2}dist^2_{\cdot\cdot})\\
+b_{ij}&=-\frac{1}{2}(dist^2_{ij}-b_{ii}-b_{jj})\\\
+&=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}+\frac{1}{2}dist^2_{\cdot\cdot}-dist^2_{\cdot j}+\frac{1}{2}dist^2_{\cdot\cdot})\\\
 &=-\frac{1}{2}(dist^2_{ij}-dist^2_{i\cdot}-dist^2_{\cdot j}+dist^2_{\cdot\cdot})
 \end{aligned}
 $$
@@ -172,7 +172,7 @@ $$
 
 $$
 \begin{aligned}
-\sum^m_{i=1}\left\| \sum^{d'}_{j=1}z_{ij}\boldsymbol{w}_j-\boldsymbol x_i \right\|^2_2&=\sum^m_{i=1}\boldsymbol z^{\mathrm{T}}_i\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z^{\mathrm{T}}_i\mathbf{W}^{\mathrm{T}}\boldsymbol x_i +\text { const }\\
+\sum^m_{i=1}\left\| \sum^{d'}_{j=1}z_{ij}\boldsymbol{w}_j-\boldsymbol x_i \right\|^2_2&=\sum^m_{i=1}\boldsymbol z^{\mathrm{T}}_i\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z^{\mathrm{T}}_i\mathbf{W}^{\mathrm{T}}\boldsymbol x_i +\text { const }\\\
 &\propto -\operatorname{tr}(\mathbf{W}^{\mathrm{T}}(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i)\mathbf{W})
 \end{aligned}
 $$
@@ -180,19 +180,19 @@ $$
 [推导]：已知$\mathbf{W}^{\mathrm{T}} \mathbf{W}=\mathbf{I},\boldsymbol z_i=\mathbf{W}^{\mathrm{T}} \boldsymbol x_i$，则
 $$
 \begin{aligned}
-\sum^m_{i=1}\left\| \sum^{d'}_{j=1}z_{ij}\boldsymbol{w}_j-\boldsymbol x_i \right\|^2_2&=\sum^m_{i=1}\left\|\mathbf{W}\boldsymbol z_i-\boldsymbol x_i \right\|^2_2\\
-&= \sum^m_{i=1} \left(\mathbf{W}\boldsymbol z_i-\boldsymbol x_i\right)^{\mathrm{T}}\left(\mathbf{W}\boldsymbol z_i-\boldsymbol x_i\right)\\
-&= \sum^m_{i=1} \left(\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\mathbf{W}\boldsymbol z_i- \boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i-\boldsymbol x_i^{\mathrm{T}}\mathbf{W}\boldsymbol z_i+\boldsymbol x_i^{\mathrm{T}}\boldsymbol x_i \right)\\
-&= \sum^m_{i=1} \left(\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i- 2\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\boldsymbol x_i^{\mathrm{T}}\boldsymbol x_i \right)\\
-&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\sum^m_{i=1}\boldsymbol x^{\mathrm{T}}_i\boldsymbol x_i\\
-&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\text { const }\\
-&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i+\text { const }\\
-&=-\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i+\text { const }\\
-&=-\sum^m_{i=1}\operatorname{tr}\left(\boldsymbol z_i\boldsymbol z_i^{\mathrm{T}}\right)+\text { const }\\
-&=-\operatorname{tr}\left(\sum^m_{i=1}\boldsymbol z_i\boldsymbol z_i^{\mathrm{T}}\right)+\text { const }\\
-&=-\operatorname{tr}\left(\sum^m_{i=1}\mathbf{W}^{\mathrm{T}} \boldsymbol x_i\boldsymbol x_i^{\mathrm{T}}\mathbf{W}\right)+\text { const }\\
-&= -\operatorname{tr}\left(\mathbf{W}^{\mathrm{T}}\left(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i\right)\mathbf{W}\right)+\text { const }\\
-&\propto-\operatorname{tr}\left(\mathbf{W}^{\mathrm{T}}\left(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i\right)\mathbf{W}\right)\\
+\sum^m_{i=1}\left\| \sum^{d'}_{j=1}z_{ij}\boldsymbol{w}_j-\boldsymbol x_i \right\|^2_2&=\sum^m_{i=1}\left\|\mathbf{W}\boldsymbol z_i-\boldsymbol x_i \right\|^2_2\\\
+&= \sum^m_{i=1} \left(\mathbf{W}\boldsymbol z_i-\boldsymbol x_i\right)^{\mathrm{T}}\left(\mathbf{W}\boldsymbol z_i-\boldsymbol x_i\right)\\\
+&= \sum^m_{i=1} \left(\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\mathbf{W}\boldsymbol z_i- \boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i-\boldsymbol x_i^{\mathrm{T}}\mathbf{W}\boldsymbol z_i+\boldsymbol x_i^{\mathrm{T}}\boldsymbol x_i \right)\\\
+&= \sum^m_{i=1} \left(\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i- 2\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\boldsymbol x_i^{\mathrm{T}}\boldsymbol x_i \right)\\\
+&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\sum^m_{i=1}\boldsymbol x^{\mathrm{T}}_i\boldsymbol x_i\\\
+&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\mathbf{W}^{\mathrm{T}}\boldsymbol x_i+\text { const }\\\
+&=\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i-2\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i+\text { const }\\\
+&=-\sum^m_{i=1}\boldsymbol z_i^{\mathrm{T}}\boldsymbol z_i+\text { const }\\\
+&=-\sum^m_{i=1}\operatorname{tr}\left(\boldsymbol z_i\boldsymbol z_i^{\mathrm{T}}\right)+\text { const }\\\
+&=-\operatorname{tr}\left(\sum^m_{i=1}\boldsymbol z_i\boldsymbol z_i^{\mathrm{T}}\right)+\text { const }\\\
+&=-\operatorname{tr}\left(\sum^m_{i=1}\mathbf{W}^{\mathrm{T}} \boldsymbol x_i\boldsymbol x_i^{\mathrm{T}}\mathbf{W}\right)+\text { const }\\\
+&= -\operatorname{tr}\left(\mathbf{W}^{\mathrm{T}}\left(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i\right)\mathbf{W}\right)+\text { const }\\\
+&\propto-\operatorname{tr}\left(\mathbf{W}^{\mathrm{T}}\left(\sum^m_{i=1}\boldsymbol x_i\boldsymbol x^{\mathrm{T}}_i\right)\mathbf{W}\right)\\\
 \end{aligned}
 $$
 
@@ -204,7 +204,7 @@ $$
 [推导]：由式（10.15）可知，主成分分析的优化目标为
 $$
 \begin{aligned}
-&\min\limits\_{\mathbf W} \quad-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)\\
+&\min\limits\_{\mathbf W} \quad-\text { tr }(\mathbf W^{\mathrm{T}} \mathbf X\mathbf X^{\mathrm{T}} \mathbf W)\\\
 &s.t. \quad\mathbf W^{\mathrm{T}} \mathbf W=\mathbf I
 \end{aligned}
 $$
@@ -239,8 +239,8 @@ $$
 令$\cfrac{\partial L(\mathbf W,\Lambda)}{\partial \mathbf W}=\mathbf 0$可得
 $$
 \begin{aligned}
--2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+2\mathbf{W}\Lambda&=\mathbf 0\\
-\mathbf X\mathbf X^{\mathrm{T}} \mathbf W&=\mathbf{W}\Lambda\\
+-2\mathbf X\mathbf X^{\mathrm{T}} \mathbf W+2\mathbf{W}\Lambda&=\mathbf 0\\\
+\mathbf X\mathbf X^{\mathrm{T}} \mathbf W&=\mathbf{W}\Lambda\\\
 \end{aligned}
 $$
 将$\mathbf W$和$\Lambda$展开可得
@@ -266,7 +266,7 @@ $$
 \mathbf{K}\boldsymbol{\alpha}^j=\lambda_j\boldsymbol{\alpha}^j
 $$
 
-[推导]：已知$\boldsymbol z_i=\phi(\boldsymbol x_i)$，类比$\mathbf{X}=\{\boldsymbol x_1,\boldsymbol x_2,...,\boldsymbol x_m\}$可以构造$\mathbf{Z}=\{\boldsymbol z_1,\boldsymbol z_2,...,\boldsymbol z_m\}$，所以公式(10.21)可变换为
+[推导]：已知$\boldsymbol z_i=\phi(\boldsymbol x_i)$，类比$\mathbf{X}=\\{\boldsymbol x_1,\boldsymbol x_2,...,\boldsymbol x_m\\}$可以构造$\mathbf{Z}=\\{\boldsymbol z_1,\boldsymbol z_2,...,\boldsymbol z_m\\}$，所以公式(10.21)可变换为
 $$
 \left(\sum\_{i=1}^{m} \phi(\boldsymbol{x}\_{i}) \phi(\boldsymbol{x}\_{i})^{\mathrm{T}}\right)\boldsymbol w_j=\left(\sum\_{i=1}^{m} \boldsymbol z_i \boldsymbol z_i^{\mathrm{T}}\right)\boldsymbol w_j=\mathbf{Z}\mathbf{Z}^{\mathrm{T}}\boldsymbol w_j=\lambda_j\boldsymbol w_j
 $$
@@ -305,19 +305,19 @@ $$
 [推导]：由书中上下文可知，式(10.28)是如下优化问题的解。
 $$
 \begin{aligned} 
-\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2} \\ 
+\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2} \\\ 
 \text { s.t. } & \sum_{j \in Q_{i}} w\_{i j}=1 
 \end{aligned}
 $$
 
 
-若令$\boldsymbol{x}\_{i}\in \mathbb{R}^{d\times 1},Q_i=\{q_i^1,q_i^2,...,q_i^n\}$，则上述优化问题的目标函数可以进行如下恒等变形
+若令$\boldsymbol{x}\_{i}\in \mathbb{R}^{d\times 1},Q_i=\\{q_i^1,q_i^2,...,q_i^n\\}$，则上述优化问题的目标函数可以进行如下恒等变形
 $$
 \begin{aligned} 
-\sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2}&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2} \\ 
-&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j}(\boldsymbol{x}\_{i}-\boldsymbol{x}\_{j}) \right\|_{2}^{2} \\ 
+\sum\_{i=1}^{m}\left\|\boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2}&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{i}-\sum\_{j \in Q_{i}} w\_{i j} \boldsymbol{x}\_{j}\right\|_{2}^{2} \\\ 
+&=\sum\_{i=1}^{m}\left\|\sum_{j \in Q_{i}} w\_{i j}(\boldsymbol{x}\_{i}-\boldsymbol{x}\_{j}) \right\|_{2}^{2} \\\ 
 &=\sum\_{i=1}^{m}\left\|\mathbf{X}_i\boldsymbol{w_i} \right\|_{2}^{2} \\\
-&=\sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
+&=\sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\\ 
 \end{aligned}
 $$
 
@@ -331,7 +331,7 @@ $$
 其中$\boldsymbol{I}=(1,1,...,1)\in \mathbb{R}^{n\times 1}$为$n$行1列的元素值全为1的向量。因此，上述优化问题可以重写为
 $$
 \begin{aligned} 
-\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\ 
+\min _{\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m}} & \sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i} \\\ 
 \text { s.t. } & \boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=1
 \end{aligned}
 $$
@@ -346,8 +346,8 @@ $$
 对拉格朗日函数关于$\boldsymbol{w_i}$求偏导并令其等于0可得
 $$
 \begin{aligned} 
-\cfrac{\partial L(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m},\lambda)}{\partial \boldsymbol{w_i}}&=\cfrac{\partial \left[\sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\
-&=\cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\
+\cfrac{\partial L(\boldsymbol{w}_{1}, \boldsymbol{w}_{2}, \ldots, \boldsymbol{w}_{m},\lambda)}{\partial \boldsymbol{w_i}}&=\cfrac{\partial \left[\sum\_{i=1}^{m}\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\\
+&=\cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}=0\\\
 \end{aligned}
 $$
 
@@ -355,7 +355,7 @@ $$
 又由矩阵微分公式$\cfrac{\partial \boldsymbol{x}^{T} \mathbf{B} \boldsymbol{x}}{\partial \boldsymbol{x}}=\left(\mathbf{B}+\mathbf{B}^{\mathrm{T}}\right) \boldsymbol{x},\cfrac{\partial \boldsymbol{x}^{T} \boldsymbol{a}}{\partial \boldsymbol{x}}=\boldsymbol{a}$可得
 $$
 \begin{aligned}
-\cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}&=2\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda \boldsymbol{I}=0\\
+\cfrac{\partial \left[\boldsymbol{w_i}^{\mathrm{T}}\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda\left(\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}-1\right)\right]}{\partial \boldsymbol{w_i}}&=2\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}+\lambda \boldsymbol{I}=0\\\
 \mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i\boldsymbol{w_i}&=-\frac{1}{2}\lambda \boldsymbol{I}
 \end{aligned}
 $$
@@ -368,7 +368,7 @@ $$
 又因为$\boldsymbol{w_i}^{\mathrm{T}}\boldsymbol{I}=\boldsymbol{I}^{\mathrm{T}}\boldsymbol{w_i}=1$，则上式两边同时左乘$\boldsymbol{I}^{\mathrm{T}}$可得
 $$
 \begin{aligned}
-\boldsymbol{I}^{\mathrm{T}}\boldsymbol{w_i}&=-\frac{1}{2}\lambda\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}=1\\
+\boldsymbol{I}^{\mathrm{T}}\boldsymbol{w_i}&=-\frac{1}{2}\lambda\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}=1\\\
 -\frac{1}{2}\lambda&=\cfrac{1}{\boldsymbol{I}^{\mathrm{T}}(\mathbf{X}_i^{\mathrm{T}}\mathbf{X}_i)^{-1}\boldsymbol{I}}
 \end{aligned}
 $$
@@ -389,7 +389,7 @@ $$
 ## 10.31
 $$
 \begin{aligned}
-&\min\limits\_{\boldsymbol Z}\operatorname{tr}(\boldsymbol Z \boldsymbol M \boldsymbol Z^T)\\
+&\min\limits\_{\boldsymbol Z}\operatorname{tr}(\boldsymbol Z \boldsymbol M \boldsymbol Z^T)\\\
 &s.t. \boldsymbol Z^T\boldsymbol Z=\boldsymbol I. 
 \end{aligned}
 $$
@@ -399,12 +399,12 @@ $$
 [推导]：
 $$
 \begin{aligned}
-\min\limits\_{\boldsymbol Z}\sum^m_{i=1}\| \boldsymbol z_i-\sum\_{j \in Q_i}w\_{ij}\boldsymbol z_j \|^2_2&=\sum^m_{i=1}\|\boldsymbol Z\boldsymbol I_i-\boldsymbol Z\boldsymbol W_i\|^2_2\\
-&=\sum^m_{i=1}\|\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\|^2_2\\
-&=\sum^m_{i=1}(\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i))^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\
-&=\sum^m_{i=1}(\boldsymbol I_i-\boldsymbol W_i)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\
-&=\operatorname{tr}((\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I-\boldsymbol W))\\
-&=\operatorname{tr}(\boldsymbol Z(\boldsymbol I-\boldsymbol W)(\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T)\\
+\min\limits\_{\boldsymbol Z}\sum^m_{i=1}\| \boldsymbol z_i-\sum\_{j \in Q_i}w\_{ij}\boldsymbol z_j \|^2_2&=\sum^m_{i=1}\|\boldsymbol Z\boldsymbol I_i-\boldsymbol Z\boldsymbol W_i\|^2_2\\\
+&=\sum^m_{i=1}\|\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\|^2_2\\\
+&=\sum^m_{i=1}(\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i))^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\\
+&=\sum^m_{i=1}(\boldsymbol I_i-\boldsymbol W_i)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I_i-\boldsymbol W_i)\\\
+&=\operatorname{tr}((\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T\boldsymbol Z(\boldsymbol I-\boldsymbol W))\\\
+&=\operatorname{tr}(\boldsymbol Z(\boldsymbol I-\boldsymbol W)(\boldsymbol I-\boldsymbol W)^T\boldsymbol Z^T)\\\
 &=\operatorname{tr}(\boldsymbol Z\boldsymbol M\boldsymbol Z^T)
 \end{aligned}
 $$

@@ -27,7 +27,7 @@ $$
 ## 15.6
 
 $$
-(A \vee B)-\{B\}=A
+(A \vee B)-\\{B\\}=A
 $$
 
 [解析]：析合范式的删除操作定义式，表示在$A$和$B$的析合式中删除成分$B$，得到成分$A$。
@@ -35,20 +35,20 @@ $$
 ## 15.7
 
 $$
-C=\left(C_{1}-\{L\}\right) \vee\left(C_{2}-\{\neg L\}\right)
+C=\left(C_{1}-\\{L\\}\right) \vee\left(C_{2}-\\{\neg L\\}\right)
 $$
 
-[解析]：$C=A\vee B$，把$A=C_1 - \{L\}$和$L=C_2-\{\neg L\}$代入即得。
+[解析]：$C=A\vee B$，把$A=C_1 - \\{L\\}$和$L=C_2-\\{\neg L\\}$代入即得。
 
 ## 15.9
 
 $$
-C_{2}=\left(C-\left(C_{1}-\{L\}\right)\right) \vee\{\neg L\}
+C_{2}=\left(C-\left(C_{1}-\\{L\\}\right)\right) \vee\\{\neg L\\}
 $$
 
 [解析]：由式15.7可知
 $$
-C_2-\{\neg L\} = C - (C_1 - \{L\})
+C_2-\\{\neg L\\} = C - (C_1 - \\{L\\})
 $$
 由式15.6 移项即证得。
 
@@ -87,7 +87,7 @@ $$
 ## 15.14
 
 $$
-C=\left(C_{1}-\left\{L_{1}\right\}\right) \theta \vee\left(C_{2}-\left\{L_{2}\right\}\right) \theta
+C=\left(C_{1}-\left\\{L_{1}\right\\}\right) \theta \vee\left(C_{2}-\left\\{L_{2}\right\\}\right) \theta
 $$
 
 [解析]：由式15.7，分别对析合的两个子项进行归结即得证。
@@ -95,13 +95,13 @@ $$
 ## 15.16
 
 $$
-C_{2}=\left(C-\left(C_{1}-\left\{L_{1}\right\}\right) \theta_{1} \vee\left\{\neg L_{1} \theta_{1}\right\}\right)\theta_{2}^{-1}
+C_{2}=\left(C-\left(C_{1}-\left\\{L_{1}\right\\}\right) \theta_{1} \vee\left\\{\neg L_{1} \theta_{1}\right\\}\right)\theta_{2}^{-1}
 $$
 
 [推导]：$\theta_1$为作者笔误，由15.9
 $$
 \begin{aligned}
-C_{2}&=\left(C-\left(C_{1}-\{L_1\}\right)\right) \vee\{L_2\}\\
+C_{2}&=\left(C-\left(C_{1}-\\{L_1\\}\right)\right) \vee\\{L_2\\}\\\
 \end{aligned}
 $$
 因为 $L_2=(\neg L_1\theta_1)\theta_2^{-1}$，替换得证。

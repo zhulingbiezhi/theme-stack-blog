@@ -16,9 +16,9 @@ $$
 [推导]：
 $$
 \begin{aligned}
-Q_{n}(k)&=\frac{1}{n}\sum_{i=1}^{n}v_{i}\\
-&=\frac{1}{n}\left(\sum_{i=1}^{n-1}v_{i}+v_{n}\right)\\
-&=\frac{1}{n}\left((n-1)\times Q_{n-1}(k)+v_{n}\right)\\
+Q_{n}(k)&=\frac{1}{n}\sum_{i=1}^{n}v_{i}\\\
+&=\frac{1}{n}\left(\sum_{i=1}^{n-1}v_{i}+v_{n}\right)\\\
+&=\frac{1}{n}\left((n-1)\times Q_{n-1}(k)+v_{n}\right)\\\
 &=Q_{n-1}(k)+\frac{1}{n}\left(v_n-Q_{n-1}(k)\right)
 \end{aligned}
 $$
@@ -27,7 +27,7 @@ $$
 
 $$
 \begin{aligned}
-&Q_{n}(k)=\frac{1}{n}\left((n-1) \times Q_{n-1}(k)+v_{n}\right)\\
+&Q_{n}(k)=\frac{1}{n}\left((n-1) \times Q_{n-1}(k)+v_{n}\right)\\\
 &=Q_{n-1}(k)+\frac{1}{n}\left(v_{n}-Q_{n-1}(k)\right)
 \end{aligned}
 $$
@@ -51,9 +51,9 @@ $$
 
 $$
 \begin{aligned}
-V_{T}^{\pi}(x)&=\mathbb{E}_{\pi}[\frac{1}{T}\sum_{t=1}^{T}r_{t}\mid x_{0}=x]\\
-&=\mathbb{E}_{\pi}[\frac{1}{T}r_{1}+\frac{T-1}{T}\frac{1}{T-1}\sum_{t=2}^{T}r_{t}\mid x_{0}=x]\\
-&=\sum_{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(\frac{1}{T}R_{x\rightarrow x{}'}^{a}+\frac{T-1}{T}\mathbb{E}_{\pi}[\frac{1}{T-1}\sum_{t=1}^{T-1}r_{t}\mid x_{0}=x{}'])\\
+V_{T}^{\pi}(x)&=\mathbb{E}_{\pi}[\frac{1}{T}\sum_{t=1}^{T}r_{t}\mid x_{0}=x]\\\
+&=\mathbb{E}_{\pi}[\frac{1}{T}r_{1}+\frac{T-1}{T}\frac{1}{T-1}\sum_{t=2}^{T}r_{t}\mid x_{0}=x]\\\
+&=\sum_{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(\frac{1}{T}R_{x\rightarrow x{}'}^{a}+\frac{T-1}{T}\mathbb{E}_{\pi}[\frac{1}{T-1}\sum_{t=1}^{T-1}r_{t}\mid x_{0}=x{}'])\\\
 &=\sum_{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(\frac{1}{T}R_{x\rightarrow x{}'}^{a}+\frac{T-1}{T}V_{T-1}^{\pi}(x{}')])
 \end{aligned}
 $$
@@ -71,7 +71,7 @@ $$
 可得
 $$
 \begin{aligned}
-&\mathbb{E}_{\pi}[\frac{1}{T}r_{1}+\frac{T-1}{T}\frac{1}{T-1}\sum_{t=2}^{T}r_{t}\mid x_{0}=x]\\
+&\mathbb{E}_{\pi}[\frac{1}{T}r_{1}+\frac{T-1}{T}\frac{1}{T-1}\sum_{t=2}^{T}r_{t}\mid x_{0}=x]\\\
 &=\sum_{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(\frac{1}{T}R_{x\rightarrow x{}'}^{a}+\frac{T-1}{T}\mathbb{E}_{\pi}[\frac{1}{T-1}\sum_{t=1}^{T-1}r_{t}\mid x_{0}=x{}'])
 \end{aligned}
 $$
@@ -92,10 +92,10 @@ $$
 [推导]：
 $$
 \begin{aligned}
-V_{\gamma }^{\pi}(x)&=\mathbb{E}_{\pi}[\sum_{t=0}^{\infty }\gamma^{t}r_{t+1}\mid x_{0}=x]\\
-&=\mathbb{E}_{\pi}[r_{1}+\sum_{t=1}^{\infty}\gamma^{t}r_{t+1}\mid x_{0}=x]\\
-&=\mathbb{E}_{\pi}[r_{1}+\gamma\sum_{t=1}^{\infty}\gamma^{t-1}r_{t+1}\mid x_{0}=x]\\
-&=\sum _{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(R_{x\rightarrow x{}'}^{a}+\gamma \mathbb{E}_{\pi}[\sum_{t=0}^{\infty }\gamma^{t}r_{t+1}\mid x_{0}=x{}'])\\
+V_{\gamma }^{\pi}(x)&=\mathbb{E}_{\pi}[\sum_{t=0}^{\infty }\gamma^{t}r_{t+1}\mid x_{0}=x]\\\
+&=\mathbb{E}_{\pi}[r_{1}+\sum_{t=1}^{\infty}\gamma^{t}r_{t+1}\mid x_{0}=x]\\\
+&=\mathbb{E}_{\pi}[r_{1}+\gamma\sum_{t=1}^{\infty}\gamma^{t-1}r_{t+1}\mid x_{0}=x]\\\
+&=\sum _{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(R_{x\rightarrow x{}'}^{a}+\gamma \mathbb{E}_{\pi}[\sum_{t=0}^{\infty }\gamma^{t}r_{t+1}\mid x_{0}=x{}'])\\\
 &=\sum _{a\in A}\pi(x,a)\sum_{x{}'\in X}P_{x\rightarrow x{}'}^{a}(R_{x\rightarrow x{}'}^{a}+\gamma V_{\gamma }^{\pi}(x{}'))
 \end{aligned}
 $$
@@ -103,7 +103,7 @@ $$
 ## 16.10
 
 $$
-\left\{\begin{array}{l}
+\left\\{\begin{array}{l}
 Q_{T}^{\pi}(x, a)=\sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{a}\left(\frac{1}{T} R_{x \rightarrow x^{\prime}}^{a}+\frac{T-1}{T} V_{T-1}^{\pi}\left(x^{\prime}\right)\right) \\\
 Q_{\gamma}^{\pi}(x, a)=\sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{a}\left(R_{x \rightarrow x^{\prime}}^{a}+\gamma V_{\gamma}^{\pi}\left(x^{\prime}\right)\right)
 \end{array}\right.
@@ -131,7 +131,7 @@ V^{\pi}(x) & \leqslant Q^{\pi}\left(x, \pi^{\prime}(x)\right) \\\
 & \leqslant \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+\gamma Q^{\pi}\left(x^{\prime}, \pi^{\prime}\left(x^{\prime}\right)\right)\right) \\\
 &= \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+
 \sum_{x'^{\prime} \in X} P_{x' \rightarrow x^{''}}^{\pi^{\prime}(x')}\left(\gamma R_{x' \rightarrow x^{\prime \prime}}^{\pi^{\prime}(x')}+
-\gamma^2 V^{\pi}\left(x^{\prime \prime}\right)\right)\right)\\
+\gamma^2 V^{\pi}\left(x^{\prime \prime}\right)\right)\right)\\\
 & \leqslant \sum_{x^{\prime} \in X} P_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}\left(R_{x \rightarrow x^{\prime}}^{\pi^{\prime}(x)}+ \sum_{x'^{\prime} \in X} P_{x' \rightarrow x^{''}}^{\pi^{\prime}(x')} \left( \gamma R_{x' \rightarrow x^{\prime \prime}}^{\pi^{\prime}(x')} +
 \gamma^2 Q^{\pi}\left(x^{\prime \prime}, \pi^{\prime }\left(x^{\prime \prime}\right)\right)\right)\right) \\\
 &\leqslant \cdots \\\

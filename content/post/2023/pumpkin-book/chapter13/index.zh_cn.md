@@ -50,7 +50,7 @@ $$
 
 [解析]：第二项很好解释，当不知道类别信息的时候，样本$x_j$的概率可以用式 13.1 表示，所有无类别信息的样本$D_u$的似然是所有样本的乘积，因为$\ln$函数是单调的，所以也可以将$\ln$函数作用于这个乘积消除因为连乘产生的数值计算问题。第一项引入了样本的标签信息，由
 $$
-p(y=j | \Theta=i, \boldsymbol{x})=\left\{\begin{array}{ll}1, & i=j \\0, & i \neq j\end{array}\right.
+p(y=j | \Theta=i, \boldsymbol{x})=\left\\{\begin{array}{ll}1, & i=j \\0, & i \neq j\end{array}\right.
 $$
 可知，这项限定了样本$x_j$只可能来自于$y_j$所对应的高斯分布。
 
@@ -115,7 +115,7 @@ $$
 [推导]：首先$LL(D_l)$对$\boldsymbol{\Sigma_i}$求偏导 ，类似于 13.6
 $$
 \begin{aligned} \frac{\partial L L\left(D_{l}\right)}{\partial \boldsymbol{\Sigma}_{i}} &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{\partial \ln \left(\alpha_{i} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)\right)}{\partial \boldsymbol{\Sigma}_{i}} \\ &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot \frac{\partial p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)}{\partial \boldsymbol{\Sigma}_{i}} \\\
-&=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}\\
+&=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i} \frac{1}{p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right)} \cdot p\left(\boldsymbol{x}\_{j} | \boldsymbol{\mu}_{i}, \boldsymbol{\Sigma}_{i}\right) \cdot\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}\\\
 &=\sum_{\left(\boldsymbol{x}\_{j}, y_{j}\right) \in D_{l} \wedge y_{j}=i}\left(\boldsymbol{\Sigma}_{i}^{-1}\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)\left(\boldsymbol{x}\_{j}-\boldsymbol{\mu}_{i}\right)^{\top}-\boldsymbol{I}\right) \cdot \frac{1}{2} \boldsymbol{\Sigma}_{i}^{-1}
 \end{aligned}
 $$
@@ -213,10 +213,10 @@ $$
 ## 13.9
 
 $$
-\min _{\boldsymbol{w}, \boldsymbol{b}, \boldsymbol{y}, \boldsymbol{\xi}} \frac{1}{2}\|\boldsymbol{w}\|_{2}^{2}+C_{l} \sum_{i=1}^{l} \xi_{i}+C_{u} \sum_{i=l+1}^{m} \xi_{i}\\
+\min _{\boldsymbol{w}, \boldsymbol{b}, \boldsymbol{y}, \boldsymbol{\xi}} \frac{1}{2}\|\boldsymbol{w}\|_{2}^{2}+C_{l} \sum_{i=1}^{l} \xi_{i}+C_{u} \sum_{i=l+1}^{m} \xi_{i}\\\
 \begin{aligned}
-\text { s.t. } &y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}\_{i}+b\right) \geqslant 1-\xi_{i}, \quad i=1,2, \ldots, l\\
-&\hat{y}_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}\_{i}+b\right) \geqslant 1-\xi_{i}, \quad i=l+1, l+2, \ldots, m\\
+\text { s.t. } &y_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}\_{i}+b\right) \geqslant 1-\xi_{i}, \quad i=1,2, \ldots, l\\\
+&\hat{y}_{i}\left(\boldsymbol{w}^{\mathrm{T}} \boldsymbol{x}\_{i}+b\right) \geqslant 1-\xi_{i}, \quad i=l+1, l+2, \ldots, m\\\
 &\xi_{i} \geqslant 0, \quad i=1,2, \dots, m
 \end{aligned}
 $$
@@ -245,8 +245,8 @@ $$
 由于$\mathbf{W}$是一个对称矩阵，可以通过变量替换得到
 $$
 \begin{aligned}
-\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}\_{j}\right)&=\sum_{j=1}^{m} \sum\_{i=1}^{m}(\mathbf{W})_{j i} f^{2}\left(\boldsymbol{x}\_{i}\right)\\
-&=\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}\_{i}\right)\\
+\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}\_{j}\right)&=\sum_{j=1}^{m} \sum\_{i=1}^{m}(\mathbf{W})_{j i} f^{2}\left(\boldsymbol{x}\_{i}\right)\\\
+&=\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}\_{i}\right)\\\
 &=
 \sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f^{2}\left(\boldsymbol{x}\_{j}\right)
 \end{aligned}
@@ -260,8 +260,8 @@ $$
 根据定义 $d_i=\sum_{j=1}^{l+u}\left(\mathbf{W}\right)_{ij}$，且$m=l+u$则
 $$
 \begin{aligned}
-E(f)&=\sum\_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}\_{i}\right)-\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right)\\
-&=\boldsymbol{f}^{\mathrm{T}}\mathbf{D}\boldsymbol{f}-\boldsymbol{f}^{\mathrm{T}}\mathbf{W}\boldsymbol{f}\\
+E(f)&=\sum\_{i=1}^{m} d_{i} f^{2}\left(\boldsymbol{x}\_{i}\right)-\sum\_{i=1}^{m} \sum_{j=1}^{m}(\mathbf{W})_{i j} f\left(\boldsymbol{x}\_{i}\right) f\left(\boldsymbol{x}\_{j}\right)\\\
+&=\boldsymbol{f}^{\mathrm{T}}\mathbf{D}\boldsymbol{f}-\boldsymbol{f}^{\mathrm{T}}\mathbf{W}\boldsymbol{f}\\\
 &=\boldsymbol{f}^{\mathrm{T}}(\mathbf{D}-\mathbf{W}) \boldsymbol{f}
 \end{aligned}
 $$
@@ -379,7 +379,7 @@ $$
 [解析]：第一项到第二项是根据矩阵乘法逆的定义：$(\mathbf{A}\mathbf{B})^{-1}=\mathbf{B}^{-1}\mathbf{A}^{-1}$，在这个式子中​
 $$
 \begin{aligned}
-\mathbf{P}_{u u}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\\
+\mathbf{P}_{u u}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u u}\\\
 \mathbf{P}_{ul}&=\mathbf{D}_{u u}^{-1} \mathbf{W}_{u l}
 \end{aligned}
 $$
@@ -398,12 +398,12 @@ $$
 当 t取不同的值时，有：
 $$
 \begin{aligned}
-t=0: \mathbf{F}(1) &=\alpha \mathbf{S F}(0)+(1-\alpha) \mathbf{Y}\\
+t=0: \mathbf{F}(1) &=\alpha \mathbf{S F}(0)+(1-\alpha) \mathbf{Y}\\\
 &=\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y} \\\
 t=1: \mathbf{F}(2) &=\alpha \mathbf{S F}(1)+(1-\alpha) \mathbf{Y}=\alpha \mathbf{S}(\alpha \mathbf{S} \mathbf{Y}+(1-\alpha) \mathbf{Y})+(1-\alpha) \mathbf{Y} \\\
 &=(\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y} \\\
 t=2:\mathbf{F}(3)&=\alpha\mathbf{S}\mathbf{F}(2)+(1-\alpha)\mathbf{Y}\\&=\alpha \mathbf{S}\left((\alpha \mathbf{S})^{2} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{1}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\right)+(1-\alpha) \mathbf{Y} \\\
-&=(\alpha \mathbf{S})^{3} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{2}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\\
+&=(\alpha \mathbf{S})^{3} \mathbf{Y}+(1-\alpha)\left(\sum_{i=0}^{2}(\alpha \mathbf{S})^{i}\right) \mathbf{Y}\\\
 \end{aligned}
 $$
 可以观察到规律

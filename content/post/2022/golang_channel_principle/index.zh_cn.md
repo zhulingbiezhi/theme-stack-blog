@@ -38,7 +38,7 @@ channel一个类型管道，通过它可以在goroutine之间发送和接收消�
 
 goRoutineA received the data 3
 
-上面只是个简单的例子，只输出goRoutineA ，没有执行goRoutineB，说明channel仅允许被一个goroutine读写。
+上面只是个简单的例子，只输出goRoutineA ，没有执行goRoutineB，说明channel每次读写，仅允许被一个goroutine读写。
 
 接下来我们通过源代码分析程序执行过程，在讲之前，如果不了解go 并发和调度相关知识。
 请阅读这篇文章 

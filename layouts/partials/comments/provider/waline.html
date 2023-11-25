@@ -1,38 +1,20 @@
-<script src='https://unpkg.com/@waline/client@v2/dist/waline.js'></script>
-<div id="waline" class="waline-container"></div>
-<style>
-    .waline-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
-    }
-    .waline-container .vcount {
-        color: var(--card-text-color-main);
-    }
-</style>
-<!-- 样式文件 -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-/>
-{{- with .Site.Params.comments.waline -}}
-{{- $config := dict "pageview" "waline-pageview-count" "el" "#waline" "dark" `html[data-scheme="dark"]` -}}
-{{- $replaceKeys := dict "serverurl" "serverURL" "requiredmeta" "requiredMeta" "wordlimit" "wordLimit" "pagesize" "pageSize" "avatarcdn" "avatarCDN" "avatarforce" "avatarForce" -}}
+<head>
+  <!-- ... -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@3.0.0-alpha.2/dist/waline.css"
+  />
+  <!-- ... -->
+</head>
+<body>
+  <!-- ... -->
+  <div id="waline"></div>
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@3.0.0-alpha.2/dist/waline.mjs';
 
-{{- range $key, $val := . -}}
-    {{- if $val -}}  
-        {{- $replaceKey := index $replaceKeys $key -}}
-        {{- $k := default $key $replaceKey -}}
-
-        {{- $config = merge $config (dict $k $val) -}}
-    {{- end -}}
-{{- end -}}
-
-<script>
-    /// Waline client configuration see: https://waline.js.org/en/reference/client.html
-    Waline.init({{ $config | jsonify | safeJS }});
-    Waline.commentCount();
-    Waline.pageviewCount();
-</script>
-{{- end -}}
+    init({
+      el: '#waline',
+      serverURL: 'https://comment.ququ123.top',
+    });
+  </script>
+</body>

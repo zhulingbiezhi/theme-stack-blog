@@ -3,6 +3,12 @@
         "title": "小球飞鱼",
         "website": "https://mantyke.icu/",
         "image": "mantyke.png",
-     "description": "我们会一起遇见鲸鱼吗？"
+        "description": "我们会一起遇见鲸鱼吗？"
+    },
+    {
+        "title": "guqing's blog",
+        "website": "https://guqing.io/",
+        "image": "mantyke.png",
+        "description": "Halo 开源团队核心成员"
     }
 ]

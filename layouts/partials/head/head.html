@@ -19,6 +19,8 @@
 
 {{ if .Params.math }}{{- partial "helper/katex.html" . -}}{{ end }}
 
+<link rel="shortcut icon" href="favicon.ico" />
+
 {{ with .Site.Params.favicon }}
     <link rel="shortcut icon" href="{{ . }}" />
 {{ end }}

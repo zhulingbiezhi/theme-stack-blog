@@ -10,5 +10,35 @@
         "website": "https://guqing.io/",
         "image": "mantyke.png",
         "description": "Halo 开源团队核心成员"
+    },
+    {
+        "title": "MoeLove",
+        "website": "https://moelove.info/",
+        "image": "mantyke.png",
+        "description": "云原生技术专家"
+    },
+    {
+        "title": "当然我在扯淡",
+        "website": "https://www.yinwang.org/",
+        "image": "mantyke.png",
+        "description": "王垠"
+    },
+    {
+        "title": "Let's go",
+        "website": "https://www.alexedwards.net/",
+        "image": "mantyke.png",
+        "description": "ALEX EDWARDS"
+    },
+    {
+        "title": "Three Dots Labs",
+        "website": "https://threedots.tech/",
+        "image": "mantyke.png",
+        "description": "Three Dots Labs"
+    },
+    {
+        "title": "山茶花舍",
+        "website": "https://irithys.com/",
+        "image": "mantyke.png",
+        "description": "吕楪在记录自己的生活"
     }
 ]

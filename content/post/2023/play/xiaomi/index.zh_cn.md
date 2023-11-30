@@ -3,7 +3,7 @@ title = "homeassistant 小米登录配置"
 date = "2023-09-16"
 slug = "homeassistant_xiaomi_login"
 categories = [
-    "homeassistant"
+    "homeassistant","小米"
 ]
 image = "http://img.ququ123.top/img/test.jpeg"
 +++

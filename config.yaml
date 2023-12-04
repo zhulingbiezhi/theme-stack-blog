@@ -2,7 +2,7 @@ baseurl: http://www.ququ123.top
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 10
-title: ququ's blog
+title: 代码与历史
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack

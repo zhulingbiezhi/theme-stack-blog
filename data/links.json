@@ -40,5 +40,17 @@
         "website": "https://irithys.com/",
         "image": "mantyke.png",
         "description": "吕楪在记录自己的生活"
+    },
+    {
+        "title": "Jamie Tanna",
+        "website": "https://www.jvt.me/",
+        "image": "mantyke.png",
+        "description": "Software Engineer"
+    },
+    {
+        "title": "Runye",
+        "website": "https://blog.xiang578.com/",
+        "image": "mantyke.png",
+        "description": "算法花园"
     }
 ]

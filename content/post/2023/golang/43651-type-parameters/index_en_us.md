@@ -5,7 +5,7 @@ slug = "golang-type-parameters-proposal"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.top/img/go-generics-1024x512.png"
+image = "https://img.ququ123.top/img/go-generics-1024x512.png"
 +++
 # Type Parameters Proposal
 Ian Lance Taylor  

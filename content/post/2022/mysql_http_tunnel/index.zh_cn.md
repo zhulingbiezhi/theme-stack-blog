@@ -5,7 +5,7 @@ slug = "mysql_http_tunnel"
 categories = [
     "mysql"
 ]
-image = "http://img.ququ123.top/img/u=3878467649,1404563456&fm=253&fmt=auto&app=138&f=JPEG"
+image = "https://img.ququ123.top/img/u=3878467649,1404563456&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
 背景
@@ -16,7 +16,7 @@ image = "http://img.ququ123.top/img/u=3878467649,1404563456&fm=253&fmt=auto&app=
 >     (3) 在公司用wifi可以连接,但是在家无法直接连接mysql,只能通过垃圾的网页版mysql进行数据库操作
 >     (4) 可以通过网页访问docker的权限,并没有任何服务器权限
 
-![image.png](http://img.ququ123.top/img/403980092-5e8016c8c717a)
+![image.png](https://img.ququ123.top/img/403980092-5e8016c8c717a)
 
 解决方案
 ---
@@ -164,7 +164,7 @@ nginx: [emerg] dlopen() "/usr/lib64/nginx/modules/ngx_http_proxy_connect_module.
 ```
 
 nginx -s reload, 访问https://t1.test.example.com/ntunnel_mysql.php
-     ![image.png](http://img.ququ123.top/img/bVbFgcl)在Navicat Premium的http tunnel输入上面这个链接就可以了
+     ![image.png](https://img.ququ123.top/img/bVbFgcl)在Navicat Premium的http tunnel输入上面这个链接就可以了
 
 大功告成!!!!
     

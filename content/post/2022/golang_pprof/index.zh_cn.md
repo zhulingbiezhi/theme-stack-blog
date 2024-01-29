@@ -5,7 +5,7 @@ slug = "golang_pprof"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.top/img/u=251838256,1456281185&fm=253&fmt=auto&app=138&f=PNG"
+image = "https://img.ququ123.top/img/u=251838256,1456281185&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
 最近组内一些Go服务碰到内存相关的问题，所以今天抽时间看了下Go pprof内存指标的含义，为后续查问题做准备。  

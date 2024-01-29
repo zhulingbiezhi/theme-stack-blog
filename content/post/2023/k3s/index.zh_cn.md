@@ -5,7 +5,7 @@ slug = "k3s-multi-cloud"
 categories = [
     "k3s","k8s","wireguard","k3sup"
 ]
-image = "http://img.ququ123.top/img/1*vczfQPNVKdJXTmcGB3VtkA.png"
+image = "https://img.ququ123.top/img/1*vczfQPNVKdJXTmcGB3VtkA.png"
 +++
 
 ## 背景

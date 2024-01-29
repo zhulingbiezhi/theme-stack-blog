@@ -1,7 +1,7 @@
 ---
 title: channel详解
 date: 2022-04-01
-image: http://img.ququ123.top/img/u=2104548819,3267708629&fm=253&fmt=auto&app=138&f=JPG
+image: https://img.ququ123.top/img/u=2104548819,3267708629&fm=253&fmt=auto&app=138&f=JPG
 categories: 
     - golang
 slug: golang_channel_principle
@@ -142,7 +142,7 @@ goRoutineA received the data 3
 ```
 如果我们创建一个带buffer的channel，底层的数据模型如下图：
 
-![img](http://img.ququ123.top/img/1460000019204881)
+![img](https://img.ququ123.top/img/1460000019204881)
 
 ### 向channel写入数据
 ```go
@@ -150,9 +150,9 @@ goRoutineA received the data 3
 ```
 底层hchan数据流程如图
 
-![img](http://img.ququ123.top/img/1460000019204882)
+![img](https://img.ququ123.top/img/1460000019204882)
 
-![img](http://img.ququ123.top/img/1460000019204883)
+![img](https://img.ququ123.top/img/1460000019204883)
 
 发送操作概要
 
@@ -170,7 +170,7 @@ goRoutineA received the data 3
 
 流程图
 
-![img](http://img.ququ123.top/img/1460000019204884)
+![img](https://img.ququ123.top/img/1460000019204884)
 
 ### 从channel读取操作
 
@@ -185,9 +185,9 @@ goRoutineA received the data 3
 ```
 底层hchan数据流程如图
 
-![img](http://img.ququ123.top/img/1460000019204885)
+![img](https://img.ququ123.top/img/1460000019204885)
 
-![img](http://img.ququ123.top/img/1460000019204886)
+![img](https://img.ququ123.top/img/1460000019204886)
 
 这里我们要注意几个属性buf、sendx、recvx、lock的变化。
 
@@ -207,13 +207,13 @@ goRoutineA received the data 3
 
 流程图
 
-![img](http://img.ququ123.top/img/1460000019204887)
+![img](https://img.ququ123.top/img/1460000019204887)
 
 ### recvq和sendq 结构
 
 recvq和sendq基本上是链表，看起来基本如下
 
-![img](http://img.ququ123.top/img/1460000019204888)
+![img](https://img.ququ123.top/img/1460000019204888)
 
 ### select
 

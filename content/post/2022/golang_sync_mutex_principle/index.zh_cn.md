@@ -5,7 +5,7 @@ slug = "golang_sync_mutex_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.top/img/u=2002782107,3956577129&fm=253&fmt=auto&app=138&f=PNG"
+image = "https://img.ququ123.top/img/u=2002782107,3956577129&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
 sync.Mutex是一个不可重入的排他锁。 这点和Java不同，golang里面的排它锁是不可重入的。

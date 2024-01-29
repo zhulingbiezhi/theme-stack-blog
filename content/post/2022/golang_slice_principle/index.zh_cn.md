@@ -5,7 +5,7 @@ slug = "golang_slice_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.top/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG"
+image = "https://img.ququ123.top/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
 ```

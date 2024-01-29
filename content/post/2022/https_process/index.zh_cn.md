@@ -5,14 +5,14 @@ slug = "https_process"
 categories = [
     "http"
 ]
-image = "http://img.ququ123.top/img/u=2210862128,933076596&fm=253&fmt=auto&app=120&f=JPEG"
+image = "https://img.ququ123.top/img/u=2210862128,933076596&fm=253&fmt=auto&app=120&f=JPEG"
 +++
 
 互联网的通信安全，建立在SSL/TLS协议之上。
 
 本文简要介绍SSL/TLS协议的运行机制。文章的重点是设计思想和运行过程，不涉及具体的实现细节。如果想了解这方面的内容，请参阅[RFC文档](http://tools.ietf.org/html/rfc5246)。
 
-![img](http://img.ququ123.top/img/bg2014020501.jpg)
+![img](https://img.ququ123.top/img/bg2014020501.jpg)
 
 **一、作用**
 
@@ -78,7 +78,7 @@ SSL/TLS协议的基本思路是采用[公钥加密法](http://en.wikipedia.org/w
 
 **四、握手阶段的详细过程**
 
-![](http://img.ququ123.top/img/bg2014020502.png)
+![](https://img.ququ123.top/img/bg2014020502.png)
 
 "握手阶段"涉及四次通信，我们一个个来看。需要注意的是，"握手阶段"的所有通信都是明文的。
 
@@ -148,7 +148,7 @@ SSL/TLS协议的基本思路是采用[公钥加密法](http://en.wikipedia.org/w
 
 至此，整个握手阶段全部结束。接下来，客户端与服务器进入加密通信，就完全是使用普通的HTTP协议，只不过用"会话密钥"加密内容。
 
-![](http://img.ququ123.top/img/bg2014020503.gif)
+![](https://img.ququ123.top/img/bg2014020503.gif)
 
 **五、参考链接**
 

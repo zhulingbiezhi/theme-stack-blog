@@ -5,7 +5,7 @@ slug = "golang_interface_principle"
 categories = [
     "golang"
 ]
-image = "http://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
+image = "https://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
 +++
 
 ## 引言

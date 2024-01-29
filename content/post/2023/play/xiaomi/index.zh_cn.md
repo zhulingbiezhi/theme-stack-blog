@@ -5,7 +5,7 @@ slug = "homeassistant_xiaomi_login"
 categories = [
     "homeassistant","小米"
 ]
-image = "http://img.ququ123.top/img/test.jpeg"
+image = "https://img.ququ123.top/img/test.jpeg"
 +++
 
 ## 服务器ssh配置

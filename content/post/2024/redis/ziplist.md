@@ -6,6 +6,7 @@ categories:
     - redis
     - 数据结构
     - 原理
+    - ziplist
 slug: blog-redis-ziplist
 ---
 在本文中，我们首先介绍一个新的Redis内部数据结构——ziplist，然后在文章后半部分我们会讨论一下在robj, dict和ziplist的基础上，Redis对外暴露的hash结构是怎样构建起来的。

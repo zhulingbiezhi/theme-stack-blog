@@ -6,6 +6,7 @@ categories:
     - redis
     - 数据结构
     - 原理
+    - skiplist
 slug: blog-redis-skiplist
 ---
 

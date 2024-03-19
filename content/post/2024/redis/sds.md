@@ -6,6 +6,7 @@ categories:
     - redis
     - 数据结构
     - 原理
+    - sds
 slug: blog-redis-sds
 ---
 

@@ -340,5 +340,11 @@ void decrRefCount(robj *o) {
 
 * * *
 
-**后记**(追加于2016-07-09): 本文在解析“将string编码成long型”的代码时提到的判断21字节的问题，后来已经提交给@antirez并合并进了unstable分支，详见[commit f648c5a](https://github.com/antirez/redis/commit/f648c5a70c802aeb60ee9773dfdcf7cf08a06357)。
+**其它精选文章**：
 
++   [Redis内部数据结构详解(6)——skiplist](https://www.ququ123.top/2024/03/blog-redis-skiplist)
++   [Redis内部数据结构详解(5)——quicklist](https://www.ququ123.top/2024/03/blog-redis-quicklist)
++   [Redis内部数据结构详解(4)——ziplist](https://www.ququ123.top/2024/03/blog-redis-ziplist)
++   [Redis内部数据结构详解(3)——robj](https://www.ququ123.top/2024/03/blog-redis-robj)
++   [Redis内部数据结构详解(2)——sds](https://www.ququ123.top/2024/03/blog-redis-sds)
++   [Redis内部数据结构详解(1)——dict](https://www.ququ123.top/2024/03/blog-redis-dict)

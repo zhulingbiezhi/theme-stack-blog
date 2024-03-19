@@ -363,6 +363,7 @@ typedef struct zset {
 
 **其它精选文章**：
 
++   [Redis内部数据结构详解(6)——skiplist](https://www.ququ123.top/2024/03/blog-redis-skiplist)
 +   [Redis内部数据结构详解(5)——quicklist](https://www.ququ123.top/2024/03/blog-redis-quicklist)
 +   [Redis内部数据结构详解(4)——ziplist](https://www.ququ123.top/2024/03/blog-redis-ziplist)
 +   [Redis内部数据结构详解(3)——robj](https://www.ququ123.top/2024/03/blog-redis-robj)

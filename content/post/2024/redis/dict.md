@@ -371,4 +371,11 @@ dictDelete的源码这里忽略，具体请参考dict.c。需要稍加注意的�
 +   如果当前不在重哈希过程中，它只在ht\[0\]中查找要删除的key；否则ht\[0\]和ht\[1\]它都要查找。
 +   删除成功后会调用key和value的析构函数（keyDestructor和valDestructor）。
 
- 
+**其它精选文章**：
+
++   [Redis内部数据结构详解(6)——skiplist](https://www.ququ123.top/2024/03/blog-redis-skiplist)
++   [Redis内部数据结构详解(5)——quicklist](https://www.ququ123.top/2024/03/blog-redis-quicklist)
++   [Redis内部数据结构详解(4)——ziplist](https://www.ququ123.top/2024/03/blog-redis-ziplist)
++   [Redis内部数据结构详解(3)——robj](https://www.ququ123.top/2024/03/blog-redis-robj)
++   [Redis内部数据结构详解(2)——sds](https://www.ququ123.top/2024/03/blog-redis-sds)
++   [Redis内部数据结构详解(1)——dict](https://www.ququ123.top/2024/03/blog-redis-dict)

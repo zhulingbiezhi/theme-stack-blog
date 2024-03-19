@@ -360,3 +360,12 @@ sdsMakeRoomFor是sds实现中很重要的一个函数。关于它的实现代码
 +   setbit和getrange都是先根据key取到整个sds字符串，然后再从字符串选取或修改指定的部分。由于sds就是一个字符数组，所以对它的某一部分进行操作似乎都比较简单。
 
 但是，string除了支持这些操作之外，当它存储的值是个数字的时候，它还支持incr、decr等操作。那么，当string存储数字值的时候，它的内部存储还是sds吗？实际上，不是了。而且，这种情况下，setbit和getrange的实现也会有所不同。这些细节，我们放在下一篇介绍robj的时候再进行系统地讨论。
+
+**其它精选文章**：
+
++   [Redis内部数据结构详解(6)——skiplist](https://www.ququ123.top/2024/03/blog-redis-skiplist)
++   [Redis内部数据结构详解(5)——quicklist](https://www.ququ123.top/2024/03/blog-redis-quicklist)
++   [Redis内部数据结构详解(4)——ziplist](https://www.ququ123.top/2024/03/blog-redis-ziplist)
++   [Redis内部数据结构详解(3)——robj](https://www.ququ123.top/2024/03/blog-redis-robj)
++   [Redis内部数据结构详解(2)——sds](https://www.ququ123.top/2024/03/blog-redis-sds)
++   [Redis内部数据结构详解(1)——dict](https://www.ququ123.top/2024/03/blog-redis-dict)

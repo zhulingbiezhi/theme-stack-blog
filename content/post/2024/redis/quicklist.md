@@ -283,3 +283,11 @@ quicklist不仅实现了从头部或尾部插入，也实现了从任意指定�
 
 `quicklistSetOptions`用于设置ziplist大小配置参数（`list-max-ziplist-size`）和节点压缩深度配置参数（`list-compress-depth`）。代码比较简单，就是将相应的值分别设置给quicklist结构的fill字段和compress字段。
 
+**其它精选文章**：
+
++   [Redis内部数据结构详解(6)——skiplist](https://www.ququ123.top/2024/03/blog-redis-skiplist)
++   [Redis内部数据结构详解(5)——quicklist](https://www.ququ123.top/2024/03/blog-redis-quicklist)
++   [Redis内部数据结构详解(4)——ziplist](https://www.ququ123.top/2024/03/blog-redis-ziplist)
++   [Redis内部数据结构详解(3)——robj](https://www.ququ123.top/2024/03/blog-redis-robj)
++   [Redis内部数据结构详解(2)——sds](https://www.ququ123.top/2024/03/blog-redis-sds)
++   [Redis内部数据结构详解(1)——dict](https://www.ququ123.top/2024/03/blog-redis-dict)

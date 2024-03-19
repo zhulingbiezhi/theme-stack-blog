@@ -208,7 +208,7 @@ sorted set是一个有序的数据集合，对于像类似排行榜这样的应�
 
 这份数据给出了每位同学的名字和分数。下面我们将这份数据存储到sorted set里面去：
 
-[![sorted set命令举例](https://web.archive.org/web/20230416113647im_/sorted_set_cmd_examples.png)](sorted_set_cmd_examples.png)
+[![sorted set命令举例](http://img.ququ123.top/img/sorted_set_cmd_examples.png)](sorted_set_cmd_examples.png)
 
 对于上面的这些命令，我们需要的注意的地方包括：
 
@@ -368,10 +368,3 @@ typedef struct zset {
 +   [Redis内部数据结构详解(3)——robj](https://www.ququ123.top/2024/03/blog-redis-robj)
 +   [Redis内部数据结构详解(2)——sds](https://www.ququ123.top/2024/03/blog-redis-sds)
 +   [Redis内部数据结构详解(1)——dict](https://www.ququ123.top/2024/03/blog-redis-dict)
-+   [你需要了解深度学习和神经网络这项技术吗？](https://www.ququ123.top/2024/03/blog-neural-nets)
-+   [技术的正宗与野路子](http://mp.weixin.qq.com/s?__biz=MzA4NTg1MjM0Mg==&mid=2657261357&idx=1&sn=ebb11a1623e00ca8e6ad55c9ad6b2547#rd)
-+   [论人生之转折](http://mp.weixin.qq.com/s?__biz=MzA4NTg1MjM0Mg==&mid=2657261385&idx=1&sn=56b335b4f33546c5baa41a1c7f1b6551#rd)
-+   [编程世界的熵增原理](http://mp.weixin.qq.com/s?__biz=MzA4NTg1MjM0Mg==&mid=2657261372&idx=1&sn=89c5b0fa1e9e339ee220d0c30001d01a#rd)
-+   [Android端外推送到底有多烦？](http://mp.weixin.qq.com/s?__biz=MzA4NTg1MjM0Mg==&mid=2657261350&idx=1&sn=6cea730ef5a144ac243f07019fb43076#rd)
-+   [Android和iOS开发中的异步处理（四）——异步任务和队列](https://www.ququ123.top/2024/03/blog-series-async-task-4)
-+   [用树型模型管理App数字和红点提示](http://mp.weixin.qq.com/s?__biz=MzA4NTg1MjM0Mg==&mid=2657261255&idx=1&sn=01ab92edada77803fc4ab7a575453d97&scene=19#wechat_redirect)

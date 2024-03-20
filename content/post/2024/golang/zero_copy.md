@@ -1,5 +1,5 @@
 +++
-title = "【golang】 zero copy"
+title = "【golang】zero copy"
 date = "2024-03-20"
 slug = "golang_zero_copy"
 categories = [

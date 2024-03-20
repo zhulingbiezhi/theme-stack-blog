@@ -1,7 +1,7 @@
 ---
 title: Redis内部数据结构详解(1)——dict
 date: 2024-03-19
-image: http://img.ququ123.top/img/redis9.png
+image: https://img.ququ123.top/img/redis9.png
 categories: 
     - redis
     - 数据结构
@@ -97,7 +97,7 @@ typedef struct dict {
 
 为了能更清楚地展示dict的数据结构定义，我们用一张结构图来表示它。如下。
 
-[![Redis dict结构图](http://img.ququ123.top/img/redis_dict_structure.png)](redis_dict_structure.png)
+[![Redis dict结构图](https://img.ququ123.top/img/redis_dict_structure.png)](redis_dict_structure.png)
 
 结合上面的代码和结构图，可以很清楚地看出dict的结构。一个dict由如下若干项组成：
 

@@ -1,7 +1,7 @@
 ---
 title: Redis内部数据结构详解(5)——quicklist
 date: 2024-03-19
-image: http://img.ququ123.top/img/QuickList.png
+image: https://img.ququ123.top/img/QuickList.png
 categories: 
     - redis
     - 数据结构
@@ -156,7 +156,7 @@ quicklistLZF结构表示一个被压缩过的ziplist。其中：
 +   fill: 16bit，ziplist大小设置，存放`list-max-ziplist-size`参数的值。
 +   compress: 16bit，节点压缩深度设置，存放`list-compress-depth`参数的值。
 
-[![Redis quicklist 结构图](http://img.ququ123.top/img/redis_quicklist_structure.png)](https://web.archive.org/web/20230425063011/http://zhangtielei.com/assets/photos_redis/redis_quicklist_structure.png)
+[![Redis quicklist 结构图](https://img.ququ123.top/img/redis_quicklist_structure.png)](https://web.archive.org/web/20230425063011/http://zhangtielei.com/assets/photos_redis/redis_quicklist_structure.png)
 
 上图是一个quicklist的结构图举例。图中例子对应的ziplist大小配置和节点压缩深度配置，如下：
 

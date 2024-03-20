@@ -1,7 +1,7 @@
 ---
 title: Redis内部数据结构详解(3)——robj
 date: 2024-03-19
-image: http://img.ququ123.top/img/923323_169890888942710.png
+image: https://img.ququ123.top/img/923323_169890888942710.png
 categories: 
     - redis
     - 数据结构

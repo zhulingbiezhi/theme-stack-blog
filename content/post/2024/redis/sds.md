@@ -1,7 +1,7 @@
 ---
 title: Redis内部数据结构详解(2)——sds
 date: 2024-03-19
-image: http://img.ququ123.top/img/redis_sds_figure_1.png
+image: https://img.ququ123.top/img/redis_sds_figure_1.png
 categories: 
     - redis
     - 数据结构
@@ -21,7 +21,7 @@ slug: blog-redis-sds
 
 在讨论sds的具体实现之前，我们先站在Redis使用者的角度，来观察一下string所支持的一些主要操作。下面是一个操作示例：
 
-[![Redis string操作示例](http://img.ququ123.top/img/redis_string_op_examples.png)](redis_string_op_examples.png)
+[![Redis string操作示例](https://img.ququ123.top/img/redis_string_op_examples.png)](redis_string_op_examples.png)
 
 以上这些操作都比较简单，我们简单解释一下：
 
@@ -94,7 +94,7 @@ sds一共有5种类型的header。之所以有5种，是为了能让不同长度
 
 sds的数据结构，我们有必要非常仔细地去解析它。
 
-[![Redis dict结构举例](http://img.ququ123.top/img/redis_sds_structure.png)](redis_sds_structure.png)
+[![Redis dict结构举例](https://img.ququ123.top/img/redis_sds_structure.png)](redis_sds_structure.png)
 
 上图是sds的一个内部结构的例子。图中展示了两个sds字符串s1和s2的内存结构，一个使用sdshdr8类型的header，另一个使用sdshdr16类型的header。但它们都表达了同样的一个长度为6的字符串的值：”tielei”。下面我们结合代码，来解释每一部分的组成。
 

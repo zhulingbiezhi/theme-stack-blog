@@ -1,7 +1,7 @@
 ---
 title: Redis内部数据结构详解(4)——ziplist
 date: 2024-03-19
-image: http://img.ququ123.top/img/452826-20201005085112228-443171530.jpg
+image: https://img.ququ123.top/img/452826-20201005085112228-443171530.jpg
 categories: 
     - redis
     - 数据结构
@@ -86,7 +86,7 @@ ziplist的数据结构组成是本文要讨论的重点。实际上，ziplist还
 
 好了，ziplist的数据结构定义，我们介绍了完了，现在我们看一个具体的例子。
 
-[![Redis Ziplist Sample](http://img.ququ123.top/img/redis_ziplist_sample.png)](http://zhangtielei.com/assets/photos_redis/redis_ziplist_sample.png)
+[![Redis Ziplist Sample](https://img.ququ123.top/img/redis_ziplist_sample.png)](http://zhangtielei.com/assets/photos_redis/redis_ziplist_sample.png)
 
 上图是一份真实的ziplist数据。我们逐项解读一下：
 

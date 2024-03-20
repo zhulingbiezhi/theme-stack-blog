@@ -1,7 +1,7 @@
 ---
 title: Redis内部数据结构详解(7)——intset
 date: 2024-03-19
-image: http://img.ququ123.top/img/e222ce2253ed71dd5f8417cff985f916.png
+image: https://img.ququ123.top/img/e222ce2253ed71dd5f8417cff985f916.png
 categories: 
     - redis
     - 数据结构
@@ -57,7 +57,7 @@ typedef struct intset {
 
 下图给出了一个添加数据的具体例子（点击看大图）。
 
-[![intset添加数据举例](http://img.ququ123.top/img/redis_intset_add_example.png)](redis_intset_add_example.png)
+[![intset添加数据举例](https://img.ququ123.top/img/redis_intset_add_example.png)](redis_intset_add_example.png)
 
 在上图中：
 
@@ -187,7 +187,7 @@ intset *intsetAdd(intset *is, int64_t value, uint8_t *success) {
 
 为了更好地理解Redis对外暴露的set数据结构，我们先看一下set的一些关键的命令。下面是一些命令举例：
 
-[![set命令举例](http://img.ququ123.top/img/redis_set_cmd_example.png)](redis_set_cmd_example.png)
+[![set命令举例](https://img.ququ123.top/img/redis_set_cmd_example.png)](redis_set_cmd_example.png)
 
 上面这些命令的含义：
 

@@ -1,5 +1,5 @@
 +++
-title = "golang泛型"
+title = "【golang】泛型"
 date = "2023-12-03"
 slug = "type-parameters"
 categories = [

@@ -1,5 +1,5 @@
 +++
-title = "pprof内存指标"
+title = "【golang】pprof内存指标"
 date = "2022-04-01"
 slug = "golang_pprof"
 categories = [

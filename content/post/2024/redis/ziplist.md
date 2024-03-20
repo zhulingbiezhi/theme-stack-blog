@@ -1,5 +1,5 @@
 ---
-title: Redis内部数据结构详解(4)——ziplist
+title: 【Redis】内部数据结构详解(4)——ziplist
 date: 2024-03-19
 image: https://img.ququ123.top/img/452826-20201005085112228-443171530.jpg
 categories: 

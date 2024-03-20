@@ -1,5 +1,5 @@
 ---
-title: pipe详解
+title: 【golang】pipe详解
 date: 2024-03-20
 image: https://img.ququ123.top/img/go-pipe.png
 categories: 

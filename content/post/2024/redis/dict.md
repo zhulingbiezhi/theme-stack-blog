@@ -1,5 +1,5 @@
 ---
-title: Redis内部数据结构详解(1)——dict
+title: 【Redis】内部数据结构详解(1)——dict
 date: 2024-03-19
 image: https://img.ququ123.top/img/redis9.png
 categories: 

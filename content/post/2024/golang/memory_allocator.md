@@ -1,5 +1,5 @@
 +++
-title = "内存分配详解"
+title = "【golang】内存分配详解"
 date = "2022-04-01"
 slug = "golang_memory_allocator"
 categories = [

@@ -1,5 +1,5 @@
 ---
-title: raft算法详解
+title: 【raft】算法详解
 date: 2024-03-19
 image: https://img.ququ123.top/img/006tNc79gy1fm40vgcvazj30y20j6tap.jpg
 categories: 

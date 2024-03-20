@@ -1,5 +1,5 @@
 +++
-title = "GMP调度详解"
+title = "【golang】GMP调度详解"
 date = "2022-04-01"
 slug = "golang_GMP_principle"
 categories = [

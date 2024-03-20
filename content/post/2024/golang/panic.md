@@ -1,5 +1,5 @@
 +++
-title = "panic详解"
+title = "【golang】panic详解"
 date = "2022-04-01"
 slug = "golang_panic_principle"
 categories = [

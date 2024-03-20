@@ -1,5 +1,5 @@
 ---
-title: channel详解
+title: 【golang】channel详解
 date: 2022-04-01
 image: https://img.ququ123.top/img/u=2104548819,3267708629&fm=253&fmt=auto&app=138&f=JPG
 categories: 

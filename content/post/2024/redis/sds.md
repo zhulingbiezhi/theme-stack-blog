@@ -1,5 +1,5 @@
 ---
-title: Redis内部数据结构详解(2)——sds
+title: 【Redis】内部数据结构详解(2)——sds
 date: 2024-03-19
 image: https://img.ququ123.top/img/redis_sds_figure_1.png
 categories: 

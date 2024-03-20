@@ -1,5 +1,5 @@
 ---
-title: Redis内部数据结构详解(7)——intset
+title: 【Redis】内部数据结构详解(7)——intset
 date: 2024-03-19
 image: https://img.ququ123.top/img/e222ce2253ed71dd5f8417cff985f916.png
 categories: 

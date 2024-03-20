@@ -1,5 +1,5 @@
 +++
-title = "sync.WaitGroup详解"
+title = "【golang】WaitGroup详解"
 date = "2022-04-01"
 slug = "golang_wait_group_principle"
 categories = [

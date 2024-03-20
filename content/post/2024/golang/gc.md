@@ -1,5 +1,5 @@
 +++
-title = "GC详解"
+title = "【golang】GC详解"
 date = "2022-04-01"
 slug = "golang_gc_principle"
 categories = [

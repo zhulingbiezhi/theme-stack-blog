@@ -1,10 +1,14 @@
+
 +++
 title = "【网络】tcp/ip详解"
-date = "2024-04-01"
-categories = ["TCP"]
-image = "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG"
+date = "2024-03-01"
 slug = "tcp_ip"
+categories = [
+    "TCP"
+]
+image = "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG"
 +++
+
 
 长文是对TCP IP的剖析归类总结，就自己的经验再次回顾IP协议而写的归纳性笔记，助力初学者掌握。文有不妥之处，请查看原文并留言告知，谢谢！
 

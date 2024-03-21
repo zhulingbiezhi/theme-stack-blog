@@ -1,12 +1,21 @@
-+++
-title = "不同云厂商的服务器搭建K3S集群"
-date = "2023-11-25"
-slug = "k3s-multi-cloud"
-categories = [
-    "k3s","k8s","wireguard","k3sup"
-]
-image = "https://img.ququ123.top/img/1*vczfQPNVKdJXTmcGB3VtkA.png"
-+++
+---
+title: "不同云厂商的服务器搭建K3S集群"
+date: "2023-11-25"
+slug: "k3s-multi-cloud"
+categories: 
+    - "k3s"
+    - "k8s"
+    - "wireguard"
+    - "k3sup"
+keywords:
+    - "k3s"
+    - "k8s"
+    - "wireguard"
+    - "k3sup"
+    - "cloud"
+    - "云服务"
+image: "https://img.ququ123.top/img/1*vczfQPNVKdJXTmcGB3VtkA.png"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

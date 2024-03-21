@@ -7,6 +7,11 @@ categories:
     - 数据结构
     - 原理
     - skiplist
+keywords:
+    - redis
+    - 数据结构
+    - 原理
+    - skiplist
 slug: blog-redis-skiplist
 ---
 

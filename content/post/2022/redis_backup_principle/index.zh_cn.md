@@ -1,12 +1,15 @@
-+++
-title = "【redis】redis备份机制"
-date = "2022-04-01"
-slug = "redis_backup_principle"
-categories = [
-    "redis"
-]
-image = "https://img.ququ123.top/img/u=1747746174,373277862&fm=253&fmt=auto&app=138&f=PNG"
-+++
+---
+title: "【redis】redis备份机制"
+date: "2022-04-01"
+slug: "redis_backup_principle"
+categories: 
+    - "redis"
+keywords:
+    - "redis"
+    - "backup"
+    - "备份"
+image: "https://img.ququ123.top/img/u=1747746174,373277862&fm=253&fmt=auto&app=138&f=PNG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

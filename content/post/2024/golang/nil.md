@@ -1,12 +1,16 @@
-+++
-title = "【golang】nil的理解"
-date = "2022-04-01"
-slug = "golang_nil"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=3035194156,1632962318&fm=253&fmt=auto"
-+++
+---
+title: "【golang】nil的理解"
+date: "2022-04-01"
+slug: "golang_nil"
+categories: 
+    - golang
+keywords:
+    - golang
+    - nil
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=3035194156,1632962318&fm=253&fmt=auto"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

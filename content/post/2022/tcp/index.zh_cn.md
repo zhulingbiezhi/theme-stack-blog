@@ -1,13 +1,15 @@
-
-+++
-title = "【网络】tcp/ip详解"
-date = "2024-03-01"
-slug = "tcp_ip"
-categories = [
-    "TCP"
-]
-image = "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG"
-+++
+---
+title: "【网络】tcp/ip详解"
+date: "2024-03-01"
+slug: "tcp_ip"
+categories: 
+    - "TCP"
+keywords:
+    - "TCP"
+    - "网络"
+    - "SYN"
+image: "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

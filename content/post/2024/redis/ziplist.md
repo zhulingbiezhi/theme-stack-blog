@@ -7,6 +7,11 @@ categories:
     - 数据结构
     - 原理
     - ziplist
+keywords:
+    - redis
+    - 数据结构
+    - 原理
+    - ziplist
 slug: blog-redis-ziplist
 ---
 

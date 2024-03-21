@@ -1,12 +1,15 @@
-+++
-title = "【网络】https过程"
-date = "2022-04-01"
-slug = "https_process"
-categories = [
-    "http"
-]
-image = "https://img.ququ123.top/img/u=2210862128,933076596&fm=253&fmt=auto&app=120&f=JPEG"
-+++
+---
+title: "【网络】https过程"
+date: "2022-04-01"
+slug: "https_process"
+categories: 
+    - "http"
+keywords:
+    - "https"
+    - "网络"
+    - "安全"
+image: "https://img.ququ123.top/img/u=2210862128,933076596&fm=253&fmt=auto&app=120&f=JPEG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

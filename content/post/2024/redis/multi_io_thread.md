@@ -5,6 +5,10 @@ image: https://img.ququ123.top/img/reactor2.png
 categories: 
     - redis
     - io
+keywords:
+    - redis
+    - io
+    - thread
 slug: redis-mlti-thread
 ---
 

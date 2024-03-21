@@ -1,12 +1,12 @@
-+++
-title = "homeassistant 小米登录配置"
-date = "2023-09-16"
-slug = "homeassistant_xiaomi_login"
-categories = [
+---
+title: "homeassistant 小米登录配置"
+date: "2023-09-16"
+slug: "homeassistant_xiaomi_login"
+categories: 
     "homeassistant","小米"
 ]
-image = "https://img.ququ123.top/img/test.jpeg"
-+++
+image: "https://img.ququ123.top/img/test.jpeg"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

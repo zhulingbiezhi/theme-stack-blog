@@ -5,6 +5,9 @@ image: https://img.ququ123.top/img/go-pipe.png
 categories: 
     - golang
     - pipe
+keywords:
+    - golang
+    - pipe
 slug: golang-pipe
 ---
 

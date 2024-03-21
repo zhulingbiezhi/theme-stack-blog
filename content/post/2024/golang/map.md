@@ -1,12 +1,16 @@
-+++
-title = "【golang】map详解"
-date = "2022-04-01"
-slug = "golang_map_principle"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=1862939405,1689361694&fm=253&fmt=auto&app=138&f=JPEG"
-+++
+---
+title: "【golang】map详解"
+date: "2022-04-01"
+slug: "golang_map_principle"
+categories: 
+    - golang
+keywords:
+    - golang
+    - map
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=1862939405,1689361694&fm=253&fmt=auto&app=138&f=JPEG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

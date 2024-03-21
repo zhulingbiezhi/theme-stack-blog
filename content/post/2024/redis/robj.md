@@ -7,6 +7,11 @@ categories:
     - 数据结构
     - 原理
     - robj
+keywords:
+    - redis
+    - 数据结构
+    - 原理
+    - robj
 slug: blog-redis-robj
 --- 
 

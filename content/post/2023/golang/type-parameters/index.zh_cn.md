@@ -1,12 +1,16 @@
-+++
-title = "【golang】泛型"
-date = "2023-12-03"
-slug = "type-parameters"
-categories = [
-    "golang","type"
-]
-image = "https://img.ququ123.top/img/7553966619703147706.jpg"
-+++
+---
+title: "【golang】泛型"
+date: "2023-12-03"
+slug: "type-parameters"
+categories: 
+    - "golang"
+    - "type"
+keywords:
+    - "golang"
+    - "type"
+    - "泛型"
+image: "https://img.ququ123.top/img/7553966619703147706.jpg"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

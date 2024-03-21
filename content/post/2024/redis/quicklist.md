@@ -7,6 +7,11 @@ categories:
     - 数据结构
     - 原理
     - quicklist
+keywords:
+    - redis
+    - 数据结构
+    - 原理
+    - quicklist
 slug: blog-redis-quicklist
 ---
 

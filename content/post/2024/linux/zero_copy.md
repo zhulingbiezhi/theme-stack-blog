@@ -1,13 +1,16 @@
-+++
-title = "【Linux】zero copy"
-date = "2024-03-20"
-slug = "linux_zero_copy"
-categories = [
-    "linux",
-    "zero_copy"
-]
-image = "https://img.ququ123.top/img/sendfile.png"
-+++
+---
+title: "【Linux】zero copy"
+date: "2024-03-20"
+slug: "linux_zero_copy"
+categories: 
+    - "linux",
+    - "zero_copy"
+keywords:
+    - "linux",
+    - "zero_copy"
+    - "socket"
+image: "https://img.ququ123.top/img/sendfile.png"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

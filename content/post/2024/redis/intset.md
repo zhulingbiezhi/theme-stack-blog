@@ -7,6 +7,11 @@ categories:
     - 数据结构
     - 原理
     - intset
+keywords:
+    - redis
+    - 数据结构
+    - 原理
+    - intset
 slug: blog-redis-intset
 ---
 

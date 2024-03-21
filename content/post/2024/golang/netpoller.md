@@ -4,7 +4,11 @@ date: 2024-03-20
 image: https://img.ququ123.top/img/netpoller-goroutines-scheduling.png
 categories: 
     - golang
-    - pipe
+    - netpoller
+keywords:
+	 - golang
+	 - netpoller
+	 - 网络
 slug: golang-netpoller
 ---
 

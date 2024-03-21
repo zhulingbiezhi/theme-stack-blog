@@ -1,12 +1,16 @@
-+++
-title = "【golang】内存分配详解"
-date = "2022-04-01"
-slug = "golang_memory_allocator"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=140571796,2511374842&fm=253&fmt=auto&app=138&f=PNG"
-+++
+---
+title: "【golang】内存分配详解"
+date: "2022-04-01"
+slug: "golang_memory_allocator"
+categories: 
+    - golang
+keywords:
+    - golang
+    - memory_allocator
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=140571796,2511374842&fm=253&fmt=auto&app=138&f=PNG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -1,12 +1,16 @@
-+++
-title = "【golang】sync.Map详解"
-date = "2022-04-01"
-slug = "golang_sync_map_principle"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=469829844,4113946476&fm=253&fmt=auto&app=138&f=JPEG"
-+++
+---
+title: "【golang】sync.Map详解"
+date: "2022-04-01"
+slug: "golang_sync_map_principle"
+categories: 
+    - golang
+keywords:
+    - golang
+    - sync.map
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=469829844,4113946476&fm=253&fmt=auto&app=138&f=JPEG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

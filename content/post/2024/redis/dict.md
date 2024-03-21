@@ -7,6 +7,11 @@ categories:
     - 数据结构
     - 原理
     - dict
+keywords:
+    - redis
+    - 数据结构
+    - 原理
+    - dict
 slug: blog-redis-dict
 ---
 

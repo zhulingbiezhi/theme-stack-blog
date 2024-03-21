@@ -1,13 +1,17 @@
-+++
-title = "【机器学习】课程讲义4"
-date = "2023-05-04"
-slug = "machine-learning-week4"
-categories = [
-    "机器学习", "吴恩达"
-]
-math = true
-image = "https://img.ququ123.top/img/image-20230602123210308.png"
-+++
+---
+title: "【机器学习】课程讲义4"
+date: "2023-05-04"
+slug: "machine-learning-week4"
+categories: 
+    - "机器学习"
+    - "吴恩达"
+keywords:
+    - "机器学习"
+    - "吴恩达"
+    - "machine learning"
+math: true
+image: "https://img.ququ123.top/img/image-20230602123210308.png"
+---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 

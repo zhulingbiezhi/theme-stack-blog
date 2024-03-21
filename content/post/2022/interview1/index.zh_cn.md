@@ -1,12 +1,11 @@
-+++
-title = "【面试】公司1（中小型）"
-date = "2022-04-01"
-slug = "interview1"
-categories = [
-    "面试"
-]
-image = "https://img.ququ123.top/img/u=242378018,3642385577&fm=253&fmt=auto&app=138&f=JPEG.jpeg"
-+++
+---
+title: "【面试】公司1（中小型）"
+date: "2022-04-01"
+slug: "interview1"
+categories: 
+    - "面试"    
+image: "https://img.ququ123.top/img/u=242378018,3642385577&fm=253&fmt=auto&app=138&f=JPEG.jpeg"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

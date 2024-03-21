@@ -1,12 +1,15 @@
-+++
-title = "【mysql】sql优化原则"
-date = "2022-04-01"
-slug = "mysql_optimize_principle"
-categories = [
-    "mysql"
-]
-image = "https://img.ququ123.top/img/u=1147917346,777784938&fm=253&fmt=auto&app=138&f=JPEG"
-+++
+---
+title: "【mysql】sql优化原则"
+date: "2022-04-01"
+slug: "mysql_optimize_principle"
+categories: 
+    - "mysql"
+keywords:
+    - "mysql"
+    - "优化"
+    - "optimize"
+image: "https://img.ququ123.top/img/u=1147917346,777784938&fm=253&fmt=auto&app=138&f=JPEG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

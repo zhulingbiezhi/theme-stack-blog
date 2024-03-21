@@ -1,12 +1,16 @@
-+++
-title = "【golang】interface原理"
-date = "2022-04-01"
-slug = "golang_interface_principle"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
-+++
+---
+title: "【golang】interface原理"
+date: "2022-04-01"
+slug: "golang_interface_principle"
+categories: 
+    - golang
+keywords:
+    - golang
+    - interface
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

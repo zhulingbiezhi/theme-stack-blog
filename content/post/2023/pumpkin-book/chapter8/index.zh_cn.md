@@ -1,13 +1,13 @@
-+++
-title = "【南瓜书】第八章"
-date = "2023-05-18"
-slug = "pumkin-book-chapter8"
-categories = [
+---
+title: "【南瓜书】第八章"
+date: "2023-05-18"
+slug: "pumkin-book-chapter8"
+categories: 
     "南瓜书"
 ]
-math = true
-image = "https://img.ququ123.top/img/nangua.jpg"
-+++
+math: true
+image: "https://img.ququ123.top/img/nangua.jpg"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

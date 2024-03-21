@@ -1,12 +1,16 @@
-+++
-title = "【golang】defer详解"
-date = "2022-04-01"
-slug = "golang_defer_principle"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/042e751cd553ea535e94a95ad21386ec.jpeg"
-+++
+---
+title: "【golang】defer详解"
+date: "2022-04-01"
+slug: "golang_defer_principle"
+categories: 
+    - golang
+keywords:
+    - golang
+    - defer
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/042e751cd553ea535e94a95ad21386ec.jpeg"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -1,12 +1,16 @@
-+++
-title = "【golang】slice源码分析"
-date = "2022-04-01"
-slug = "golang_slice_principle"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG"
-+++
+---
+title: "【golang】slice源码分析"
+date: "2022-04-01"
+slug: "golang_slice_principle"
+categories: 
+    - golang
+keywords:
+    - golang
+    - slice
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

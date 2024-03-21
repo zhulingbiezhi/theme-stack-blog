@@ -1,12 +1,15 @@
-+++
-title = "【mysql】分库分表"
-date = "2022-04-01"
-slug = "mysql_partition_table"
-categories = [
-    "mysql"
-]
-image = "https://img.ququ123.top/img/u=324709543,2705389629&fm=253&fmt=auto&app=138&f=PNG"
-+++
+---
+title: "【mysql】分库分表"
+date: "2022-04-01"
+slug: "mysql_partition_table"
+categories: 
+    - "mysql"
+keywords:
+    - "mysql"
+    - "分库"
+    - "分表"
+image: "https://img.ququ123.top/img/u=324709543,2705389629&fm=253&fmt=auto&app=138&f=PNG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

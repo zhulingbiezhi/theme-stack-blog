@@ -1,12 +1,15 @@
-+++
-title = "【golang】pprof内存指标"
-date = "2022-04-01"
-slug = "golang_pprof"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=251838256,1456281185&fm=253&fmt=auto&app=138&f=PNG"
-+++
+---
+title: "【golang】pprof内存指标"
+date: "2022-04-01"
+slug: "golang_pprof"
+categories: 
+    - golang
+keywords:
+    - golang
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=251838256,1456281185&fm=253&fmt=auto&app=138&f=PNG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

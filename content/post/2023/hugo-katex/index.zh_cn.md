@@ -1,13 +1,17 @@
-+++
-title = "hugo完美支持数学公式(KaTex)"
-date = "2023-06-03"
-slug = "hugo-katex"
-categories = [
-    "hugo","KaTeX"
-]
-math = true
-image = "https://img.ququ123.top/img/og_logo.png"
-+++
+---
+title: "hugo完美支持数学公式(KaTex)"
+date: "2023-06-03"
+slug: "hugo-katex"
+categories: 
+    - "hugo"
+    - "KaTeX"
+keywords:
+    - "hugo"
+    - "KaTex"
+    - "数学公式"
+math: true
+image: "https://img.ququ123.top/img/og_logo.png"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
@@ -50,16 +54,16 @@ $$f(a) = \\frac{1}{2\\pi i} \\oint\\frac{f(z)}{z-a}dz$$
 应在 front-matter 中使用 math 参数。
 
 ```
-	+++
+	---
 	title = "hugo完美支持数学公式(KaTex)"
 	date = "2023-06-03"
 	slug = "hugo-katex"
-	categories = [
+	categories: 
 	    "hugo","KaTeX"
 	]
-	math = true
+	math: true
 	image = "https://img.ququ123.top/img/og_logo.png"
-	+++
+	---
 
 ```
 

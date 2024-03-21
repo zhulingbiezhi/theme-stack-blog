@@ -1,12 +1,16 @@
-+++
-title = "【golang】Pool详解"
-date = "2022-04-01"
-slug = "golang_sync_pool_principle"
-categories = [
-    "golang"
-]
-image = "https://img.ququ123.top/img/u=2033342888,4177252789&fm=253&fmt=auto&app=138&f=PNG"
-+++
+---
+title: "【golang】Pool详解"
+date: "2022-04-01"
+slug: "golang_sync_pool_principle"
+categories: 
+    - golang
+keywords:
+    - golang
+    - pool
+    - 原理
+    - 源码
+image: "https://img.ququ123.top/img/u=2033342888,4177252789&fm=253&fmt=auto&app=138&f=PNG"
+---
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -7,7 +7,7 @@ categories = [
     "io",
     "zero copy"
 ]
-image = "http://img.ququ123.top/img/sendfile.png"
+image = "https://img.ququ123.top/img/sendfile.png"
 +++
 
 
@@ -61,7 +61,7 @@ assert(bytes != -1);
 
 数据传输过程图：
 
-![](http://img.ququ123.top/img/linux-io-splice.png)
+![](https://img.ququ123.top/img/linux-io-splice.png)
 
 使用 `splice()` 完成一次磁盘文件到网卡的读写过程如下：
 
@@ -98,7 +98,7 @@ assert(bytes != -1);
 
 HAProxy 实现的 pipe pool 就是依据上述的思路进行设计的，将单一的全局资源池拆分成全局资源池+本地资源池。
 
-![](http://img.ququ123.top/img/pipe-pool-in-haproxy.png)
+![](https://img.ququ123.top/img/pipe-pool-in-haproxy.png)
 
 全局资源池利用单链表和自旋锁实现，本地资源池则是基于线程私有存储（Thread Local Storage, TLS）实现，`TLS` 是一种线程的私有的变量，它的主要作用是在多线程编程中避免锁竞争的开销。`TLS` 由编译器提供支持，我们知道编译 C 程序得到的 `obj` 或者链接得到的 `exe`，其中的 `.text` 段保存代码文本，`.data` 段保存已初始化的全局变量和已初始化的静态变量，`.bss` 段则保存未初始化的全局变量和未初始化的局部静态变量。
 
@@ -130,7 +130,7 @@ HAProxy 的 pipe pool 实现虽然只有短短的 100 多行代码，但是其�
 
 Google 了一张图来展示 `sync.Pool` 的底层实现：
 
-![](http://img.ququ123.top/img/go-sync-pool.png)
+![](https://img.ququ123.top/img/go-sync-pool.png)
 
 +   获取对象时：当某个 P 上的 goroutine 从 `sync.Pool` 尝试获取缓存的对象时，需要先把当前的 goroutine 锁死在 P 上，防止操作期间突然被调度走，然后先尝试去取本地私有变量 `private`，如果没有则去 `shared` 双向链表的表头取，该链表可以被其他 P 消费（或者说"偷"），如果当前 P 上的 `shared` 是空则去"偷"其他 P 上的 `shared` 双向链表的表尾，最后解除锁定，如果还是没有取到缓存的对象，则直接调用 `New` 创建一个返回。
 +   放回对象时：先把当前的 goroutine 锁死在 P 上，如果本地的 `private` 为空，则直接将对象存入，否则就存入 `shared` 双向链表的表头，最后解除锁定。

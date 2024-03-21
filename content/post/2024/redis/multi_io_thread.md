@@ -1,7 +1,7 @@
 ---
 title: 【Redis】多线程IO
 date: 2024-03-20
-image: http://img.ququ123.top/img/reactor2.png
+image: https://img.ququ123.top/img/reactor2.png
 categories: 
     - redis
     - io
@@ -30,7 +30,7 @@ Redis 从本质上来讲是一个网络服务器，而对于一个网络服务�
 
 Redis 的高性能得益于以下几个基础：
 
-![](http://img.ququ123.top/img/why-is-redis-fast.png)
+![](https://img.ququ123.top/img/why-is-redis-fast.png)
 
 +   **C 语言实现**，虽然 C 对 Redis 的性能有助力，但语言并不是最核心因素。
 +   **纯内存 I/O**，相较于其他基于磁盘的 DB，Redis 的纯内存操作有着天然的性能优势。
@@ -65,7 +65,7 @@ Redis 的作者 Salvatore Sanfilippo (别称 antirez) 对 Redis 的设计和代�
 
 你期望的多线程编程 **VS** 实际上的多线程编程：
 
-![你期望的多线程VS实际上的多线程](http://img.ququ123.top/img/multithreaded-programming.jpg)
+![你期望的多线程VS实际上的多线程](https://img.ququ123.top/img/multithreaded-programming.jpg)
 
 前面我们提到引入多线程必须的同步机制，如果 Redis 使用多线程模式，那么所有的底层数据结构都必须实现成线程安全的，这无疑又使得 Redis 的实现变得更加复杂。
 
@@ -84,7 +84,7 @@ Redis 的作者 Salvatore Sanfilippo (别称 antirez) 对 Redis 的设计和代�
 
 我们首先来剖析一下 Redis 的核心网络模型，从 Redis 的 v1.0 到 v6.0 版本之前，Redis 的核心网络模型一直是一个典型的单 Reactor 模型：利用 epoll/select/kqueue 等多路复用技术，在单线程的事件循环中不断去处理事件（客户端请求），最后回写响应数据到客户端：
 
-![](http://img.ququ123.top/img/single-threaded-redis.png)
+![](https://img.ququ123.top/img/single-threaded-redis.png)
 
 这里有几个核心的概念需要学习：
 
@@ -121,7 +121,7 @@ Redis 的作者 antirez 为了解决这个问题进行了很多思考，一开�
 
 于是，在 Redis v4.0 之后增加了一些的非阻塞命令如 `UNLINK`、`FLUSHALL ASYNC`、`FLUSHDB ASYNC`。
 
-![](http://img.ququ123.top/img/redis-async-commands.png)
+![](https://img.ququ123.top/img/redis-async-commands.png)
 
 `UNLINK` 命令其实就是 `DEL` 的异步版本，它不会同步删除数据，而只是把 key 从 keyspace 中暂时移除掉，然后将任务添加到一个异步队列，最后由后台线程去删除，不过这里需要考虑一种情况是如果用 `UNLINK` 去删除一个很小的 key，用异步的方式去做反而开销更大，所以它会先计算一个开销的阀值，只有当这个值大于 64 才会使用异步的方式去删除 key，对于基本的数据类型如 List、Set、Hash 这些，阀值就是其中存储的对象数量。
 
@@ -145,7 +145,7 @@ Redis 的作者 antirez 为了解决这个问题进行了很多思考，一开�
 
 6.0 版本之后，Redis 正式在核心网络模型中引入了多线程，也就是所谓的 *I/O threading*，至此 Redis 真正拥有了多线程模型。前一小节，我们了解了 Redis 在 6.0 版本之前的单线程事件循环模型，实际上就是一个非常经典的 Reactor 模型：
 
-![](http://img.ququ123.top/img/single-reactor.png)
+![](https://img.ququ123.top/img/single-reactor.png)
 
 目前 Linux 平台上主流的高性能网络库/框架中，大都采用 Reactor 模式，比如 netty、libevent、libuv、POE(Perl)、Twisted(Python)等。
 
@@ -157,7 +157,7 @@ Redis 的核心网络模型在 6.0 版本之前，一直是单 Reactor 模式：
 
 通常来说，单 Reactor 模式，引入多线程之后会进化为 Multi-Reactors 模式，基本工作模式如下：
 
-![](http://img.ququ123.top/img/multi-reactors.png)
+![](https://img.ququ123.top/img/multi-reactors.png)
 
 区别于单 Reactor 模式，这种模式不再是单线程的事件循环，而是有多个线程（Sub Reactors）各自维护一个独立的事件循环，由 Main Reactor 负责接收新连接并分发给 Sub Reactors 去独立处理，最后 Sub Reactors 回写响应给客户端。
 
@@ -167,7 +167,7 @@ Multiple Reactors 模式通常也可以等同于 Master-Workers 模式，比如 
 
 Redis 虽然也实现了多线程，但是却不是标准的 Multi-Reactors/Master-Workers 模式，这其中的缘由我们后面会分析，现在我们先看一下 Redis 多线程网络模型的总体设计：
 
-![](http://img.ququ123.top/img/multiple-threaded-redis.png)
+![](https://img.ququ123.top/img/multiple-threaded-redis.png)
 
 1.  Redis 服务器启动，开启主线程事件循环（Event Loop），注册 `acceptTcpHandler` 连接应答处理器到用户配置的监听端口对应的文件描述符，等待新连接到来；
 2.  客户端和服务端建立网络连接；
@@ -570,13 +570,13 @@ void processInputBuffer(client *c) {
 
 首先是 CPU 高速缓存（这里讨论的是 L1 Cache 和 L2 Cache 都集成在 CPU 中的硬件架构），这里想象一种场景：Redis 主进程正在 CPU-1 上运行，给客户端提供数据服务，此时 Redis 启动了子进程进行数据持久化（BGSAVE 或者 AOF），系统调度之后子进程抢占了主进程的 CPU-1，主进程被调度到 CPU-2 上去运行，导致之前 CPU-1 的高速缓存里的相关指令和数据被汰换掉，CPU-2 需要重新加载指令和数据到自己的本地高速缓存里，浪费 CPU 资源，降低性能。
 
-![](http://img.ququ123.top/img/cpu-cache-levels.png)
+![](https://img.ququ123.top/img/cpu-cache-levels.png)
 
 因此，Redis 通过设置 CPU 亲和性，可以将主进程/线程和子进程/线程绑定到不同的核隔离开来，使之互不干扰，能有效地提升系统性能。
 
 其次是基于 NUMA 架构的考虑，在 NUMA 体系下，内存控制器芯片被集成到处理器内部，形成 CPU 本地内存，访问本地内存只需通过内存通道而无需经过系统总线，访问时延大大降低，而多个处理器之间通过 QPI 数据链路互联，跨 NUMA 节点的内存访问开销远大于本地内存的访问：
 
-![](http://img.ququ123.top/img/02-04-QPI-Architecture-750x406.png)
+![](https://img.ququ123.top/img/02-04-QPI-Architecture-750x406.png)
 
 因此，Redis 通过设置 CPU 亲和性，让主进程/线程尽可能在固定的 NUMA 节点上的 CPU 上运行，更多地使用本地内存而不需要跨节点访问数据，同样也能大大地提升性能。
 
@@ -586,21 +586,21 @@ void processInputBuffer(client *c) {
 
 `io_threads_pending` 是原子变量，不需要加锁保护，`io_threads_op` 和 `io_threads_list` 这两个变量则是通过控制主线程和 I/O 线程交错访问来规避共享数据竞争问题：I/O 线程启动之后会通过忙轮询和锁休眠等待主线程的信号，在这之前它不会去访问自己的本地任务队列 `io_threads_list[id]`，而主线程会在分配完所有任务到各个 I/O 线程的本地队列之后才去唤醒 I/O 线程开始工作，并且主线程之后在 I/O 线程运行期间只会访问自己的本地任务队列 `io_threads_list[0]` 而不会再去访问 I/O 线程的本地队列，这也就保证了主线程永远会在 I/O 线程之前访问 `io_threads_list` 并且之后不再访问，保证了交错访问。`io_threads_op` 同理，主线程会在唤醒 I/O 线程之前先设置好 `io_threads_op` 的值，并且在 I/O 线程运行期间不会再去访问这个变量。
 
-![](http://img.ququ123.top/img/lock-free-during-multi-threads-in-redis.png)
+![](https://img.ququ123.top/img/lock-free-during-multi-threads-in-redis.png)
 
 ### 性能提升
 
 Redis 将核心网络模型改造成多线程模式追求的当然是最终性能上的提升，所以最终还是要以 benchmark 数据见真章：
 
-![](http://img.ququ123.top/img/redis6-benchmark-no-pipeline.png)
+![](https://img.ququ123.top/img/redis6-benchmark-no-pipeline.png)
 
 测试数据表明，Redis 在使用多线程模式之后性能大幅提升，达到了一倍。更详细的性能压测数据可以参阅这篇文章：[Benchmarking the experimental Redis Multi-Threaded I/O](https://itnext.io/benchmarking-the-experimental-redis-multi-threaded-i-o-1bb28b69a314)。
 
 以下是美图技术团队实测的新旧 Redis 版本性能对比图，仅供参考：
 
-![](http://img.ququ123.top/img/v2-5fc23efb73e636b4cbb8fcc31c1996cb_1440w.jpg)
+![](https://img.ququ123.top/img/v2-5fc23efb73e636b4cbb8fcc31c1996cb_1440w.jpg)
 
-![](http://img.ququ123.top/img/v2-3dce301a6402226f551527cd2f2d4e10_1440w.jpg)
+![](https://img.ququ123.top/img/v2-3dce301a6402226f551527cd2f2d4e10_1440w.jpg)
 
 ### 模型缺陷
 

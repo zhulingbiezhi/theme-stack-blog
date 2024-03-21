@@ -1,7 +1,7 @@
 ---
 title: 博客导航
 date: 2024-03-21
-image: http://img.ququ123.top/img/hugo.png
+image: https://img.ququ123.top/img/hugo.png
 categories: 
     - golang
     - Redis

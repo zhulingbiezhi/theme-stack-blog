@@ -8,6 +8,9 @@ categories = [
 math = true
 image = "https://img.ququ123.top/img/nangua.jpg"
 +++
+
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 ## 4.1
 $$\operatorname{Ent}(D)=-\sum\_{k=1}^{|\mathcal{Y}|}p_k\log_{2}{p_k}$$
 [解析]：证明$0\leq\operatorname{Ent}(D)\leq\log_{2}|\mathcal{Y}|$：

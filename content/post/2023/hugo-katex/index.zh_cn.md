@@ -9,6 +9,9 @@ math = true
 image = "https://img.ququ123.top/img/og_logo.png"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 # 在 Hugo 中使用数学排版
 
 在 Hugo 中进行数学排版，或者说渲染 LaTeX 并不是一项难任务。我们有两个流行的选择。第一个是 [mathjax](https://www.mathjax.org/)，我之前在 [jekyll](https://mertbakir.gitlab.io/jekyll/mathjax) 中使用过它。另一个流行的数学排版库是 [KaTeX](https://katex.org/)。由于它更快，这次我将选择 KaTeX。

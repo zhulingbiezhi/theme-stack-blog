@@ -10,6 +10,8 @@ categories:
 slug: blog-redis-sds
 ---
 
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 
 不管在哪门编程语言当中，字符串都几乎是使用最多的数据结构。sds正是在Redis中被广泛使用的字符串结构，它的全称是Simple Dynamic String。与其它语言环境中出现的字符串相比，它具有如下显著的特点：
 

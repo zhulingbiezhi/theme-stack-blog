@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ## 引言
 
 在上一篇文章 [《深入理解 Go Interface》](http://legendtkl.com/2017/06/12/understanding-golang-interface/)中从设计和使用的角度介绍了 Golang 的 interface，作为补充，这篇文章将从源码级别来看看 interface 的具体实现。所有源码分析都是基于 Go 1.8.3。在开始之前，我们先看一个例子。

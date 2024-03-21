@@ -7,6 +7,10 @@ categories = [
 ]
 image = "https://img.ququ123.top/img/go-generics-1024x512.png"
 +++
+
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 # Type Parameters Proposal
 Ian Lance Taylor  
 Robert Griesemer  

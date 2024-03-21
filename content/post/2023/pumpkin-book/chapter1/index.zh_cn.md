@@ -9,6 +9,9 @@ math = true
 image = "https://img.ququ123.top/img/nangua.jpg"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ## 1.1
 $$E_{o t e}\left(\mathfrak{L}\_{a} | X, f\right)=\sum\_{h} \sum\_{\boldsymbol{x} \in \mathcal{X}-X} P(\boldsymbol{x}) \mathbb{I}(h(\boldsymbol{x}) \neq f(\boldsymbol{x})) P\left(h | X, \mathfrak{L}_{a}\right)$$
 [解析]：参见公式(1.2)

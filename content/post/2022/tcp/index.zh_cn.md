@@ -10,6 +10,9 @@ image = "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app
 +++
 
 
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
+
 长文是对TCP IP的剖析归类总结，就自己的经验再次回顾IP协议而写的归纳性笔记，助力初学者掌握。文有不妥之处，请查看原文并留言告知，谢谢！
 
 如果对网络工程基础不牢，建议通读《[细说OSI七层协议模型及OSI参考模型中的数据封装过程？](https://www.zhoulujun.cn/html/theory/network/2016_0316_7709.html)》

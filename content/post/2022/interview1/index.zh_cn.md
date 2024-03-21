@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=242378018,3642385577&fm=253&fmt=auto&app=138&f=JPEG.jpeg"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 * **笔试**
 1. 详细描述一下web的session；
 2. 优化一段代码

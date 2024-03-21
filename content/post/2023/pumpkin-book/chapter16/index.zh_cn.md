@@ -8,6 +8,9 @@ categories = [
 math = true
 image = "https://img.ququ123.top/img/nangua.jpg"
 +++
+
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 ## 16.2
 $$
 Q_{n}(k)=\frac{1}{n}\left((n-1)\times Q_{n-1}(k)+v_{n}\right)

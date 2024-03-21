@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=2002782107,3956577129&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 sync.Mutex是一个不可重入的排他锁。 这点和Java不同，golang里面的排它锁是不可重入的。
 
 当一个 goroutine 获得了这个锁的拥有权后， 其它请求锁的 goroutine 就会阻塞在 Lock 方法的调用上，直到锁被释放。

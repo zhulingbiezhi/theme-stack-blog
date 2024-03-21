@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=1147917346,777784938&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ### 文章目录
 
 *   法则一：只返回需要的结果

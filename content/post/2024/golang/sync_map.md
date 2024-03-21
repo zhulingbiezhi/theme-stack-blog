@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=469829844,4113946476&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 工作中，经常会碰到并发读写 map 而造成 panic 的情况，为什么在并发读写的时候，会 panic 呢？因为在并发读写的情况下，map 里的数据会被写乱，之后就是 `Garbage in, garbage out`，还不如直接 panic 了。
 
 是什么

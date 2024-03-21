@@ -9,6 +9,9 @@ categories = [
 image = "http://img.ququ123.top/img/sendfile.png"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ## 导言
 
 如今的网络应用早已从 CPU 密集型转向了 I/O 密集型，网络服务器大多是基于 `C-S` 模型，也即 `客户端 - 服务端` 模型，客户端需要和服务端进行大量的网络通信，这也决定了现代网络应用的性能瓶颈：I/O。

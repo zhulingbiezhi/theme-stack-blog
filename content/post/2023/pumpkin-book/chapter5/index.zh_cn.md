@@ -9,6 +9,9 @@ math = true
 image = "https://img.ququ123.top/img/nangua.jpg"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ## 5.2
 $$\Delta w_i=\eta(y-\hat{y})x_i$$
 [解析]：此公式是感知机学习算法中的参数更新公式，下面依次给出感知机模型、学习策略和学习算法的具体介绍<sup>[1]</sup>：

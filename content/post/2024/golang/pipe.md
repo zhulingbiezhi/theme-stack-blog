@@ -8,6 +8,7 @@ categories:
 slug: golang-pipe
 ---
 
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 
 golang的io包中，稍微有点儿晦涩的就是Pipe方法，今天我们就一起来看一看这个Pipe。
 

@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=3035194156,1632962318&fm=253&fmt=auto"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 最近在油管上面看了一个视频：Understanding nil，挺有意思，这篇文章就对视频做一个归纳总结，代码示例都是来自于视频。
 
 nil是什么

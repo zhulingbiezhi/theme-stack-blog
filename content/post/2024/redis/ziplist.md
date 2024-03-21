@@ -9,6 +9,10 @@ categories:
     - ziplist
 slug: blog-redis-ziplist
 ---
+
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 在本文中，我们首先介绍一个新的Redis内部数据结构——ziplist，然后在文章后半部分我们会讨论一下在robj, dict和ziplist的基础上，Redis对外暴露的hash结构是怎样构建起来的。
 
 我们在讨论中还会涉及到两个Redis配置（在redis.conf中的ADVANCED CONFIG部分）：

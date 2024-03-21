@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=1747746174,373277862&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 突然挂了！Redis缓存都在内存中，这下完了！
 -----------------------
 我是**Redis**，一个叫**Antirez**的男人把我带到了这个世界上。

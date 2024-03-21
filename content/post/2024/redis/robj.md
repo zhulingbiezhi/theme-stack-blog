@@ -10,6 +10,8 @@ categories:
 slug: blog-redis-robj
 --- 
 
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 
 那到底什么是robj呢？它有什么用呢？
 

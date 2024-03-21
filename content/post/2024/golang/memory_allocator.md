@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=140571796,2511374842&fm=253&fmt=auto&app=138&f=PNG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 这篇文章**主要介绍Go内存分配和Go内存管理**，会轻微涉及内存申请和释放，以及Go垃圾回收。
 
 从非常宏观的角度看，Go的内存管理就是下图这个样子，我们今天主要关注其中标红的部分。

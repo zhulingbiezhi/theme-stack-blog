@@ -10,6 +10,8 @@ categories:
 slug: blog-redis-quicklist
 ---
 
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 在本文中，我们介绍一个Redis内部数据结构——quicklist。Redis对外暴露的list数据类型，它底层实现所依赖的内部数据结构就是quicklist。
 
 我们在讨论中还会涉及到两个Redis配置（在redis.conf中的ADVANCED CONFIG部分）：

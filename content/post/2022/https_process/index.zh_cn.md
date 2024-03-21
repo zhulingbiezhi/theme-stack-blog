@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=2210862128,933076596&fm=253&fmt=auto&app=120&f=JPEG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 互联网的通信安全，建立在SSL/TLS协议之上。
 
 本文简要介绍SSL/TLS协议的运行机制。文章的重点是设计思想和运行过程，不涉及具体的实现细节。如果想了解这方面的内容，请参阅[RFC文档](http://tools.ietf.org/html/rfc5246)。

@@ -9,6 +9,9 @@ math = true
 image = "https://img.ququ123.top/img/nangua.jpg"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ## 6.9
 $$\boldsymbol{w} = \sum_{i=1}^m\alpha_iy_i\boldsymbol{x}\_i$$
 [推导]：公式(6.8)可作如下展开

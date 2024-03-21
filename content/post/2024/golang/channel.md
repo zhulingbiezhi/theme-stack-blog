@@ -6,6 +6,7 @@ categories:
     - golang
 slug: golang_channel_principle
 ---
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 
 channel一个类型管道，通过它可以在goroutine之间发送和接收消息。它是Golang在语言层面提供的goroutine间的通信方式。
 

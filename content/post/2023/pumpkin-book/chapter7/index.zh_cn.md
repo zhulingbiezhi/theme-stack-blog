@@ -8,6 +8,9 @@ categories = [
 math = true
 image = "https://img.ququ123.top/img/nangua.jpg"
 +++
+
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 ## 7.5
 $$R(c|\boldsymbol x)=1−P(c|\boldsymbol x)$$
 [推导]：由公式(7.1)和公式(7.4)可得：

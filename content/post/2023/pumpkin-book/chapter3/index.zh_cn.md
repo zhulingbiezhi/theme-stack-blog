@@ -9,6 +9,9 @@ math = true
 image = "https://img.ququ123.top/img/nangua.jpg"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ## 3.5
 $$\cfrac{\partial E_{(w, b)}}{\partial w}=2\left(w \sum\_{i=1}^{m} x_{i}^{2}-\sum\_{i=1}^{m}\left(y_{i}-b\right) x_{i}\right)$$
 [推导]：已知$E_{(w, b)}=\sum\limits\_{i=1}^{m}\left(y_{i}-w x_{i}-b\right)^{2}$，所以

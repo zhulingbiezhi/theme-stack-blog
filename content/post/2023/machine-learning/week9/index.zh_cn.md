@@ -9,6 +9,9 @@ math = true
 image = "https://img.ququ123.top/img/image-20230602123210308.png"
 +++
 
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
+
 异常检测(Anomaly Detection)
 ---------------------------------
 

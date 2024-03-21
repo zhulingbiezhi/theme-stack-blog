@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/u=60200828,2533224267&fm=253&fmt=auto&app=138&f=JPEG"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 Golang最大的特色可以说是协程(goroutine)了, 协程让本来很复杂的异步编程变得简单, 让程序员不再需要面对回调地狱,  
 虽然现在引入了协程的语言越来越多, 但go中的协程仍然是实现的是最彻底的.  
 这篇文章将通过分析golang的源代码来讲解协程的实现原理.

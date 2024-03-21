@@ -8,6 +8,9 @@ categories = [
 image = "https://img.ququ123.top/img/test.jpeg"
 +++
 
+
+[原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 ## 服务器ssh配置
 - 打开SSH服务器上的SSH配置文件，在大多数Linux系统上通常是/etc/ssh/sshd_config文件。
 

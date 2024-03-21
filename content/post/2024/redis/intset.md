@@ -12,6 +12,7 @@ slug: blog-redis-intset
 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
+
 Redis里面使用intset是为了实现集合(set)这种对外的数据结构。set结构类似于数学上的集合的概念，它包含的元素无序，且不能重复。Redis里的set结构还实现了基础的集合并、交、差的操作。与Redis对外暴露的其它数据结构类似，set的底层实现，随着元素类型是否是整型以及添加的元素的数目多少，而有所变化。概括来讲，当set中添加的元素都是整型且元素数目较少时，set使用intset作为底层数据结构，否则，set使用[dict](https://www.ququ123.top/2024/03/blog-redis-dict)作为底层数据结构。
 
 在本文中我们将大体分成三个部分进行介绍：

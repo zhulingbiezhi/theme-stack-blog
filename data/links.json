@@ -58,5 +58,11 @@
         "website": "https://strikefreedom.top/",
         "image": "mantyke.png",
         "description": "潘少"
+    },
+    {
+        "title": "真没什么逻辑",
+        "website": "https://draveness.me/",
+        "image": "mantyke.png",
+        "description": "Go 语言设计与实现"
     }
 ]

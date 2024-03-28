@@ -3,10 +3,10 @@ title: "【Linux】zero copy"
 date: "2024-03-20"
 slug: "linux_zero_copy"
 categories: 
-    - "linux",
+    - "linux"
     - "zero_copy"
 keywords:
-    - "linux",
+    - "linux"
     - "zero_copy"
     - "socket"
 image: "https://img.ququ123.top/img/sendfile.png"

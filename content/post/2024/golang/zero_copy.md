@@ -2,13 +2,13 @@
 title: "【golang】zero copy"
 date: "2024-03-20"
 slug: "golang_zero_copy"
-categories: 
-    - "golang",
-    - "io",
+categories:
+    - "golang"
+    - "io"
     - "zero copy"
 keywords:
-    - "golang",
-    - "io",
+    - "golang"
+    - "io"
     - "zero copy"
     - "网络"
 image: "https://img.ququ123.top/img/sendfile.png"

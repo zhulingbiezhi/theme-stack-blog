@@ -2,9 +2,13 @@
 title: "【南瓜书】第十一章"
 date: "2023-05-21"
 slug: "pumkin-book-chapter11"
-categories: 
-    "南瓜书"
-]
+categories:
+  - "南瓜书"
+  - "机器学习"
+keywords:
+  - "南瓜书"
+  - "机器学习"
+  - "数学"
 math: true
 image: "https://img.ququ123.top/img/nangua.jpg"
 ---

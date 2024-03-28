@@ -5,8 +5,8 @@ slug: "golang-type-parameters-proposal"
 categories: 
     - "golang"
 keywords:
-	- "golang"
-	- "泛型"
+    - "golang"
+    - "泛型"
 image: "https://img.ququ123.top/img/go-generics-1024x512.png"
 ---
 

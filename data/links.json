@@ -64,5 +64,17 @@
         "website": "https://draveness.me/",
         "image": "mantyke.png",
         "description": "Go 语言设计与实现"
+    },
+    {
+        "title": "Legendtkl",
+        "website": "http://legendtkl.com/",
+        "image": "mantyke.png",
+        "description": "Tao Kelu"
+    },
+    {
+        "title": "xiaorui",
+        "website": "https://xiaorui.cc/",
+        "image": "mantyke.png",
+        "description": "xiaorui"
     }
 ]

@@ -3,8 +3,12 @@ title: "homeassistant 小米登录配置"
 date: "2023-09-16"
 slug: "homeassistant_xiaomi_login"
 categories: 
-    "homeassistant","小米"
-]
+    - "homeassistant"
+    - "小米"
+keywords:
+    - "homeassistant"
+    - "小米"
+    - "登录"
 image: "https://img.ququ123.top/img/test.jpeg"
 ---
 

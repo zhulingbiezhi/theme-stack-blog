@@ -1,6 +1,6 @@
 ---
 title: 【pay】支付渠道统计
-date: 2023-03-28
+date: 2024-03-28
 image: https://img.ququ123.top/img/u=2104548819,3267708629&fm=253&fmt=auto&app=138&f=JPG
 categories:
     - 支付
@@ -9,7 +9,7 @@ keywords:
     - 钱包
     - 海外
     - 统计
-slug: payment_channe
+slug: payment_channel
 ---
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 
@@ -21,25 +21,25 @@ slug: payment_channe
 
 以下是一些全球范围内知名的卡组织：  
 
-*   **Visa（维萨）：**覆盖全球范围内几乎所有国家。涉及信用卡、借记卡、电子钱包等支付服务，以及跨境交易处理等业务。
+*   **Visa（维萨）：** 覆盖全球范围内几乎所有国家。涉及信用卡、借记卡、电子钱包等支付服务，以及跨境交易处理等业务。
     
-*   **Mastercard（万事达卡）：**覆盖全球范围内几乎所有国家。业务涉及信用卡、借记卡、移动支付等支付服务，以及商务解决方案。
+*   **Mastercard（万事达卡）：** 覆盖全球范围内几乎所有国家。业务涉及信用卡、借记卡、移动支付等支付服务，以及商务解决方案。
     
-*   **American Express（美国运通）:**涉及美国、欧洲、亚洲等多个国家和地区的高端信用卡服务、旅行和商务服务、企业支付解决方案。
+*   **American Express（美国运通）:** 涉及美国、欧洲、亚洲等多个国家和地区的高端信用卡服务、旅行和商务服务、企业支付解决方案。
     
-*   **China UnionPay（中国银联）:**覆盖中国及全球多个国家和地区。业务涉及信用卡、借记卡、移动支付等支付服务，以及跨境交易处理。
+*   **China UnionPay（中国银联）:** 覆盖中国及全球多个国家和地区。业务涉及信用卡、借记卡、移动支付等支付服务，以及跨境交易处理。
     
-*   **JCB（日本信用局）:**覆盖日本及亚洲其他国家。涉及信用卡、借记卡、移动支付等支付服务。
+*   **JCB（日本信用局）:** 覆盖日本及亚洲其他国家。涉及信用卡、借记卡、移动支付等支付服务。
     
-*   **Diners Club International（大莱卡）:**涉及欧洲、北美、亚洲等国家的高端信用卡服务及旅行相关服务。 
+*   **Diners Club International（大莱卡）:** 涉及欧洲、北美、亚洲等国家的高端信用卡服务及旅行相关服务。 
     
-*   **Discover:**主要覆盖美国。涉及信用卡、借记卡、在线支付等业务。
+*   **Discover:** 主要覆盖美国。涉及信用卡、借记卡、在线支付等业务。
     
-*   **Rupay（印度国家支付系统）:**印度国内信用卡、借记卡支付服务。
+*   **Rupay（印度国家支付系统）:** 印度国内信用卡、借记卡支付服务。
     
-*   **Mir（俄罗斯国家支付系统）:**主要是俄罗斯的银行卡支付服务。
+*   **Mir（俄罗斯国家支付系统）:** 主要是俄罗斯的银行卡支付服务。
     
-*   **Elo（巴西信用卡品牌）:**主要设计巴西的信用卡、借记卡支付服务。
+*   **Elo（巴西信用卡品牌）:** 主要设计巴西的信用卡、借记卡支付服务。
     
 
 下面按照大洲分类，整理了全球各国的主要支付方式和支付发展特点
@@ -460,37 +460,37 @@ slug: payment_channe
 
 **2.1北欧**
 
-**钱包支付：**Swish（瑞典）、MobilePay（丹麦）、Vipps（挪威）
+**钱包支付：** Swish（瑞典）、MobilePay（丹麦）、Vipps（挪威）
 
-**互联网支付：**瑞典的Klarna和Trustly、Dankort Online（丹麦）、BankAxept Internet（挪威）  
+**互联网支付：** 瑞典的Klarna和Trustly、Dankort Online（丹麦）、BankAxept Internet（挪威）  
 
-**移动支付：**移动支付在北欧国家中越来越受欢迎，常见的移动支付应用包括上述提到的钱包支付应用，如Swish、MobilePay和Vipps，它们也提供了移动支付功能。
+**移动支付：** 移动支付在北欧国家中越来越受欢迎，常见的移动支付应用包括上述提到的钱包支付应用，如Swish、MobilePay和Vipps，它们也提供了移动支付功能。
 
-**银行卡支付：**北欧国家的银行卡支付主要由国际信用卡品牌支持，如：Visa、Mastercard、Maestro
+**银行卡支付：** 北欧国家的银行卡支付主要由国际信用卡品牌支持，如：Visa、Mastercard、Maestro
 
-**跨境支付：**北欧国家的跨境支付市场相对活跃，常见的跨境支付品牌包括PayPal、TransferWise、Klarna（也提供跨境支付服务）
+**跨境支付：** 北欧国家的跨境支付市场相对活跃，常见的跨境支付品牌包括PayPal、TransferWise、Klarna（也提供跨境支付服务）
 
 其他：除了上述列举的支付方式品牌外，北欧国家还可能存在其他支付方式，如银行转账、电子支票等。
 
 **2.2东欧** 
 
-**钱包支付：**俄罗斯的Qiwi Wallet和Yandex.Money、Paysafecard（波兰）、GoPay Wallet（捷克）
+**钱包支付：** 俄罗斯的Qiwi Wallet和Yandex.Money、Paysafecard（波兰）、GoPay Wallet（捷克）
 
-**互联网支付：**俄罗斯的Robokassa和2Checkout、Dotpay（波兰）、Privat24（乌克兰）
+**互联网支付：** 俄罗斯的Robokassa和2Checkout、Dotpay（波兰）、Privat24（乌克兰）
 
 **2.3中欧**
 
-**钱包支付：**德国的Giropay和EPS、EPS（奥地利）、PayU（波兰）
+**钱包支付：** 德国的Giropay和EPS、EPS（奥地利）、PayU（波兰）
 
-**互联网支付：**德国的PayPal和Sofortbanking（现更名为PayNow）、Przelewy24（波兰）、GoPay（捷克）
+**互联网支付：** 德国的PayPal和Sofortbanking（现更名为PayNow）、Przelewy24（波兰）、GoPay（捷克）
 
 **2.4西欧**
 
-**钱包支付：**英国的Skrill和PayPal、法国的Lemon Wallet和Paylib
+**钱包支付：** 英国的Skrill和PayPal、法国的Lemon Wallet和Paylib
 
-**互联网支付：**Stripe、Worldpay、Payzen、LCL Internet
+**互联网支付：** Stripe、Worldpay、Payzen、LCL Internet
 
-**移动支付：**Apple Pay、Google Pay、Orange Money、BNP Paribas Mobile Payment
+**移动支付：** Apple Pay、Google Pay、Orange Money、BNP Paribas Mobile Payment
 
 **银行卡支付：**
 
@@ -536,21 +536,21 @@ slug: payment_channe
 
 **3.非洲**
 
-**钱包支付：**M-PESA（肯尼亚、坦桑尼亚等）、Airtel Money（肯尼亚、加纳等）、PalmPay（加纳）、OPay（尼日利亚）、Zeepay（非洲多国）、Wallettec（非洲多国）
+**钱包支付：** M-PESA（肯尼亚、坦桑尼亚等）、Airtel Money（肯尼亚、加纳等）、PalmPay（加纳）、OPay（尼日利亚）、Zeepay（非洲多国）、Wallettec（非洲多国）
 
-**互联网支付：**Paystack（尼日利亚）、Flutterwave（尼日利亚）、SnapScan（南非）、Cellulant（肯尼亚等）
+**互联网支付：** Paystack（尼日利亚）、Flutterwave（尼日利亚）、SnapScan（南非）、Cellulant（肯尼亚等）
 
-**移动支付：**M-PESA 、N-OPay、Zeepay、Chipper Cash（泛非地区）、Vodacom M-Pesa（南非、莱索托等）
+**移动支付：** M-PESA 、N-OPay、Zeepay、Chipper Cash（泛非地区）、Vodacom M-Pesa（南非、莱索托等）
 
-**跨境支付：**Earthport、Adyen  
+**跨境支付：** Earthport、Adyen  
 
 **4.大洋洲**
 
-**钱包支付：**humm（澳大利亚）、PayPal钱包、Apple Pay、Google Pay
+**钱包支付：** humm（澳大利亚）、PayPal钱包、Apple Pay、Google Pay
 
-**互联网支付：**eWAY（澳大利亚）  
+**互联网支付：** eWAY（澳大利亚）  
 
-**移动支付：**Vodafone Wallet  
+**移动支付：** Vodafone Wallet  
 
 **5.北美洲**
 
@@ -594,7 +594,7 @@ slug: payment_channe
 *   Global Payments：全球支付处理公司，提供多种支付方式和货币支持。
     
 
-**移动支付：**Apple Pay、Google Pay、Samsung Pay、Venmo、Cash App、Square Cash、Zelle 
+**移动支付：** Apple Pay、Google Pay、Samsung Pay、Venmo、Cash App、Square Cash、Zelle 
 
 **银行卡支付：**
 

@@ -3,8 +3,12 @@ title: "【南瓜书】第二章"
 date: "2023-05-12"
 slug: "pumkin-book-chapter2"
 categories: 
-    "南瓜书"
-]
+    - "南瓜书"
+    - "机器学习"
+keywords:
+    - "南瓜书"
+    - "机器学习"
+    - "数学"
 math: true
 image: "https://img.ququ123.top/img/nangua.jpg"
 ---

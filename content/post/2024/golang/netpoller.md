@@ -6,9 +6,9 @@ categories:
     - golang
     - netpoller
 keywords:
-	 - golang
-	 - netpoller
-	 - 网络
+    - golang
+    - netpoller
+    - 网络
 slug: golang-netpoller
 ---
 

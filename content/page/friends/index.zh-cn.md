@@ -1,5 +1,5 @@
 ---
-title: "Friends"
+title: "好友"
 date: 2019-05-28
 description: 
 slug: "links"
@@ -13,3 +13,4 @@ menu:
         params:
             icon: link
 ---
+ 

@@ -8,7 +8,7 @@ keywords:
     - golang
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=251838256,1456281185&fm=253&fmt=auto&app=138&f=PNG"
+image: "https://img.ququ123.top/img/u=251838256,1456281185&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
 ---
 
 

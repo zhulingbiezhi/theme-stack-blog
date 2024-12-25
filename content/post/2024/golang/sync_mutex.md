@@ -9,7 +9,7 @@ keywords:
     - mutex
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=2002782107,3956577129&fm=253&fmt=auto&app=138&f=PNG"
+image: "https://img.ququ123.top/img/u=2002782107,3956577129&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
 ---
 
 

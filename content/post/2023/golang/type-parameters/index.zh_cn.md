@@ -9,7 +9,7 @@ keywords:
     - "golang"
     - "type"
     - "泛型"
-image: "https://img.ququ123.top/img/7553966619703147706.jpg"
+image: "https://img.ququ123.top/img/7553966619703147706.jpg?imageView2/2/w/900/h/480"
 ---
 
 

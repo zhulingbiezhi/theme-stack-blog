@@ -9,7 +9,7 @@ keywords:
     - interface
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG"
+image: "https://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG?imageView2/2/w/900/h/480"
 ---
 
 

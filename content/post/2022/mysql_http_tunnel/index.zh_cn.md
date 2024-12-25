@@ -7,7 +7,7 @@ categories:
 keywords:
     - "mysql"
     - "tunnel"
-image: "https://img.ququ123.top/img/u=3878467649,1404563456&fm=253&fmt=auto&app=138&f=JPEG"
+image: "https://img.ququ123.top/img/u=3878467649,1404563456&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
 ---
 
 

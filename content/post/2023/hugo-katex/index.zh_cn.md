@@ -10,7 +10,7 @@ keywords:
     - "KaTex"
     - "数学公式"
 math: true
-image: "https://img.ququ123.top/img/og_logo.png"
+image: "https://img.ququ123.top/img/og_logo.png?imageView2/2/w/900/h/480"
 ---
 
 

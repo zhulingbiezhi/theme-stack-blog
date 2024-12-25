@@ -10,7 +10,7 @@ keywords:
     - "机器学习"
     - "数学"
 math: true
-image: "https://img.ququ123.top/img/nangua.jpg"
+image: "https://img.ququ123.top/img/nangua.jpg?imageView2/2/w/900/h/480"
 ---
 
 

@@ -9,7 +9,7 @@ keywords:
     - slice
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG"
+image: "https://img.ququ123.top/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
 ---
 
 

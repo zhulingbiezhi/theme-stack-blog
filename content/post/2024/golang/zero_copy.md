@@ -11,7 +11,7 @@ keywords:
     - "io"
     - "zero copy"
     - "网络"
-image: "https://img.ququ123.top/img/sendfile.png"
+image: "https://img.ququ123.top/img/sendfile.png?imageView2/2/w/900/h/480"
 ---
 
 

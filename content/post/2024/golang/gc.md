@@ -9,7 +9,7 @@ keywords:
     - GC
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=2823023142,3998149518&fm=253&fmt=auto&app=138&f=JPEG"
+image: "https://img.ququ123.top/img/u=2823023142,3998149518&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
 ---
 
 

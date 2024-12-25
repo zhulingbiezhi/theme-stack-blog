@@ -1,7 +1,7 @@
 ---
 title: 【Redis】内部数据结构详解(6)——skiplist
 date: 2024-03-19
-image: https://img.ququ123.top/img/skiplist.png
+image: https://img.ququ123.top/img/skiplist.png?imageView2/2/w/900/h/480
 categories: 
     - redis
     - 数据结构

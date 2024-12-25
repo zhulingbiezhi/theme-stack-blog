@@ -8,7 +8,7 @@ keywords:
     - "mysql"
     - "优化"
     - "optimize"
-image: "https://img.ququ123.top/img/u=1147917346,777784938&fm=253&fmt=auto&app=138&f=JPEG"
+image: "https://img.ququ123.top/img/u=1147917346,777784938&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
 ---
 
 

@@ -8,7 +8,7 @@ keywords:
     - "mysql"
     - "分库"
     - "分表"
-image: "https://img.ququ123.top/img/u=324709543,2705389629&fm=253&fmt=auto&app=138&f=PNG"
+image: "https://img.ququ123.top/img/u=324709543,2705389629&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
 ---
 
 

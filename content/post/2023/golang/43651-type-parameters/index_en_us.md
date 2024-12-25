@@ -7,7 +7,7 @@ categories:
 keywords:
     - "golang"
     - "泛型"
-image: "https://img.ququ123.top/img/go-generics-1024x512.png"
+image: "https://img.ququ123.top/img/go-generics-1024x512.png?imageView2/2/w/900/h/480"
 ---
 
 

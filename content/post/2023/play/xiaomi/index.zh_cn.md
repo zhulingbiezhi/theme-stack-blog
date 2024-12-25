@@ -9,7 +9,7 @@ keywords:
     - "homeassistant"
     - "小米"
     - "登录"
-image: "https://img.ququ123.top/img/test.jpeg"
+image: "https://img.ququ123.top/img/test.jpeg?imageView2/2/w/900/h/480"
 ---
 
 

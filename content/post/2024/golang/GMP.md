@@ -9,7 +9,7 @@ keywords:
     - GMP
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=60200828,2533224267&fm=253&fmt=auto&app=138&f=JPEG"
+image: "https://img.ququ123.top/img/u=60200828,2533224267&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
 ---
 
 

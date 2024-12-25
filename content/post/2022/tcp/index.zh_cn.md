@@ -8,7 +8,7 @@ keywords:
     - "TCP"
     - "网络"
     - "SYN"
-image: "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG"
+image: "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
 ---
 
 

@@ -9,7 +9,7 @@ keywords:
     - defer
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/042e751cd553ea535e94a95ad21386ec.jpeg"
+image: "https://img.ququ123.top/img/042e751cd553ea535e94a95ad21386ec.jpeg?imageView2/2/w/900/h/480"
 ---
 
 

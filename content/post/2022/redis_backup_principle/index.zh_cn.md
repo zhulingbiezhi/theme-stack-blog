@@ -8,7 +8,7 @@ keywords:
     - "redis"
     - "backup"
     - "备份"
-image: "https://img.ququ123.top/img/u=1747746174,373277862&fm=253&fmt=auto&app=138&f=PNG"
+image: "https://img.ququ123.top/img/u=1747746174,373277862&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
 ---
 
 

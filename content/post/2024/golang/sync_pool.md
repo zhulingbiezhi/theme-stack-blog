@@ -9,7 +9,7 @@ keywords:
     - pool
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=2033342888,4177252789&fm=253&fmt=auto&app=138&f=PNG"
+image: "https://img.ququ123.top/img/u=2033342888,4177252789&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
 ---
 
 

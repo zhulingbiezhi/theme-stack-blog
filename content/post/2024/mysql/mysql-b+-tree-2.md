@@ -2,7 +2,7 @@
 ---
 title: 【mysql】b+树详解(二)
 date: 2024-05-07
-image: https://img.ququ123.top/img/1010726-20191029190008819-78324296.png?imageView2/2/w/940/h/250
+image: https://img.ququ123.top/img/1010726-20191029190008819-78324296.png?imageView2/2/w/900/h/480
 categories: 
     - mysql
 keywords:

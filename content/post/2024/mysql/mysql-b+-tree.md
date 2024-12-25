@@ -2,7 +2,7 @@
 ---
 title: 【mysql】b+树详解(一)
 date: 2024-05-07
-image: http://img.ququ123.top/img/20240507101736.png
+image: https://img.ququ123.top/img/20240507101736.png
 categories: 
     - mysql
 keywords:
@@ -39,13 +39,13 @@ slug: mysql_b+_tree
 
 下图是另一棵`3阶B+树`:
 
-![ds-bplus-tree2](http://img.ququ123.top/img/ds_bplus_tree2.jpg)
+![ds-bplus-tree2](https://img.ququ123.top/img/ds_bplus_tree2.jpg)
 
 ### 1.2 B+树的另一种定义
 
 各种资料上B+树的定义各有不同，一种定义方式是关键字个数和孩子结点个数相同。这里我们采取维基百科上所定义的方式，即关键字个数比孩子结点个数小1，这种方式是和B树基本等价的。下图就是一颗阶数为4的B+树。
 
-![ds-bplus-treedef](http://img.ququ123.top/img/ds_bplus_tree_def.png)
+![ds-bplus-treedef](https://img.ququ123.top/img/ds_bplus_tree_def.png)
 
 除此之外B+树还有以下的要求:
 
@@ -114,7 +114,7 @@ m阶`B+树`的插入操作在叶子节点上进行，假设要插入关键字`a`
 
 **2) 当前分裂成的X节点与Y节点原所属节点是根节点**
 
-如下图所示，当前插入节点是根节点，且插入关键字`5`后，该节点的关键字数目大于3，因此需要分裂成`X节点`和`Y`节点， 并将分裂出的两个节点的各自最大关键字组成新的节点，成为新的根节点： ![ds-bplus-tree-insert2](http://img.ququ123.top/img/ds_bplus_tree_insert2.jpg)
+如下图所示，当前插入节点是根节点，且插入关键字`5`后，该节点的关键字数目大于3，因此需要分裂成`X节点`和`Y`节点， 并将分裂出的两个节点的各自最大关键字组成新的节点，成为新的根节点： ![ds-bplus-tree-insert2](https://img.ququ123.top/img/ds_bplus_tree_insert2.jpg)
 
 **3) 当前节点是非根节点，且插入后节点关键字数目小于等于3**
 
@@ -129,21 +129,21 @@ m阶`B+树`的插入操作在叶子节点上进行，假设要插入关键字`a`
 
 如下图所示，当前插入节点是非根节点，且插入关键字`35`后关键字数目大于3， 需要进行分裂。分裂后新插入关键字`35`不是`Y节点`的新索引值，此时直接向上合并即可:
 
-![ds-bplus-tree-insert4](http://img.ququ123.top/img/ds_bplus_tree_insert4.jpg)
+![ds-bplus-tree-insert4](https://img.ququ123.top/img/ds_bplus_tree_insert4.jpg)
 
 **5) 当前节点是非根节点，且插入后节点关键字数目大于3**
 
 如下图所示，当前插入节点是非根节点，且插入关键字`100`后关键字数目大于3， 需要进行分裂：
 
-![ds-bplus-tree-insert51](http://img.ququ123.top/img/ds_bplus_tree_insert51.jpg)
+![ds-bplus-tree-insert51](https://img.ququ123.top/img/ds_bplus_tree_insert51.jpg)
 
 分裂后新插入关键字`100`是`Y节点`的新索引值，此时需要先从上至下用`100`替换原来老的索引值`90`:
 
-![ds-bplus-tree-insert52](http://img.ququ123.top/img/ds_bplus_tree_insert52.jpg)
+![ds-bplus-tree-insert52](https://img.ququ123.top/img/ds_bplus_tree_insert52.jpg)
 
 然后提取`X节点的索引值`， 与`Y节点`一起归并到上级节点中：
 
-![ds-bplus-tree-insert53](http://img.ququ123.top/img/ds_bplus_tree_insert53.jpg)
+![ds-bplus-tree-insert53](https://img.ququ123.top/img/ds_bplus_tree_insert53.jpg)
 
 4\. B+树的删除
 ----------
@@ -181,9 +181,9 @@ m阶`B+树`的插入操作在叶子节点上进行，假设要插入关键字`a`
 
 `MyISAM`中有两种索引，分别是主索引和辅助索引，在这里面的主索引使用具有唯一性的键值进行创建，而辅助索引中键值可以是相同的。MyISAM分别会存在一个索引文件和数据文件，它的主索引是非聚集索引。当我们查询的时候，我们找到叶子节点中保存的地址，然后通过地址我们找到对应的信息。
 
-![ds-bplus-tree-index1](http://img.ququ123.top/img/ds_bplus_tree_index1.jpg)
+![ds-bplus-tree-index1](https://img.ququ123.top/img/ds_bplus_tree_index1.jpg)
 
-![ds-bplus-tree-index2](http://img.ququ123.top/img/ds_bplus_tree_index2.jpg)
+![ds-bplus-tree-index2](https://img.ququ123.top/img/ds_bplus_tree_index2.jpg)
 
 注： ISAM，即Indexed Sequential Access Method（索引顺序访问方法）
 
@@ -191,9 +191,9 @@ m阶`B+树`的插入操作在叶子节点上进行，假设要插入关键字`a`
 
 `InnoDB`索引和`MyISAM`的最大区别是它只有一个数据文件。在InnoDB存储引擎中，表数据文件本身就是按`B+树`组织的一个索引结构，这棵树的叶节点数据保存了完整的数据记录，所以我们把它的主索引叫做聚集索引。而它的辅助索引和`MyISAM`也会有所不同，它的辅助索引都是将主键作为数据域，所以这样当我们查找的时候通过辅助索引先找到主键，然后通过主索引找到对应的主键，从而得到相应的数据信息。
 
-![ds-bplus-tree-index3](http://img.ququ123.top/img/ds_bplus_tree_index3.jpg)
+![ds-bplus-tree-index3](https://img.ququ123.top/img/ds_bplus_tree_index3.jpg)
 
-![ds-bplus-tree-index4](http://img.ququ123.top/img/ds_bplus_tree_index4.jpg)
+![ds-bplus-tree-index4](https://img.ququ123.top/img/ds_bplus_tree_index4.jpg)
 
 ### 7.3 MyISAM与InnoDB比较
 

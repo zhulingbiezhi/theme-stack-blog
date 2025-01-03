@@ -7,6 +7,12 @@
 {{- $title := partialCached "data/title" . .RelPermalink -}}
 <title>{{ $title }}</title>
 
+{{- $keywords := partialCached "data/keywords" . .RelPermalink -}}
+{{- $categories := partialCached "data/categories" . .RelPermalink -}}
+{{- $mergedKeywords := delimit (uniq (merge (split $keywords ",") (split $categories ","))) ", " -}}
+<meta name='keywords' content='{{ $mergedKeywords }}'>
+
+
 <link rel='canonical' href='{{ .Permalink }}'>
 
 {{- partial "head/style.html" . -}}

@@ -8,7 +8,7 @@ keywords:
     - "http"
     - "code"
 image: "https://img.ququ123.top/img/u=60266580,2966073051&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
-describe: "本文详细介绍了HTTP状态码，包括其含义、适用的HTTP版本以及常见的使用场景。通过阅读本文，您将了解每个HTTP状态码的具体含义及其在实际应用中的作用。"
+description: "本文详细介绍了HTTP状态码，包括其含义、适用的HTTP版本以及常见的使用场景。通过阅读本文，您将了解每个HTTP状态码的具体含义及其在实际应用中的作用。"
 ---
 
 

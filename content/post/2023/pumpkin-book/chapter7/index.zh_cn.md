@@ -19,7 +19,7 @@ image: "https://img.ququ123.top/img/nangua.jpg?imageView2/2/w/900/h/480"
 ## 7.5
 $$R(c|\boldsymbol x)=1−P(c|\boldsymbol x)$$
 [推导]：由公式(7.1)和公式(7.4)可得：
-$$R(c_i|\boldsymbol x)=1*P(c_1|\boldsymbol x)+...+1*P(c_{i-1}|\boldsymbol x)+0*P(c_i|\boldsymbol x)+1*P(c_{i+1}|\boldsymbol x)+...+1*P(c_N|\boldsymbol x)$$
+$$R(c_i|\boldsymbol x)=1\*P(c_1|\boldsymbol x)+...+1\*P(c_{i-1}|\boldsymbol x)+0\*P(c_i|\boldsymbol x)+1\*P(c_{i+1}|\boldsymbol x)+...+1*P(c_N|\boldsymbol x)$$
 又$\sum_{j=1}^{N}P(c_j|\boldsymbol x)=1$，则：
 $$R(c_i|\boldsymbol x)=1-P(c_i|\boldsymbol x)$$
 此即为公式(7.5）
@@ -29,32 +29,32 @@ $$h^{*}(\boldsymbol{x})=\underset{c \in \mathcal{Y}}{\arg \max } P(c | \boldsymb
 [推导]：将公式(7.5)代入公式(7.3)即可推得此式。
 
 ## 7.12
-$$\hat{\boldsymbol{\mu}}_{c}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} \in D_{c}} \boldsymbol{x}$$
+$$\hat{\boldsymbol{\mu}}\_{c}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} \in D_{c}} \boldsymbol{x}$$
 [推导]：参见公式(7.13)
 
 ## 7.13
-$$\hat{\boldsymbol{\sigma}}_{c}^{2}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} \in D_{c}}\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)^{\mathrm{T}}$$
+$$\hat{\boldsymbol{\sigma}}\_{c}^{2}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} \in D_{c}}\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}\_{c}\right)\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}\_{c}\right)^{\mathrm{T}}$$
 [推导]：根据公式(7.11)和公式(7.10)可知参数求解公式为
 $$\begin{aligned}
-\hat{\boldsymbol{\theta}}_{c}&=\underset{\boldsymbol{\theta}_{c}}{\arg \max } LL\left(\boldsymbol{\theta}_{c}\right) \\\
-&=\underset{\boldsymbol{\theta}_{c}}{\arg \min } -LL\left(\boldsymbol{\theta}_{c}\right) \\\
-&= \underset{\boldsymbol{\theta}_{c}}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \log P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)
+\hat{\boldsymbol{\theta}}\_{c}&=\underset{\boldsymbol{\theta}\_{c}}{\arg \max } LL\left(\boldsymbol{\theta}\_{c}\right) \\\
+&=\underset{\boldsymbol{\theta}\_{c}}{\arg \min } -LL\left(\boldsymbol{\theta}\_{c}\right) \\\
+&= \underset{\boldsymbol{\theta}\_{c}}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \log P\left(\boldsymbol{x} | \boldsymbol{\theta}\_{c}\right)
 \end{aligned}$$
-由西瓜书上下文可知，此时假设概率密度函数$p(\boldsymbol{x} | c) \sim \mathcal{N}\left(\boldsymbol{\mu}_{c}, \boldsymbol{\sigma}_{c}^{2}\right)$，其等价于假设
-$$P\left(\boldsymbol{x} | \boldsymbol{\theta}_{c}\right)=P\left(\boldsymbol{x} | \boldsymbol{\mu}_{c}, \boldsymbol{\sigma}_{c}^{2}\right)=\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)$$
-其中，$d$表示$\boldsymbol{x}$的维数，$\boldsymbol{\Sigma}_c=\boldsymbol{\sigma}_{c}^{2}$为对称正定协方差矩阵，$|\boldsymbol{\Sigma}_c|$表示$\boldsymbol{\Sigma}_c$的行列式。将其代入参数求解公式可得
+由西瓜书上下文可知，此时假设概率密度函数$p(\boldsymbol{x} | c) \sim \mathcal{N}\left(\boldsymbol{\mu}\_{c}, \boldsymbol{\sigma}\_{c}^{2}\right)$，其等价于假设
+$$P\left(\boldsymbol{x} | \boldsymbol{\theta}\_{c}\right)=P\left(\boldsymbol{x} | \boldsymbol{\mu}\_{c}, \boldsymbol{\sigma}\_{c}^{2}\right)=\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)$$
+其中，$d$表示$\boldsymbol{x}$的维数，$\boldsymbol{\Sigma}_c=\boldsymbol{\sigma}\_{c}^{2}$为对称正定协方差矩阵，$|\boldsymbol{\Sigma}_c|$表示$\boldsymbol{\Sigma}_c$的行列式。将其代入参数求解公式可得
 $$\begin{aligned}
-(\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \log\left[\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)\right] \\\
-&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \left[-\frac{d}{2}\log(2 \pi)-\frac{1}{2}\log|\boldsymbol{\Sigma}_c|-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
-&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{d}{2}\log(2 \pi)+\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
-&= \underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
+(\hat{\boldsymbol{\mu}}\_{c}, \hat{\boldsymbol{\Sigma}}\_{c})&= \underset{(\boldsymbol{\mu}\_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \log\left[\frac{1}{\sqrt{(2 \pi)^{d}|\boldsymbol{\Sigma}_c|}} \exp \left(-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right)\right] \\\
+&= \underset{(\boldsymbol{\mu}\_{c},\boldsymbol{\Sigma}_c)}{\arg \min }-\sum\_{\boldsymbol{x} \in D_{c}} \left[-\frac{d}{2}\log(2 \pi)-\frac{1}{2}\log|\boldsymbol{\Sigma}_c|-\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
+&= \underset{(\boldsymbol{\mu}\_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{d}{2}\log(2 \pi)+\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
+&= \underset{(\boldsymbol{\mu}\_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum\_{\boldsymbol{x} \in D_{c}} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}-\boldsymbol{\mu}_c)\right] \\\
 \end{aligned}$$
 假设此时数据集$D_c$中的样本个数为$n$，也即$|D_c|=n$，则上式可以改写为
 $$\begin{aligned}
-(\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})&=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum_{i=1}^{n} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)\right]\\\
-&=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)\\\
+(\hat{\boldsymbol{\mu}}\_{c}, \hat{\boldsymbol{\Sigma}}\_{c})&=\underset{(\boldsymbol{\mu}\_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\sum_{i=1}^{n} \left[\frac{1}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_{i}-\boldsymbol{\mu}_c)\right]\\\
+&=\underset{(\boldsymbol{\mu}\_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)\\\
 \end{aligned}$$
-为了便于分别求解$\hat{\boldsymbol{\mu}}_{c}$和$\hat{\boldsymbol{\Sigma}}_{c}$，在这里我们根据公式$\boldsymbol{x}^{\mathrm{T}}\mathbf{A}\boldsymbol{x}=\operatorname{tr}(\mathbf{A}\boldsymbol{x}\boldsymbol{x}^{\mathrm{T}}),\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}\_i$将上式中的最后一项作如下恒等变形
+为了便于分别求解$\hat{\boldsymbol{\mu}}\_{c}$和$\hat{\boldsymbol{\Sigma}}\_{c}$，在这里我们根据公式$\boldsymbol{x}^{\mathrm{T}}\mathbf{A}\boldsymbol{x}=\operatorname{tr}(\mathbf{A}\boldsymbol{x}\boldsymbol{x}^{\mathrm{T}}),\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}\_i$将上式中的最后一项作如下恒等变形
 $$\begin{aligned}
 &\sum_{i=1}^{n}\frac{1}{2}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)\\\
 =&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)(\boldsymbol{x}\_i-\boldsymbol{\mu}_c)^{\mathrm{T}}\right]\\\
@@ -69,15 +69,15 @@ $$\begin{aligned}
 =&\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_c^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})
 \end{aligned}$$
 所以
-$$(\hat{\boldsymbol{\mu}}_{c}, \hat{\boldsymbol{\Sigma}}_{c})=\underset{(\boldsymbol{\mu}_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})$$
+$$(\hat{\boldsymbol{\mu}}\_{c}, \hat{\boldsymbol{\Sigma}}\_{c})=\underset{(\boldsymbol{\mu}\_{c},\boldsymbol{\Sigma}_c)}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}\_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]+\frac{n}{2}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})^{\mathrm{T}} \boldsymbol{\Sigma}_c^{-1}(\boldsymbol{\mu}_c-\bar{\boldsymbol{x}})$$
 观察上式可知，由于此时$\boldsymbol{\Sigma}_c^{-1}$和$\boldsymbol{\Sigma}_c$一样均为正定矩阵，所以当$\boldsymbol{\mu}_c-\bar{\boldsymbol{x}}\neq\boldsymbol{0}$时，上式最后一项为正定二次型。根据正定二次型的性质可知，上式最后一项取值的大小此时仅与$\boldsymbol{\mu}_c-\bar{\boldsymbol{x}}$相关，而且当且仅当$\boldsymbol{\mu}_c-\bar{\boldsymbol{x}}=\boldsymbol{0}$时，上式最后一项取到最小值0，此时可以解得
-$$\hat{\boldsymbol{\mu}}_{c}=\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}\_i$$
-将求解出来的$\hat{\boldsymbol{\mu}}_{c}$代回参数求解公式可得新的参数求解公式为
-$$\hat{\boldsymbol{\Sigma}}_{c}=\underset{\boldsymbol{\Sigma}_c}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]$$
-此时的参数求解公式是仅与$\boldsymbol{\Sigma}_c$相关的函数。为了求解$\hat{\boldsymbol{\Sigma}}_{c}$，在这里我们不加证明地给出一个引理（具体证明参见参考文献[8]）：设$\mathbf{B}$为$p$阶正定矩阵，$n>0$为实数，在对所有$p$阶正定矩阵$\boldsymbol{\Sigma}$有
+$$\hat{\boldsymbol{\mu}}\_{c}=\bar{\boldsymbol{x}}=\frac{1}{n}\sum_{i=1}^{n}\boldsymbol{x}\_i$$
+将求解出来的$\hat{\boldsymbol{\mu}}\_{c}$代回参数求解公式可得新的参数求解公式为
+$$\hat{\boldsymbol{\Sigma}}\_{c}=\underset{\boldsymbol{\Sigma}_c}{\arg \min }\frac{n}{2}\log|\boldsymbol{\Sigma}_c|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}\_{c}^{-1}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}\right]$$
+此时的参数求解公式是仅与$\boldsymbol{\Sigma}_c$相关的函数。为了求解$\hat{\boldsymbol{\Sigma}}\_{c}$，在这里我们不加证明地给出一个引理（具体证明参见参考文献[8]）：设$\mathbf{B}$为$p$阶正定矩阵，$n>0$为实数，在对所有$p$阶正定矩阵$\boldsymbol{\Sigma}$有
 $$\frac{n}{2}\log|\boldsymbol{\Sigma}|+\frac{1}{2}\operatorname{tr}\left[\boldsymbol{\Sigma}^{-1}\mathbf{B}\right]\geq\frac{n}{2}\log|\mathbf{B}|+\frac{pn}{2}(1-\log n)$$
 当且仅当$\boldsymbol{\Sigma}=\frac{1}{n}\mathbf{B}$时等号成立。所以根据此引理可知，当且仅当$\boldsymbol{\Sigma}_c=\frac{1}{n}\sum_{i=1}^{n}(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})(\boldsymbol{x}\_i-\bar{\boldsymbol{x}})^{\mathrm{T}}$
-时，上述参数求解公式中$\arg \min$后面的式子取到最小值，那么此时的$\boldsymbol{\Sigma}_c$即为我们想要求解的$\hat{\boldsymbol{\Sigma}}_{c}$。
+时，上述参数求解公式中$\arg \min$后面的式子取到最小值，那么此时的$\boldsymbol{\Sigma}_c$即为我们想要求解的$\hat{\boldsymbol{\Sigma}}\_{c}$。
 
 ## 7.19
 $$\hat{P}(c)=\frac{\left|D_{c}\right|+1}{|D|+N}$$

@@ -7,11 +7,22 @@
 {{- $title := partialCached "data/title" . .RelPermalink -}}
 <title>{{ $title }}</title>
 
-{{- $keywords := partialCached "data/keywords" . .RelPermalink -}}
-{{- $categories := partialCached "data/categories" . .RelPermalink -}}
-{{- $mergedKeywords := delimit (uniq (merge (split $keywords ",") (split $categories ","))) ", " -}}
-<meta name='keywords' content='{{ $mergedKeywords }}'>
+{{- $keywords := "" -}}
+{{- with partialCached "data/keywords" . .RelPermalink -}}
+    {{- $keywords = . -}}
+{{- end -}}
 
+{{- $categories := "" -}}
+{{- with partialCached "data/categories" . .RelPermalink -}}
+    {{- $categories = . -}}
+{{- end -}}
+
+{{- if or (not (eq $keywords "")) (not (eq $categories "")) -}}
+    {{- $keywordsArray := cond (not (eq $keywords "")) (split $keywords ",") (slice) -}}
+    {{- $categoriesArray := cond (not (eq $categories "")) (split $categories ",") (slice) -}}
+    {{- $mergedKeywords := delimit (uniq (append $keywordsArray $categoriesArray)) ", " -}}
+    <meta name='keywords' content='{{ $mergedKeywords }}'>
+{{- end -}}
 
 <link rel='canonical' href='{{ .Permalink }}'>
 

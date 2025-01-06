@@ -6,4 +6,11 @@ image: "https://img.ququ123.top/img/u=2096067828,1292178619&fm=253&fmt=auto&app=
 style:
     background: "#2a9d8f"
     color: "#fff"
+keywords:
+    - mysql
+    - 数据库
+    - 索引
+    - b+树
+    - 算法
+    - 优化
 ---

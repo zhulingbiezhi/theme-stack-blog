@@ -17,9 +17,9 @@ image: "https://img.ququ123.top/img/nangua.jpg?imageView2/2/w/900/h/480"
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 ## 7.5
-$$R(c|\boldsymbol x)=1−P(c|\boldsymbol x)$$
+$$R(c|\boldsymbol{x})=1-P(c|\boldsymbol{x})$$
 [推导]：由公式(7.1)和公式(7.4)可得：
-$$R(c_i|\boldsymbol x)=1\*P(c_1|\boldsymbol x)+...+1\*P(c_{i-1}|\boldsymbol x)+0\*P(c_i|\boldsymbol x)+1\*P(c_{i+1}|\boldsymbol x)+...+1*P(c_N|\boldsymbol x)$$
+$$R(c_i|\boldsymbol{x})=1\cdot P(c_1|\boldsymbol{x})+\cdots+1\cdot P(c_{i-1}|\boldsymbol{x})+0\cdot P(c_i|\boldsymbol{x})+1\cdot P(c_{i+1}|\boldsymbol{x})+\cdots+1\cdot P(c_N|\boldsymbol{x})$$
 又$\sum_{j=1}^{N}P(c_j|\boldsymbol x)=1$，则：
 $$R(c_i|\boldsymbol x)=1-P(c_i|\boldsymbol x)$$
 此即为公式(7.5）
@@ -29,11 +29,11 @@ $$h^{*}(\boldsymbol{x})=\underset{c \in \mathcal{Y}}{\arg \max } P(c | \boldsymb
 [推导]：将公式(7.5)代入公式(7.3)即可推得此式。
 
 ## 7.12
-$$\hat{\boldsymbol{\mu}}\_{c}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} \in D_{c}} \boldsymbol{x}$$
+$$\hat{\boldsymbol{\mu}}_{c}=\frac{1}{\left|D_{c}\right|} \sum_{\boldsymbol{x} \in D_{c}} \boldsymbol{x}$$
 [推导]：参见公式(7.13)
 
 ## 7.13
-$$\hat{\boldsymbol{\sigma}}\_{c}^{2}=\frac{1}{\left|D_{c}\right|} \sum\_{\boldsymbol{x} \in D_{c}}\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}\_{c}\right)\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}\_{c}\right)^{\mathrm{T}}$$
+$$\hat{\boldsymbol{\sigma}}_{c}^{2}=\frac{1}{\left|D_{c}\right|} \sum_{\boldsymbol{x} \in D_{c}}\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)\left(\boldsymbol{x}-\hat{\boldsymbol{\mu}}_{c}\right)^{\mathrm{T}}$$
 [推导]：根据公式(7.11)和公式(7.10)可知参数求解公式为
 $$\begin{aligned}
 \hat{\boldsymbol{\theta}}\_{c}&=\underset{\boldsymbol{\theta}\_{c}}{\arg \max } LL\left(\boldsymbol{\theta}\_{c}\right) \\\
@@ -80,7 +80,7 @@ $$\frac{n}{2}\log|\boldsymbol{\Sigma}|+\frac{1}{2}\operatorname{tr}\left[\boldsy
 时，上述参数求解公式中$\arg \min$后面的式子取到最小值，那么此时的$\boldsymbol{\Sigma}_c$即为我们想要求解的$\hat{\boldsymbol{\Sigma}}\_{c}$。
 
 ## 7.19
-$$\hat{P}(c)=\frac{\left|D_{c}\right|+1}{|D|+N}$$
+$$\hat{P}(c)=\frac{|D_{c}|+1}{|D|+N}$$
 [推导]：从贝叶斯估计（参见附录①）的角度来说，拉普拉斯修正就等价于先验概率为Dirichlet分布（参见附录③）的后验期望值估计。为了接下来的叙述方便，我们重新定义一下相关数学符号。设包含$m$个独立同分布样本的训练集为$D$，$D$中可能的类别数为$k$，其类别的具体取值范围为$\\{c_1,c_2,...,c_k\\}$。若令随机变量$C$表示样本所属的类别，且$C$取到每个值的概率分别为$P(C=c_1)=\theta_1,P(C=c_2)=\theta_2,...,P(C=c_k)=\theta_k$，那么显然$C$服从参数为$\boldsymbol{\theta}=(\theta_1,\theta_2,...,\theta_k)\in\mathbb{R}^{k}$的Categorical分布（参见附录②），其概率质量函数为
 $$P(C=c_i)=P(c_i)=\theta_i$$
 其中$P(c_i)=\theta_i$就是公式(7.9)所要求解的$\hat{P}(c)$，下面我们用贝叶斯估计中的后验期望值估计来估计$\theta_i$。根据贝叶斯估计的原理可知，在进行参数估计之前，需要先主观预设一个先验概率$P(\boldsymbol{\theta})$，通常为了方便计算<sup>[7]</sup>后验概率$P(\boldsymbol{\theta}|D)$，我们会用似然函数$P(D|\boldsymbol{\theta})$的共轭先验<sup>[6]</sup>作为我们的先验概率。显然，此时的似然函数$P(D|\boldsymbol{\theta})$是一个基于Categorical分布的似然函数，而Categorical分布的共轭先验为Dirichlet分布，所以此时只需要预设先验概率$P(\boldsymbol{\theta})$为Dirichlet分布，然后使用后验期望值估计就能估计出$\theta_i$。具体地，记$D$中样本类别取值为$c_i$的样本个数为$y_i$，则似然函数$P(D|\boldsymbol{\theta})$可展开为
@@ -126,15 +126,15 @@ $$\begin{aligned}
 显然，公式(7.9)是当$\boldsymbol{\alpha}=(1,1,...,1)$时推得的具体结果，此时等价于我们主观预设的先验概率$P(\boldsymbol{\theta})$服从均匀分布，此即为拉普拉斯修正。同理，当我们调整$\boldsymbol{\alpha}$的取值后，即可推得其他数据平滑的公式。
 
 ## 7.20
-$$\hat{P}\left(x_{i} | c\right)=\frac{\left|D_{c, x_{i}}\right|+1}{\left|D_{c}\right|+N_{i}}$$
+$$\hat{P}(x_{i} | c)=\frac{|D_{c,x_{i}}|+1}{|D_{c}|+N_{i}}$$
 [推导]：参见公式(7.19)
 
 ## 7.24
-$$\hat{P}\left(c, x_{i}\right)=\frac{\left|D_{c, x_{i}}\right|+1}{|D|+N_{i}}$$
+$$\hat{P}(c, x_{i})=\frac{|D_{c,x_{i}}|+1}{|D|+N_{i}}$$
 [推导]：参见公式(7.19)
 
 ## 7.25
-$$\hat{P}\left(x_{j} | c, x_{i}\right)=\frac{\left|D_{c, x_{i}, x_{j}}\right|+1}{\left|D_{c, x_{i}}\right|+N_{j}}$$
+$$\hat{P}(x_{j} | c, x_{i})=\frac{|D_{c,x_{i},x_{j}}|+1}{|D_{c,x_{i}}|+N_{j}}$$
 [推导]：参见公式(7.20)
 
 ## 7.27

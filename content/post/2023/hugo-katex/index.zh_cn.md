@@ -11,6 +11,7 @@ keywords:
     - "数学公式"
 math: true
 image: "https://img.ququ123.top/img/og_logo.png?imageView2/2/w/900/h/480"
+description: "在 Hugo 中进行数学排版，或者说渲染 LaTeX 并不是一项难任务。我们有两个流行的选择。第一个是 mathjax，我之前在 jekyll 中使用过它。另一个流行的数学排版库是 KaTeX。由于它更快，这次我将选择 KaTeX。实现这些库非常简单。我们只需要将它们包含在 `<head>` 部分。然而，我们不希望它们在每个页面都加载，只有在需要时才加载。"
 ---
 
 

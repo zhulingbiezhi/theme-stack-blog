@@ -9,7 +9,9 @@ keywords:
     - "homeassistant"
     - "小米"
     - "登录"
+    - "配置"
 image: "https://img.ququ123.top/img/test.jpeg?imageView2/2/w/900/h/480"
+description: "homeassistant添加小米组件时，登录小米帐号需要安全验证，点击这里继续，提示错误的时候，右键复制“click”的访问链接，firefox打开复制的访问链接，手机设备通过验证，再回到登录xiaomi Miot Auto窗口，点击登录即可，多试几次是可以成功的。"
 ---
 
 

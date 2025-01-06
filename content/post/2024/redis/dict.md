@@ -13,6 +13,7 @@ keywords:
     - 原理
     - dict
 slug: blog-redis-dict
+description: 本文深入解析Redis内部数据结构dict的实现原理，涵盖其数据结构定义、创建、查找、插入、替换和删除操作。重点介绍了Redis如何通过增量式重哈希（incremental rehashing）优化性能，避免一次性重哈希带来的响应时间波动。适合对Redis底层实现感兴趣的开发者阅读。
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 slug: golang_channel_principle
+description: channel一个类型管道，通过它可以在goroutine之间发送和接收消息。它是Golang在语言层面提供的goroutine间的通信方式。众所周知，Go依赖于称为CSP（Communicating Sequential Processes）的并发模型，通过Channel实现这种同步模式。Go并发的核心哲学是不要通过共享内存进行通信; 相反，通过沟通分享记忆。
 ---
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 

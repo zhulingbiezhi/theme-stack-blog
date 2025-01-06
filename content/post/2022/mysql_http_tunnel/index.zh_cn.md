@@ -8,6 +8,7 @@ keywords:
     - "mysql"
     - "tunnel"
 image: "https://img.ququ123.top/img/u=3878467649,1404563456&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
+description: "公司为了降低工作效率, 连接mysql必须通过特定的代理才能连接。产线这个模式可以理解, 但是测试环境你也搞个这个,那我就要哭了。在公司用wifi可以连接,但是在家无法直接连接mysql,只能通过垃圾的网页版mysql进行数据库操作。可以通过网页访问docker的权限,并没有任何服务器权限。"
 ---
 
 

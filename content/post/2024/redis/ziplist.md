@@ -13,6 +13,8 @@ keywords:
     - 原理
     - ziplist
 slug: blog-redis-ziplist
+description: 本文详细解析了Redis内部数据结构ziplist的实现原理，包括其内存结构、编码方式、插入操作等。同时探讨了Redis中hash结构如何基于ziplist构建，以及hash-max-ziplist配置对性能的影响。适合对Redis底层实现感兴趣的开发者阅读。
+
 ---
 
 

@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=2002782107,3956577129&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
+description: "本文深入解析了Golang中sync.Mutex的原理与实现，详细介绍了Mutex的数据结构、状态机、锁的获取与释放过程，以及正常模式和饥饿模式的区别。通过源码分析，帮助读者理解Mutex如何保证并发安全与公平性。"
 ---
 
 

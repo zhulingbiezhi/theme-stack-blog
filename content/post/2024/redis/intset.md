@@ -13,6 +13,7 @@ keywords:
     - 原理
     - intset
 slug: blog-redis-intset
+description: "intset 是 Redis 中用于存储整数集合的一种数据结构。它是一种紧凑的数据结构，可以有效地节省内存空间，同时支持高效的查找、插入和删除操作。本文将详细介绍 intset 的实现原理、数据结构和相关操作。"
 ---
 
 

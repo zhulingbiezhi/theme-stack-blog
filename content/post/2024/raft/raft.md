@@ -6,6 +6,7 @@ categories:
     - raft
     - 分布式
 slug: algorithm-raft
+description: 本文介绍raft算法的基本原理和实现细节，包括选举、日志复制、安全性和活性等方面的内容。
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

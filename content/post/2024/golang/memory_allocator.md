@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=140571796,2511374842&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
+description: "从非常宏观的角度看，Go的内存管理就是下图这个样子，我们今天主要关注其中标红的部分。"
 ---
 
 

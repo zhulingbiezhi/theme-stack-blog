@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=2033342888,4177252789&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
+description: "sync.Pool是Go语言标准库提供的一个临时对象池，可以用来存储一些临时对象，以便在需要时重复使用，从而减少内存分配和垃圾回收的开销。本文将详细介绍sync.Pool的原理和实现，并提供一些使用示例。"
 ---
 
 

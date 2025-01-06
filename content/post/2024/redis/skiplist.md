@@ -13,6 +13,8 @@ keywords:
     - 原理
     - skiplist
 slug: blog-redis-skiplist
+description: 本文详细介绍了Redis中的skiplist数据结构，包括其原理、实现方式以及与平衡树和哈希表的比较。通过分析skiplist的查找、插入和删除操作，解释了其在Redis中的应用场景，特别是在sorted set中的实现细节。文章还探讨了Redis如何通过skiplist、dict和ziplist结合来实现高效的排序集合操作。
+
 ---
 
 

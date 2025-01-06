@@ -15,6 +15,7 @@ keywords:
     - "cloud"
     - "云服务"
 image: "https://img.ququ123.top/img/1*vczfQPNVKdJXTmcGB3VtkA.png"
+description: "由于买的国内厂商打折服务器，大部分情况下都无法在同一家厂商买到多台优惠服务器，此时想搭建 K3S 集群就需要走公网，直接通过K3S 的安装方式节点之间无法通信，因此需要使用 `WireGuard`来组网。"
 ---
 
 

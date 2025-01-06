@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=1862939405,1689361694&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
+decription: "map是golang中的一种数据结构，它的底层实现是一个哈希表。本文将从源码角度，深入分析map的实现原理。"
 ---
 
 

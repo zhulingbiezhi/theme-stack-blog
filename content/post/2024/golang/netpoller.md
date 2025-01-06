@@ -10,6 +10,7 @@ keywords:
     - netpoller
     - 网络
 slug: golang-netpoller
+descriptions: 本文介绍了netpoller的工作原理，包括netpoller的初始化、netpoller的事件循环、netpoller的事件分发、netpoller的调度等内容。
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

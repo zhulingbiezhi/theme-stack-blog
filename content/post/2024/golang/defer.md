@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/042e751cd553ea535e94a95ad21386ec.jpeg?imageView2/2/w/900/h/480"
+description: "defer是Go语言的一个关键字，用于延迟执行一个函数。在Go语言中，defer语句经常被用于处理一些函数的收尾工作，比如打开一个文件，函数结束前关闭文件。"
 ---
 
 

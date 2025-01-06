@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=708091934,2439842609&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
+description: "panic是golang中的一个内置函数，用于在程序运行时发生异常情况时终止程序的执行。当panic函数被调用时，它会立即停止当前函数的执行，并开始执行一系列的清理操作，最终导致程序的崩溃。"
 ---
 
 

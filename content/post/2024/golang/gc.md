@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=2823023142,3998149518&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
+description: "Golang从1.5开始引入了三色GC, 经过多次改进, 当前的1.9版本的GC停顿时间已经可以做到极短. 停顿时间的减少意味着\"最大响应时间\"的缩短, 这也让go更适合编写网络服务程序. 这篇文章将通过分析golang的源代码来讲解go中的三色GC的实现原理."
 ---
 
 

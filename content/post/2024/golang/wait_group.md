@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=2548277013,2202110587&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
+description: "WaitGroup是golang中的一个同步原语，用于等待一组goroutine的完成。本文介绍WaitGroup的原理和源码实现。"
 ---
 
 

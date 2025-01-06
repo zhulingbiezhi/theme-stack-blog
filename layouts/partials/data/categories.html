@@ -2,9 +2,8 @@
 {{ $categories := "" }}
 
 {{ if .Params.Categories }}
+    <!-- Page categories exist -->
     {{ $categories = .Params.Categories }}
-{{ else if .IsPage }}
-    {{ $categories = "is_page" }}
 {{ end }}
 
 {{ $categoriesString := delimit $categories "," }} <!-- 使用 delimit 将切片转换为逗号分隔的字符串 -->

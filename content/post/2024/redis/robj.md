@@ -13,6 +13,7 @@ keywords:
     - 原理
     - robj
 slug: blog-redis-robj
+description: 本文详细解析了Redis内部数据结构robj的实现原理，重点介绍了robj如何统一表示多种数据类型，并通过不同的编码方式优化内存使用。文章深入探讨了string类型robj的编码与解码过程，以及robj在Redis中的作用，帮助读者理解Redis底层数据结构的核心机制。
 --- 
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

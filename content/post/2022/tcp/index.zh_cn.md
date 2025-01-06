@@ -9,6 +9,7 @@ keywords:
     - "网络"
     - "SYN"
 image: "https://img.ququ123.top/img/u=2780567489,1125352720&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
+description: "TCP/IP协议是互联网的基础协议，是一种面向连接的、可靠的、基于字节流的传输层通信协议。本文主要介绍TCP/IP协议的基本概念和运行机制。"
 ---
 
 

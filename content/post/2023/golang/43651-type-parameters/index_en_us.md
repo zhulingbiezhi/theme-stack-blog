@@ -8,6 +8,7 @@ keywords:
     - "golang"
     - "泛型"
 image: "https://img.ququ123.top/img/go-generics-1024x512.png?imageView2/2/w/900/h/480"
+description: "Go语言泛型提案，Ian Lance Taylor，Robert Griesemer，2021年8月20日。"
 ---
 
 

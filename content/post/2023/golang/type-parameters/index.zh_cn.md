@@ -10,6 +10,7 @@ keywords:
     - "type"
     - "泛型"
 image: "https://img.ququ123.top/img/7553966619703147706.jpg?imageView2/2/w/900/h/480"
+description: "2022年3月，争议非常大但同时也备受期待的泛型终于伴随着Go1.18发布了。参考 Type Parameters Proposal，写一篇比较完整系统介绍Go1.18 泛型的文章。"
 ---
 
 

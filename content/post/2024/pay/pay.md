@@ -10,6 +10,7 @@ keywords:
     - 海外
     - 统计
 slug: payment_channel
+descrition: 整理列举一下全球各国的主要支付方式，首先了解一下主要的卡组织, 然后再看看各国的主要支付方式。
 ---
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
 

@@ -9,7 +9,7 @@ keywords:
     - interface
     - 原理
     - 源码
-image: "https://img.ququ123.top/img/u=3058794105,1671274202&fm=253&fmt=auto&app=138&f=JPG?imageView2/2/w/900/h/480"
+description: "本文深入探讨了Golang中interface的底层实现原理，详细分析了iface和eface的结构，并通过源码解析了interface的类型转换、方法调用和类型断言等机制。适合对Golang底层实现感兴趣的开发者阅读。"
 ---
 
 

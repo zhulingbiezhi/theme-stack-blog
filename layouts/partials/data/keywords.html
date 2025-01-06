@@ -2,10 +2,8 @@
 {{ $keywords := "" }}
 
 {{ if .Params.Keywords }}
+    <!-- Page keywords exist -->
     {{ $keywords = .Params.Keywords }}
-{{ else if .IsPage }}
-<!-- Use page summary -->
-    {{ $keywords = "is_page" }}
 {{ end }}
 
 {{ $keywordsString := delimit $keywords "," }} <!-- 使用 delimit 将切片转换为逗号分隔的字符串 -->

@@ -10,6 +10,7 @@ keywords:
     - "zero_copy"
     - "socket"
 image: "https://img.ququ123.top/img/sendfile.png?imageView2/2/w/900/h/480"
+description: "零拷贝技术是一种高效的数据传输方式，它可以减少数据在内核和用户空间之间的拷贝次数，从而提高系统的性能。本文介绍了零拷贝技术的概念、优势以及常见的实现方式，包括传统的零拷贝技术和新型的零拷贝技术。"
 ---
 
 

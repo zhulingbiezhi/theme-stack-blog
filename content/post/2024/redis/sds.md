@@ -13,6 +13,7 @@ keywords:
     - 原理
     - sds
 slug: blog-redis-sds
+description: 本文详细解析了Redis中的SDS（Simple Dynamic String）数据结构，包括其动态扩展、二进制安全、与C字符串兼容等特性，以及SDS的内部实现原理和常用操作函数。通过代码示例和图示，深入探讨了SDS的header结构、内存分配策略及其与Redis string类型的关系。
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

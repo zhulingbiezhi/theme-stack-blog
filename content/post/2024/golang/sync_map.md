@@ -10,6 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=469829844,4113946476&fm=253&fmt=auto&app=138&f=JPEG?imageView2/2/w/900/h/480"
+description: 本文详细解析了 Go 语言中的 `sync.Map`，介绍了其线程安全的特性、适用场景及使用方法。通过源码分析，深入探讨了 `sync.Map` 的底层数据结构、读写分离机制以及如何通过空间换时间的方式提升性能。文章还涵盖了 `sync.Map` 的常见操作如 Store、Load、Delete 等的实现原理，并提供了代码示例和性能优化建议。
 ---
 
 

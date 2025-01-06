@@ -9,6 +9,7 @@ keywords:
     - "网络"
     - "安全"
 image: "https://img.ququ123.top/img/u=2210862128,933076596&fm=253&fmt=auto&app=120&f=JPEG?imageView2/2/w/900/h/480"
+description: "互联网的通信安全，建立在SSL/TLS协议之上。本文简要介绍SSL/TLS协议的运行机制。文章的重点是设计思想和运行过程，不涉及具体的实现细节。如果想了解这方面的内容，请参阅RFC文档。"
 ---
 
 

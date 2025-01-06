@@ -10,7 +10,7 @@ keywords:
     - io
     - thread
 slug: redis-mlti-thread
-descripion: Redis 6.0 引入了多线程 IO 的支持，这是一个重要的改进，它可以显著提高 Redis 在多核 CPU 系统上的性能。本文将深入探讨 Redis 多线程 IO 的实现原理，以及它如何提高 Redis 的性能。
+description: Redis 6.0 引入了多线程 IO 的支持，这是一个重要的改进，它可以显著提高 Redis 在多核 CPU 系统上的性能。本文将深入探讨 Redis 多线程 IO 的实现原理，以及它如何提高 Redis 的性能。
 ---
 
 

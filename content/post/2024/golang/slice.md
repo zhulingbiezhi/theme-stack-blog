@@ -10,7 +10,7 @@ keywords:
     - 原理
     - 源码
 image: "https://img.ququ123.top/img/u=1266772566,2726106697&fm=253&fmt=auto&app=138&f=PNG?imageView2/2/w/900/h/480"
-descrition: "slice是golang中一种非常重要的数据结构，本文将从源码的角度，分析slice的实现原理。"
+description: "slice是golang中一种非常重要的数据结构，本文将从源码的角度，分析slice的实现原理。"
 ---
 
 

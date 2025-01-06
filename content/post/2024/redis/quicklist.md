@@ -13,7 +13,7 @@ keywords:
     - 原理
     - quicklist
 slug: blog-redis-quicklist
-descripion: 在本文中，我们介绍一个Redis内部数据结构——quicklist。Redis对外暴露的list数据类型，它底层实现所依赖的内部数据结构就是quicklist。我们在讨论中还会涉及到两个Redis配置（在redis.conf中的ADVANCED CONFIG部分）：list-max-ziplist-size -2list-compress-depth 0我们在讨论中会详细解释这两个配置的含义。注：本文讨论的quicklist实现基于Redis源码的3.2分支。
+description: 在本文中，我们介绍一个Redis内部数据结构——quicklist。Redis对外暴露的list数据类型，它底层实现所依赖的内部数据结构就是quicklist。我们在讨论中还会涉及到两个Redis配置（在redis.conf中的ADVANCED CONFIG部分）：list-max-ziplist-size -2list-compress-depth 0我们在讨论中会详细解释这两个配置的含义。注：本文讨论的quicklist实现基于Redis源码的3.2分支。
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

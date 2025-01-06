@@ -7,22 +7,23 @@
 {{- $title := partialCached "data/title" . .RelPermalink -}}
 <title>{{ $title }}</title>
 
-{{- $keywords := "" -}}
+{{- $keywordsArray := slice -}} <!-- 初始化为空切片 -->
 {{- with partialCached "data/keywords" . .RelPermalink -}}
-    {{- $keywords = . -}}
+    {{- $keywordsArray = split . "," -}} <!-- 将字符串转换为切片 -->
 {{- end -}}
 
-{{- $categories := "" -}}
+{{- $categoriesArray := slice -}} <!-- 初始化为空切片 -->
 {{- with partialCached "data/categories" . .RelPermalink -}}
-    {{- $categories = . -}}
+    {{- $categoriesArray = split . "," -}} <!-- 将字符串转换为切片 -->
 {{- end -}}
 
-{{- if or (not (eq $keywords "")) (not (eq $categories "")) -}}
-    {{- $keywordsArray := cond (not (eq $keywords "")) (split $keywords ",") (slice) -}}
-    {{- $categoriesArray := cond (not (eq $categories "")) (split $categories ",") (slice) -}}
-    {{- $mergedKeywords := delimit (uniq (append $keywordsArray $categoriesArray)) ", " -}}
-    <meta name='keywords' content='{{ $mergedKeywords }}'>
+{{- if and $keywordsArray $categoriesArray }}
+    {{- $mergedArray := append $keywordsArray $categoriesArray }}   <!-- 合并两个切片 -->
+    {{- $uniqueArray := uniq $mergedArray }}   <!-- 去重 -->
+    {{- $keywordsString := delimit $uniqueArray "," }}  <!-- 使用 delimit 拼接成字符串 -->
+    <meta name='keywords' content='{{ $keywordsString }}'>
 {{- end -}}
+
 
 <link rel='canonical' href='{{ .Permalink }}'>
 

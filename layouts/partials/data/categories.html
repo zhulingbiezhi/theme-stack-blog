@@ -1,1 +1,12 @@
-{{ .Site.Params.Categories | default "" }}
+<!-- Use site subtitle by default -->
+{{ $categories := "" }}
+
+{{ if .Params.Categories }}
+    {{ $categories = .Params.Categories }}
+{{ else if .IsPage }}
+    {{ $categories = "is_page" }}
+{{ end }}
+
+{{ $categoriesString := delimit $categories "," }} <!-- 使用 delimit 将切片转换为逗号分隔的字符串 -->
+
+{{ return $categoriesString }} <!-- 返回拼接后的字符串 -->

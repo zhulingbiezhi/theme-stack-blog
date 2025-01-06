@@ -1,1 +1,13 @@
-{{ .Site.Params.keywords | default "" }}
+<!-- Use site subtitle by default -->
+{{ $keywords := "" }}
+
+{{ if .Params.Keywords }}
+    {{ $keywords = .Params.Keywords }}
+{{ else if .IsPage }}
+<!-- Use page summary -->
+    {{ $keywords = "is_page" }}
+{{ end }}
+
+{{ $keywordsString := delimit $keywords "," }} <!-- 使用 delimit 将切片转换为逗号分隔的字符串 -->
+
+{{ return $keywordsString }} <!-- 返回拼接后的字符串 -->

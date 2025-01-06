@@ -1,6 +1,6 @@
 ---
 title: "【机器学习】课程讲义10"
-date: "2023-05-10"
+date: "2023-07-03"
 slug: "machine-learning-week10"
 categories: 
     - "机器学习"
@@ -11,6 +11,7 @@ keywords:
     - "machine learning"
 math: true
 image: "https://img.ququ123.top/img/image-20230602123210308.png?imageView2/2/w/900/h/480"
+description: "本课程讲解大规模机器学习系统。通过在线学习算法和MapReduce框架，帮助理解如何高效处理海量数据并构建可扩展的机器学习系统。"
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -1,6 +1,6 @@
 ---
 title: "【机器学习】课程讲义7"
-date: "2023-05-07"
+date: "2023-06-12"
 slug: "machine-learning-week7"
 categories: 
     - "机器学习"
@@ -11,6 +11,7 @@ keywords:
     - "machine learning"
 math: true
 image: "https://img.ququ123.top/img/image-20230602123210308.png?imageView2/2/w/900/h/480"
+description: "本课程讲解支持向量机算法。通过最大间隔分类器，帮助理解如何构建高效的分类模型并处理非线性分类问题。"
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

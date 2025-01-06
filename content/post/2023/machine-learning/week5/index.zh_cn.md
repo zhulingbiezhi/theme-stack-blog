@@ -1,6 +1,6 @@
 ---
 title: "【机器学习】课程讲义5"
-date: "2023-05-05"
+date: "2023-05-29"
 slug: "machine-learning-week5"
 categories: 
     - "机器学习"
@@ -11,6 +11,7 @@ keywords:
     - "machine learning"
 math: true
 image: "https://img.ququ123.top/img/image-20230602123210308.png?imageView2/2/w/900/h/480"
+description: "本课程讲解神经网络的学习算法。通过反向传播算法，帮助理解如何训练神经网络模型并优化参数。"
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -1,6 +1,6 @@
 ---
 title: "【机器学习】课程讲义3"
-date: "2023-05-03"
+date: "2023-05-15"
 slug: "machine-learning-week3"
 categories: 
     - "机器学习"
@@ -11,6 +11,7 @@ keywords:
     - "machine learning"
 math: true
 image: "https://img.ququ123.top/img/image-20230602123210308.png?imageView2/2/w/900/h/480"
+description: "本课程讲解多变量线性回归的概念与应用。通过特征缩放、学习率选择等技巧，帮助理解如何高效处理多特征数据集。"
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -1,6 +1,6 @@
 ---
 title: "【机器学习】课程讲义4"
-date: "2023-05-04"
+date: "2023-05-22"
 slug: "machine-learning-week4"
 categories: 
     - "机器学习"
@@ -11,6 +11,7 @@ keywords:
     - "machine learning"
 math: true
 image: "https://img.ququ123.top/img/image-20230602123210308.png?imageView2/2/w/900/h/480"
+description: "本课程深入讲解神经网络的基础概念与实现。通过前向传播和反向传播算法，帮助理解如何构建多层神经网络模型。"
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

@@ -1,6 +1,6 @@
 ---
 title: "【机器学习】课程讲义9"
-date: "2023-05-09"
+date: "2023-06-26"
 slug: "machine-learning-week9"
 categories: 
     - "机器学习"
@@ -11,6 +11,7 @@ keywords:
     - "machine learning"
 math: true
 image: "https://img.ququ123.top/img/image-20230602123210308.png?imageView2/2/w/900/h/480"
+description: "本课程讲解异常检测算法。通过高斯分布模型，帮助理解如何识别数据中的异常点并构建有效的检测系统。"
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)

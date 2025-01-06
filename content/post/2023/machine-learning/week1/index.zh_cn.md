@@ -11,6 +11,7 @@ keywords:
     - "machine learning"
 math: true
 image: "https://img.ququ123.top/img/image-20230602123210308.png?imageView2/2/w/900/h/480"
+description: "机器学习是目前信息技术中最激动人心的方向之一。本课程将带你学习机器学习的前沿知识，并实现机器学习算法。了解机器学习在搜索、图像识别、垃圾邮件过滤等领域的应用。"
 ---
 
 [原文链接，转载请注明出处](https://www.ququ123.top/2024/03/ququ-blog)
@@ -531,6 +532,3 @@ ${{\left( {{A}^{T}} \right)}^{T}}=A $
 ${{\left( KA \right)}^{T}}=K{{A}^{T}} $
 
 **matlab**中矩阵转置：直接打一撇，`x=y'`。
-
-
-

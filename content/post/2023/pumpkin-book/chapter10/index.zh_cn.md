@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第十章"
+description: "本章主要讲解降维方法，包括主成分分析（PCA）、核主成分分析（Kernel PCA）以及局部线性嵌入（LLE）等经典降维算法"
 date: "2023-05-20"
 slug: "pumkin-book-chapter10"
 categories: 

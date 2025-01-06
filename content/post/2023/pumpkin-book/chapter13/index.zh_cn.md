@@ -1,5 +1,6 @@
 ---
-title: "【南瓜书】第十三章"
+title: "【南瓜书】第十三章" 
+description: "本章主要介绍半监督学习，包括高斯混合模型、EM算法在半监督学习中的应用、基于图的半监督学习以及标签传播等核心内容"
 date: "2023-05-23"
 slug: "pumkin-book-chapter13"
 categories: 
@@ -426,6 +427,3 @@ $$
 \lim _{t \rightarrow \infty} \sum_{i=0}^{t-1}(\alpha \mathbf{S})^{i}=\frac{\mathbf{I}-\lim _{t \rightarrow \infty}(\alpha \mathbf{S})^{t}}{\mathbf{I}-\alpha \mathbf{S}}=\frac{\mathbf{I}}{\mathbf{I}-\alpha \mathbf{S}}=(\mathbf{I}-\alpha \mathbf{S})^{-1}
 $$
 综合可得式 13.20。
-
-
-

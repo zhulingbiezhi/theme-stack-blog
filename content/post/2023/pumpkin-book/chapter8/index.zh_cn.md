@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第八章"
+description: "本章详细讲解了集成学习方法，包括Boosting算法（如AdaBoost）、Bagging与随机森林、误差-分歧分解等核心内容"
 date: "2023-05-18"
 slug: "pumkin-book-chapter8"
 categories: 

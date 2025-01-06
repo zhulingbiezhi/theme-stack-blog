@@ -1,5 +1,6 @@
 ---
-title: "【南瓜书】第十四章"
+title: "【南瓜书】第十四章" 
+description: "本章主要介绍概率图模型，包括马尔可夫随机场、条件独立性、信念传播、马尔可夫链蒙特卡洛方法以及变分推断等核心内容"
 date: "2023-05-24"
 slug: "pumkin-book-chapter14"
 categories: 

@@ -1,5 +1,6 @@
 ---
-title: "【南瓜书】第十二章"
+title: "【南瓜书】第十二章" 
+description: "本章主要介绍计算学习理论，包括PAC学习框架、VC维与增长函数、Rademacher复杂度以及稳定性与泛化性等核心理论内容"
 date: "2023-05-22"
 slug: "pumkin-book-chapter12"
 categories:
@@ -822,14 +823,3 @@ $$
 P(\ell(\mathfrak{L}, \mathcal{D})-\ell(g, \mathcal{D})\leqslant\epsilon)\geqslant 1-\delta
 $$
 又因为$m$为与$\left(1/\epsilon,1/\delta,\text{size}(x),\text{size}(c)\right)$相关的多项式的值，因此根据定理12.2，定理12.5，得到结论$\mathcal{H}$是(不可知)PAC可学习的。
-
-
-
-
-
-
-
-
-
-
-

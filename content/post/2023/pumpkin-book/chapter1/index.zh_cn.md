@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第一章"
+description: "本章详细讲解了机器学习中的数学基础，包括期望误差的计算公式及其推导过程，通过具体示例解释了公式的每一步推导"
 date: "2023-05-11"
 slug: "pumkin-book-chapter1"
 categories: 

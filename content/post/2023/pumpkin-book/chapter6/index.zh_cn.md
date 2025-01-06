@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第六章"
+description: "本章详细讲解了支持向量机相关算法，包括线性SVM、核方法、软间隔SVM、支持向量回归等核心内容"
 date: "2023-05-16"
 slug: "pumkin-book-chapter6"
 categories: 

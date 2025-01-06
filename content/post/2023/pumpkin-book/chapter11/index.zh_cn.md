@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第十一章"
+description: "本章主要讲解特征选择与稀疏表示，包括信息增益、L1/L2正则化、LASSO回归以及稀疏编码与字典学习等核心内容"
 date: "2023-05-21"
 slug: "pumkin-book-chapter11"
 categories:
@@ -331,4 +332,3 @@ $$
 得证。
 
 将矩阵$\mathbf{B}$分解成矩阵列$\boldsymbol{b}_j,j=1,2,\dots,k$带来一个好处，即和11.16的原理相同，矩阵列与列之间无关，因此可以分别优化各个列，即将$\min_\mathbf{B}\Vert\dots\mathbf{B}\dots\Vert^2_F$转化成了$\min_{b_i}\Vert\cdots\boldsymbol{b}_i\cdots\Vert^2_F$，得到第三行的等式之后，再利用文中介绍的KSVD算法求解即可。
-

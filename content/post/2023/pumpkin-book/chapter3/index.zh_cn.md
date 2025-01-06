@@ -1,5 +1,6 @@
 ---
-title: "【南瓜书】第三章"
+title: "【南瓜书】第三章" 
+description: "本章详细讲解了线性回归、逻辑回归和线性判别分析等经典机器学习算法的数学推导，包括参数估计、优化目标函数和求解过程"
 date: "2023-05-13"
 slug: "pumkin-book-chapter3"
 categories: 

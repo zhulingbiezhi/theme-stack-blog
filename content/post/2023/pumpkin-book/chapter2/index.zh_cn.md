@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第二章"
+description: "本章深入讲解了机器学习中的ROC曲线和AUC指标，详细推导了AUC的计算公式，并通过具体示例解释了ROC曲线的绘制过程"
 date: "2023-05-12"
 slug: "pumkin-book-chapter2"
 categories: 

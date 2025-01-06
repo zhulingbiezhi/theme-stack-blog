@@ -1,5 +1,6 @@
 ---
-title: "【南瓜书】第四章"
+title: "【南瓜书】第四章" 
+description: "本章深入讲解了决策树算法，包括信息熵、信息增益、基尼指数等核心概念，以及CART算法构建决策树的过程"
 date: "2023-05-14"
 slug: "pumkin-book-chapter4"
 categories: 

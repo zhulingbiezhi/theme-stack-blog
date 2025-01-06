@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第十六章"
+description: "本章介绍强化学习核心概念，包括Q学习、时序差分学习、策略评估与改进、贝尔曼方程等关键内容"
 date: "2023-05-26"
 slug: "pumkin-book-chapter16"
 categories: 

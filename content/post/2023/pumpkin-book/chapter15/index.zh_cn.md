@@ -1,5 +1,6 @@
 ---
-title: "【南瓜书】第十五章"
+title: "【南瓜书】第十五章" 
+description: "本章主要介绍规则学习，包括似然率统计量、FOIL增益、逻辑操作（吸收、辨识、内构/互构）以及归结与合一等核心内容"
 date: "2023-05-25"
 slug: "pumkin-book-chapter15"
 categories: 
@@ -112,6 +113,3 @@ C_{2}&=\left(C-\left(C_{1}-\\{L_1\\}\right)\right) \vee\\{L_2\\}\\\
 \end{aligned}
 $$
 因为 $L_2=(\neg L_1\theta_1)\theta_2^{-1}$，替换得证。
-
-
-

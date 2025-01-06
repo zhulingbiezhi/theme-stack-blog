@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第五章"
+description: "本章详细讲解了神经网络相关算法，包括感知机模型、反向传播算法、Boltzmann机等核心内容"
 date: "2023-05-15"
 slug: "pumkin-book-chapter5"
 categories: 

@@ -1,5 +1,6 @@
 ---
 title: "【南瓜书】第七章"
+description: "本章详细讲解了贝叶斯分类器相关算法，包括贝叶斯决策论、朴素贝叶斯分类器、半朴素贝叶斯分类器、贝叶斯网等核心内容"
 date: "2023-05-17"
 slug: "pumkin-book-chapter7"
 categories: 

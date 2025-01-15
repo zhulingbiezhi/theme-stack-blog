@@ -1,6 +1,6 @@
 ---
 title: "DIY 3D 打印机完整指南：从组装到高级校准"
-date: 2025-01-15
+date: 2025-01-14
 draft: false
 categories: 
   - "3D打印"

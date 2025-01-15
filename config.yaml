@@ -1,5 +1,5 @@
 baseurl: http://www.ququ123.top
-languageCode: en-us
+languageCode: zh-cn
 theme: hugo-theme-stack
 pagination:
   pageSize: 10

@@ -13,7 +13,7 @@ keywords:
   - "3D打印维护"
   - "创客项目"
 slug: "diy-3d-printer-complete-guide"
-image: "/images/3d-printer-guide.jpg"
+image: "https://img.ququ123.top/img/3D打印机.jpg?imageView2/2/w/900/h/480"
 ---
 
 ## 引言

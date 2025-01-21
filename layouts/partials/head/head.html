@@ -36,6 +36,7 @@
 {{- end -}}
 
 {{ if .Params.math }}{{- partial "helper/katex.html" . -}}{{ end }}
+{{ if .Params.mermaid }}{{- partial "helper/mermaid.html" . -}}{{ end }}
 
 <link rel="shortcut icon" href="favicon.ico" />
 

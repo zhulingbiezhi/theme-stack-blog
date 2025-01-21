@@ -14,6 +14,7 @@ keywords:
   - "智能补全"
 slug: "vscode-cline-plugin-guide"
 image: "https://img.ququ123.top/img/download.jpeg?imageView2/2/w/900/h/480"
+mermaid: true
 ---
 
 ## 什么是 VSCode Cline？

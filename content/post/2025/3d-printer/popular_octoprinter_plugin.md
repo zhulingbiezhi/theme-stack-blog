@@ -1,3 +1,17 @@
+---
+title: "The Best OctoPrint Plugins And How To Install Them"
+date: "2022-08-12"
+slug: "best-octoprint-plugins"
+categories: 
+    - 3d-printing
+keywords:
+    - octoprint
+    - 3d-printing
+    - plugins
+    - raspberry-pi
+image: "https://www.obico.io/assets/images/octoprint-logo.png"
+description: "A comprehensive guide to the most popular OctoPrint plugins that enhance your 3D printing experience, including installation instructions and usage tips."
+---
 # The Best OctoPrint Plugins And How To Install Them
 
 **This article was updated on August 12, 2022**
@@ -86,7 +100,7 @@ Nothing is more important to get the perfect print than your printer’s bed. It
 
 ## Plugin #3: OctoPrint-PrintTimeGenius
 
-![PrintTimeGenius](https://www.obico.io/assets/images/octoprint-printtimegenius-plugin.png)
+![PrintTimeGenius](https://img.ququ123.top/img/download%20(1).png)
 
 Time waits for no one, and every second counts when you have a bunch of prints queuing up.
 
@@ -465,7 +479,6 @@ Imagine a long-running, multi-part print job only to have one of the parts fail 
 
 ## Plugin #21: OctoPrint-Enclosure
 
-![OctoPrint Enclosure main screen](https://www.obico.io/assets/images/octoprint-enclosure-plugin.png)
 
 *OctoPrint Enclosure main screen (Source: [Enclosure](https://plugins.octoprint.org/plugins/enclosure/) page on OctoPrint Plugin Repository)*
 
@@ -501,6 +514,3 @@ Plugin Manager gives 3 options to install a plugin: from the listed plugin repos
 
 To install a plugin via command line, paste it into the command line of the host you installed OctoPrint on.
 
-[This wonderful video](https://www.youtube.com/embed/HBd0olxI-No) by [Thomas Sanladerer](https://www.youtube.com/channel/UCb8Rde3uRL1ohROUVg46h1A) can help you get through the process.
-
-For more information, see [OctoPrint Help Page](https://plugins.octoprint.org/help/installation/).

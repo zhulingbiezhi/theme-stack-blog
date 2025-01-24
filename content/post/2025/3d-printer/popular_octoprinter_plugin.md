@@ -64,10 +64,12 @@ If it sounds a bit too futuristic, that's what I thought at first too! While Obi
 However, this plugin has one "but". It's open source, but to obtain additional features like email support and customization of the AI model, you have to get a paid subscription from [the official Obico website](https://www.obico.io/).
 
 ### Recommended for:
+
 - Recognizing print fails in real-time.
 - Getting a live feed of the printing process on your phone.
 
 ### Created by:
+
 [The Obico team](https://plugins.octoprint.org/by_author/#the-obico-team)
 
 [GitHub page](https://github.com/TheSpaghettiDetective/OctoPrint-Obico)
@@ -89,9 +91,11 @@ Nothing is more important to get the perfect print than your printer’s bed. It
 [Check out this user guide video to learn more](https://www.youtube.com/embed/tyq2hptQXcI).
 
 ### Recommended for:
+
 - Diagnosing any build plate issues, for example, mechanical damage or wrong bed level.
 
 ### Created by:
+
 [Jneilliii](https://plugins.octoprint.org/by_author/#jneilliii)
 
 [GitHub page](https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/)
@@ -109,9 +113,11 @@ Time waits for no one, and every second counts when you have a bunch of prints q
 The plugin can include the bed and nozzle heating time in its calculations, as well as correct the print time during the process. It promises to get your time right to even seconds!
 
 ### Recommended for:
+
 - Precise estimation of printing time.
 
 ### Created by:
+
 [Eyal](https://plugins.octoprint.org/by_author/#eyal)
 
 [GitHub page](https://github.com/eyal0/OctoPrint-PrintTimeGenius)
@@ -131,9 +137,11 @@ The plugin allows you to move the extruder out of the frame and position the pri
 *Video made with Octolapse by [WildRoseBuilds](https://www.youtube.com/c/WildRoseBuilds)*
 
 ### Recommended for:
+
 - Making smooth and highly customizable time-lapse videos that are a sight to behold.
 
 ### Created by:
+
 [Brad Hochgesang](https://plugins.octoprint.org/by_author/#brad-hochgesang)
 
 [GitHub page](https://github.com/FormerLurker/Octolapse/)
@@ -153,9 +161,11 @@ This plugin informs you of print layer progress, estimated end time, and current
 The information that [DisplayLayerProgress](https://plugins.octoprint.org/plugins/DisplayLayerProgress/) provides can be displayed on OctoPrint’s NavBar and as a tab title or as a pop-up. It even allows you to display progress percentage and current layer on the printer display itself!
 
 ### Recommended for:
+
 - Checking printing progress in real-time.
 
 ### Created by:
+
 [Olli](https://plugins.octoprint.org/by_author/#olli)
 
 [GitHub page](https://github.com/OllisGit/OctoPrint-DisplayLayerProgress)
@@ -175,9 +185,11 @@ When you’re done messing with the OctoPrint settings, there’s room for addin
 The community is having a lot of fun with this plugin, so if you’re interested in making your OctoPrint shine like a diamond, be sure to visit [the forum thread](https://community.octoprint.org/t/pimp-my-web-interface/3349/32).
 
 ### Recommended for:
+
 - Personalized app look, including color, font types, and sizes, etc.
 
 ### Created by:
+
 [Birk Johansson](https://plugins.octoprint.org/by_author/#birk-johansson)
 
 [GitHub page](https://github.com/birkbjo/OctoPrint-Themeify)
@@ -195,9 +207,11 @@ Instead of getting printer-specific software or looking for a dedicated flashing
 [Firmware Updater](https://plugins.octoprint.org/plugins/firmwareupdater/) also allows you to customize and configure flashing methods and run a gcode or system command before or after a firmware update.
 
 ### Recommended for:
+
 - Flashing many types of printers and adding pre- or post-flashing commands.
 
 ### Created by:
+
 [Ben Lye](https://plugins.octoprint.org/by_author/#ben-lye), [Gina Häußge](https://plugins.octoprint.org/by_author/#gina-h%C3%A4u%C3%9Fge), [Nicanor Romero Venier](https://plugins.octoprint.org/by_author/#nicanor-romero-venier)
 
 [GitHub page](https://github.com/OctoPrint/OctoPrint-FirmwareUpdater)
@@ -215,9 +229,11 @@ The [Navbar Temp](https://plugins.octoprint.org/plugins/navbartemp/) tool displa
 It is still in development, so as the authors say: “get ready for testing.”
 
 ### Recommended for:
+
 - Checking temperatures on the printer and Raspberry Pi.
 
 ### Created by:
+
 [Cosik](https://plugins.octoprint.org/by_author/#cosik), [Jarek Szczepanski](https://plugins.octoprint.org/by_author/#jarek-szczepanski)
 
 [GitHub page](https://github.com/imrahil/OctoPrint-NavbarTemp)
@@ -233,6 +249,7 @@ It is still in development, so as the authors say: “get ready for testing.”
 [OctoPrint-Dashboard](https://plugins.octoprint.org/plugins/dashboard/) plugin gives you all the basic data of an ongoing print in a user-friendly and informative format.
 
 In general, widgets include:
+
 - Temperatures readout
 - Print progress
 - Print time
@@ -242,9 +259,11 @@ In general, widgets include:
 It can be accompanied with [PrintTimeGenius](#plugin-3-octoprint-printtimegenius) and [DisplayLayerProgress](#plugin-5-displaylayerprogress) explained above.
 
 ### Recommended for:
+
 - Real-time overview of a bunch of printing parameters.
 
 ### Created by:
+
 [Stefan Cohen](https://plugins.octoprint.org/by_author/#stefan-cohen), [j7126](https://plugins.octoprint.org/by_author/#j7126), [Willmac16](https://plugins.octoprint.org/by_author/#willmac16)
 
 [GitHub page](https://github.com/j7126/OctoPrint-Dashboard)
@@ -258,9 +277,11 @@ Creality is renowned for making affordable desktop printers, but any Ender or CR
 [Creality 2x temperature reporting fix](https://plugins.octoprint.org/plugins/ender3v2tempfix/) corrects temperature reporting for printers with a new mainboard: Ender-3 Pro's, Ender-3 Pro v2, CR-6 SE, and others.
 
 ### Recommended for:
+
 - Fixing readout errors for the new generation of Creality machines.
 
 ### Created by:
+
 [Albert MN. @ SimplyPrint](https://plugins.octoprint.org/by_author/#albert-mn-simplyprint), [b-morgan](https://plugins.octoprint.org/by_author/#b-morgan)
 
 ---
@@ -278,9 +299,11 @@ The plugin settings allow you to control how often the heaters are inspected.
 Let's be honest, we all try our hardest to practice safe 3D printing, but mistakes do happen. It would almost be silly not to have this installed as a fail-safe because an overheated printer could potentially burn down your workspace or house.
 
 ### Recommended for:
+
 - As a final precaution against thermal runaway, this is an essential safety feature.
 
 ### Created by:
+
 [Andrew Cherevatkin](https://plugins.octoprint.org/by_author/#andrew-cherevatkin), [Uriah Welcome](https://plugins.octoprint.org/by_author/#uriah-welcome)
 
 [GitHub page](https://github.com/Andy-ch/OctoPrint-HeaterTimeout)
@@ -298,9 +321,11 @@ The next plugin on the list is called [GcodeEditor](https://plugins.octoprint.or
 To access the Gcode editor, simply click the pencil icon that appears next to each file that has been loaded for printing. Simply scroll down and change the line that needs to be changed, then click the Save button.
 
 ### Recommended for:
+
 - Editing and making final or instant modifications to the Gcode of any file that's not printing.
 
 ### Created by:
+
 [Ieatacid](https://plugins.octoprint.org/by_author/#ieatacid)
 
 [GitHub page](https://github.com/ieatacid/OctoPrint-GcodeEditor)
@@ -318,9 +343,11 @@ With the [TouchUI](https://plugins.octoprint.org/plugins/touchui/) plugin for Oc
 Using the TouchUI platform, you can quickly check on your prints and have full control over your printer in an aesthetically pleasing interface.
 
 ### Recommended for:
+
 - Creating a nice compact touchscreen environment you can use right next to your 3D printer or your phone to help you control it.
 
 ### Created by:
+
 [Paul de Vries](https://plugins.octoprint.org/by_author/#paul-de-vries)
 
 [GitHub page](https://github.com/BillyBlaze/OctoPrint-TouchUI)
@@ -338,9 +365,11 @@ Using the TouchUI platform, you can quickly check on your prints and have full c
 This is where the [Arc Welder](https://plugins.octoprint.org/plugins/arc_welder/) plugin comes in handy. This plugin takes different points that are straight lines in your 3D print and repurposes them to arcs using G2/G3 gcodes. The arc movements also mean you get better print quality for round objects, faster print times, and more.
 
 ### Recommended for:
+
 - Speeding up 3D printing and producing smoother prints.
 
 ### Created by:
+
 [Brad Hochgesang](https://plugins.octoprint.org/by_author/#brad-hochgesang)
 
 [GitHub page](https://github.com/FormerLurker/ArcWelderPlugin)
@@ -360,9 +389,11 @@ Tasks such as elevating the probe pin or lowering the probe can be performed, as
 Basically, the OctoPrint-BLTouch plugin gives your OctoPrint control interface a digital version of these buttons, which hide the actual gcode commands. Since you no longer have to be close to your printer to use it, your BLTouch is much easier to manage and use.
 
 ### Recommended for:
+
 - Adding BLTouch controls to the Control tab using a simple plugin.
 
 ### Created by:
+
 [Jneilliii](https://plugins.octoprint.org/by_author/#jneilliii)
 
 [GitHub page](https://github.com/jneilliii/OctoPrint-BLTouch)
@@ -382,9 +413,11 @@ And that's exactly what the [Simple Emergency Stop](https://plugins.octoprint.or
 If your print screws up, hit EMERGENCY STOP.
 
 ### Recommended for:
+
 - Adding an Emergency Stop button to the NavBar in case something goes wrong and you want to stop the print immediately.
 
 ### Created by:
+
 [Sebastien Clement (SebClem)](https://plugins.octoprint.org/by_author/#sebastien-clement-sebclem)
 
 [GitHub page](https://github.com/Sebclem/OctoPrint-SimpleEmergencyStop)
@@ -402,9 +435,11 @@ The [OctoPrint-Display-ETA](https://plugins.octoprint.org/plugins/display_eta/) 
 Monitoring the print and seeing how far it has progressed is no longer a bothersome task.
 
 ### Recommended for:
+
 - Displaying the time required to complete the current print as estimated by OctoPrint.
 
 ### Created by:
+
 [AlexVerrico](https://plugins.octoprint.org/by_author/#alexverrico) and [Pablo Ventura](https://plugins.octoprint.org/by_author/#pablo-ventura)
 
 [GitHub page](https://github.com/AlexVerrico/Octoprint-Display-ETA)
@@ -424,9 +459,11 @@ This is especially useful if you are not around your 3D printer and want to turn
 You can use multiple such devices and by naming different 3D printers with different names, you can switch them ON or OFF just by speaking the command followed by the name of the printer.
 
 ### Recommended for:
+
 - Using voice commands to remotely turn your 3D printer ON or OFF.
 
 ### Created by:
+
 [jneilliii](https://plugins.octoprint.org/by_author/#jneilliii)
 
 [GitHub page](https://github.com/jneilliii/OctoPrint-TPLinkSmartplug)
@@ -448,9 +485,11 @@ You can choose whether the image fills the entire screen (the default) or just t
 If you only have one printer, you can have some fun with the background images. You can use a picture of Darth Vader as your background if you want.
 
 ### Recommended for:
+
 - Changing the temperature graph's background image.
 
 ### Created by:
+
 [jneilliii](https://plugins.octoprint.org/by_author/#jneilliii)
 
 [GitHub page](https://github.com/jneilliii/OctoPrint-CustomBackground)
@@ -468,9 +507,11 @@ Imagine a long-running, multi-part print job only to have one of the parts fail 
 [Exclude Region](https://plugins.octoprint.org/plugins/excluderegion/) plugin is here to save the day! With this plugin, you simply drag a box or select the failing part, and OctoPrint will ignore it thereafter and not print it. This saves filament and avoids spaghetti from ruining the other good parts. This is one of the most helpful 3D printing plugins you'll ever find.
 
 ### Recommended for:
+
 - Ability to prevent printing within rectangular or circular portions of the presently active gcode file.
 
 ### Created by:
+
 [Brad Fisher](https://plugins.octoprint.org/by_author/#brad-fisher)
 
 [GitHub page](https://github.com/bradcfisher/OctoPrint-ExcludeRegionPlugin)
@@ -478,7 +519,6 @@ Imagine a long-running, multi-part print job only to have one of the parts fail 
 ---
 
 ## Plugin #21: OctoPrint-Enclosure
-
 
 *OctoPrint Enclosure main screen (Source: [Enclosure](https://plugins.octoprint.org/plugins/enclosure/) page on OctoPrint Plugin Repository)*
 
@@ -491,9 +531,11 @@ This plugin is very flexible and can take care of almost any part of your enclos
 The plugin currently only works with the Raspberry Pi.
 
 ### Recommended for:
+
 - Using Raspberry Pi GPIO to control the printer environment (temperature control, lights, fans, and filament sensor).
 
 ### Created by:
+
 [Vitor Henrique](https://plugins.octoprint.org/by_author/#vitor-henrique)
 
 [GitHub page](https://github.com/vitormhenrique/OctoPrint-Enclosure)
@@ -513,4 +555,3 @@ Plugin Manager gives 3 options to install a plugin: from the listed plugin repos
 *Plugin Manager Browser (Source: [OctoPrint Help](https://plugins.octoprint.org/help/installation/))*
 
 To install a plugin via command line, paste it into the command line of the host you installed OctoPrint on.
-

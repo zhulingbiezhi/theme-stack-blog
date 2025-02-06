@@ -1,3 +1,17 @@
+title: "pyenv vs uv：如何选择更适合的 Python 版本管理工具"
+date: 2025-01-20
+draft: false
+categories:
+  - 开发
+  - 工具
+description: "本文深入探讨了 pyenv 和 uv 这两个 Python 环境管理工具的区别与适用场景，帮助开发者选择最适合的解决方案。"
+keywords:
+  - pyenv
+  - uv
+  - Python 版本管理
+  - 工具对比
+slug: "pyenv-vs-uv"
+image: "https://img.ququ123.top/img/download%20(1).jpeg?imageView2/2/w/900/h/480"
 
 
 # Pyenv vs Uv

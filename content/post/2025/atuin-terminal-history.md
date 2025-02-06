@@ -1,9 +1,17 @@
-+++
-title = "终端历史记录管理工具 Atuin 详解"
-date = 2025-06-02
-categories = ["工具"]
-tags = ["terminal", "bash", "linux"]
-+++
+---
+title: "Atuin：高效终端历史记录管理工具"
+date: 2025-02-06
+draft: false
+categories:
+  - "工具"
+  - "开发效率"
+description: "介绍 Atuin 这款高效的终端历史命令管理工具，及其核心功能与适用场景。"
+keywords:
+  - "Atuin"
+  - "终端历史记录"
+  - "开发效率工具"
+slug: "atuin-terminal-history-manager"
+---
 
 
 # 终端历史记录管理工具 Atuin 详解

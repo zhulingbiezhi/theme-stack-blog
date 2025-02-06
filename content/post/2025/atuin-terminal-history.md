@@ -11,6 +11,7 @@ keywords:
   - "终端历史记录"
   - "开发效率工具"
 slug: "atuin-terminal-history-manager"
+image: "https://img.ququ123.top/img/20250206165153561.png?imageView2/2/w/900/h/480"
 ---
 
 
@@ -47,13 +48,13 @@ pip install atuin
 3. **初始化数据库**
 
 ```bash
-atui init
+atuin init
 ```
 
 4. **启动服务**
 
 ```bash
-atui serve
+atuin serve
 ```
 
 ### 配置
@@ -71,25 +72,25 @@ Atuin 的配置文件位于 `~/.config/atuin/config.yaml`。用户可以根据�
 1. **查看历史记录**
 
 ```bash
-atui history
+atuin history
 ```
 
 2. **搜索历史记录**
 
 ```bash
-atui search "关键词"
+atuin search "关键词"
 ```
 
 3. **按标签查询**
 
 ```bash
-atui tag 标签名
+atuin tag 标签名
 ```
 
 4. **执行历史命令**
 
 ```bash
-atui run <命令ID>
+atuin run <命令ID>
 ```
 
 ### 高级功能
@@ -99,7 +100,7 @@ atui run <命令ID>
 用户可以为历史命令添加多个标签，便于后续分类和查询。
 
 ```bash
-atui tag 命令ID 添加标签1 添加标签2
+atuin tag 命令ID 添加标签1 添加标签2
 ```
 
 #### 时间范围筛选
@@ -107,7 +108,7 @@ atui tag 命令ID 添加标签1 添加标签2
 Atuin 支持按时间范围查询历史记录：
 
 ```bash
-atui range "起始日期" "结束日期"
+atuin range "起始日期" "结束日期"
 ```
 
 ## Atuin 的优势

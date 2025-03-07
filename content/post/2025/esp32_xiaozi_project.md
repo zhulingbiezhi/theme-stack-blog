@@ -296,4 +296,4 @@ A: 开发板设定流程如下：
 - 在main.cc中，调用Application::GetInstance().Start()，会调用Board::GetInstance()，就是调用create_board函数
 
 ### Q: 如何添加新开发板？
-A: 请参考：https://github.com/tenclass/xiaozhi/blob/main/docs/how_to_add_board.md
+A: 请参考：https://www.ququ123.top/2025/03/esp32-add-new-board-support/

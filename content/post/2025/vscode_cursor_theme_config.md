@@ -19,7 +19,7 @@ keywords:
   - "TextMate"
   - "Scope"
 slug: "vscode-cursor-theme-guide"
-image: "https://img.ququ123.top/img/download.jpeg?imageView2/2/w/900/h/480"
+image: "https://img.ququ123.top/img/download17.jpeg?imageView2/2/w/900/h/480"
 ---
 
 ## 1. 引言

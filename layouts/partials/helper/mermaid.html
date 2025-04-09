@@ -5,12 +5,21 @@
         crossorigin="anonymous"
 ></script>
 <script>
-    // Replace mermaid pre.code to div
-    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
-        (el) => {
-            el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`;
-        }
-    );
+    // 初始化 mermaid 配置
+    mermaid.initialize({
+        startOnLoad: true,
+        theme: 'neutral',
+        securityLevel: 'loose'
+    });
+    
+    // Replace mermaid pre.code to div 
+    document.addEventListener("DOMContentLoaded", function() {
+        Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+            (el) => {
+                el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`;
+            }
+        );
+    });
 </script>
 <style>
     /* Set svg to center */

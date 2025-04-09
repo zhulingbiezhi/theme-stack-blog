@@ -1,7 +1,6 @@
 ---
 title: "就问你Apple订阅乱不乱?"
 date: 2025-04-04
-draft: true
 categories: ["iOS开发", "应用内购买"]
 description: "深入解析Apple应用内订阅系统的复杂性与常见问题"
 keywords: ["Apple", "IAP", "应用内购买", "订阅", "App Store"]
@@ -10,20 +9,18 @@ image: "https://img.ququ123.top/img/20250206165153561.png?imageView2/2/w/900/h/4
 mermaid: true
 ---
 
-## 概念说明
+## 一、概念说明
 
 开始前，我们先明确两个重要概念：
 
 - **订阅单**：代表一个订阅组的初始交易，也是 Apple 的`originTransactionID`
 - **交易单**：代表一笔实际的收费交易，也是 Apple 的`transactionID`
 
-## Apple 交易单问题
+## 二、Apple 订阅系统问题
 
-### 一个交易单存在多个交易 ID
+### 2.1 一个交易单存在多个交易 ID
 
 Apple 订阅系统中，同一笔`交易单`可能对应多个交易 ID（如 120012745728737、120012745728738），它们拥有相同的购买时间戳和过期时间戳，表明属于同一笔交易。
-
----
 
 ```mermaid
 graph LR
@@ -46,14 +43,13 @@ graph LR
   class 交易ID1,交易ID2 ids
 ```
 
-## 苹果的多个数据源，交易数据不一致
+### 2.2 多数据源数据不一致
 
 苹果提供了多种 API 来获取交易信息，但不同接口返回的数据可能存在差异，给开发者带来困扰：
 
-### [Get Transaction History](https://developer.apple.com/documentation/appstoreserverapi/get-transaction-history)
+#### 2.2.1 [Get Transaction History](https://developer.apple.com/documentation/appstoreserverapi/get-transaction-history)
 
 - 接口：`https://api.storekit.itunes.apple.com/inApps/v2/history/{transactionId}`
-
 - 参数: 120012745728737 和 120012745728738 返回结果是一样的
 
 ```mermaid
@@ -75,10 +71,9 @@ graph LR
   class 交易ID1 ids
 ```
 
-### [Get Transaction Info](https://developer.apple.com/documentation/appstoreserverapi/get_transaction_info)
+#### 2.2.2 [Get Transaction Info](https://developer.apple.com/documentation/appstoreserverapi/get_transaction_info)
 
 - 接口：`https://api.storekit.itunes.apple.com/inApps/v1/transactions/{transactionId}`
-
 - 参数: 120012745728737
 
 ```mermaid
@@ -113,11 +108,10 @@ graph LR
   class 交易ID2 ids
 ```
 
-### [Get All Subscription Statuses](https://developer.apple.com/documentation/appstoreserverapi/get-all-subscription-statuses)
+#### 2.2.3 [Get All Subscription Statuses](https://developer.apple.com/documentation/appstoreserverapi/get-all-subscription-statuses)
 
 - 接口：`https://api.storekit.itunes.apple.com/inApps/v1/subscriptions/{transactionId}`
 - 特点：返回用户所有订阅的状态
-
 - 参数: 120012745728737 和 120012745728738 返回结果是一样的
 
 ```mermaid
@@ -139,29 +133,29 @@ graph LR
  class 交易ID1 ids
 ```
 
-### [Look Up Order ID](https://developer.apple.com/documentation/appstoreserverapi/look-up-order-id)
+#### 2.2.4 [Look Up Order ID](https://developer.apple.com/documentation/appstoreserverapi/look-up-order-id)
 
 - 接口：`https://api.storekit.itunes.apple.com/inApps/v1/lookup/{orderId}`
 - 特点：通过订单 ID 查询交易
 - 未测试, 数据未知
 
-### [App Store Server Notifications V2](https://developer.apple.com/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2)
+#### 2.2.5 [App Store Server Notifications V2](https://developer.apple.com/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2)
 
 - 特点：推送交易状态变化通知
 
-### 总结
+#### 2.2.6 结论
 
-- [Get Transaction Info](https://developer.apple.com/documentation/appstoreserverapi/get_transaction_info): 对于重复的交易 id 是可以查询到数据的
-- [Get All Subscription Statuses](https://developer.apple.com/documentation/appstoreserverapi/get-all-subscription-statuses) + [Get Transaction Info](https://developer.apple.com/documentation/appstoreserverapi/get_transaction_info) + [App Store Server Notifications V2](https://developer.apple.com/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2) 都是只返回其中一个交易 ID
-- `注意`: 交易 id120012745728737 和 120012745728738 相差 1, 但有时候不在 +1/-1 范围, 有可能是 +2/-2 范围, 也有可能超出这个范围......
+- **Get Transaction Info**: 对于重复的交易 ID 都可以查询到数据
+- **Get All Subscription Statuses**、**Get Transaction Info** 和 **App Store Server Notifications V2** 都只返回其中一个交易 ID
+- **注意**: 交易 ID 120012745728737 和 120012745728738 相差 1, 但有时候不在 +1/-1 范围, 有可能是 +2/-2 范围, 也有可能超出这个范围......
 
-## 同一个订阅组多个订阅单
+## 三、一个订阅组多个订阅单
 
-按照最之前苹果的约定, 同一个订阅组, 只会有一个`订阅单`,但是最近发现以下一些不符合之前的逻辑
+按照之前苹果的约定, 同一个订阅组, 只会有一个`订阅单`，但最近出现了一些不符合以往逻辑的情况：
 
-### 问题 1: 生成新的订阅单
+### 3.1 生成新的订阅单问题
 
-大概在 2025 年 2, 3 月的时候, 发现苹果竟然对一些很久没有续费的`订阅单`, 生成了新的订阅单号(originTransactionID)
+大概在 2025 年 2、3 月的时候, 发现苹果竟然对一些很久没有续费的`订阅单`, 生成了新的订阅单号(originTransactionID)
 
 ```mermaid
 graph LR
@@ -193,7 +187,7 @@ graph LR
  class 交易ID1,交易ID2 ids
 ```
 
-### 问题 2: 重复的订阅单
+### 3.2 重复的订阅单问题
 
 其中还发现存在一些重复的订阅单, 类似最开始描述的多个交易 ID 情况
 
@@ -235,15 +229,15 @@ class 订阅单,交易单,交易单2,交易单3 transaction
 class 交易ID1,交易ID2 ids
 ```
 
-### 问题 3: 新`订阅单`的回滚到旧`订阅单`
+### 3.3 新订阅单回滚到旧订阅单问题
 
-## ![交易关联回原来的订阅单](https://img.ququ123.top/img/20250409180202077.png)
+![交易关联回原来的订阅单](https://img.ququ123.top/img/20250409180202077.png)
 
-`注意: 发生在2025-03-17之后, 所有的回调, 查询交易, 查询状态的返回数据, 对应交易关联全部被回滚到旧的订阅单. 你说奇不奇葩? 跟闹着玩似的`
+**注意**: 发生在 2025-03-17 之后，所有的回调、查询交易、查询状态的返回数据，对应交易关联全部被回滚到旧的订阅单。你说奇不奇葩? 跟闹着玩似的...
 
-## 苹果的订阅支付开发历程
+## 四、苹果订阅支付系统的演进历程
 
-#### 通知部分演进时间线：
+### 4.1 通知部分演进时间线
 
 - **2019-11**: App Store Server Notifications 初版发布
 - **2021-10**: App Store Server Notifications V2 发布
@@ -253,7 +247,7 @@ class 交易ID1,交易ID2 ids
 - **2024-04**: 新增 CONSUMPTION_REQUEST 通知类型，用于自动续期订阅的退款请求
 - **2025-03**: JWSTransactionDecodedPayload 中新增 previousOriginalTransactionId 字段 `(就是这个最奇葩的改动)`
 
-## Apple Developer Forums 相关 issuer
+## 五、相关官方讨论链接
 
 [Purchase information for users wit… | Apple Developer Forums](https://developer.apple.com/forums/thread/778493)
 

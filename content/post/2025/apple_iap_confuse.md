@@ -5,7 +5,7 @@ categories: ["iOS开发", "应用内购买"]
 description: "深入解析Apple应用内订阅系统的复杂性与常见问题"
 keywords: ["Apple", "IAP", "应用内购买", "订阅", "App Store"]
 slug: "apple-iap-confuse"
-image: "https://img.ququ123.top/img/20250206165153561.png?imageView2/2/w/900/h/480"
+image: "https://img.ququ123.top/img/20250409180202077.png?imageView2/2/w/900/h/480"
 mermaid: true
 ---
 
@@ -247,7 +247,27 @@ class 交易ID1,交易ID2 ids
 - **2024-04**: 新增 CONSUMPTION_REQUEST 通知类型，用于自动续期订阅的退款请求
 - **2025-03**: JWSTransactionDecodedPayload 中新增 previousOriginalTransactionId 字段 `(就是这个最奇葩的改动)`
 
-## 五、相关官方讨论链接
+## 五、问题反馈过程
+
+### 发起 issuer
+
+- 在 [Apple Developer Forums](https://developer.apple.com/forums) 发起 issuer
+- 我提了 issuer [Transaction ID Misassociation in IAP Subscription API](https://developer.apple.com/forums/thread/777433)
+- 不起作用, 一句话懒得理你, 要你提到 https://feedbackassistant.apple.com/feedback
+  ![1](https://img.ququ123.top/img/20250417115918284.png)
+
+### 填写 feedback
+
+回复时间真久不说, 等来的只是几个字回复..... 就问你服不服 ? 好歹我也提供了那么多数据啊, apple 老大哥!!!
+关键是这回复, 回了跟没回有什么区别?
+
+- 问题原因是什么? --- 没说
+- 怎么解决的? --- 没说
+- 异常的订单怎么处理? --- 没说
+- `去死吧 垃圾apple` --- 我说
+  ![](https://img.ququ123.top/img/20250417114620140.png)
+
+## 六、相关官方讨论链接
 
 [Purchase information for users wit… | Apple Developer Forums](https://developer.apple.com/forums/thread/778493)
 

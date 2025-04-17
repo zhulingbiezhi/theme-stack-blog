@@ -3,7 +3,34 @@ title: "就问你Apple订阅乱不乱?"
 date: 2025-04-04
 categories: ["iOS开发", "应用内购买"]
 description: "深入解析Apple应用内订阅系统的复杂性与常见问题"
-keywords: ["Apple", "IAP", "应用内购买", "订阅", "App Store"]
+keywords:
+  [
+    "Apple",
+    "IAP",
+    "应用内购买",
+    "订阅",
+    "App Store",
+    "StoreKit",
+    "transactionID",
+    "originTransactionID",
+    "订阅系统",
+    "自动续期",
+    "iOS支付",
+    "App内购买问题",
+    "Apple问题反馈",
+    "订阅单",
+    "交易单",
+    "应用内订阅",
+    "App Store Server API",
+    "交易历史",
+    "订阅状态",
+    "App Store Server Notifications",
+    "苹果支付系统",
+    "StoreKit2",
+    "苹果订阅漏洞",
+    "订阅API",
+    "苹果开发者",
+  ]
 slug: "apple-iap-confuse"
 image: "https://img.ququ123.top/img/20250409180202077.png?imageView2/2/w/900/h/480"
 mermaid: true

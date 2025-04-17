@@ -16,6 +16,24 @@ keywords:
   - "人工智能"
   - "嵌入式开发"
   - "AI 小智"
+  - "ESP-IDF"
+  - "C++开发"
+  - "离线语音唤醒"
+  - "声纹识别"
+  - "大模型对话"
+  - "ESP-SR"
+  - "流式语音对话"
+  - "ESP32-S3"
+  - "MCU开发"
+  - "语音交互系统"
+  - "ESP32 voice assistant"
+  - "embedded AI"
+  - "IoT voice control"
+  - "ESP32 development"
+  - "speech recognition"
+  - "LLM on ESP32"
+  - "voice wake word"
+  - "ESP32 audio projects"
 slug: "esp32-xiaozi-voice-assistant"
 image: "https://img.ququ123.top/img/20250307121847669.png?imageView2/2/w/900/h/480"
 ---
@@ -23,9 +41,11 @@ image: "https://img.ququ123.top/img/20250307121847669.png?imageView2/2/w/900/h/4
 # ESP32 智能语音助手项目分析
 
 ## 一、项目概述
+
 这是一个基于 ESP32 的智能语音助手项目，支持多种开发板，具有语音交互、显示界面、网络连接等功能。项目采用 C++ 开发，使用 ESP-IDF 框架。
 
 ### 主要特点
+
 - 支持 Wi-Fi / ML307 Cat.1 4G 网络连接
 - 离线语音唤醒（基于 ESP-SR）
 - 多语言语音识别（支持国语、粤语、英语、日语、韩语）
@@ -37,6 +57,7 @@ image: "https://img.ququ123.top/img/20250307121847669.png?imageView2/2/w/900/h/4
 - 支持多种显示方案（OLED/LCD）
 
 ### 支持的开发板
+
 - 立创·实战派 ESP32-S3
 - 乐鑫 ESP32-S3-BOX3
 - M5Stack CoreS3
@@ -48,6 +69,7 @@ image: "https://img.ququ123.top/img/20250307121847669.png?imageView2/2/w/900/h/4
 ## 二、系统架构
 
 ### 文件结构
+
 ```
 main/
 ├── audio_codecs/          # 音频编解码器实现
@@ -84,6 +106,7 @@ Board (抽象基类)
 ## 三、运行流程
 
 ### 启动流程
+
 1. 系统初始化
 2. 硬件外设初始化
 3. 网络连接
@@ -103,6 +126,7 @@ void Application::Start() {
 ```
 
 ### 主循环流程
+
 1. 等待系统事件
 2. 处理音频输入
 3. 处理音频输出
@@ -113,11 +137,11 @@ void Application::MainLoop() {
     while (true) {
         // 等待事件
         auto bits = xEventGroupWaitBits(
-            SCHEDULE_EVENT | 
-            AUDIO_INPUT_READY_EVENT | 
+            SCHEDULE_EVENT |
+            AUDIO_INPUT_READY_EVENT |
             AUDIO_OUTPUT_READY_EVENT
         );
-        
+
         // 处理各类事件
         if (bits & AUDIO_INPUT_READY_EVENT) {
             InputAudio();
@@ -134,8 +158,8 @@ void Application::MainLoop() {
 
 ## 四、类继承体系
 
-
 ### 开发板抽象
+
 ```
 Board (抽象基类)
 ├── CommonBoard (通用开发板基类)
@@ -152,6 +176,7 @@ Board (抽象基类)
 ```
 
 ### 核心类关系
+
 ```
 Application (系统核心，单例)
 ├── Board (开发板抽象)
@@ -163,16 +188,18 @@ Application (系统核心，单例)
 ```
 
 ### 音频系统
+
 ```
 AudioCodec (抽象基类)
 ├── NoAudioCodec
-├── BoxAudioCodec 
+├── BoxAudioCodec
 ├── ES8311AudioCodec
 ├── ES8388AudioCodec
 └── CoreS3AudioCodec
 ```
 
 ### 显示系统
+
 ```
 Display (抽象基类)
 ├── NoDisplay
@@ -187,6 +214,7 @@ Display (抽象基类)
 ```
 
 ### 通信系统
+
 ```
 Protocol (抽象基类)
 ├── WebsocketProtocol
@@ -194,6 +222,7 @@ Protocol (抽象基类)
 ```
 
 ### 按键系统
+
 ```
 Button (抽象基类)
 ├── GpioButton (GPIO按键)
@@ -204,22 +233,23 @@ Button (抽象基类)
 ## 五、核心类方法
 
 ### Application 类
+
 ```cpp
 class Application {
 public:
     // 单例访问
     static Application& GetInstance();
-    
+
     // 状态管理
     DeviceState GetDeviceState();
     void SetDeviceState(DeviceState state);
-    
+
     // 核心功能
     void Start();
     void ToggleChatState();
     void StartListening();
     void StopListening();
-    
+
 private:
     // 内部处理
     void InputAudio();
@@ -229,6 +259,7 @@ private:
 ```
 
 ### Protocol 类
+
 ```cpp
 class Protocol {
 public:
@@ -238,7 +269,7 @@ public:
     virtual void SendAudio(const std::vector<uint8_t>& data) = 0;
     virtual void SendStartListening() = 0;
     virtual void SendStopListening() = 0;
-    
+
 protected:
     // 回调接口
     virtual void OnNetworkError() = 0;
@@ -248,6 +279,7 @@ protected:
 ```
 
 ### AudioCodec 类
+
 ```cpp
 class AudioCodec {
 public:
@@ -257,7 +289,7 @@ public:
     virtual void EnableOutput(bool enable) = 0;
     virtual int input_sample_rate() const = 0;
     virtual int output_sample_rate() const = 0;
-    
+
 protected:
     // 音频处理
     virtual void ProcessInput() = 0;
@@ -268,12 +300,15 @@ protected:
 ## 六、使用指南
 
 ### 环境配置
+
 1. **开发环境要求**
+
    - Cursor 或 VSCode
    - ESP-IDF 插件（SDK 5.3+）
    - 推荐使用 Linux 开发环境
 
 2. **配置步骤**
+
 ```bash
 # 配置项目
 idf.py menuconfig
@@ -288,12 +323,15 @@ idf.py flash
 ## 七、常见问题
 
 ### Q: 如何设定开发板？
+
 A: 开发板设定流程如下：
-- idf.py menuconfig 会更改sdkconfig （当然你也可以手动改其中的东西）
-- sdkconfig会声明开发板name
-- 在CMakeLists.txt中，会根据sdkconfig的BOARD_TYPE声明，选择对应的开发板的源文件加入到编译
-- 在每个开发板的cc文件中都有宏定义 DECLARE_BOARD，这样编译期就把全局的create_board函数设置为对应board的初始化了
-- 在main.cc中，调用Application::GetInstance().Start()，会调用Board::GetInstance()，就是调用create_board函数
+
+- idf.py menuconfig 会更改 sdkconfig （当然你也可以手动改其中的东西）
+- sdkconfig 会声明开发板 name
+- 在 CMakeLists.txt 中，会根据 sdkconfig 的 BOARD_TYPE 声明，选择对应的开发板的源文件加入到编译
+- 在每个开发板的 cc 文件中都有宏定义 DECLARE_BOARD，这样编译期就把全局的 create_board 函数设置为对应 board 的初始化了
+- 在 main.cc 中，调用 Application::GetInstance().Start()，会调用 Board::GetInstance()，就是调用 create_board 函数
 
 ### Q: 如何添加新开发板？
+
 A: 请参考[如何添加新开发板支持](https://www.ququ123.top/2025/03/esp32-add-new-board-support)

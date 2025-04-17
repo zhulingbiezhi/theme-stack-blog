@@ -18,6 +18,26 @@ keywords:
   - "highlight"
   - "TextMate"
   - "Scope"
+  - "VSCode 设置"
+  - "Go语言开发环境"
+  - "代码配色方案"
+  - "编辑器主题定制"
+  - "Material主题"
+  - "代码阅读体验"
+  - "语义高亮"
+  - "Cursor编辑器配置"
+  - "编程字体"
+  - "代码风格美化"
+  - "editor customization"
+  - "Go development"
+  - "code readability"
+  - "semantic highlighting"
+  - "token colorization"
+  - "VSCode settings.json"
+  - "theme configuration"
+  - "Material theme for Go"
+  - "Golang IDE setup"
+  - "programming font"
 slug: "vscode-cursor-theme-guide"
 image: "https://img.ququ123.top/img/download17.jpeg?imageView2/2/w/900/h/480"
 ---
@@ -30,9 +50,9 @@ image: "https://img.ququ123.top/img/download17.jpeg?imageView2/2/w/900/h/480"
 
 ### 1.1. 为什么代码高亮很重要？
 
-*   **提高可读性**：不同的颜色可以区分不同的代码元素，例如变量、函数、关键字等，使代码更易于阅读和理解。
-*   **减少错误**：清晰的高亮可以帮助你快速发现代码中的错误，例如拼写错误、语法错误等。
-*   **提升开发效率**：良好的代码高亮可以让你更快地定位到代码中的关键部分，从而提升开发效率。
+- **提高可读性**：不同的颜色可以区分不同的代码元素，例如变量、函数、关键字等，使代码更易于阅读和理解。
+- **减少错误**：清晰的高亮可以帮助你快速发现代码中的错误，例如拼写错误、语法错误等。
+- **提升开发效率**：良好的代码高亮可以让你更快地定位到代码中的关键部分，从而提升开发效率。
 
 ### 1.2. 什么是 Material Theme？
 
@@ -77,12 +97,12 @@ graph LR
 
 ### 3.1. 主题
 
--   **One Monokai (推荐)**
-    -   One Monokai 主题本身底色是深色系的，通常以黑色或深灰色为主背景，搭配高对比度的亮色来突出代码元素。
--   **其他主题推荐**
-    *   Material Theme: 提供了多种 Material Design 风格的主题，可以根据自己的喜好选择。
-    *   Dracula: 一款流行的暗色主题，拥有良好的色彩搭配和对比度。
-    *   Atom One Dark: Atom 编辑器的经典主题，简洁而舒适。
+- **One Monokai (推荐)**
+  - One Monokai 主题本身底色是深色系的，通常以黑色或深灰色为主背景，搭配高对比度的亮色来突出代码元素。
+- **其他主题推荐**
+  - Material Theme: 提供了多种 Material Design 风格的主题，可以根据自己的喜好选择。
+  - Dracula: 一款流行的暗色主题，拥有良好的色彩搭配和对比度。
+  - Atom One Dark: Atom 编辑器的经典主题，简洁而舒适。
 
 ### 3.2. 安装与启用主题
 
@@ -118,8 +138,8 @@ Ctrl+Shift+P, 输入 `setting.json` --> `open user setting`
 }
 ```
 
-*   `ui.semanticTokens`: 启用语义高亮，可以更准确地识别代码元素。
-*   `formatting.gofumpt`: 使用 `gofumpt` 进行代码格式化，比 `go fmt` 更加严格和美观。
+- `ui.semanticTokens`: 启用语义高亮，可以更准确地识别代码元素。
+- `formatting.gofumpt`: 使用 `gofumpt` 进行代码格式化，比 `go fmt` 更加严格和美观。
 
 ### 5.3. 代码行高度调整
 
@@ -137,27 +157,27 @@ Ctrl+Shift+P, 输入 `setting.json` --> `open user setting`
 
 ### 6.1. 函数名称（`entity.name.function`）
 
-*   原配色：`#cb78db`（淡紫色）
-*   建议配色：`#ff8b59`（橙色系）
-    *   理由：橙色在深色背景上非常醒目，且与 One Monokai 的整体风格搭配得很好，能够清晰突出函数名称。
-*   备选配色：`#ff79c6`（粉色系）
-    *   理由：粉色在深色背景上也很醒目，同时带有一种现代感。
+- 原配色：`#cb78db`（淡紫色）
+- 建议配色：`#ff8b59`（橙色系）
+  - 理由：橙色在深色背景上非常醒目，且与 One Monokai 的整体风格搭配得很好，能够清晰突出函数名称。
+- 备选配色：`#ff79c6`（粉色系）
+  - 理由：粉色在深色背景上也很醒目，同时带有一种现代感。
 
 ### 6.2. 变量（`variable.other`）
 
-*   原配色：`#b3995a`（淡黄色）
-*   建议配色：`#8be9fd`（天蓝色）
-    *   理由：天蓝色在深色背景上对比度高，且给人一种清新、易读的感觉，适合用于变量。
-*   备选配色：`#a1eef9`（浅蓝色）
-    *   理由：浅蓝色更加柔和，不会过于刺眼，同时也能很好地突出变量。
+- 原配色：`#b3995a`（淡黄色）
+- 建议配色：`#8be9fd`（天蓝色）
+  - 理由：天蓝色在深色背景上对比度高，且给人一种清新、易读的感觉，适合用于变量。
+- 备选配色：`#a1eef9`（浅蓝色）
+  - 理由：浅蓝色更加柔和，不会过于刺眼，同时也能很好地突出变量。
 
 ### 6.3. 字符串（`string`）
 
-*   原配色：`#67e220ad`（半透明的绿色）
-*   建议配色：`#50fa7b`（亮绿色）
-    *   理由：亮绿色在深色背景上对比度高，且绿色通常用于表示字符串，符合编程习惯。
-*   备选配色：`#aaffc3`（浅绿色）
-    *   理由：浅绿色更加柔和，适合长时间阅读，同时也能很好地突出字符串内容。
+- 原配色：`#67e220ad`（半透明的绿色）
+- 建议配色：`#50fa7b`（亮绿色）
+  - 理由：亮绿色在深色背景上对比度高，且绿色通常用于表示字符串，符合编程习惯。
+- 备选配色：`#aaffc3`（浅绿色）
+  - 理由：浅绿色更加柔和，适合长时间阅读，同时也能很好地突出字符串内容。
 
 ### 6.4. 配置部分
 
@@ -192,13 +212,13 @@ Ctrl+Shift+P, 输入 `setting.json` --> `open user setting`
 
 如果你还希望调整其他代码元素的颜色，以下是一些常见的建议：
 
-*   注释（`comment`）：可以使用灰色系，如 `#6272a4`，保持低调但清晰可读。
-*   关键字（`keyword`）：可以使用亮黄色系，如 `#f1fa8c`，突出关键字的重要性。
-*   类型（`entity.name.type`）：可以使用青色系，如 `#8be9fd`，与变量区分开来。
-*   常量（`constant.language`）：可以使用淡紫色系，如 `#bd93f9`，与函数名称形成对比，同时保持整体协调。
-*   数字（`constant.numeric`）：可以使用淡紫色系，如 `#bd93f9`，与函数名称形成对比，同时保持整体协调。
-*   Struct 名称 (`entity.name.struct`)：可以使用橙色系，如 `#ff8b59`，与函数名称保持一致。
-*   Interface 名称 (`entity.name.interface`)：可以使用青色系，如 `#8be9fd`，与类型保持一致。
+- 注释（`comment`）：可以使用灰色系，如 `#6272a4`，保持低调但清晰可读。
+- 关键字（`keyword`）：可以使用亮黄色系，如 `#f1fa8c`，突出关键字的重要性。
+- 类型（`entity.name.type`）：可以使用青色系，如 `#8be9fd`，与变量区分开来。
+- 常量（`constant.language`）：可以使用淡紫色系，如 `#bd93f9`，与函数名称形成对比，同时保持整体协调。
+- 数字（`constant.numeric`）：可以使用淡紫色系，如 `#bd93f9`，与函数名称形成对比，同时保持整体协调。
+- Struct 名称 (`entity.name.struct`)：可以使用橙色系，如 `#ff8b59`，与函数名称保持一致。
+- Interface 名称 (`entity.name.interface`)：可以使用青色系，如 `#8be9fd`，与类型保持一致。
 
 ### 6.6. 实践案例
 
@@ -254,26 +274,26 @@ Ctrl+Shift+P, 输入 `setting.json` --> `open user setting`
 
 ### 8.1. 高亮不生效
 
-*   检查主题是否已启用：确保已选择并启用了对应的主题。
-*   检查 `setting.json` 语法：确保 `setting.json` 文件没有语法错误。
-*   重启 VSCode/Cursor：有时候重启编辑器可以解决一些奇怪的问题。
-*   检查 `gopls` 是否正常工作：可以在 VSCode/Cursor 的 "输出" (Output) 面板中查看 `gopls` 的日志。
-*   检查 Scope 是否正确：使用 "Developer: Inspect Editor Tokens and Scopes" 命令检查 Scope 是否正确。
+- 检查主题是否已启用：确保已选择并启用了对应的主题。
+- 检查 `setting.json` 语法：确保 `setting.json` 文件没有语法错误。
+- 重启 VSCode/Cursor：有时候重启编辑器可以解决一些奇怪的问题。
+- 检查 `gopls` 是否正常工作：可以在 VSCode/Cursor 的 "输出" (Output) 面板中查看 `gopls` 的日志。
+- 检查 Scope 是否正确：使用 "Developer: Inspect Editor Tokens and Scopes" 命令检查 Scope 是否正确。
 
 ### 8.2. `gopls` 报错
 
-*   更新 `gopls`：确保你使用的 `gopls` 是最新版本。
-*   检查 Go 版本：确保你的 Go 版本符合 `gopls` 的要求。
-*   查看 `gopls` 日志：可以在 VSCode/Cursor 的 "输出" (Output) 面板中查看 `gopls` 的日志，了解具体的错误信息。
+- 更新 `gopls`：确保你使用的 `gopls` 是最新版本。
+- 检查 Go 版本：确保你的 Go 版本符合 `gopls` 的要求。
+- 查看 `gopls` 日志：可以在 VSCode/Cursor 的 "输出" (Output) 面板中查看 `gopls` 的日志，了解具体的错误信息。
 
 ## 9. 参考链接
 
-*   VSCode 官方文档: [https://code.visualstudio.com/docs](https://code.visualstudio.com/docs)
-*   Cursor 官方文档: [https://cursor.sh/docs](https://cursor.sh/docs)
-*   gopls 官方文档: [https://github.com/golang/tools/tree/master/gopls](https://github.com/golang/tools/tree/master/gopls)
-*   VSCode 语法高亮指南: [https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
-*   VSCode 语义高亮指南: [https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide)
-*   TextMate 语法规则: [https://macromates.com/manual/en/language_grammars](https://macromates.com/manual/en/language_grammars)
+- VSCode 官方文档: [https://code.visualstudio.com/docs](https://code.visualstudio.com/docs)
+- Cursor 官方文档: [https://cursor.sh/docs](https://cursor.sh/docs)
+- gopls 官方文档: [https://github.com/golang/tools/tree/master/gopls](https://github.com/golang/tools/tree/master/gopls)
+- VSCode 语法高亮指南: [https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
+- VSCode 语义高亮指南: [https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide)
+- TextMate 语法规则: [https://macromates.com/manual/en/language_grammars](https://macromates.com/manual/en/language_grammars)
 
 ## 10. 总结
 
@@ -281,7 +301,7 @@ Ctrl+Shift+P, 输入 `setting.json` --> `open user setting`
 
 希望本文能够帮助你打造一个既美观又实用的代码阅读环境。如果你想进一步学习代码高亮配置，可以参考以下资源：
 
-*   VSCode 官方文档
-*   TextMate 语法规则
+- VSCode 官方文档
+- TextMate 语法规则
 
 希望这些建议能帮助你更好地调整 VSCode 的代码高亮配色！

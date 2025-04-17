@@ -2,23 +2,51 @@
 title: "The Best OctoPrint Plugins And How To Install Them"
 date: "2022-08-12"
 slug: "best-octoprint-plugins"
-categories: 
-    - 3d-printing
+categories:
+  - 3d-printing
 keywords:
-    - octoprint
-    - 3d-printing
-    - plugins
-    - raspberry-pi
+  - octoprint
+  - 3d-printing
+  - plugins
+  - raspberry-pi
+  - octoprint monitoring
+  - 3d printer remote control
+  - print failure detection
+  - 3d printer camera setup
+  - bed visualization
+  - print time estimation
+  - 3d printing timelapse
+  - layer progress display
+  - octoprint themes
+  - firmware updater
+  - temperature monitoring
+  - smart power control
+  - octoprint plugin installation
+  - best octoprint plugins
+  - AI print monitoring
+  - progress bar plugin
+  - smart 3d printing assistant
+  - auto shutdown feature
+  - gcode editor
+  - touch screen interface
+  - region exclusion
+  - remote printer management
+  - octoprint dashboard
+  - print failure prevention
+  - wireless 3d printing
+  - octoprint mobile app
+  - print quality monitoring
 image: "https://www.obico.io/assets/images/octoprint-logo.png"
 description: "A comprehensive guide to the most popular OctoPrint plugins that enhance your 3D printing experience, including installation instructions and usage tips."
 ---
+
 # The Best OctoPrint Plugins And How To Install Them
 
 **This article was updated on August 12, 2022**
 
 [OctoPrint](https://octoprint.org/) is a web interface dedicated to making 3D printing easier by allowing you to control and monitor the process. The software allows you to access and control virtually any parameter on your printer.
 
-Moreover, in a heart-warming, traditional internet fashion, it’s open source.
+Moreover, in a heart-warming, traditional internet fashion, it's open source.
 
 There is a vast database of plugins developed by the 3D printing community that make your experience with [OctoPrint](https://octoprint.org/) even better, and here we list and explain the most popular ones.
 
@@ -59,7 +87,7 @@ If it sounds a bit too futuristic, that's what I thought at first too! While Obi
 
 ![Obico remote control](https://www.obico.io/assets/images/obico-for-octoprint-the-spaghetti-detective-plugin-849a7030a681a807950b81813666afb4.png)
 
-*Obico remote control (Source: [Obico](https://plugins.octoprint.org/plugins/obico/) page on OctoPrint Plugin Repository)*
+_Obico remote control (Source: [Obico](https://plugins.octoprint.org/plugins/obico/) page on OctoPrint Plugin Repository)_
 
 However, this plugin has one "but". It's open source, but to obtain additional features like email support and customization of the AI model, you have to get a paid subscription from [the official Obico website](https://www.obico.io/).
 
@@ -82,9 +110,9 @@ However, this plugin has one "but". It's open source, but to obtain additional f
 
 ![Bed Level Visualizer tab view](https://www.obico.io/assets/images/octoprint-bed-level-visualizer-plugin-7517f59af7f8612396ed567e6fd40df6.png)
 
-*Bed Level Visualizer tab view (Source: [Bed Level Visualizer](https://plugins.octoprint.org/plugins/bedlevelvisualizer/) page on OctoPrint Plugin Repository)*
+_Bed Level Visualizer tab view (Source: [Bed Level Visualizer](https://plugins.octoprint.org/plugins/bedlevelvisualizer/) page on OctoPrint Plugin Repository)_
 
-Nothing is more important to get the perfect print than your printer’s bed. Its surface needs to be spotless and leveled. If your printer has a mesh leveling feature, this OctoPrint plugin is one of the best tools for you.
+Nothing is more important to get the perfect print than your printer's bed. Its surface needs to be spotless and leveled. If your printer has a mesh leveling feature, this OctoPrint plugin is one of the best tools for you.
 
 [The Bed Level Visualizer](https://plugins.octoprint.org/plugins/bedlevelvisualizer/) converts data from the bed topography report into a comprehensive 3D map. Thanks to that, you get a visualization of the build plate.
 
@@ -104,7 +132,7 @@ Nothing is more important to get the perfect print than your printer’s bed. It
 
 ## Plugin #3: OctoPrint-PrintTimeGenius
 
-![PrintTimeGenius](https://img.ququ123.top/img/download%20(1).png)
+![PrintTimeGenius](<https://img.ququ123.top/img/download%20(1).png>)
 
 Time waits for no one, and every second counts when you have a bunch of prints queuing up.
 
@@ -134,7 +162,7 @@ The plugin allows you to move the extruder out of the frame and position the pri
 
 ![Octolapse gif](https://media.giphy.com/media/ot9qBu3pIpO3m9cgak/giphy-downsized-large.gif?cid=790b7611dacfd6e1ac2c1992924fb7f870796272c9799d5c&rid=giphy-downsized-large.gif&ct=g)
 
-*Video made with Octolapse by [WildRoseBuilds](https://www.youtube.com/c/WildRoseBuilds)*
+_Video made with Octolapse by [WildRoseBuilds](https://www.youtube.com/c/WildRoseBuilds)_
 
 ### Recommended for:
 
@@ -154,11 +182,11 @@ The plugin allows you to move the extruder out of the frame and position the pri
 
 ![DisplayLayerProgress pop-up](https://www.obico.io/assets/images/octoprint-display-layer-progress-plugin-472c3f246a0824647af9fa16694e8ca0.jpeg)
 
-*DisplayLayerProgress pop-up (Source: [DisplayLayerProgress](https://plugins.octoprint.org/plugins/DisplayLayerProgress) on OctoPrint Plugin Repository)*
+_DisplayLayerProgress pop-up (Source: [DisplayLayerProgress](https://plugins.octoprint.org/plugins/DisplayLayerProgress) on OctoPrint Plugin Repository)_
 
 This plugin informs you of print layer progress, estimated end time, and current height, all compressed into a simple progress bar.
 
-The information that [DisplayLayerProgress](https://plugins.octoprint.org/plugins/DisplayLayerProgress/) provides can be displayed on OctoPrint’s NavBar and as a tab title or as a pop-up. It even allows you to display progress percentage and current layer on the printer display itself!
+The information that [DisplayLayerProgress](https://plugins.octoprint.org/plugins/DisplayLayerProgress/) provides can be displayed on OctoPrint's NavBar and as a tab title or as a pop-up. It even allows you to display progress percentage and current layer on the printer display itself!
 
 ### Recommended for:
 
@@ -176,13 +204,13 @@ The information that [DisplayLayerProgress](https://plugins.octoprint.org/plugin
 
 ![Discord-inspired Dark Theme for OctoPrint](https://www.obico.io/assets/images/octoprint-themeify-plugin-057cceec33501ace0fb2c986137d8877.png)
 
-*Discord-inspired Dark Theme for OctoPrint (Source: [Themeify](https://plugins.octoprint.org/plugins/themeify/) on OctoPrint Plugin Repository)*
+_Discord-inspired Dark Theme for OctoPrint (Source: [Themeify](https://plugins.octoprint.org/plugins/themeify/) on OctoPrint Plugin Repository)_
 
-When you’re done messing with the OctoPrint settings, there’s room for adding a bit of personality to the interface.
+When you're done messing with the OctoPrint settings, there's room for adding a bit of personality to the interface.
 
 [Themeify](https://plugins.octoprint.org/plugins/themeify/) lets you modify the color palette and basically any other aspect of the browser display.
 
-The community is having a lot of fun with this plugin, so if you’re interested in making your OctoPrint shine like a diamond, be sure to visit [the forum thread](https://community.octoprint.org/t/pimp-my-web-interface/3349/32).
+The community is having a lot of fun with this plugin, so if you're interested in making your OctoPrint shine like a diamond, be sure to visit [the forum thread](https://community.octoprint.org/t/pimp-my-web-interface/3349/32).
 
 ### Recommended for:
 
@@ -222,11 +250,11 @@ Instead of getting printer-specific software or looking for a dedicated flashing
 
 ![NavBar Temp plugin settings window](https://www.obico.io/assets/images/octoprint-navbar-temp-plugin-0fbf7c6e13e0994afc44a619c8651ed3.png)
 
-*NavBar Temp plugin settings window (Source: [Navbar](https://plugins.octoprint.org/plugins/navbartemp/) page on OctoPrint Plugin Repository)*
+_NavBar Temp plugin settings window (Source: [Navbar](https://plugins.octoprint.org/plugins/navbartemp/) page on OctoPrint Plugin Repository)_
 
-The [Navbar Temp](https://plugins.octoprint.org/plugins/navbartemp/) tool displays bed, nozzle, and SoC (Raspberry Pi’s chip) temperature on NavBar.
+The [Navbar Temp](https://plugins.octoprint.org/plugins/navbartemp/) tool displays bed, nozzle, and SoC (Raspberry Pi's chip) temperature on NavBar.
 
-It is still in development, so as the authors say: “get ready for testing.”
+It is still in development, so as the authors say: "get ready for testing."
 
 ### Recommended for:
 
@@ -242,9 +270,9 @@ It is still in development, so as the authors say: “get ready for testing.”
 
 ## Plugin #9: OctoPrint-Dashboard
 
-![Dashboard’s user-friendly display](https://www.obico.io/assets/images/octoprint-dashboard-plugin-a7eee243dac22c2f4a65ea42fcf3382a.png)
+![Dashboard's user-friendly display](https://www.obico.io/assets/images/octoprint-dashboard-plugin-a7eee243dac22c2f4a65ea42fcf3382a.png)
 
-*Dashboard’s user-friendly display (Source: [OctoPrint-Dashboard](https://plugins.octoprint.org/plugins/dashboard/) page on OctoPrint Plugin Repository)*
+_Dashboard's user-friendly display (Source: [OctoPrint-Dashboard](https://plugins.octoprint.org/plugins/dashboard/) page on OctoPrint Plugin Repository)_
 
 [OctoPrint-Dashboard](https://plugins.octoprint.org/plugins/dashboard/) plugin gives you all the basic data of an ongoing print in a user-friendly and informative format.
 
@@ -272,7 +300,7 @@ It can be accompanied with [PrintTimeGenius](#plugin-3-octoprint-printtimegenius
 
 ## Plugin #10: Creality 2x temperature reporting fix
 
-Creality is renowned for making affordable desktop printers, but any Ender or CR series user knows all too well there is much space for improvement (and fun DIY’s!). With the release of the v2 line, we receive a set of new “challenges” to overcome.
+Creality is renowned for making affordable desktop printers, but any Ender or CR series user knows all too well there is much space for improvement (and fun DIY's!). With the release of the v2 line, we receive a set of new "challenges" to overcome.
 
 [Creality 2x temperature reporting fix](https://plugins.octoprint.org/plugins/ender3v2tempfix/) corrects temperature reporting for printers with a new mainboard: Ender-3 Pro's, Ender-3 Pro v2, CR-6 SE, and others.
 
@@ -290,7 +318,7 @@ Creality is renowned for making affordable desktop printers, but any Ender or CR
 
 ![Configure Heater Timeout](https://www.obico.io/assets/images/octoprint-heater-timeout-plugin-3a4c110446b5cc93b2ce35942b1738f2.png)
 
-*Configure Heater Timeout (Source: [HeaterTimeout](https://plugins.octoprint.org/plugins/HeaterTimeout/) page on OctoPrint Plugin Repository)*
+_Configure Heater Timeout (Source: [HeaterTimeout](https://plugins.octoprint.org/plugins/HeaterTimeout/) page on OctoPrint Plugin Repository)_
 
 Has the hot end of your 3D printer accidentally been left on? This is a serious issue as it can prove to be a fire hazard for your nozzle, your 3D printer, and even your house. The good news is that [HeaterTimeout](https://plugins.octoprint.org/plugins/HeaterTimeout/) has your back. OctoPrint will turn off the heat to your printer bed and nozzle after a predefined amount of time has passed to prevent thermal runaway.
 
@@ -314,7 +342,7 @@ Let's be honest, we all try our hardest to practice safe 3D printing, but mistak
 
 ![Gcode Editor plugin adds edit button in file list](https://www.obico.io/assets/images/octoprint-gcode-editor-plugin-ba675b0b885c6cc02aa8d6faaa3bab7c.png)
 
-*Gcode Editor plugin adds edit button in file list (Source: [GcodeEditor](https://plugins.octoprint.org/plugins/GcodeEditor/) page on OctoPrint Plugin Repository)*
+_Gcode Editor plugin adds edit button in file list (Source: [GcodeEditor](https://plugins.octoprint.org/plugins/GcodeEditor/) page on OctoPrint Plugin Repository)_
 
 The next plugin on the list is called [GcodeEditor](https://plugins.octoprint.org/plugins/GcodeEditor/), and it does exactly that. How many times has it happened to you that you sliced a model only to find that you have actually entered some wrong parameters? Maybe you wanted to print in PLA but selected ABS in your slicer. Or forgot to add a bed temperature when printing with ABS, or even just want to tweak the fan speed a bit. Well, in all these cases, you will have to reslice the model, unless there is a solution. The solution is GcodeEditor. This is one of the best OctoPrint plugins that enables you to make instant modifications to gcode files without having to re-slice the entire thing.
 
@@ -336,7 +364,7 @@ To access the Gcode editor, simply click the pencil icon that appears next to ea
 
 ![TouchUI control tab](https://www.obico.io/assets/images/octoprint-touch-ui-plugin-a31f87810c9a9e0b1884f7334e21df51.png)
 
-*TouchUI control tab (Source: [TouchUI](https://plugins.octoprint.org/plugins/touchui/) page on OctoPrint Plugin Repository)*
+_TouchUI control tab (Source: [TouchUI](https://plugins.octoprint.org/plugins/touchui/) page on OctoPrint Plugin Repository)_
 
 With the [TouchUI](https://plugins.octoprint.org/plugins/touchui/) plugin for OctoPrint, you can easily control your printer via a custom Graphic User Interface (GUI) that is installed on your display. This means you can use this plugin as a direct printer interface right beside your machine or on a smartphone/tablet to use on the fly. You can use TouchUI to move and home your machine's axes, set temperatures, change the fan speed, and more.
 
@@ -358,7 +386,7 @@ Using the TouchUI platform, you can quickly check on your prints and have full c
 
 ![Arc Welder tab](https://www.obico.io/assets/images/octoprint-arc-welder-plugin-0b5d065945730342088c8b79968369f2.jpg)
 
-*Arc Welder tab (Source: [Arc Welder](https://plugins.octoprint.org/plugins/arc_welder/) page on OctoPrint Plugin Repository)*
+_Arc Welder tab (Source: [Arc Welder](https://plugins.octoprint.org/plugins/arc_welder/) page on OctoPrint Plugin Repository)_
 
 3D printers use gcodes to take actions in order to print a part. Most commonly used gcodes are the G0 & G1 codes, used for linear movements, but sometimes G2 & G3 codes are also used for arc movements. Arc movements greatly help in the case of printing circular objects. Basically, it reduces the multiple linear movements required for regular gcodes with simpler arc movements. This substantially compresses the gcode file and also reduces stuttering due to tiny movements over a small space.
 
@@ -380,7 +408,7 @@ This is where the [Arc Welder](https://plugins.octoprint.org/plugins/arc_welder/
 
 ![BLTouch controls](https://www.obico.io/assets/images/octoprint-bl-touch-plugin-8c987f4813ee89850d9140b1d565acbd.png)
 
-*BLTouch controls (Source: [BLTouch](https://plugins.octoprint.org/plugins/BLTouch/) page on OctoPrint Plugin Repository)*
+_BLTouch controls (Source: [BLTouch](https://plugins.octoprint.org/plugins/BLTouch/) page on OctoPrint Plugin Repository)_
 
 For 3D printing, BLTouch sensors have gained a lot of attention in recent years because of their use in automatic bed leveling. [OctoPrint-BLTouch](https://plugins.octoprint.org/plugins/BLTouch/) plugin, while not adding any new features, allows you to control the BLTouch sensor through your OctoPrint interface.
 
@@ -404,7 +432,7 @@ Basically, the OctoPrint-BLTouch plugin gives your OctoPrint control interface a
 
 ![Simple Emergency Stop button on NavBar](https://www.obico.io/assets/images/octoprint-simple-emergency-stop-plugin-12e02f91b56c10cbfca6e39e2be01839.jpg)
 
-*Simple Emergency Stop button on NavBar (Source: [Simple Emergency Stop](https://plugins.octoprint.org/plugins/simpleemergencystop/) page on OctoPrint Plugin Repository)*
+_Simple Emergency Stop button on NavBar (Source: [Simple Emergency Stop](https://plugins.octoprint.org/plugins/simpleemergencystop/) page on OctoPrint Plugin Repository)_
 
 This is a really simple plugin (sorry, couldn't resist). But using a 3D printer is rarely simple and easy. Often, prints do not go as planned, and the natural impulse is to STOP them right away.
 
@@ -428,7 +456,7 @@ If your print screws up, hit EMERGENCY STOP.
 
 ![OctoPrint-Display-ETA status](https://www.obico.io/assets/images/octoprint-display-eta-plugin-3f81d72bc244ff9c6119f8181bd8e1b9.png)
 
-*OctoPrint-Display-ETA status (Source: [Display-ETA](https://plugins.octoprint.org/plugins/display_eta/) page on OctoPrint Plugin Repository)*
+_OctoPrint-Display-ETA status (Source: [Display-ETA](https://plugins.octoprint.org/plugins/display_eta/) page on OctoPrint Plugin Repository)_
 
 The [OctoPrint-Display-ETA](https://plugins.octoprint.org/plugins/display_eta/) plugin is a valuable addition to any printer's toolkit. Every user wants to know how much time is left until the task is done. Slicer software often has a print time estimate capability, however, these estimations are rarely accurate. AlexVerrico and Pablo Ventura's clever Display ETA plugin estimates the time remaining to finish the print and does so fairly accurately.
 
@@ -450,7 +478,7 @@ Monitoring the print and seeing how far it has progressed is no longer a bothers
 
 ![TP-Link Smartplug editor](https://www.obico.io/assets/images/octoprint-tp-link-smart-plug-plugin-041265369851a59ba0cf11e57e627656.png)
 
-*TP-Link Smartplug editor (Source: [TP link smartplug](https://plugins.octoprint.org/plugins/tplinksmartplug/) page on OctoPrint Plugin Repository)*
+_TP-Link Smartplug editor (Source: [TP link smartplug](https://plugins.octoprint.org/plugins/tplinksmartplug/) page on OctoPrint Plugin Repository)_
 
 [TP link smartplug](https://plugins.octoprint.org/plugins/tplinksmartplug/) is a great home automation plugin that allows you to control your 3D printer through voice commands. To use this, you will need the help of a WiFi smartplug from TP Link named KASA. Once you buy this device and install it, you will be able to control your 3D printer with voice commands over your smartphone through its app, and also through your Google Assistant or Amazon Alexa device.
 
@@ -474,7 +502,7 @@ You can use multiple such devices and by naming different 3D printers with diffe
 
 ![OctoPrint-CustomBackground](https://www.obico.io/assets/images/octoprint-background-plugin-6e9961422f56ed53ac7a0bba2eba9c8b.png)
 
-*OctoPrint-CustomBackground (Source: [CustomBackground](https://plugins.octoprint.org/plugins/custombackground/) page on OctoPrint Plugin Repository)*
+_OctoPrint-CustomBackground (Source: [CustomBackground](https://plugins.octoprint.org/plugins/custombackground/) page on OctoPrint Plugin Repository)_
 
 With [OctoPrint-CustomBackground](https://plugins.octoprint.org/plugins/custombackground/), you can change the image used as the background for the temperature output tab. You can replace the background image with a picture you clicked or created in any other picture app.
 
@@ -500,7 +528,7 @@ If you only have one printer, you can have some fun with the background images. 
 
 ![OctoPrint gcode viewer with Exclude Region plugin installed](https://www.obico.io/assets/images/octoprint-exclude-region-plugin-dc450285c0097ad61128f14ebbc142b0.png)
 
-*OctoPrint gcode viewer with Exclude Region plugin installed (Source: [Exclude Region](https://plugins.octoprint.org/plugins/excluderegion/) page on OctoPrint Plugin Repository)*
+_OctoPrint gcode viewer with Exclude Region plugin installed (Source: [Exclude Region](https://plugins.octoprint.org/plugins/excluderegion/) page on OctoPrint Plugin Repository)_
 
 Imagine a long-running, multi-part print job only to have one of the parts fail halfway through. If you let the project continue, the spaghetti-like extrusions in the failed area will stick to other areas and cause additional failures or blemishes (as well as wasted filament). You may need to spend hours removing spaghetti by hand or gluing the failed part to the print bed, which creates toxic fumes.
 
@@ -520,7 +548,7 @@ Imagine a long-running, multi-part print job only to have one of the parts fail 
 
 ## Plugin #21: OctoPrint-Enclosure
 
-*OctoPrint Enclosure main screen (Source: [Enclosure](https://plugins.octoprint.org/plugins/enclosure/) page on OctoPrint Plugin Repository)*
+_OctoPrint Enclosure main screen (Source: [Enclosure](https://plugins.octoprint.org/plugins/enclosure/) page on OctoPrint Plugin Repository)_
 
 As of now, most 3D printers have a protective enclosure to keep dust and dirt out. There are numerous other uses for an enclosure, including lighting, heaters for the enclosure, which controls temperature, or even more sensors. Taking control of the printer's environment will always lead to better quality prints.
 
@@ -552,6 +580,6 @@ Plugin Manager gives 3 options to install a plugin: from the listed plugin repos
 
 ![install plugin octoprint](https://plugins.octoprint.org/assets/img/help/install_plugin_from_repo.png)
 
-*Plugin Manager Browser (Source: [OctoPrint Help](https://plugins.octoprint.org/help/installation/))*
+_Plugin Manager Browser (Source: [OctoPrint Help](https://plugins.octoprint.org/help/installation/))_
 
 To install a plugin via command line, paste it into the command line of the host you installed OctoPrint on.

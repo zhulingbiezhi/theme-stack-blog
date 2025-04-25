@@ -1,7 +1,7 @@
 ---
 title: "VSCode Cline 插件：AI 辅助编程新体验"
 date: 2025-01-15
-draft: false
+mermaid: true
 categories:
   - "编程工具"
   - "AI 编程"

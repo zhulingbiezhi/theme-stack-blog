@@ -1,7 +1,7 @@
 ---
 title: "VSCode/Cursor Go 语言高亮高级配置：打造舒适的 Material 主题"
 date: 2025-03-21
-draft: false
+mermaid: true
 categories:
   - "VSCode"
   - "Cursor"

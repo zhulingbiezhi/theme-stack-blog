@@ -52,12 +52,23 @@
 <meta name="bytedance-verification-code" content="rr0mrnQIsV99xSttyBKD" />
 <meta name="360-site-verification" content="5b3e2696c1e86dcab859bafe70fc6062" />
 <meta name="yandex-verification" content="247bcf40438ae313" />
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) with GDPR compliance -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY9LX4PFXY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-MY9LX4PFXY');
+  // Set default consent state - will be updated by cookie consent
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+
+  gtag('config', 'G-MY9LX4PFXY', {
+    'anonymize_ip': true,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
 </script>

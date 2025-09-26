@@ -34,8 +34,14 @@
 备案号：
   <a target="_blank" href="http://beian.miit.gov.cn/" style="color:#0000ff"  rel="nofollow">赣ICP备2022002813号-2</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->| 
   <!-- <a target="_blank" href="http://beian.miit.gov.cn/portal/registerSystemInfo?recordcode=2022002813" style="color:#0000ff;text-decoration:none;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow"></a> -->
+</section>
 
-    </section>
+<!-- Footer Links -->
+<section class="footer-links">
+  {{ range .Site.Menus.footer }}
+    <a href="{{ .URL }}" style="color:#0000ff; margin-right: 15px;">{{ .Name }}</a>
+  {{ end }}
+</section>
 </section>
 
 <script>

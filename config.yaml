@@ -195,6 +195,28 @@ menu:
               newTab: flase
               icon: home
 
+    footer:
+        - identifier: privacy
+          name: 隐私政策
+          url: /privacy/
+          weight: 10
+        - identifier: terms
+          name: 服务条款
+          url: /terms/
+          weight: 20
+        - identifier: cookies
+          name: Cookie政策
+          url: /cookies/
+          weight: 30
+        - identifier: disclaimer
+          name: 免责声明
+          url: /disclaimer/
+          weight: 40
+        - identifier: contact
+          name: 联系我们
+          url: /contact/
+          weight: 50
+
     social:
         - identifier: github
           name: GitHub

@@ -2,7 +2,6 @@
 title: "远程游戏串流与组网技术完全指南：Moonlight、Sunshine、Tailscale 与 NAT 打洞详解"
 description: "深入解析 Moonlight/Sunshine 游戏串流技术，以及 Tailscale、ZeroTier、Headscale 等组网方案，帮助您构建高效的远程控制系统"
 date: 2025-09-26T10:00:00+08:00
-image: 
 math: 
 license: 
 hidden: false

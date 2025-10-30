@@ -1,0 +1,1104 @@
+<!-- MBTI 测试应用 Shortcode -->
+<div id="mbti-app" class="mbti-app-container">
+  <!-- 导航标签 -->
+  <div class="mbti-tabs">
+    <button class="mbti-tab active" onclick="showMBTIPage('home')">首页</button>
+    <button class="mbti-tab" onclick="showMBTIPage('knowledge')">理论知识</button>
+    <button class="mbti-tab" onclick="showMBTIPage('statistics')">数据统计</button>
+    <button class="mbti-tab" onclick="showMBTIPage('test')">开始测试</button>
+  </div>
+
+  <!-- 首页 -->
+  <div id="mbti-page-home" class="mbti-page active">
+    <div class="mbti-hero">
+      <h1>发现你的MBTI人格类型</h1>
+      <p class="mbti-subtitle">基于荣格心理学理论，探索你的性格特点、优势与发展方向</p>
+      <button class="mbti-btn-primary" onclick="showMBTIPage('test')">开始测试</button>
+    </div>
+
+    <div class="mbti-section">
+      <h2>MBTI的四个维度</h2>
+      <div class="mbti-grid-4">
+        <div class="mbti-feature-card">
+          <div class="mbti-feature-icon">1</div>
+          <h3>精力来源</h3>
+          <p class="mbti-feature-subtitle">外向(E) vs 内向(I)</p>
+          <p>了解你获取能量的方式，是倾向于外部世界还是内心世界</p>
+        </div>
+        <div class="mbti-feature-card">
+          <div class="mbti-feature-icon">2</div>
+          <h3>认知方式</h3>
+          <p class="mbti-feature-subtitle">实感(S) vs 直觉(N)</p>
+          <p>发现你如何接收和处理信息，是注重现实细节还是整体可能性</p>
+        </div>
+        <div class="mbti-feature-card">
+          <div class="mbti-feature-icon">3</div>
+          <h3>判断方式</h3>
+          <p class="mbti-feature-subtitle">思考(T) vs 情感(F)</p>
+          <p>探索你如何做决定，是基于逻辑分析还是个人价值观</p>
+        </div>
+        <div class="mbti-feature-card">
+          <div class="mbti-feature-icon">4</div>
+          <h3>生活方式</h3>
+          <p class="mbti-feature-subtitle">判断(J) vs 知觉(P)</p>
+          <p>了解你如何应对外部世界，是偏好计划有序还是灵活适应</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mbti-info-box">
+      <h2>为什么了解你的MBTI类型很重要？</h2>
+      <p>MBTI人格类型理论帮助你更好地理解自己的行为模式、决策方式和沟通风格。通过了解自己的人格类型，你可以：</p>
+      <ul class="mbti-list">
+        <li>提高自我认知和个人成长</li>
+        <li>改善人际关系和沟通效果</li>
+        <li>找到更适合的职业发展方向</li>
+        <li>理解并欣赏他人的差异</li>
+      </ul>
+      <button class="mbti-btn-secondary" onclick="showMBTIPage('knowledge')">了解更多</button>
+    </div>
+  </div>
+
+  <!-- 理论知识页 -->
+  <div id="mbti-page-knowledge" class="mbti-page">
+    <div class="mbti-header">
+      <h1>MBTI理论基础</h1>
+      <p>MBTI（迈尔斯-布里格斯类型指标）是一种人格分类理论，由凯瑟琳·布里格斯和她的女儿伊莎贝尔·布里格斯·迈尔斯基于荣格的心理学类型理论发展而来。</p>
+    </div>
+
+    <div class="mbti-card">
+      <h2>理论起源</h2>
+      <p>MBTI理论源于瑞士心理学家卡尔·荣格(Carl Jung)在1921年出版的《心理类型》一书。荣格提出人类在感知世界和做出判断时存在根本差异，这些差异形成了个体独特的人格类型。</p>
+      <p style="margin-top: 15px;">在20世纪40年代，凯瑟琳·布里格斯和伊莎贝尔·布里格斯·迈尔斯母女基于荣格的理论开发了MBTI测评工具，将人格分为16种不同的类型，每种类型由四个字母组成。</p>
+    </div>
+
+    <h2 style="margin-top: 30px;">人格的四个维度</h2>
+    
+    <div class="mbti-dimension-section">
+      <h3>精力来源</h3>
+      <div class="mbti-grid-2">
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>外向 (E)</h4>
+          <p>倾向于从外部世界获取能量，喜欢与人互动，思维和行动较为外显</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>喜欢社交活动</li>
+              <li>表达想法前会说出来</li>
+              <li>通过交流获得能量</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>内向 (I)</h4>
+          <p>倾向于从内心世界获取能量，喜欢独处或小团体，思维和行动较为内敛</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>享受独处时光</li>
+              <li>先思考后表达</li>
+              <li>在安静环境中恢复能量</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mbti-dimension-section">
+      <h3>认知方式</h3>
+      <div class="mbti-grid-2">
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>实感 (S)</h4>
+          <p>关注现实和具体信息，注重实际经验和细节</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>关注当下现实</li>
+              <li>注重细节和事实</li>
+              <li>喜欢具体明确的指示</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>直觉 (N)</h4>
+          <p>关注可能性和整体图景，注重抽象概念和未来展望</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>关注未来可能性</li>
+              <li>注重整体和模式</li>
+              <li>喜欢创新和概念</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mbti-dimension-section">
+      <h3>判断方式</h3>
+      <div class="mbti-grid-2">
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>思考 (T)</h4>
+          <p>基于逻辑和客观分析做决定，注重公平和原则</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>重视逻辑和客观性</li>
+              <li>分析利弊做决定</li>
+              <li>注重公平公正</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>情感 (F)</h4>
+          <p>基于个人价值观和他人感受做决定，注重和谐和同理心</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>重视人际关系和谐</li>
+              <li>考虑他人感受</li>
+              <li>基于价值观做决定</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mbti-dimension-section">
+      <h3>生活方式</h3>
+      <div class="mbti-grid-2">
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>判断 (J)</h4>
+          <p>偏好有计划、有组织的生活方式，喜欢做决定和完成事项</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>喜欢计划和组织</li>
+              <li>做决定后不易改变</li>
+              <li>重视截止日期</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mbti-card">
+          <h4><span class="mbti-dot"></span>知觉 (P)</h4>
+          <p>偏好灵活、自发的生活方式，喜欢保持开放性和适应性</p>
+          <div class="mbti-characteristics">
+            <p><strong>典型特征：</strong></p>
+            <ul>
+              <li>喜欢灵活应变</li>
+              <li>保持选项开放性</li>
+              <li>享受过程多于结果</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mbti-types-grid">
+      <h2>16种人格类型</h2>
+      <p>四个维度的不同组合形成了16种不同的人格类型，每种类型都有其独特的特征和行为模式：</p>
+      <div class="mbti-grid-types">
+        <div class="mbti-type-badge">ISTJ</div>
+        <div class="mbti-type-badge">ISFJ</div>
+        <div class="mbti-type-badge">INFJ</div>
+        <div class="mbti-type-badge">INTJ</div>
+        <div class="mbti-type-badge">ISTP</div>
+        <div class="mbti-type-badge">ISFP</div>
+        <div class="mbti-type-badge">INFP</div>
+        <div class="mbti-type-badge">INTP</div>
+        <div class="mbti-type-badge">ESTP</div>
+        <div class="mbti-type-badge">ESFP</div>
+        <div class="mbti-type-badge">ENFP</div>
+        <div class="mbti-type-badge">ENTP</div>
+        <div class="mbti-type-badge">ESTJ</div>
+        <div class="mbti-type-badge">ESFJ</div>
+        <div class="mbti-type-badge">ENFJ</div>
+        <div class="mbti-type-badge">ENTJ</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 数据统计页 -->
+  <div id="mbti-page-statistics" class="mbti-page">
+    <h1>测试数据分析</h1>
+    
+    <div class="mbti-stats-grid">
+      <div class="mbti-stat-card">
+        <div class="mbti-stat-value">12,432</div>
+        <div class="mbti-stat-label">已完成测试</div>
+      </div>
+      <div class="mbti-stat-card">
+        <div class="mbti-stat-value">12分钟</div>
+        <div class="mbti-stat-label">平均完成时间</div>
+      </div>
+      <div class="mbti-stat-card">
+        <div class="mbti-stat-value">ENFP</div>
+        <div class="mbti-stat-label">最常见类型</div>
+      </div>
+      <div class="mbti-stat-card">
+        <div class="mbti-stat-value">INFJ</div>
+        <div class="mbti-stat-label">最罕见类型</div>
+      </div>
+    </div>
+
+    <div class="mbti-grid-2">
+      <div class="mbti-card">
+        <h2>各维度分布比例</h2>
+        <div class="mbti-chart">
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">外向(E)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 65%"></div></div>
+            <span class="mbti-bar-value">65%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">内向(I)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 35%"></div></div>
+            <span class="mbti-bar-value">35%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">实感(S)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 42%"></div></div>
+            <span class="mbti-bar-value">42%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">直觉(N)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 58%"></div></div>
+            <span class="mbti-bar-value">58%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">思考(T)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 38%"></div></div>
+            <span class="mbti-bar-value">38%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">情感(F)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 62%"></div></div>
+            <span class="mbti-bar-value">62%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">判断(J)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 47%"></div></div>
+            <span class="mbti-bar-value">47%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">知觉(P)</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill" style="width: 53%"></div></div>
+            <span class="mbti-bar-value">53%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mbti-card">
+        <h2>人格类型分布</h2>
+        <div class="mbti-chart">
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">ENFP</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill mbti-bar-violet" style="width: 72%"></div></div>
+            <span class="mbti-bar-value">18%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">其他</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill mbti-bar-violet" style="width: 60%"></div></div>
+            <span class="mbti-bar-value">15%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">ISTJ</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill mbti-bar-violet" style="width: 56%"></div></div>
+            <span class="mbti-bar-value">14%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">INFJ</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill mbti-bar-violet" style="width: 48%"></div></div>
+            <span class="mbti-bar-value">12%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">ESFJ</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill mbti-bar-violet" style="width: 44%"></div></div>
+            <span class="mbti-bar-value">11%</span>
+          </div>
+          <div class="mbti-bar-item">
+            <span class="mbti-bar-label">INTP</span>
+            <div class="mbti-bar-bg"><div class="mbti-bar-fill mbti-bar-violet" style="width: 36%"></div></div>
+            <span class="mbti-bar-value">9%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mbti-card" style="margin-top: 30px;">
+      <h2>用户特征分析</h2>
+      <div class="mbti-grid-2">
+        <div>
+          <h3>最常见的职业领域</h3>
+          <ul class="mbti-list">
+            <li>教育/咨询</li>
+            <li>创意行业</li>
+            <li>技术开发</li>
+            <li>医疗健康</li>
+            <li>商业管理</li>
+          </ul>
+        </div>
+        <div>
+          <h3>最常报告的优势</h3>
+          <ul class="mbti-list">
+            <li>共情能力</li>
+            <li>创造力</li>
+            <li>逻辑分析</li>
+            <li>执行力</li>
+            <li>适应性</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 测试页 -->
+  <div id="mbti-page-test" class="mbti-page">
+    <div class="mbti-test-container">
+      <h1>MBTI 人格测试</h1>
+      <p class="mbti-test-intro">请根据你的真实感受回答以下问题，共 20 题</p>
+      
+      <div id="mbti-test-content">
+        <div class="mbti-progress-bar">
+          <div id="mbti-progress" class="mbti-progress-fill"></div>
+        </div>
+        <p class="mbti-progress-text">进度: <span id="mbti-current-question">1</span> / 20</p>
+        
+        <div id="mbti-question-card" class="mbti-question-card">
+          <h3 id="mbti-question-text"></h3>
+          <div class="mbti-options">
+            <button class="mbti-option-btn" onclick="answerQuestion('A')">A. <span id="mbti-option-a"></span></button>
+            <button class="mbti-option-btn" onclick="answerQuestion('B')">B. <span id="mbti-option-b"></span></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mbti-test-result" class="mbti-result" style="display: none;">
+        <h2>你的 MBTI 类型是：<span id="mbti-result-type" class="mbti-result-type"></span></h2>
+        <div id="mbti-result-description" class="mbti-result-desc"></div>
+        <div class="mbti-result-scores">
+          <h3>各维度得分：</h3>
+          <div id="mbti-dimension-scores"></div>
+        </div>
+        <button class="mbti-btn-primary" onclick="restartTest()">重新测试</button>
+        <button class="mbti-btn-secondary" onclick="showMBTIPage('knowledge')">了解更多</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.mbti-app-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.mbti-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.mbti-tab {
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.3s;
+}
+
+.mbti-tab:hover {
+  color: #3b82f6;
+}
+
+.mbti-tab.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.mbti-page {
+  display: none;
+}
+
+.mbti-page.active {
+  display: block;
+}
+
+.mbti-hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.mbti-hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.mbti-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.mbti-btn-primary {
+  background: #3b82f6;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.mbti-btn-primary:hover {
+  background: #2563eb;
+}
+
+.mbti-btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
+}
+
+.mbti-btn-secondary:hover {
+  background: #d1d5db;
+}
+
+.mbti-section {
+  margin: 60px 0;
+}
+
+.mbti-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #1f2937;
+}
+
+.mbti-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.mbti-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.mbti-feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mbti-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.mbti-feature-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.mbti-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.mbti-feature-subtitle {
+  color: #3b82f6;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.mbti-feature-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.mbti-info-box {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.mbti-info-box h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.mbti-info-box p {
+  color: #4b5563;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mbti-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.mbti-list li {
+  padding: 8px 0 8px 30px;
+  position: relative;
+  color: #374151;
+}
+
+.mbti-list li::before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+}
+
+.mbti-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.mbti-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+.mbti-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.mbti-card h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+}
+
+.mbti-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.mbti-dot {
+  width: 12px;
+  height: 12px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.mbti-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mbti-header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+.mbti-header p {
+  color: #6b7280;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mbti-dimension-section {
+  margin: 40px 0;
+}
+
+.mbti-dimension-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.mbti-characteristics {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mbti-characteristics p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.mbti-characteristics ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mbti-characteristics li {
+  padding: 4px 0 4px 20px;
+  position: relative;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.mbti-characteristics li::before {
+  content: "•";
+  color: #3b82f6;
+  position: absolute;
+  left: 0;
+}
+
+.mbti-types-grid {
+  background: #f9fafb;
+  padding: 40px;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.mbti-types-grid h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+.mbti-types-grid p {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.mbti-grid-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+}
+
+.mbti-type-badge {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  color: #3b82f6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.mbti-type-badge:hover {
+  transform: scale(1.05);
+}
+
+.mbti-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.mbti-stat-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.mbti-stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.mbti-stat-label {
+  color: #6b7280;
+}
+
+.mbti-chart {
+  margin-top: 20px;
+}
+
+.mbti-bar-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 60px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mbti-bar-label {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.mbti-bar-bg {
+  height: 24px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mbti-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  transition: width 1s ease-in-out;
+}
+
+.mbti-bar-violet {
+  background: linear-gradient(90deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.mbti-bar-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  text-align: right;
+}
+
+.mbti-test-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mbti-test-intro {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.mbti-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.mbti-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  transition: width 0.3s;
+}
+
+.mbti-progress-text {
+  text-align: right;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.mbti-question-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mbti-question-card h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 30px;
+}
+
+.mbti-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mbti-option-btn {
+  background: white;
+  border: 2px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.mbti-option-btn:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.mbti-result {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.mbti-result h2 {
+  font-size: 1.75rem;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.mbti-result-type {
+  color: #3b82f6;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+  margin: 20px 0;
+}
+
+.mbti-result-desc {
+  color: #6b7280;
+  line-height: 1.8;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.mbti-result-scores {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.mbti-result-scores h3 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .mbti-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .mbti-grid-4, .mbti-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .mbti-tabs {
+    overflow-x: auto;
+  }
+}
+</style>
+
+<script>
+// MBTI 测试题目
+const mbtiQuestions = [
+  { question: "在社交场合中，你更倾向于：", optionA: "主动与他人交谈", optionB: "等待他人来找我交谈", dimension: "EI" },
+  { question: "你更喜欢：", optionA: "在热闹的聚会中度过周末", optionB: "独自在家安静地度过周末", dimension: "EI" },
+  { question: "在解决问题时，你更依赖：", optionA: "过往的经验和事实", optionB: "直觉和可能性", dimension: "SN" },
+  { question: "你更注重：", optionA: "具体的细节和现实", optionB: "整体的概念和未来", dimension: "SN" },
+  { question: "在做决定时，你更看重：", optionA: "逻辑和客观分析", optionB: "个人价值观和他人感受", dimension: "TF" },
+  { question: "别人可能会说你是一个：", optionA: "理性且公正的人", optionB: "富有同情心的人", dimension: "TF" },
+  { question: "你更喜欢：", optionA: "提前计划好所有事情", optionB: "保持灵活，随机应变", dimension: "JP" },
+  { question: "在工作中，你更倾向于：", optionA: "按照计划有序进行", optionB: "享受过程，灵活调整", dimension: "JP" },
+  { question: "在团队活动中，你通常：", optionA: "活跃地参与讨论", optionB: "认真倾听他人意见", dimension: "EI" },
+  { question: "你更倾向于：", optionA: "通过实际行动学习", optionB: "通过阅读和思考学习", dimension: "SN" },
+  { question: "当朋友遇到问题时，你更可能：", optionA: "提供实际的解决方案", optionB: "给予情感上的支持", dimension: "TF" },
+  { question: "对于截止日期，你通常：", optionA: "提前完成任务", optionB: "在截止日期前完成即可", dimension: "JP" },
+  { question: "你更喜欢的工作环境是：", optionA: "充满活力，与人互动频繁", optionB: "安静独立，可以专注工作", dimension: "EI" },
+  { question: "在学习新事物时，你更喜欢：", optionA: "循序渐进，打好基础", optionB: "快速掌握要点，理解原理", dimension: "SN" },
+  { question: "评价一个决定时，你更关注：", optionA: "是否合理有效", optionB: "是否对所有人都公平", dimension: "TF" },
+  { question: "你的生活方式更像：", optionA: "井井有条，按部就班", optionB: "随性自由，充满变化", dimension: "JP" },
+  { question: "下班后，你更倾向于：", optionA: "约朋友聚会聊天", optionB: "独自放松，恢复精力", dimension: "EI" },
+  { question: "你更相信：", optionA: "眼见为实的事实", optionB: "第六感和直觉", dimension: "SN" },
+  { question: "在争论中，你更注重：", optionA: "谁的论点更有道理", optionB: "如何维护关系和谐", dimension: "TF" },
+  { question: "旅行时，你更喜欢：", optionA: "详细规划行程安排", optionB: "随心所欲，走到哪算哪", dimension: "JP" }
+];
+
+let currentQuestion = 0;
+let answers = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
+function showMBTIPage(pageName) {
+  // 隐藏所有页面
+  document.querySelectorAll('.mbti-page').forEach(page => {
+    page.classList.remove('active');
+  });
+  
+  // 隐藏所有标签active状态
+  document.querySelectorAll('.mbti-tab').forEach(tab => {
+    tab.classList.remove('active');
+  });
+  
+  // 显示选中的页面
+  document.getElementById('mbti-page-' + pageName).classList.add('active');
+  
+  // 激活对应标签
+  document.querySelectorAll('.mbti-tab').forEach((tab, index) => {
+    const pages = ['home', 'knowledge', 'statistics', 'test'];
+    if (pages[index] === pageName) {
+      tab.classList.add('active');
+    }
+  });
+  
+  // 如果是测试页面，初始化测试
+  if (pageName === 'test') {
+    initTest();
+  }
+}
+
+function initTest() {
+  currentQuestion = 0;
+  answers = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+  document.getElementById('mbti-test-content').style.display = 'block';
+  document.getElementById('mbti-test-result').style.display = 'none';
+  showQuestion();
+}
+
+function showQuestion() {
+  if (currentQuestion >= mbtiQuestions.length) {
+    showResult();
+    return;
+  }
+  
+  const question = mbtiQuestions[currentQuestion];
+  document.getElementById('mbti-question-text').textContent = question.question;
+  document.getElementById('mbti-option-a').textContent = question.optionA;
+  document.getElementById('mbti-option-b').textContent = question.optionB;
+  document.getElementById('mbti-current-question').textContent = currentQuestion + 1;
+  
+  const progress = ((currentQuestion) / mbtiQuestions.length) * 100;
+  document.getElementById('mbti-progress').style.width = progress + '%';
+}
+
+function answerQuestion(choice) {
+  const question = mbtiQuestions[currentQuestion];
+  const dimension = question.dimension;
+  
+  if (choice === 'A') {
+    answers[dimension[0]]++;
+  } else {
+    answers[dimension[1]]++;
+  }
+  
+  currentQuestion++;
+  showQuestion();
+}
+
+function showResult() {
+  document.getElementById('mbti-test-content').style.display = 'none';
+  document.getElementById('mbti-test-result').style.display = 'block';
+  document.getElementById('mbti-progress').style.width = '100%';
+  
+  const type = 
+    (answers.E > answers.I ? 'E' : 'I') +
+    (answers.S > answers.N ? 'S' : 'N') +
+    (answers.T > answers.F ? 'T' : 'F') +
+    (answers.J > answers.P ? 'J' : 'P');
+  
+  document.getElementById('mbti-result-type').textContent = type;
+  
+  const descriptions = {
+    'ISTJ': '检查员 - 认真负责，注重细节，值得信赖的实干家',
+    'ISFJ': '守护者 - 温和体贴，乐于助人，可靠的支持者',
+    'INFJ': '倡导者 - 理想主义，富有洞察力，追求有意义的人生',
+    'INTJ': '建筑师 - 独立思考，战略规划，追求完美的创新者',
+    'ISTP': '鉴赏家 - 灵活务实，善于解决问题的技术专家',
+    'ISFP': '探险家 - 温和友善，热爱自由，富有艺术气质',
+    'INFP': '调停者 - 理想主义，富有创造力，追求真实自我',
+    'INTP': '逻辑学家 - 理性思考，热爱知识，富有创新精神',
+    'ESTP': '企业家 - 精力充沛，善于冒险，追求刺激的行动派',
+    'ESFP': '表演者 - 热情开朗，享受当下，生活的享乐家',
+    'ENFP': '竞选者 - 热情洋溢，富有创造力，充满可能性',
+    'ENTP': '辩论家 - 聪明机智，喜欢挑战，思维敏捷的创新者',
+    'ESTJ': '总经理 - 务实高效，善于管理，可靠的组织者',
+    'ESFJ': '执政官 - 热心助人，注重和谐，受欢迎的社交家',
+    'ENFJ': '主人公 - 富有魅力，善于激励他人，天生的领导者',
+    'ENTJ': '指挥官 - 果断自信，善于规划，目标导向的领导者'
+  };
+  
+  document.getElementById('mbti-result-description').innerHTML = 
+    '<p>' + descriptions[type] + '</p>';
+  
+  const scoresHTML = `
+    <div class="mbti-bar-item">
+      <span class="mbti-bar-label">外向(E) vs 内向(I)</span>
+      <div class="mbti-bar-bg">
+        <div class="mbti-bar-fill" style="width: ${(answers.E/(answers.E+answers.I)*100)}%"></div>
+      </div>
+      <span class="mbti-bar-value">${answers.E} : ${answers.I}</span>
+    </div>
+    <div class="mbti-bar-item">
+      <span class="mbti-bar-label">实感(S) vs 直觉(N)</span>
+      <div class="mbti-bar-bg">
+        <div class="mbti-bar-fill" style="width: ${(answers.S/(answers.S+answers.N)*100)}%"></div>
+      </div>
+      <span class="mbti-bar-value">${answers.S} : ${answers.N}</span>
+    </div>
+    <div class="mbti-bar-item">
+      <span class="mbti-bar-label">思考(T) vs 情感(F)</span>
+      <div class="mbti-bar-bg">
+        <div class="mbti-bar-fill" style="width: ${(answers.T/(answers.T+answers.F)*100)}%"></div>
+      </div>
+      <span class="mbti-bar-value">${answers.T} : ${answers.F}</span>
+    </div>
+    <div class="mbti-bar-item">
+      <span class="mbti-bar-label">判断(J) vs 知觉(P)</span>
+      <div class="mbti-bar-bg">
+        <div class="mbti-bar-fill" style="width: ${(answers.J/(answers.J+answers.P)*100)}%"></div>
+      </div>
+      <span class="mbti-bar-value">${answers.J} : ${answers.P}</span>
+    </div>
+  `;
+  
+  document.getElementById('mbti-dimension-scores').innerHTML = scoresHTML;
+}
+
+function restartTest() {
+  initTest();
+}
+
+// 初始化
+window.addEventListener('load', function() {
+  showMBTIPage('home');
+});
+</script>
+

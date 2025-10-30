@@ -1,0 +1,76 @@
+{{- $id := printf "tabs-%d" (now.Unix) -}}
+
+<div class="custom-tabs" style="margin: 20px 0;">
+  <div class="tab-buttons" style="display: flex; gap: 5px; border-bottom: 2px solid #e0e0e0; margin-bottom: 20px;">
+    {{- range $index, $tab := split (.Inner) "###TAB###" -}}
+      {{- if $tab -}}
+        {{- $parts := split $tab "###CONTENT###" -}}
+        {{- $tabTitle := index $parts 0 | trim -}}
+        <button 
+          onclick="showTab('{{ $id }}', {{ $index }})"
+          id="{{ $id }}-btn-{{ $index }}"
+          class="tab-button"
+          style="padding: 10px 20px;
+                 border: none;
+                 background: transparent;
+                 cursor: pointer;
+                 font-weight: 500;
+                 color: #666;
+                 border-bottom: 2px solid transparent;
+                 transition: all 0.3s;">
+          {{ $tabTitle }}
+        </button>
+      {{- end -}}
+    {{- end -}}
+  </div>
+  
+  <div class="tab-contents">
+    {{- range $index, $tab := split (.Inner) "###TAB###" -}}
+      {{- if $tab -}}
+        {{- $parts := split $tab "###CONTENT###" -}}
+        {{- $tabContent := index $parts 1 | trim -}}
+        <div 
+          id="{{ $id }}-content-{{ $index }}"
+          class="tab-content"
+          style="display: none;">
+          {{ $tabContent | markdownify }}
+        </div>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</div>
+
+<script>
+(function() {
+  function showTab(tabId, index) {
+    // 隐藏所有内容
+    const contents = document.querySelectorAll('[id^="' + tabId + '-content-"]');
+    contents.forEach(c => c.style.display = 'none');
+    
+    // 重置所有按钮样式
+    const buttons = document.querySelectorAll('[id^="' + tabId + '-btn-"]');
+    buttons.forEach(b => {
+      b.style.color = '#666';
+      b.style.borderBottomColor = 'transparent';
+    });
+    
+    // 显示选中的内容
+    const selectedContent = document.getElementById(tabId + '-content-' + index);
+    if (selectedContent) selectedContent.style.display = 'block';
+    
+    // 高亮选中的按钮
+    const selectedButton = document.getElementById(tabId + '-btn-' + index);
+    if (selectedButton) {
+      selectedButton.style.color = '#667eea';
+      selectedButton.style.borderBottomColor = '#667eea';
+    }
+  }
+  
+  // 默认显示第一个标签
+  showTab('{{ $id }}', 0);
+  
+  // 导出到全局作用域
+  window.showTab = showTab;
+})();
+</script>
+

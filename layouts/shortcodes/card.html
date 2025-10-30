@@ -1,0 +1,21 @@
+{{- $title := .Get "title" -}}
+{{- $color := .Get "color" | default "#667eea" -}}
+{{- $icon := .Get "icon" | default "✨" -}}
+
+<div style="background: linear-gradient(135deg, {{ $color }} 0%, {{ $color }}dd 100%); 
+            padding: 25px; 
+            border-radius: 12px; 
+            color: white; 
+            margin: 20px 0; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+    <span>{{ $icon }}</span>
+    <span>{{ $title }}</span>
+  </h3>
+  <div style="line-height: 1.6;">
+    {{- with .Inner -}}
+      {{ . | markdownify }}
+    {{- end -}}
+  </div>
+</div>
+

@@ -1,0 +1,36 @@
+{{- $type := .Get "type" | default "info" -}}
+{{- $title := .Get "title" -}}
+
+{{- $colors := dict 
+  "info" "#3498db"
+  "success" "#2ecc71" 
+  "warning" "#f39c12"
+  "danger" "#e74c3c"
+-}}
+
+{{- $icons := dict
+  "info" "ℹ️"
+  "success" "✅"
+  "warning" "⚠️"
+  "danger" "❌"
+-}}
+
+{{- $color := index $colors $type -}}
+{{- $icon := index $icons $type -}}
+
+<div style="border-left: 4px solid {{ $color }};
+            background: {{ $color }}15;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;">
+  <div style="display: flex; align-items: flex-start; gap: 10px;">
+    <span style="font-size: 1.2em;">{{ $icon }}</span>
+    <div style="flex: 1;">
+      {{- if $title -}}
+      <strong style="color: {{ $color }}; display: block; margin-bottom: 8px;">{{ $title }}</strong>
+      {{- end -}}
+      <div>{{ .Inner | markdownify }}</div>
+    </div>
+  </div>
+</div>
+

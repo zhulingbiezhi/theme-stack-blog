@@ -80,5 +80,16 @@
                 <span>{{ T "darkMode" }}</span>
             </li>
         {{ end }}
+        
+        {{ if hugo.IsMultilingual }}
+            {{ range .Translations }}
+                <li>
+                    <a href="{{ .RelPermalink }}" onclick="localStorage.setItem('userPreferredLang', '{{ .Language.Lang }}');">
+                        {{ partial "helper/icon" "link" }}
+                        <span>{{ .Language.LanguageName }}</span>
+                    </a>
+                </li>
+            {{ end }}
+        {{ end }}
     </ol>
 </aside>

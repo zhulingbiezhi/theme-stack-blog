@@ -1,11 +1,10 @@
 ---
 title: About
-description: ququ's blog
+description: About Code & History
 date: '2020-03-28'
 aliases:
   - about-us
   - about-hugo
-  - contact
 lastmod: '2020-10-09'
 menu:
     main: 

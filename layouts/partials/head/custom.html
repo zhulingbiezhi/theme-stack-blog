@@ -1,3 +1,39 @@
+<!-- 自动语言检测和跳转脚本 -->
+<script>
+    (function() {
+        // 检查是否已经手动选择过语言（使用 localStorage 保存用户偏好）
+        var userPreferredLang = localStorage.getItem('userPreferredLang');
+        
+        // 如果用户已经手动选择过语言，则不自动跳转
+        if (userPreferredLang) {
+            return;
+        }
+        
+        // 获取浏览器语言设置
+        var browserLang = navigator.language || navigator.userLanguage;
+        var currentPath = window.location.pathname;
+        
+        // 检测中文语言（包括 zh, zh-CN, zh-TW 等）
+        var isChineseBrowser = browserLang.toLowerCase().startsWith('zh');
+        
+        // 检测当前页面语言
+        var isEnglishPage = currentPath.startsWith('/en/');
+        var isChinesePage = !isEnglishPage; // 默认中文
+        
+        // 如果浏览器是中文但当前是英文页面，尝试跳转到中文版本
+        if (isChineseBrowser && isEnglishPage) {
+            var chinesePath = currentPath.replace(/^\/en\//, '/');
+            // 使用 replace 而不是 href，这样不会在历史记录中留下额外记录
+            window.location.replace(chinesePath);
+        }
+        // 如果浏览器不是中文但当前是中文页面，尝试跳转到英文版本
+        else if (!isChineseBrowser && isChinesePage && currentPath !== '/') {
+            var englishPath = '/en' + currentPath;
+            window.location.replace(englishPath);
+        }
+    })();
+</script>
+
 <script>
     var _hmt = _hmt || [];
     (function() {

@@ -1,9 +1,5 @@
 baseurl: https://www.ququ123.top
-languageCode: zh-cn
 theme: hugo-theme-stack
-pagination:
-  pageSize: 10
-title: 代码与历史
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
@@ -15,9 +11,55 @@ googleAnalytics:
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk
 DefaultContentLanguage: zh-cn
 
-# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
-# This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage: true
+# Multilingual configuration
+languages:
+  zh-cn:
+    languageCode: zh-cn
+    languageName: 简体中文
+    title: 代码与历史
+    weight: 1
+    hasCJKLanguage: true
+    params:
+      description: "分享代码技术与历史见解"
+      dateFormat:
+        published: 2006年01月02日
+        lastUpdated: 2006年01月02日 15点04分05秒
+    
+  en:
+    languageCode: en
+    languageName: English
+    title: Code & History
+    weight: 2
+    params:
+      description: "Sharing code technology and historical insights"
+      dateFormat:
+        published: Jan 02, 2006
+        lastUpdated: Jan 02, 2006 15:04 MST
+    menu:
+      footer:
+        - identifier: privacy
+          name: Privacy Policy
+          url: /en/privacy/
+          weight: 10
+        - identifier: terms
+          name: Terms of Service
+          url: /en/terms/
+          weight: 20
+        - identifier: cookies
+          name: Cookie Policy
+          url: /en/cookies/
+          weight: 30
+        - identifier: disclaimer
+          name: Disclaimer
+          url: /en/disclaimer/
+          weight: 40
+        - identifier: contact
+          name: Contact Us
+          url: /en/contact/
+          weight: 50
+
+pagination:
+  pagerSize: 10
 
 sitemap:
   changefreq: daily
@@ -44,6 +86,8 @@ params:
     dateFormat:
         published: 2006年01月02日
         lastUpdated: 2006年01月02日 15点04分05秒
+    
+    # Language-specific date format will override this in menu section below
 
     sidebar:
         emoji: 🍥

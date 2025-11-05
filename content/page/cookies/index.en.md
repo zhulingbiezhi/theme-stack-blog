@@ -3,11 +3,7 @@ title: Cookie Policy
 description: Code & History Cookie Policy
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -70
-        params:
-            icon: hash
+slug: cookies
 ---
 
 # Cookie Policy

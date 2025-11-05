@@ -3,11 +3,7 @@ title: Cookie政策
 description: 代码与历史网站Cookie使用政策
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -70
-        params:
-            icon: hash
+slug: cookies
 ---
 
 # Cookie政策

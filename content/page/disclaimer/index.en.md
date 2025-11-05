@@ -3,11 +3,7 @@ title: Disclaimer
 description: Code & History Disclaimer
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -65
-        params:
-            icon: copyright
+slug: disclaimer
 ---
 
 # Disclaimer

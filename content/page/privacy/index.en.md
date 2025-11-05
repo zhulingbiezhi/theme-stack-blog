@@ -3,11 +3,7 @@ title: Privacy Policy
 description: Code & History Privacy Policy
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -80
-        params:
-            icon: user
+slug: privacy
 ---
 
 # Privacy Policy

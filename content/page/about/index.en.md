@@ -7,7 +7,8 @@ aliases:
   - about-hugo
 lastmod: '2020-10-09'
 menu:
-    main: 
+    main:
+        name: About
         weight: -90
         params:
             icon: user

@@ -3,11 +3,7 @@ title: 免责声明
 description: 代码与历史网站免责声明
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -65
-        params:
-            icon: copyright
+slug: disclaimer
 ---
 
 # 免责声明

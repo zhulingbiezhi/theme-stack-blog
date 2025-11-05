@@ -3,11 +3,7 @@ title: Contact Us
 description: Contact Code & History
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -60
-        params:
-            icon: messages
+slug: contact
 ---
 
 # Contact Us

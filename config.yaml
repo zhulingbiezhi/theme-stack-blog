@@ -24,6 +24,36 @@ languages:
       dateFormat:
         published: 2006年01月02日
         lastUpdated: 2006年01月02日 15点04分05秒
+    menu:
+      main:
+        - identifier: home
+          name: 首页
+          url: /
+          weight: -100
+          params:
+              newTab: false
+              icon: home
+      footer:
+        - identifier: privacy
+          name: 隐私政策
+          url: /privacy/
+          weight: 10
+        - identifier: terms
+          name: 服务条款
+          url: /terms/
+          weight: 20
+        - identifier: cookies
+          name: Cookie政策
+          url: /cookies/
+          weight: 30
+        - identifier: disclaimer
+          name: 免责声明
+          url: /disclaimer/
+          weight: 40
+        - identifier: contact
+          name: 联系我们
+          url: /contact/
+          weight: 50
     
   en:
     languageCode: en

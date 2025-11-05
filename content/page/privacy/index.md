@@ -3,11 +3,7 @@ title: 隐私政策
 description: 代码与历史网站隐私政策
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -80
-        params:
-            icon: user
+slug: privacy
 ---
 
 # 隐私政策

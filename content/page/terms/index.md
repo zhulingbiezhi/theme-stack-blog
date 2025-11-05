@@ -3,11 +3,7 @@ title: 服务条款
 description: 代码与历史网站服务条款
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -75
-        params:
-            icon: messages
+slug: terms
 ---
 
 # 服务条款

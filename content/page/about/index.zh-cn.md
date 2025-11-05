@@ -8,7 +8,8 @@ aliases:
   - contact
 lastmod: '2020-10-09'
 menu:
-    main: 
+    main:
+        name: 关于
         weight: -90
         params:
             icon: user

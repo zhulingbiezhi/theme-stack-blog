@@ -3,11 +3,7 @@ title: 联系我们
 description: 联系代码与历史网站
 date: '2025-09-26'
 lastmod: '2025-09-26'
-menu:
-    main: 
-        weight: -60
-        params:
-            icon: messages
+slug: contact
 ---
 
 # 联系我们

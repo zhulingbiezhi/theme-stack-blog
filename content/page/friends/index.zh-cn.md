@@ -8,8 +8,8 @@ comments: false
 license: false
 menu: 
     main:
-        name: Friends
-        weight: -90
+        name: 好友
+        weight: -80
         params:
             icon: link
 ---

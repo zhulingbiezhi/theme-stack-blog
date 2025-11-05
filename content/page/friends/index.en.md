@@ -9,7 +9,7 @@ license: false
 menu: 
     main:
         name: Friends
-        weight: -90
+        weight: -80
         params:
             icon: link
 ---

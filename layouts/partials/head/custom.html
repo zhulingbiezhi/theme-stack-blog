@@ -44,7 +44,17 @@
     })();
     </script>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script defer src="https://us.umami.is/script.js" data-website-id="d501d708-5722-4653-be01-e0919e4163fd"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6812677205018200"
-     crossorigin="anonymous"></script>
+<!-- AdSense 延迟加载 -->
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var adsScript = document.createElement('script');
+      adsScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6812677205018200';
+      adsScript.async = true;
+      adsScript.crossOrigin = 'anonymous';
+      document.head.appendChild(adsScript);
+    }, 2000); // 页面加载完成后 2 秒再加载广告
+  });
+</script>

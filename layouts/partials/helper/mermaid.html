@@ -1,24 +1,30 @@
 {{ if .Params.mermaid }}
-<script
-        src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"
-        integrity="sha256-KqisLh8jVMBRjpNkOhH5W9VWs+F6x6vQksLqxs7+x9A="
-        crossorigin="anonymous"
-></script>
 <script>
-    // 初始化 mermaid 配置
-    mermaid.initialize({
-        startOnLoad: true,
-        theme: 'neutral',
-        securityLevel: 'loose'
-    });
-    
-    // Replace mermaid pre.code to div 
-    document.addEventListener("DOMContentLoaded", function() {
-        Array.from(document.getElementsByClassName("language-mermaid")).forEach(
-            (el) => {
-                el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`;
-            }
-        );
+    // 延迟加载 Mermaid
+    window.addEventListener('load', function() {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js';
+        script.integrity = 'sha256-KqisLh8jVMBRjpNkOhH5W9VWs+F6x6vQksLqxs7+x9A=';
+        script.crossOrigin = 'anonymous';
+        script.onload = function() {
+            // 初始化 mermaid 配置
+            mermaid.initialize({
+                startOnLoad: false,
+                theme: 'neutral',
+                securityLevel: 'loose'
+            });
+            
+            // Replace mermaid pre.code to div 
+            Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+                (el) => {
+                    el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`;
+                }
+            );
+            
+            // 手动渲染
+            mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        };
+        document.head.appendChild(script);
     });
 </script>
 <style>

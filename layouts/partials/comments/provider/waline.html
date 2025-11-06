@@ -1,20 +1,56 @@
-<head>
-  <!-- ... -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/@waline/client@3.0.0-alpha.2/dist/waline.css"
-  />
-  <!-- ... -->
-</head>
-<body>
-  <!-- ... -->
-  <div id="waline"></div>
-  <script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@3.0.0-alpha.2/dist/waline.mjs';
+<div id="waline"></div>
+<script type="module">
+  // 延迟加载 Waline CSS
+  const loadWalineCSS = () => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/@waline/client@3.0.0-alpha.2/dist/waline.css';
+    document.head.appendChild(link);
+  };
 
-    init({
-      el: '#waline',
-      serverURL: 'https://comment.ququ123.top',
-    });
-  </script>
-</body>
+  // 使用 Intersection Observer 实现懒加载
+  const walineContainer = document.getElementById('waline');
+  
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadWalineCSS();
+          import('https://unpkg.com/@waline/client@3.0.0-alpha.2/dist/waline.mjs')
+            .then(({ init }) => {
+              init({
+                el: '#waline',
+                serverURL: 'https://comment.ququ123.top',
+                lang: '{{ .Site.Params.comments.waline.lang | default "zh-CN" }}',
+                visitor: {{ .Site.Params.comments.waline.visitor | default true }},
+                avatar: '{{ .Site.Params.comments.waline.avatar | default "identicon" }}',
+                {{- with .Site.Params.comments.waline.emoji }}
+                emoji: {{ . | jsonify }},
+                {{- end }}
+                {{- with .Site.Params.comments.waline.requiredMeta }}
+                requiredMeta: {{ . | jsonify }},
+                {{- end }}
+                placeholder: '{{ .Site.Params.comments.waline.placeholder | default "允许匿名评论" }}',
+                {{- with .Site.Params.comments.waline.locale }}
+                locale: {{ . | jsonify }},
+                {{- end }}
+              });
+            });
+          observer.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+    
+    observer.observe(walineContainer);
+  } else {
+    // 降级方案：直接加载
+    loadWalineCSS();
+    import('https://unpkg.com/@waline/client@3.0.0-alpha.2/dist/waline.mjs')
+      .then(({ init }) => {
+        init({
+          el: '#waline',
+          serverURL: 'https://comment.ququ123.top',
+        });
+      });
+  }
+</script>

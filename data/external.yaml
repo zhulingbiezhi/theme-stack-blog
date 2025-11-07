@@ -1,28 +1,23 @@
 Vibrant:
-    - src: https://unpkg.com/node-vibrant@3.1.5/dist/vibrant.min.js
-      integrity: sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=
+    - src: /lib/vibrant/vibrant.min.js
       type: script
       async: true
 
 PhotoSwipe:
-    - src: https://unpkg.com/photoswipe@4.1.3/dist/photoswipe.min.js
-      integrity: sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=
+    - src: /lib/photoswipe/photoswipe.min.js
       type: script
       async: true
 
-    - src: https://unpkg.com/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js
-      integrity: sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=
+    - src: /lib/photoswipe/photoswipe-ui-default.min.js
       type: script
       async: true
 
-    - src: https://unpkg.com/photoswipe@4.1.3/dist/default-skin/default-skin.css
-      integrity: sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=
+    - src: /lib/photoswipe/dist/default-skin/default-skin.css
       type: style
       media: print
       onload: this.media='all'
 
-    - src: https://unpkg.com/photoswipe@4.1.3/dist/photoswipe.css
-      integrity: sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=
+    - src: /lib/photoswipe/photoswipe.css
       type: style
       media: print
       onload: this.media='all'

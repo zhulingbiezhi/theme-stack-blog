@@ -1,6 +1,15 @@
 <!-- 自动语言检测和跳转脚本 -->
 <script>
     (function() {
+        // 检测是否为搜索引擎爬虫
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isCrawler = /bot|crawler|spider|crawling|googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkshare|w3c_validator|whatsapp|lighthouse/i.test(userAgent);
+        
+        // 如果是爬虫，不执行跳转
+        if (isCrawler) {
+            return;
+        }
+        
         // 检查是否已经手动选择过语言（使用 localStorage 保存用户偏好）
         var userPreferredLang = localStorage.getItem('userPreferredLang');
         

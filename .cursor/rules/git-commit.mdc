@@ -1,0 +1,23 @@
+---
+description: "Git 提交规范"
+---
+
+# Git 提交规范
+
+## 要求
+- 语言：英文
+- 长度：≤30 字符
+- 格式：简洁明了
+
+## 前缀
+- `fix:` - 修复 bug
+- `add:` - 新功能
+- `update:` - 更新功能
+- `refactor:` - 重构
+- `optimize:` - 性能优化
+
+## 示例
+✅ `fix: google subscription error`
+✅ `add: apple payment gateway`
+❌ `修复了订阅bug`（中文）
+❌ `fix: fixed a bug in google...`（超长）

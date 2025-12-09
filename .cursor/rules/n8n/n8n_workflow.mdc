@@ -1,0 +1,72 @@
+---
+alwaysApply: true
+---
+# n8n Workflow 设计规范
+
+## 设计原则
+
+### 工作流结构设计
+1. **单一职责**：每个工作流只处理一个明确的业务场景
+2. **错误处理**：关键节点必须配置错误输出，避免静默失败
+3. **幂等性**：支持重复执行的节点要设计幂等检查
+4. **可观测性**：关键节点添加日志记录，便于问题排查
+
+### 节点配置原则
+1. **先搜索后配置**：使用 `search_nodes` 查找节点，再用 `get_node` 获取配置
+2. **标准详情优先**：`get_node` 先用 `detail='standard'`，不足再用 `detail='full'`
+3. **配置验证**：节点配置完成后用 `validate_node` 验证，部署前用 `validate_workflow` 验证整个工作流
+4. **版本管理**：使用 `n8n_workflow_versions` 管理版本历史，重要变更前创建备份
+
+## 使用 n8n-mcp 的标准流程
+
+### 创建工作流
+1. **查找节点**：`search_nodes({query: "关键词"})` 搜索所需节点
+2. **获取配置**：`get_node({nodeType: "nodes-base.xxx", detail: "standard"})` 获取节点配置
+3. **创建结构**：`n8n_create_workflow` 创建工作流基础结构
+4. **增量更新**：使用 `n8n_update_partial_workflow` 逐步添加节点和连接
+5. **验证测试**：`n8n_validate_workflow` 验证，`n8n_test_workflow` 测试执行
+
+### 模板使用
+1. **搜索模板**：`search_templates` 按关键词、节点类型或任务类型搜索
+2. **查看模板**：`get_template` 获取模板完整配置
+3. **部署模板**：`n8n_deploy_template` 直接部署到 n8n 实例，自动修复常见问题
+
+### 工作流管理
+1. **版本控制**：重要变更前使用 `n8n_workflow_versions` 查看历史版本
+2. **自动修复**：部署后使用 `n8n_autofix_workflow` 修复表达式格式、typeVersion 等问题
+3. **执行监控**：使用 `n8n_executions` 查看执行历史和结果
+
+## 最佳实践
+
+### 节点配置
+- **必须使用标准详情**：`get_node` 先用 `detail='standard'`，避免获取过大响应
+- **属性搜索**：使用 `mode='search_properties'` 查找特定配置项（如认证、参数）
+- **文档模式**：需要理解节点功能时使用 `mode='docs'` 获取可读文档
+
+### 验证策略
+- **节点级验证**：配置单个节点后用 `validate_node` 快速检查必填字段
+- **工作流级验证**：部署前用 `validate_workflow` 完整验证结构、连接、表达式
+- **验证模式**：编辑时用 `profile='minimal'`，部署前用 `profile='runtime'` 或 `'strict'`
+
+### 错误处理
+- **错误输出配置**：关键节点必须配置错误输出路径
+- **重试策略**：网络请求等可重试操作配置重试次数和间隔
+- **降级处理**：非关键路径失败不应影响主流程
+
+### 性能优化
+- **批量处理**：避免循环中调用外部 API，使用批量接口
+- **缓存策略**：频繁查询的数据使用缓存节点
+- **异步处理**：耗时操作使用异步节点或拆分到独立工作流
+
+## 参考资源
+
+- **官方模板库**：https://n8n.io/workflows
+- **社区模板**：https://github.com/Zie619/n8n-workflows
+- **工具文档**：使用 `tools_documentation({topic: "工具名", depth: "full"})` 获取详细文档
+
+## 注意事项
+
+1. **API 配置**：n8n API 工具需要配置 `N8N_API_URL` 和 `N8N_API_KEY`
+2. **版本兼容**：使用 `n8n_health_check` 检查 n8n 实例版本兼容性
+3. **Code 节点**：配置 JavaScript/Python Code 节点前先查看对应指南
+4. **节点类型前缀**：所有节点类型必须包含 `nodes-base.` 或 `nodes-langchain.` 前缀

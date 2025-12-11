@@ -12,6 +12,7 @@ categories:
 draft: false
 description: "本文深度解析 Neal.fun 的交互式作品《Size of Life》，探讨其如何通过创新的可视化技术，将宇宙万物从微观粒子到宏观星系的尺度直观呈现。文章不仅剖析其技术实现与设计哲学，更延伸思考数据叙事、科学教育以及人类在宇宙中的位置等深层议题。"
 slug: "exploring-universe-scale-and-life-dimensions-size-of-life-analysis"
+math: true
 ---
 
 ## 文章摘要

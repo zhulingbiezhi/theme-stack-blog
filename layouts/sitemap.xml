@@ -2,19 +2,40 @@
 {{ printf "<?xml-stylesheet type=\"text/xsl\" href=\"/sitemap.xsl\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {{ range .Data.Pages }}
-  {{ $isCategoryPage := findRE "/categories/[^/]+" .RelPermalink }}
   {{ $shouldInclude := true }}
   
-  {{ if $isCategoryPage }}
-    {{ $categorySlug := index (last 1 (split (trim .RelPermalink "/") "/")) 0 }}
-    
-    {{ $categoryPage := .Parent }}
-    {{ if eq .Kind "taxonomy" }}
-      {{ $categoryPage = . }}
-    {{ end }}
-    
-    {{ if lt (len .Pages) 5 }}
+  {{/* 排除所有 tag 相关页面 */}}
+  {{ if eq .Type "tags" }}
+    {{ $shouldInclude = false }}
+  {{ end }}
+  
+  {{/* 排除特定功能页面和法律页面 */}}
+  {{ $excludePages := slice "archives" "search"}}
+  {{ if .File }}
+    {{ if in $excludePages .File.TranslationBaseName }}
       {{ $shouldInclude = false }}
+    {{ end }}
+  {{ end }}
+  {{ if in $excludePages .Params.slug }}
+    {{ $shouldInclude = false }}
+  {{ end }}
+  {{ if in $excludePages .Params.layout }}
+    {{ $shouldInclude = false }}
+  {{ end }}
+  
+  {{/* 排除 /page/ 列表页 */}}
+  {{ if hasPrefix .RelPermalink "/page/" }}
+    {{ if eq .Kind "section" }}
+      {{ $shouldInclude = false }}
+    {{ end }}
+  {{ end }}
+  
+  {{/* 过滤少于 5 篇文章的 category 页面 */}}
+  {{ if eq .Type "categories" }}
+    {{ if eq .Kind "term" }}
+      {{ if lt (len .Pages) 5 }}
+        {{ $shouldInclude = false }}
+      {{ end }}
     {{ end }}
   {{ end }}
   

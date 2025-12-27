@@ -12,6 +12,7 @@ categories:
 draft: false
 description: "本文深入探讨了犹他州自然历史博物馆报道的一种新发现致幻蘑菇。文章不仅介绍了其独特的‘童话般’致幻效应，更从真菌学、神经药理学和生物多样性保护的角度，分析了此类发现对科学研究的深远意义、潜在应用价值以及伴随的伦理与法律挑战。"
 slug: "exploring-new-hallucinogenic-mushroom-fairytale-effects-science-ethics"
+---
 
 ## 文章摘要
 

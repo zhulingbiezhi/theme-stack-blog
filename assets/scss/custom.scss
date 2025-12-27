@@ -140,12 +140,10 @@ blockquote.quote {
 
 // 优化文章字体和行距
 :root {
-    // 备用字体栈（在 Web 字体加载前使用，避免闪烁）
-    --fallback-font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    
-    // 默认使用备用字体，避免字体闪烁
-    --base-font-family: var(--fallback-font-family);
-    --article-font-family: var(--fallback-font-family);
+    // 使用字体栈，配合 font-display: fallback 策略
+    // 字体在3秒内加载完成时自动应用，否则保持备用字体，避免延迟闪烁
+    --base-font-family: "LXGW WenKai Screen", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --article-font-family: "LXGW WenKai Screen", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     
     // 增大文章字体大小
     --article-font-size: 1.8rem;
@@ -156,17 +154,6 @@ blockquote.quote {
     
     // 增大行距，提升可读性（楷体字体需要更大的行距）
     --article-line-height: 2.0;
-}
-
-// 字体加载完成后，平滑切换到目标字体
-html.fonts-loaded {
-    --base-font-family: "LXGW WenKai Screen", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    --article-font-family: "LXGW WenKai Screen", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    
-    // 添加平滑过渡，避免字体切换时的视觉跳跃
-    body, .article-content {
-        transition: font-family 0.1s ease-in-out;
-    }
 }
 
 // 进一步优化文章内容的排版

@@ -1,53 +1,90 @@
-<!-- 字体加载优化：避免字体闪烁 -->
+<!-- 字体加载检测：确保字体在100ms内加载完成，否则使用备用字体 -->
 <script>
 (function() {
-    // 初始状态：使用备用字体，避免闪烁
+    // 初始状态：字体加载中
     document.documentElement.classList.add('fonts-loading');
     
+    var fontLoaded = false;
+    var fontCheckStartTime = performance.now();
+    
     // 检测字体是否已加载
-    if ('fonts' in document) {
-        // 等待字体 CSS 加载完成
-        function checkFontLoaded() {
+    function checkFont() {
+        if (fontLoaded) return;
+        
+        if ('fonts' in document) {
             // 检查字体是否可用
             if (document.fonts.check('1em "LXGW WenKai Screen"')) {
-                document.documentElement.classList.remove('fonts-loading');
-                document.documentElement.classList.add('fonts-loaded');
-                return true;
+                var loadTime = performance.now() - fontCheckStartTime;
+                
+                // 如果字体在100ms内加载完成（font-display: optional的窗口期）
+                if (loadTime < 100) {
+                    fontLoaded = true;
+                    document.documentElement.classList.remove('fonts-loading');
+                    document.documentElement.classList.add('fonts-loaded');
+                    return true;
+                }
             }
-            return false;
-        }
-        
-        // 立即检查一次
-        if (!checkFontLoaded()) {
-            // 如果字体未加载，等待加载
-            document.fonts.ready.then(function() {
-                checkFontLoaded();
-            });
             
             // 主动加载字体
             document.fonts.load('1em "LXGW WenKai Screen"').then(function() {
-                document.documentElement.classList.remove('fonts-loading');
-                document.documentElement.classList.add('fonts-loaded');
-            }).catch(function() {
-                // 字体加载失败，使用备用字体
-                document.documentElement.classList.remove('fonts-loading');
-                document.documentElement.classList.add('fonts-fallback');
-            });
-            
-            // 设置超时，避免无限等待
-            setTimeout(function() {
-                if (document.documentElement.classList.contains('fonts-loading')) {
+                var loadTime = performance.now() - fontCheckStartTime;
+                
+                if (!fontLoaded && loadTime < 100) {
+                    fontLoaded = true;
                     document.documentElement.classList.remove('fonts-loading');
-                    if (!checkFontLoaded()) {
-                        document.documentElement.classList.add('fonts-fallback');
-                    }
+                    document.documentElement.classList.add('fonts-loaded');
+                } else if (!fontLoaded) {
+                    // 超过100ms，使用备用字体
+                    fontLoaded = true;
+                    document.documentElement.classList.remove('fonts-loading');
+                    document.documentElement.classList.add('fonts-fallback');
                 }
-            }, 3000); // 3秒超时
+            }).catch(function() {
+                if (!fontLoaded) {
+                    fontLoaded = true;
+                    document.documentElement.classList.remove('fonts-loading');
+                    document.documentElement.classList.add('fonts-fallback');
+                }
+            });
+        } else {
+            // 不支持 Font Loading API，延迟后显示（使用备用字体）
+            setTimeout(function() {
+                if (!fontLoaded) {
+                    fontLoaded = true;
+                    document.documentElement.classList.remove('fonts-loading');
+                    document.documentElement.classList.add('fonts-fallback');
+                }
+            }, 50);
         }
+        
+        // 设置超时保护：100ms后如果字体未加载完成，使用备用字体
+        setTimeout(function() {
+            if (!fontLoaded) {
+                fontLoaded = true;
+                document.documentElement.classList.remove('fonts-loading');
+                if (document.fonts && document.fonts.check('1em "LXGW WenKai Screen"')) {
+                    document.documentElement.classList.add('fonts-loaded');
+                } else {
+                    document.documentElement.classList.add('fonts-fallback');
+                }
+            }
+        }, 100);
+    }
+    
+    // DOM 加载完成后立即检查
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', checkFont);
     } else {
-        // 不支持 Font Loading API，使用备用字体
-        document.documentElement.classList.remove('fonts-loading');
-        document.documentElement.classList.add('fonts-fallback');
+        checkFont();
+    }
+    
+    // 也监听字体加载完成事件
+    if ('fonts' in document) {
+        document.fonts.ready.then(function() {
+            if (!fontLoaded) {
+                checkFont();
+            }
+        });
     }
 })();
 </script>

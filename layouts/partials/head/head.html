@@ -48,10 +48,45 @@
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-<!-- 预加载霞鹜文楷屏幕阅读版字体文件，避免字体闪烁 -->
+<!-- 无闪烁方案：使用 font-display: optional + 激进预加载 + 字体加载检测 -->
+<!-- 1. DNS 预解析和预连接（最高优先级） -->
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- 2. 预加载字体文件（最高优先级，在HTML解析时就开始下载） -->
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/files/lxgwwenkaiscreen-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<!-- 加载字体样式表 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
+
+<!-- 3. 内联 @font-face 定义，使用 optional 策略（100ms窗口期，避免闪烁） -->
+<style>
+@font-face {
+    font-family: 'LXGW WenKai Screen';
+    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/files/lxgwwenkaiscreen-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: optional; /* 100ms窗口期，如果加载完成就使用，否则永远使用备用字体，完全避免闪烁 */
+}
+
+/* 字体加载检测：在字体加载完成前短暂隐藏文本，避免闪烁 */
+/* 应用到所有页面：首页、列表页、文章页、归档页、搜索页等 */
+html.fonts-loading .main-container,
+html.fonts-loading footer {
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+
+/* 字体加载完成后显示内容 */
+html.fonts-loaded .main-container,
+html.fonts-loaded footer,
+html.fonts-fallback .main-container,
+html.fonts-fallback footer {
+    opacity: 1;
+    transition: opacity 0.1s ease-in;
+}
+</style>
+
+<!-- 4. 异步加载完整字体CSS（不阻塞渲染） -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css"></noscript>
 
 {{- partial "head/style.html" . -}}
 {{- partial "head/script.html" . -}}

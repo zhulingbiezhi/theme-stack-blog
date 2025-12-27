@@ -48,6 +48,11 @@
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
+<!-- 预加载霞鹜文楷屏幕阅读版字体文件，避免字体闪烁 -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/files/lxgwwenkaiscreen-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<!-- 加载字体样式表 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.7.0/style.min.css">
+
 {{- partial "head/style.html" . -}}
 {{- partial "head/script.html" . -}}
 {{- partial "head/opengraph/include.html" . -}}

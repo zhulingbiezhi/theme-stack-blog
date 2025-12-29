@@ -1,3 +1,4 @@
+---
 title: "苹果开源Sharp模型：从2D照片到3D视图的即时转换革命"
 date: 2025-12-28
 tags:
@@ -16,6 +17,7 @@ categories:
 draft: false
 description: "苹果公司开源了Sharp模型，这是一个能够从单张2D照片即时生成高质量3D视图的突破性技术。本文深入解析其技术原理、核心优势、开源意义，并探讨其对3D内容创作、AR/VR及计算机视觉领域的深远影响。"
 slug: "apple-open-source-sharp-model-2d-to-3d-instant-conversion"
+---
 
 ## 文章摘要
 

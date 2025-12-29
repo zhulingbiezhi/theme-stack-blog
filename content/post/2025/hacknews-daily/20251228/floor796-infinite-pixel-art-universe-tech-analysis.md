@@ -1,3 +1,4 @@
+---
 title: "Floor796：一个无限滚动的像素艺术宇宙，探索技术与创意的边界"
 date: 2025-12-28
 tags:
@@ -14,6 +15,7 @@ categories:
 draft: false
 description: "深入解析Floor796项目，这是一个融合了像素艺术、无限滚动与互动叙事的Web技术杰作。本文将探讨其背后的技术实现、创意构思，以及对未来互动媒体和前端开发的启示。"
 slug: "floor796-infinite-pixel-art-universe-tech-analysis"
+---
 
 ## 文章摘要
 

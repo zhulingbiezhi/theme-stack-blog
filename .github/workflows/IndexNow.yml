@@ -10,26 +10,6 @@ jobs:
   check-and-submit:
     runs-on: ubuntu-latest
     steps:
-      - name: Check zh-cn sitemap
-        run: |
-          echo "Checking zh-cn sitemap..."
-          curl -I https://www.ququ123.top/zh-cn/sitemap.xml
-          echo "First 2000 characters of sitemap:"
-          curl -s https://www.ququ123.top/zh-cn/sitemap.xml | head -c 2000
-          echo ""
-          echo "Checking for invalid characters around position 768..."
-          curl -s https://www.ququ123.top/zh-cn/sitemap.xml | head -c 900 | tail -c 200
-        
-      - name: Check IndexNow Key
-        run: |
-          echo "IndexNow Key length: ${#INDEXNOW_KEY}"
-          echo "IndexNow Key (first 8 chars): ${INDEXNOW_KEY:0:8}..."
-          echo "IndexNow Key (last 8 chars): ...${INDEXNOW_KEY: -8}"
-          echo "Key contains special characters check:"
-          echo "$INDEXNOW_KEY" | od -c | head -5
-        env:
-          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-      
       - name: submit-zh-cn-to-bing
         uses: bojieyang/indexnow-action@v2
         with:
@@ -39,15 +19,6 @@ jobs:
           since-unit: 'day'
           key: ${{ secrets.INDEXNOW_KEY }}
           lastmod-required: false
-        continue-on-error: true
-      
-      - name: Check en sitemap  
-        run: |
-          echo "Checking en sitemap..."
-          curl -I https://www.ququ123.top/en/sitemap.xml
-          echo "First 2000 characters of sitemap:"
-          curl -s https://www.ququ123.top/en/sitemap.xml | head -c 2000
-          echo ""
       
       - name: submit-en-to-bing
         uses: bojieyang/indexnow-action@v2
@@ -58,9 +29,3 @@ jobs:
           since-unit: 'day'
           key: ${{ secrets.INDEXNOW_KEY }}
           lastmod-required: false
-        continue-on-error: true
-      
-      - name: Summary
-        run: |
-          echo "IndexNow submission completed (with possible errors)"
-          echo "Check the logs above for details"

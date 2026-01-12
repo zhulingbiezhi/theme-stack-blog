@@ -4,7 +4,7 @@ on:
     branches:
       - main
   schedule:
-    - cron:  '0 0,12 * * *'
+    - cron: '0 0,12 * * *'
 
 jobs:
   check-and-submit:
@@ -18,7 +18,8 @@ jobs:
           since: 10
           since-unit: 'day'
           key: ${{ secrets.INDEXNOW_KEY }}
-       
+          lastmod-required: false
+      
       - name: submit-en-to-bing
         uses: bojieyang/indexnow-action@v2
         with:
@@ -27,4 +28,4 @@ jobs:
           since: 10
           since-unit: 'day'
           key: ${{ secrets.INDEXNOW_KEY }}
-  
+          lastmod-required: false

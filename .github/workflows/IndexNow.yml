@@ -17,9 +17,8 @@ jobs:
           endpoint: 'www.bing.com'
           since: 10
           since-unit: 'day'
-          key: '${{ secrets.INDEXNOW_KEY }}'
-          key-location: '${{ secrets.INDEXNOW_KEY_LOCATION }}'
-      
+          key: ${{ secrets.INDEXNOW_KEY }}
+       
       - name: submit-en-to-bing
         uses: bojieyang/indexnow-action@v2
         with:
@@ -27,6 +26,5 @@ jobs:
           endpoint: 'www.bing.com'
           since: 10
           since-unit: 'day'
-          key: '${{ secrets.INDEXNOW_KEY }}'
-          key-location: '${{ secrets.INDEXNOW_KEY_LOCATION }}'
-
+          key: ${{ secrets.INDEXNOW_KEY }}
+  

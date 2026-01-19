@@ -1,0 +1,79 @@
+{{ define "main" }}
+    <h3 class="section-title">
+        {{ if eq .Parent (.GetPage "/") }}
+            {{ T "list.section" }}
+        {{ else }}
+            {{ .Parent.Title }}
+        {{ end }}
+    </h3>
+
+    <div class="section-card">
+        <div class="section-details">
+            {{/* 过滤掉文章数小于阈值的分类 */}}
+            {{ $minCount := default 5 .Site.Params.taxonomyMinCount }}
+            {{ $filteredPages := slice }}
+            {{ range .Pages }}
+                {{ if ge (len .Pages) $minCount }}
+                    {{ $filteredPages = $filteredPages | append . }}
+                {{ end }}
+            {{ end }}
+            
+            <h3 class="section-count">{{ T "list.page" (len $filteredPages) }}</h3>
+            <h1 class="section-term">{{ .Title }}</h1>
+            {{ with .Params.description }}
+                <h2 class="section-description">{{ . }}</h2>
+            {{ end }}
+        </div>
+
+        {{- $image := partialCached "helper/image" (dict "Context" . "Type" "section") .RelPermalink "section" -}}
+        {{ if $image.exists }}
+            <div class="section-image">
+                {{ if $image.resource }}
+                    {{- $Permalink := $image.resource.RelPermalink -}}
+                    {{- $Width := $image.resource.Width -}}
+                    {{- $Height := $image.resource.Height -}}
+
+                    {{- if (default true .Page.Site.Params.imageProcessing.cover.enabled) -}}
+                        {{- $thumbnail := $image.resource.Fill "120x120" -}}
+                        {{- $Permalink = $thumbnail.RelPermalink -}}
+                        {{- $Width = $thumbnail.Width -}}
+                        {{- $Height = $thumbnail.Height -}}
+                    {{- end -}}
+                    
+                    <img src="{{ $Permalink }}" 
+                        width="{{ $Width }}"
+                        height="{{ $Height }}" 
+                        loading="lazy">
+                {{ else }}
+                    <img src="{{ $image.permalink }}" loading="lazy" />
+                {{ end }}
+            </div>
+        {{ end }}
+    </div>
+
+    {{/* 使用过滤后的页面 */}}
+    {{ $minCount := default 5 .Site.Params.taxonomyMinCount }}
+    {{ $filteredPages := slice }}
+    {{ range .Pages }}
+        {{ if ge (len .Pages) $minCount }}
+            {{ $filteredPages = $filteredPages | append . }}
+        {{ end }}
+    {{ end }}
+
+    {{/* 列出过滤后的分类页面 */}}
+    {{ $paginator := .Paginate $filteredPages }}
+    <section class="article-list--compact">
+        {{ range $paginator.Pages }}
+            {{ partial "article-list/compact" . }}
+        {{ end }}
+    </section>
+
+    {{- partial "pagination.html" . -}}
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partialCached "sidebar/right.html" . }}
+{{ end }}
+

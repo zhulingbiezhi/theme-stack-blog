@@ -31,8 +31,8 @@ languages:
           url: /
           weight: -100
           params:
-              newTab: false
-              icon: home
+            newTab: false
+            icon: home
       footer:
         - identifier: privacy
           name: 隐私政策
@@ -54,7 +54,7 @@ languages:
           name: 联系我们
           url: /contact/
           weight: 50
-    
+
   en:
     languageCode: en
     languageName: English
@@ -72,8 +72,8 @@ languages:
           url: /en/
           weight: -100
           params:
-              newTab: false
-              icon: home
+            newTab: false
+            icon: home
       footer:
         - identifier: privacy
           name: Privacy Policy
@@ -107,231 +107,237 @@ sitemap:
 enableRobotsTXT: true
 
 permalinks:
-    post: /:year/:month/:slug/
-    page: /:slug/
+  post: /:year/:month/:slug/
+  page: /:slug/
 
 params:
-    mainSections:
-        - post
-    featuredImageField: image
-    rssFullContent: true
-    favicon: img/avatar.png
+  mainSections:
+    - post
+  featuredImageField: image
+  rssFullContent: true
+  favicon: img/avatar.png
 
-    footer:
-        since: 2020
-        customText:
+  # 分类法最小文章数阈值（tags/categories 少于此数量的不生成页面）
+  taxonomyMinCount: 5
 
-    dateFormat:
-        published: 2006年01月02日
-        lastUpdated: 2006年01月02日 15点04分05秒
-    
-    # Language-specific date format will override this in menu section below
+  footer:
+    since: 2020
+    customText:
 
-    sidebar:
-        emoji: 🍥
-        subtitle: No code, no talk.
-        avatar:
-            enabled: true
-            local: true
-            src: img/avatar.png
+  dateFormat:
+    published: 2006年01月02日
+    lastUpdated: 2006年01月02日 15点04分05秒
 
-    article:
-        math: false
-        toc: true
-        readingTime: true
-        license:
-            enabled: false
+  # Language-specific date format will override this in menu section below
 
-    comments:
-        enabled: true
-        provider: waline
+  sidebar:
+    emoji: 🍥
+    subtitle: No code, no talk.
+    avatar:
+      enabled: true
+      local: true
+      src: img/avatar.png
 
-        disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
+  article:
+    math: false
+    toc: true
+    readingTime: true
+    license:
+      enabled: false
 
-        utterances:
-            repo:
-            issueTerm: pathname
-            label:
+  comments:
+    enabled: true
+    provider: waline
 
-        remark42:
-            host:
-            site:
-            locale:
+    disqusjs:
+      shortname:
+      apiUrl:
+      apiKey:
+      admin:
+      adminLabel:
 
-        vssue:
-            platform:
-            owner:
-            repo:
-            clientId:
-            clientSecret:
-            autoCreateIssue: false
+    utterances:
+      repo:
+      issueTerm: pathname
+      label:
 
-        # Waline client configuration see: https://waline.js.org/en/reference/client.html
-        waline:
-            serverURL: https://comment.ququ123.top
-            lang: zh-CN
-            visitor: true
-            avatar: identicon
-            emoji:
-                - https://unpkg.com/@waline/emojis@1.0.1/qq
-                - https://unpkg.com/@waline/emojis@1.0.1/bilibili
-                - https://unpkg.com/@waline/emojis@1.0.1/tieba
-            requiredMeta:
-                - name
-                - email
-            placeholder: 允许匿名评论
-            locale:
-                admin: Admin
+    remark42:
+      host:
+      site:
+      locale:
 
-        twikoo:
-            envId:
-            region:
-            path:
-            lang:
+    vssue:
+      platform:
+      owner:
+      repo:
+      clientId:
+      clientSecret:
+      autoCreateIssue: false
 
-        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
-        cactus:
-            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
-            serverName: "cactus.chat"
-            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
+    # Waline client configuration see: https://waline.js.org/en/reference/client.html
+    waline:
+      serverURL: https://comment.ququ123.top
+      lang: zh-CN
+      visitor: true
+      avatar: identicon
+      emoji:
+        - https://unpkg.com/@waline/emojis@1.0.1/qq
+        - https://unpkg.com/@waline/emojis@1.0.1/bilibili
+        - https://unpkg.com/@waline/emojis@1.0.1/tieba
+      requiredMeta:
+        - name
+        - email
+      placeholder: 允许匿名评论
+      locale:
+        admin: Admin
 
-        giscus:
-            repo:
-            repoID:
-            category:
-            categoryID:
-            mapping:
-            lightTheme:
-            darkTheme:
-            reactionsEnabled: 1
-            emitMetadata: 0
+    twikoo:
+      envId:
+      region:
+      path:
+      lang:
 
-        gitalk:
-            owner:
-            admin:
-            repo:
-            clientID:
-            clientSecret:
+    # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
+    cactus:
+      defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+      serverName: "cactus.chat"
+      siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
 
-        cusdis:
-            host:
-            id:
-    widgets:
-        enabled:
-            - search
-            - toc
-            - categories
-            - archives
-            - tag-cloud
+    giscus:
+      repo:
+      repoID:
+      category:
+      categoryID:
+      mapping:
+      lightTheme:
+      darkTheme:
+      reactionsEnabled: 1
+      emitMetadata: 0
 
+    gitalk:
+      owner:
+      admin:
+      repo:
+      clientID:
+      clientSecret:
 
-        archives:
-            limit: 5
+    cusdis:
+      host:
+      id:
+  widgets:
+    enabled:
+      - search
+      - toc
+      - categories
+      - archives
+      - tag-cloud
 
-        tagCloud:
-            limit: 10
+    archives:
+      limit: 5
 
+    tagCloud:
+      limit: 10
+
+  opengraph:
+    twitter:
+      # Your Twitter username
+      site:
+
+      # Available values: summary, summary_large_image
+      card: summary_large_image
+
+  defaultImage:
     opengraph:
-        twitter:
-            # Your Twitter username
-            site:
+      enabled: false
+      local: false
+      src:
 
-            # Available values: summary, summary_large_image
-            card: summary_large_image
+  colorScheme:
+    # Display toggle
+    toggle: true
 
-    defaultImage:
-        opengraph:
-            enabled: false
-            local: false
-            src:
+    # Available values: auto, light, dark
+    default: auto
 
-    colorScheme:
-        # Display toggle
-        toggle: true
-
-        # Available values: auto, light, dark
-        default: auto
-
-    imageProcessing:
-        cover:
-            enabled: true
-        content:
-            enabled: true
+  imageProcessing:
+    cover:
+      enabled: true
+    content:
+      enabled: true
 
 ### Custom menu
 ### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
 ### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
 menu:
-    main:
-        - identifier: home
-          name: Home
-          url: /
-          weight: -100
-          params:
-              ### For demonstration purpose, the home link will be open in a new tab
-              newTab: flase
-              icon: home
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: -100
+      params:
+        ### For demonstration purpose, the home link will be open in a new tab
+        newTab: flase
+        icon: home
 
-    footer:
-        - identifier: privacy
-          name: 隐私政策
-          url: /privacy/
-          weight: 10
-        - identifier: terms
-          name: 服务条款
-          url: /terms/
-          weight: 20
-        - identifier: cookies
-          name: Cookie政策
-          url: /cookies/
-          weight: 30
-        - identifier: disclaimer
-          name: 免责声明
-          url: /disclaimer/
-          weight: 40
-        - identifier: contact
-          name: 联系我们
-          url: /contact/
-          weight: 50
+  footer:
+    - identifier: privacy
+      name: 隐私政策
+      url: /privacy/
+      weight: 10
+    - identifier: terms
+      name: 服务条款
+      url: /terms/
+      weight: 20
+    - identifier: cookies
+      name: Cookie政策
+      url: /cookies/
+      weight: 30
+    - identifier: disclaimer
+      name: 免责声明
+      url: /disclaimer/
+      weight: 40
+    - identifier: contact
+      name: 联系我们
+      url: /contact/
+      weight: 50
 
-    social:
-        - identifier: github
-          name: GitHub
-          url: https://github.com/zhulingbiezhi
-          params:
-              icon: brand-github
-
+  social:
+    - identifier: github
+      name: GitHub
+      url: https://github.com/zhulingbiezhi
+      params:
+        icon: brand-github
 
 related:
-    includeNewer: true
-    threshold: 60
-    toLower: false
-    indices:
-        - name: tags
-          weight: 100
+  includeNewer: true
+  threshold: 60
+  toLower: false
+  indices:
+    - name: tags
+      weight: 100
 
-        - name: categories
-          weight: 200
+    - name: categories
+      weight: 200
 
 markup:
-    goldmark:
-        renderer:
-            ## Set to true if you have HTML content inside Markdown
-            unsafe: true
-    tableOfContents:
-        endLevel: 4
-        ordered: true
-        startLevel: 2
-    highlight: 
-        noClasses: false
-        codeFences: false
-        guessSyntax: true
-        lineNoStart: 1
-        lineNos: true
-        lineNumbersInTable: true
-        tabWidth: 4
+  goldmark:
+    renderer:
+      ## Set to true if you have HTML content inside Markdown
+      unsafe: true
+  tableOfContents:
+    endLevel: 4
+    ordered: true
+    startLevel: 2
+  highlight:
+    noClasses: false
+    codeFences: false
+    guessSyntax: true
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    tabWidth: 4
+
+# 分类法配置
+taxonomies:
+  tag: tags
+  category: categories

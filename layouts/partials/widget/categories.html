@@ -1,32 +1,24 @@
-{{- $query := first 1 (where .Site.Pages "Layout" "==" "archives") -}}
-{{- if $query -}}
-    {{- $archivesPage := index $query 0 -}}
-    <section class="widget categories">
-        <div class="widget-icon">
-            {{ partial "helper/icon" "infinity" }}  
-        </div> 
-        <h2 class="widget-title section-title">Categories</h2>
-        <div class="widget-categories--list">
-            <div class="widget">
-                <h3 class="widget-title">{{ T "widget_categories" }}</h3>
-                <div class="widget-body">
-                    <div class="category-list">
-                        {{- range first 10 (sort $.Site.Taxonomies.categories "Count" "desc") }}
-                            {{- $name := .Page.Title }} 
-                            {{- $count := .Count }} 
-                            {{- with $.Site.GetPage (printf "/categories/%s" $name) }}
-                                <div class="category-list-item">
-                                    <a href="{{ .Permalink }}" class="category-list-link">
-                                        {{ .Title }} <span class="category-list-count">{{ $count }}</span>
-                                    </a>
-                                </div>
-                            {{- end }}
-                        {{- end }}
-                    </div>
-                </div>
+{{- $hasCategories := .Site.Taxonomies.categories -}}
+{{- $categoriesCount := len .Site.Taxonomies.categories -}}
+
+{{- if $hasCategories -}}
+<section class="widget categories">
+    <div class="widget-icon">
+        {{ partial "helper/icon" "infinity" }}
+    </div>
+    <h2 class="widget-title section-title">分类 ({{ $categoriesCount }})</h2>
+    <div class="widget-body">
+        <div class="category-list">
+            {{- range first 10 (sort .Site.Taxonomies.categories "Count" "desc") }}
+            <div class="category-list-item">
+                <a href="{{ .Page.RelPermalink }}" class="category-list-link">
+                    {{ .Page.Title }} <span class="category-list-count">({{ .Count }})</span>
+                </a>
             </div>
+            {{- end }}
         </div>
-    </section>
+    </div>
+</section>
 {{- else -}}
-    {{- warnf "Archives page not found. Create a page with layout: archives." -}}
+<div style="color: red;">DEBUG: No categories taxonomy found! Count: {{ $categoriesCount }}</div>
 {{- end -}}

@@ -337,13 +337,6 @@ markup:
     lineNumbersInTable: true
     tabWidth: 4
 
-# 分类法配置
+# 分类法配置 - 只启用 categories，禁用 tags
 taxonomies:
-  tag: tags
   category: categories
-
-# 只禁用每个标签/分类的单独页面（term），保留标签和分类的列表页
-# 这样可以大幅减少生成的页面数量（从2000+个标签页降到只有2个列表页）
-# 但侧边栏的标签云和分类列表仍然可以正常工作
-disableKinds:
-  - term

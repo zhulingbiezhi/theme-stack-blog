@@ -1,3 +1,4 @@
+{{- if .Site.Taxonomies.tags -}}
 <section class="widget tagCloud">
     <div class="widget-icon">
         {{ partial "helper/icon" "tag" }}
@@ -12,3 +13,4 @@
         {{ end }}
     </div>
 </section>
+{{- end -}}
